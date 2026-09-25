@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AstraVista | Planetarium & Observatory</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   ASTRAVISTA PREMIUM HEADER + FOOTER
+   ========================================================= */
+
+:root{
+    --primary:#6C63FF;
+    --primary-dark:#5148D9;
+    --secondary:#FFB84D;
+    --secondary-dark:#E49A2E;
+
+    --nav-bg:#080A18;
+    --nav-surface:#101326;
+    --nav-border:rgba(255,255,255,.10);
+
+    --footer-bg:#070914;
+    --footer-surface:#0D1020;
+
+    --white:#ffffff;
+    --text:#15182A;
+    --muted:#73788E;
+
+    --transition:.35s cubic-bezier(.22,.61,.36,1);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:#fff;
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+button,
+a{
+    font-family:inherit;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.av-header{
+    position:sticky;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:9999;
+
+    background:rgba(8,10,24,.92);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    transition:
+        background var(--transition),
+        box-shadow var(--transition),
+        transform var(--transition);
+}
+
+.av-header.scrolled{
+    background:rgba(8,10,24,.98);
+    box-shadow:0 15px 45px rgba(0,0,0,.25);
+}
+
+
+/* =========================================================
+   HEADER INNER
+   ========================================================= */
+
+.av-nav{
+    width:min(1380px, calc(100% - 48px));
+    min-height:82px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.av-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink:0;
+}
+
+.av-brand img{
+    width:46px;
+    height:46px;
+    object-fit:contain;
+    display:block;
+}
+
+.av-brand-name{
+    display:flex;
+    flex-direction:column;
+    line-height:1;
+}
+
+.av-brand-name strong{
+    color:#fff;
+    font-family:"Playfair Display",serif;
+    font-size:24px;
+    font-weight:700;
+    letter-spacing:-.5px;
+}
+
+.av-brand-name span{
+    margin-top:5px;
+    color:var(--secondary);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   DESKTOP NAV
+   ========================================================= */
+
+.av-menu{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:3px;
+    margin-left:auto;
+}
+
+.av-menu > li{
+    list-style:none;
+    position:relative;
+}
+
+.av-menu > li > a{
+    min-height:44px;
+    padding:0 15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+
+    color:rgba(255,255,255,.78);
+    font-size:14px;
+    font-weight:600;
+    white-space:nowrap;
+
+    border-radius:10px;
+
+    transition:
+        color var(--transition),
+        background var(--transition);
+}
+
+.av-menu > li > a:hover{
+    color:#fff;
+    background:rgba(255,255,255,.065);
+}
+
+.av-menu > li.active > a{
+    color:#fff;
+}
+
+
+/* =========================================================
+   HOME DROPDOWN CHEVRON
+   No icon beside normal navbar links
+   ========================================================= */
+
+.av-home-chevron{
+    width:7px;
+    height:7px;
+
+    border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;
+
+    transform:rotate(45deg);
+    margin-top:-4px;
+
+    transition:transform var(--transition);
+}
+
+.av-home-dropdown:hover .av-home-chevron{
+    transform:rotate(225deg);
+    margin-top:4px;
+}
+
+
+/* =========================================================
+   HOME DROPDOWN
+   ========================================================= */
+
+.av-home-dropdown{
+    position:relative;
+}
+
+.av-dropdown{
+    position:absolute;
+    top:calc(100% + 14px);
+    left:50%;
+
+    width:210px;
+    padding:8px;
+
+    transform:
+        translate(-50%, -8px)
+        scale(.98);
+
+    transform-origin:top center;
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    background:rgba(13,16,32,.98);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:16px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.35),
+        inset 0 1px 0 rgba(255,255,255,.04);
+
+    transition:
+        opacity var(--transition),
+        transform var(--transition),
+        visibility var(--transition);
+}
+
+.av-home-dropdown:hover .av-dropdown{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+
+    transform:
+        translate(-50%,0)
+        scale(1);
+}
+
+.av-dropdown::before{
+    content:"";
+    position:absolute;
+
+    top:-6px;
+    left:50%;
+
+    width:11px;
+    height:11px;
+
+    background:#0D1020;
+
+    border-left:1px solid rgba(255,255,255,.10);
+    border-top:1px solid rgba(255,255,255,.10);
+
+    transform:translateX(-50%) rotate(45deg);
+}
+
+.av-dropdown a{
+    display:flex;
+    align-items:center;
+
+    min-height:45px;
+    padding:0 13px;
+
+    color:rgba(255,255,255,.72);
+    font-size:13px;
+    font-weight:600;
+
+    border-radius:10px;
+
+    transition:
+        color var(--transition),
+        background var(--transition),
+        padding var(--transition);
+}
+
+.av-dropdown a:hover{
+    color:#fff;
+    background:rgba(108,99,255,.16);
+    padding-left:17px;
+}
+
+
+/* =========================================================
+   NAV ACTIONS
+   ========================================================= */
+
+.av-actions{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-shrink:0;
+}
+
+
+/* =========================================================
+   DARK / RTL BUTTONS
+   No icons
+   ========================================================= */
+
+.av-tool{
+    height:40px;
+    padding:0 11px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:rgba(255,255,255,.72);
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:9px;
+
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.5px;
+
+    cursor:pointer;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.av-tool:hover{
+    color:#fff;
+    background:rgba(108,99,255,.17);
+    border-color:rgba(108,99,255,.45);
+}
+
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.av-login{
+    height:42px;
+    padding:0 19px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#080A18;
+    background:var(--secondary);
+
+    border-radius:10px;
+
+    font-size:13px;
+    font-weight:800;
+
+    transition:
+        transform var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
+}
+
+.av-login:hover{
+    background:#FFC96E;
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(255,184,77,.22);
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.av-mobile-toggle{
+    display:none;
+
+    width:43px;
+    height:43px;
+
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:10px;
+
+    background:rgba(255,255,255,.055);
+
+    cursor:pointer;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+    gap:5px;
+}
+
+.av-mobile-toggle span{
+    display:block;
+    width:18px;
+    height:1.5px;
+    background:#fff;
+    transition:var(--transition);
+}
+
+.av-mobile-toggle.open span:nth-child(1){
+    transform:translateY(6.5px) rotate(45deg);
+}
+
+.av-mobile-toggle.open span:nth-child(2){
+    opacity:0;
+}
+
+.av-mobile-toggle.open span:nth-child(3){
+    transform:translateY(-6.5px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE PANEL
+   ========================================================= */
+
+.av-mobile-panel{
+    display:none;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.av-footer{
+    position:relative;
+    overflow:hidden;
+
+    background:var(--footer-bg);
+    color:#fff;
+
+    padding:85px 0 0;
+
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+
+/* Decorative glow */
+
+.av-footer::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    top:-280px;
+    left:-220px;
+
+    background:radial-gradient(
+        circle,
+        rgba(108,99,255,.13),
+        transparent 68%
+    );
+
+    pointer-events:none;
+}
+
+.av-footer::after{
+    content:"";
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    right:-250px;
+    bottom:-250px;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,184,77,.09),
+        transparent 68%
+    );
+
+    pointer-events:none;
+}
+
+
+.av-footer-container{
+    position:relative;
+    z-index:1;
+
+    width:min(1380px, calc(100% - 48px));
+    margin:auto;
+}
+
+
+/* =========================================================
+   FOOTER MAIN
+   ========================================================= */
+
+.av-footer-main{
+    display:grid;
+    grid-template-columns:1.6fr 1fr 1fr 1.15fr;
+    gap:65px;
+
+    padding-bottom:70px;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+   ========================================================= */
+
+.av-footer-brand{
+    max-width:380px;
+}
+
+.av-footer-logo{
+    display:flex;
+    align-items:center;
+    gap:13px;
+
+    margin-bottom:22px;
+}
+
+.av-footer-logo img{
+    width:54px;
+    height:54px;
+
+    object-fit:contain;
+}
+
+.av-footer-logo strong{
+    font-family:"Playfair Display",serif;
+    font-size:27px;
+    font-weight:700;
+}
+
+.av-footer-brand > p{
+    color:rgba(255,255,255,.57);
+    font-size:14px;
+    line-height:1.9;
+
+    max-width:350px;
+}
+
+
+/* =========================================================
+   FOOTER HEADINGS
+   ========================================================= */
+
+.av-footer-column h3{
+    position:relative;
+
+    margin-bottom:21px;
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:1.6px;
+    text-transform:uppercase;
+}
+
+.av-footer-column h3::after{
+    content:"";
+
+    display:block;
+
+    width:28px;
+    height:2px;
+
+    margin-top:9px;
+
+    background:var(--secondary);
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+   ========================================================= */
+
+.av-footer-links{
+    list-style:none;
+}
+
+.av-footer-links li{
+    margin-bottom:12px;
+}
+
+.av-footer-links a{
+    color:rgba(255,255,255,.57);
+    font-size:13px;
+
+    transition:
+        color var(--transition),
+        padding var(--transition);
+}
+
+.av-footer-links a:hover{
+    color:#fff;
+    padding-left:5px;
+}
+
+
+/* =========================================================
+   FOOTER CONTACT
+   ========================================================= */
+
+.av-footer-contact{
+    list-style:none;
+}
+
+.av-footer-contact li{
+    color:rgba(255,255,255,.57);
+    font-size:13px;
+    line-height:1.7;
+
+    margin-bottom:15px;
+}
+
+
+/* =========================================================
+   FOOTER CTA
+   ========================================================= */
+
+.av-footer-cta{
+    margin-top:25px;
+}
+
+.av-footer-cta a{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:42px;
+    padding:0 17px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:9px;
+
+    color:#fff;
+
+    font-size:12px;
+    font-weight:700;
+
+    transition:var(--transition);
+}
+
+.av-footer-cta a:hover{
+    background:var(--primary);
+    border-color:var(--primary);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.av-footer-bottom{
+    min-height:72px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:25px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+.av-footer-bottom p{
+    color:rgba(255,255,255,.40);
+    font-size:12px;
+}
+
+.av-footer-bottom-links{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.av-footer-bottom-links a{
+    color:rgba(255,255,255,.43);
+    font-size:11px;
+    font-weight:600;
+
+    transition:color var(--transition);
+}
+
+.av-footer-bottom-links a:hover{
+    color:#fff;
+}
+
+
+/* =========================================================
+   RTL
+   ========================================================= */
+
+html[dir="rtl"] .av-menu{
+    margin-left:0;
+    margin-right:auto;
+}
+
+html[dir="rtl"] .av-footer-links a:hover{
+    padding-left:0;
+    padding-right:5px;
+}
+
+html[dir="rtl"] .av-dropdown a:hover{
+    padding-left:13px;
+    padding-right:17px;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.light-mode{
+    background:#F5F7FB;
+    color:#16182A;
+}
+
+body.light-mode .av-header{
+    background:rgba(255,255,255,.94);
+    border-bottom-color:rgba(15,20,40,.08);
+}
+
+body.light-mode .av-brand-name strong{
+    color:#111426;
+}
+
+body.light-mode .av-menu > li > a{
+    color:#4D5268;
+}
+
+body.light-mode .av-menu > li > a:hover{
+    color:#111426;
+    background:rgba(15,20,40,.05);
+}
+
+body.light-mode .av-tool{
+    color:#4D5268;
+    background:#F2F3F8;
+    border-color:#E2E4ED;
+}
+
+body.light-mode .av-mobile-toggle{
+    background:#F2F3F8;
+    border-color:#E2E4ED;
+}
+
+body.light-mode .av-mobile-toggle span{
+    background:#16182A;
+}
+
+body.light-mode .av-dropdown{
+    background:#fff;
+    border-color:#E4E6EF;
+
+    box-shadow:
+        0 25px 60px rgba(20,25,50,.15);
+}
+
+body.light-mode .av-dropdown::before{
+    background:#fff;
+    border-color:#E4E6EF;
+}
+
+body.light-mode .av-dropdown a{
+    color:#555A70;
+}
+
+body.light-mode .av-dropdown a:hover{
+    color:#16182A;
+    background:#F1F0FF;
+}
+
+
+/* =========================================================
+   RESPONSIVE — NEST HUB / TABLET
+   ========================================================= */
+
+@media(max-width:1100px){
+
+    .av-nav{
+        width:min(100% - 32px, 1000px);
+        gap:15px;
+    }
+
+    .av-menu > li > a{
+        padding:0 9px;
+        font-size:12px;
+    }
+
+    .av-actions{
+        gap:5px;
+    }
+
+    .av-tool{
+        padding:0 8px;
+        font-size:10px;
+    }
+
+    .av-login{
+        padding:0 14px;
+        font-size:12px;
+    }
+
+    .av-footer-main{
+        grid-template-columns:1.3fr 1fr 1fr;
+        gap:40px;
+    }
+
+    .av-footer-brand{
+        grid-column:1 / -1;
+        max-width:600px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / IPAD MINI
+   ========================================================= */
+
+@media(max-width:850px){
+
+    .av-nav{
+        min-height:76px;
+    }
+
+    .av-menu,
+    .av-actions{
+        display:none;
+    }
+
+    .av-mobile-toggle{
+        display:flex;
+    }
+
+    .av-mobile-panel{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+
+        display:block;
+
+        background:rgba(8,10,24,.98);
+        border-top:1px solid rgba(255,255,255,.07);
+
+        max-height:0;
+        overflow:hidden;
+
+        opacity:0;
+        transition:
+            max-height .45s ease,
+            opacity .3s ease;
+    }
+
+    .av-mobile-panel.open{
+        max-height:700px;
+        opacity:1;
+    }
+
+    .av-mobile-inner{
+        width:min(100% - 32px, 650px);
+        margin:auto;
+        padding:13px 0 20px;
+    }
+
+    .av-mobile-link{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+
+        min-height:48px;
+
+        color:rgba(255,255,255,.78);
+        font-size:14px;
+        font-weight:600;
+
+        border-bottom:1px solid rgba(255,255,255,.06);
+    }
+
+    .av-mobile-link:hover{
+        color:#fff;
+    }
+
+    .av-mobile-home-list{
+        padding:0 0 5px;
+    }
+
+    .av-mobile-home-list a{
+        display:block;
+
+        padding:10px 14px;
+
+        color:rgba(255,255,255,.53);
+        font-size:12px;
+
+        border-radius:8px;
+    }
+
+    .av-mobile-home-list a:hover{
+        color:#fff;
+        background:rgba(108,99,255,.13);
+    }
+
+    .av-mobile-actions{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:8px;
+
+        padding-top:14px;
+    }
+
+    .av-mobile-action{
+        height:43px;
+
+        border:1px solid rgba(255,255,255,.09);
+        border-radius:9px;
+
+        background:rgba(255,255,255,.05);
+
+        color:#fff;
+
+        font-size:11px;
+        font-weight:700;
+
+        cursor:pointer;
+    }
+
+    .av-mobile-login{
+        grid-column:1 / -1;
+
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        height:44px;
+
+        border-radius:9px;
+
+        background:var(--secondary);
+        color:#080A18;
+
+        font-size:12px;
+        font-weight:800;
+    }
+
+    body.light-mode .av-mobile-panel{
+        background:#fff;
+        border-top-color:#E6E7EF;
+        box-shadow:0 20px 40px rgba(20,25,50,.12);
+    }
+
+    body.light-mode .av-mobile-link{
+        color:#42475D;
+        border-bottom-color:#ECEEF4;
+    }
+
+    body.light-mode .av-mobile-home-list a{
+        color:#686D80;
+    }
+
+    body.light-mode .av-mobile-action{
+        color:#33384D;
+        background:#F3F4F8;
+        border-color:#E2E4EC;
+    }
+
+    .av-footer{
+        padding-top:65px;
+    }
+
+    .av-footer-main{
+        grid-template-columns:1fr 1fr;
+        gap:45px 35px;
+    }
+
+    .av-footer-brand{
+        grid-column:1 / -1;
+    }
+}
+
+
+/* =========================================================
+   SAMSUNG S8+ / SMALL PHONES
+   ========================================================= */
+
+@media(max-width:520px){
+
+    .av-nav{
+        width:calc(100% - 24px);
+        min-height:70px;
+    }
+
+    .av-brand img{
+        width:40px;
+        height:40px;
+    }
+
+    .av-brand-name strong{
+        font-size:21px;
+    }
+
+    .av-brand-name span{
+        font-size:7px;
+        letter-spacing:1.5px;
+    }
+
+    .av-mobile-toggle{
+        width:40px;
+        height:40px;
+    }
+
+    .av-footer{
+        padding-top:55px;
+    }
+
+    .av-footer-container{
+        width:calc(100% - 28px);
+    }
+
+    .av-footer-main{
+        grid-template-columns:1fr;
+        gap:34px;
+        padding-bottom:45px;
+    }
+
+    .av-footer-brand{
+        grid-column:auto;
+    }
+
+    .av-footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        justify-content:center;
+
+        padding:20px 0;
+        gap:12px;
+    }
+
+    .av-footer-bottom-links{
+        flex-wrap:wrap;
+        gap:10px 18px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL
+   ========================================================= */
+
+@media(max-width:370px){
+
+    .av-brand-name span{
+        display:none;
+    }
+
+    .av-brand-name strong{
+        font-size:20px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     HEADER
+     ======================================================= -->
+
+<header class="av-header" id="avHeader">
+
+    <nav class="av-nav">
+
+        <!-- LOGO -->
+        <a href="index.html" class="av-brand">
+
+            <img
+                src="images/astravista-logo.png"
+                alt="AstraVista">
+
+            <span class="av-brand-name">
+                <strong>AstraVista</strong>
+                <span>Planetarium & Observatory</span>
+            </span>
+
+        </a>
+
+
+        <!-- DESKTOP NAVIGATION -->
+        <ul class="av-menu">
+
+            <li class="active av-home-dropdown">
+
+                <a href="index.html">
+
+                    Home
+
+                    <span class="av-home-chevron"></span>
+
+                </a>
+
+                <div class="av-dropdown">
+
+                    <a href="index.html">
+                        Home 01
+                    </a>
+
+                    <a href="home-2.html">
+                        Home 02
+                    </a>
+
+                </div>
+
+            </li>
+
+
+            <li>
+                <a href="shows.html">
+                    Shows & Programs
+                </a>
+            </li>
+
+
+            <li>
+                <a href="school-programs.html">
+                    School Programs
+                </a>
+            </li>
+
+
+            <li>
+                <a href="membership.html">
+                    Membership
+                </a>
+            </li>
+
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+
+            <li>
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- RIGHT ACTIONS -->
+        <div class="av-actions">
+
+            <button
+                type="button"
+                class="av-tool"
+                id="avDarkBtn"
+                aria-label="Toggle dark mode">
+                DARK
+            </button>
+
+            <button
+                type="button"
+                class="av-tool"
+                id="avRtlBtn"
+                aria-label="Toggle RTL">
+                RTL
+            </button>
+
+            <a
+                href="login.html"
+                class="av-login">
+                Login
+            </a>
+
+        </div>
+
+
+        <!-- MOBILE MENU -->
+        <button
+            type="button"
+            class="av-mobile-toggle"
+            id="avMobileToggle"
+            aria-label="Open navigation"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </nav>
+
+
+    <!-- ===================================================
+         MOBILE PANEL
+         =================================================== -->
+
+    <div class="av-mobile-panel" id="avMobilePanel">
+
+        <div class="av-mobile-inner">
+
+            <a href="index.html" class="av-mobile-link">
+                Home
+            </a>
+
+            <div class="av-mobile-home-list">
+
+                <a href="index.html">
+                    Home 01
+                </a>
+
+                <a href="home-2.html">
+                    Home 02
+                </a>
+
+            </div>
+
+
+            <a
+                href="shows.html"
+                class="av-mobile-link">
+                Shows & Programs
+            </a>
+
+
+            <a
+                href="school-programs.html"
+                class="av-mobile-link">
+                School Programs
+            </a>
+
+
+            <a
+                href="membership.html"
+                class="av-mobile-link">
+                Membership
+            </a>
+
+
+            <a
+                href="contact.html"
+                class="av-mobile-link">
+                Contact
+            </a>
+
+
+            <a
+                href="dashboard.html"
+                class="av-mobile-link">
+                Dashboard
+            </a>
+
+
+            <div class="av-mobile-actions">
+
+                <button
+                    type="button"
+                    class="av-mobile-action"
+                    id="avMobileDark">
+                    DARK
+                </button>
+
+                <button
+                    type="button"
+                    class="av-mobile-action"
+                    id="avMobileRtl">
+                    RTL
+                </button>
+
+                <a
+                    href="login.html"
+                    class="av-mobile-login">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =======================================================
+     PAGE CONTENT PLACEHOLDER
+     Remove this section when inserting into your pages
+     ======================================================= -->
+
+<main style="
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:80px 20px;
+    text-align:center;
+">
+
+    <div>
+
+        <p style="
+            color:#6C63FF;
+            font-size:12px;
+            font-weight:800;
+            letter-spacing:2px;
+            margin-bottom:12px;
+        ">
+            ASTRAVISTA
+        </p>
+
+        <h1 style="
+            font-family:'Playfair Display',serif;
+            font-size:clamp(38px,6vw,76px);
+            line-height:1.05;
+        ">
+            Explore Beyond<br>
+            the Ordinary.
+        </h1>
+
+    </div>
+
+</main>
+
+
+
+<!-- =======================================================
+     FOOTER
+     ======================================================= -->
+
+<footer class="av-footer">
+
+    <div class="av-footer-container">
+
+        <div class="av-footer-main">
+
+
+            <!-- BRAND -->
+            <div class="av-footer-brand">
+
+                <div class="av-footer-logo">
+
+                    <img
+                        src="images/astravista-logo.png"
+                        alt="AstraVista">
+
+                    <strong>
+                        AstraVista
+                    </strong>
+
+                </div>
+
+                <p>
+                    Discover the universe through immersive
+                    planetarium experiences, telescope sessions,
+                    astronomy programs, and unforgettable
+                    journeys beneath the night sky.
+                </p>
+
+                <div class="av-footer-cta">
+
+                    <a href="shows.html">
+                        Explore Our Programs
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- EXPLORE -->
+            <div class="av-footer-column">
+
+                <h3>
+                    Explore
+                </h3>
+
+                <ul class="av-footer-links">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="shows.html">
+                            Shows & Programs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="school-programs.html">
+                            School Programs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="membership.html">
+                            Membership
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- VISITOR -->
+            <div class="av-footer-column">
+
+                <h3>
+                    Visitor
+                </h3>
+
+                <ul class="av-footer-links">
+
+                    <li>
+                        <a href="dashboard.html">
+                            Visitor Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Visitor Information
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTACT -->
+            <div class="av-footer-column">
+
+                <h3>
+                    Visit AstraVista
+                </h3>
+
+                <ul class="av-footer-contact">
+
+                    <li>
+                        Open for scheduled shows,
+                        astronomy programs and
+                        observation sessions.
+                    </li>
+
+                    <li>
+                        Planetarium & Observatory
+                    </li>
+
+                    <li>
+                        Visitor Support:
+                        9:00 AM – 8:00 PM
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOTTOM -->
+        <div class="av-footer-bottom">
+
+            <p>
+                © 2026 AstraVista. All rights reserved.
+            </p>
+
+            <div class="av-footer-bottom-links">
+
+                <a href="#">
+                    Privacy
+                </a>
+
+                <a href="#">
+                    Terms
+                </a>
+
+                <a href="#">
+                    Accessibility
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   ASTRAVISTA HEADER JAVASCRIPT
+   ========================================================= */
+
+(function(){
+
+    "use strict";
+
+
+    /* -----------------------------------------------------
+       ELEMENTS
+       ----------------------------------------------------- */
+
+    const header =
+        document.getElementById("avHeader");
+
+    const mobileToggle =
+        document.getElementById("avMobileToggle");
+
+    const mobilePanel =
+        document.getElementById("avMobilePanel");
+
+    const darkBtn =
+        document.getElementById("avDarkBtn");
+
+    const rtlBtn =
+        document.getElementById("avRtlBtn");
+
+    const mobileDark =
+        document.getElementById("avMobileDark");
+
+    const mobileRtl =
+        document.getElementById("avMobileRtl");
+
+
+    /* -----------------------------------------------------
+       SCROLL HEADER
+       ----------------------------------------------------- */
+
+    function updateHeader(){
+
+        if(window.scrollY > 15){
+
+            header.classList.add("scrolled");
+
+        }else{
+
+            header.classList.remove("scrolled");
+
+        }
+
+    }
+
+    window.addEventListener(
+        "scroll",
+        updateHeader,
+        {passive:true}
+    );
+
+    updateHeader();
+
+
+    /* -----------------------------------------------------
+       MOBILE MENU
+       ----------------------------------------------------- */
+
+    function toggleMobile(){
+
+        const open =
+            mobilePanel.classList.toggle("open");
+
+        mobileToggle.classList.toggle(
+            "open",
+            open
+        );
+
+        mobileToggle.setAttribute(
+            "aria-expanded",
+            String(open)
+        );
+
+    }
+
+
+    mobileToggle.addEventListener(
+        "click",
+        toggleMobile
+    );
+
+
+    /* Close mobile menu after navigation */
+
+    mobilePanel
+        .querySelectorAll("a")
+        .forEach(function(link){
+
+            link.addEventListener(
+                "click",
+                function(){
+
+                    mobilePanel.classList.remove("open");
+
+                    mobileToggle.classList.remove("open");
+
+                    mobileToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* -----------------------------------------------------
+       DARK / LIGHT
+       ----------------------------------------------------- */
+
+    function updateThemeButton(){
+
+        const isLight =
+            document.body.classList.contains(
+                "light-mode"
+            );
+
+        const text =
+            isLight ? "LIGHT" : "DARK";
+
+        darkBtn.textContent = text;
+        mobileDark.textContent = text;
+
+    }
+
+
+    function toggleTheme(){
+
+        document.body.classList.toggle(
+            "light-mode"
+        );
+
+        const mode =
+            document.body.classList.contains(
+                "light-mode"
+            )
+            ? "light"
+            : "dark";
+
+        localStorage.setItem(
+            "av-theme",
+            mode
+        );
+
+        updateThemeButton();
+
+    }
+
+
+    darkBtn.addEventListener(
+        "click",
+        toggleTheme
+    );
+
+    mobileDark.addEventListener(
+        "click",
+        toggleTheme
+    );
+
+
+    /* Restore theme */
+
+    const savedTheme =
+        localStorage.getItem("av-theme");
+
+    if(savedTheme === "light"){
+
+        document.body.classList.add(
+            "light-mode"
+        );
+
+    }
+
+    updateThemeButton();
+
+
+    /* -----------------------------------------------------
+       RTL
+       ----------------------------------------------------- */
+
+    function updateRtlButton(){
+
+        const isRTL =
+            document.documentElement.dir === "rtl";
+
+        rtlBtn.textContent =
+            isRTL ? "LTR" : "RTL";
+
+        mobileRtl.textContent =
+            isRTL ? "LTR" : "RTL";
+
+    }
+
+
+    function toggleRTL(){
+
+        const current =
+            document.documentElement.dir;
+
+        const next =
+            current === "rtl"
+            ? "ltr"
+            : "rtl";
+
+        document.documentElement.dir = next;
+
+        localStorage.setItem(
+            "av-direction",
+            next
+        );
+
+        updateRtlButton();
+
+    }
+
+
+    rtlBtn.addEventListener(
+        "click",
+        toggleRTL
+    );
+
+    mobileRtl.addEventListener(
+        "click",
+        toggleRTL
+    );
+
+
+    /* Restore direction */
+
+    const savedDirection =
+        localStorage.getItem("av-direction");
+
+    if(savedDirection){
+
+        document.documentElement.dir =
+            savedDirection;
+
+    }
+
+    updateRtlButton();
+
+
+    /* -----------------------------------------------------
+       ESCAPE CLOSE
+       ----------------------------------------------------- */
+
+    document.addEventListener(
+        "keydown",
+        function(event){
+
+            if(event.key === "Escape"){
+
+                mobilePanel.classList.remove("open");
+
+                mobileToggle.classList.remove("open");
+
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* -----------------------------------------------------
+       RESIZE SAFETY
+       ----------------------------------------------------- */
+
+    window.addEventListener(
+        "resize",
+        function(){
+
+            if(window.innerWidth > 850){
+
+                mobilePanel.classList.remove("open");
+
+                mobileToggle.classList.remove("open");
+
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        }
+    );
+
+
+})();
+
+</script>
+
+</body>
+</html>

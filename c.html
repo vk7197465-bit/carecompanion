@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Care Companion — Different Hero Concepts</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#479899;
+    --secondary:#E89651;
+    --dark:#182728;
+    --text:#273737;
+    --muted:#728080;
+    --line:#e4ebea;
+    --soft:#f5f8f7;
+    --white:#fff;
+    --shadow:0 30px 80px rgba(24,39,40,.12);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    color:var(--text);
+    background:#fff;
+}
+
+img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+}
+
+.demo-nav{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(255,255,255,.94);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid var(--line);
+}
+
+.nav-inner{
+    max-width:1450px;
+    margin:auto;
+    padding:15px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:var(--primary);
+}
+
+.nav-buttons{
+    display:flex;
+    gap:7px;
+    overflow-x:auto;
+    scrollbar-width:none;
+}
+
+.nav-buttons::-webkit-scrollbar{
+    display:none;
+}
+
+.nav-buttons button{
+    flex:0 0 auto;
+    border:1px solid var(--line);
+    background:#fff;
+    color:var(--muted);
+    padding:9px 14px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:11px;
+    transition:.3s;
+}
+
+.nav-buttons button.active,
+.nav-buttons button:hover{
+    background:var(--primary);
+    color:#fff;
+    border-color:var(--primary);
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.hero{
+    min-height:calc(100vh - 70px);
+    padding:80px 5%;
+    display:none;
+    overflow:hidden;
+}
+
+.hero.active{
+    display:flex;
+}
+
+.hero-inner{
+    max-width:1400px;
+    width:100%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.copy{
+    max-width:620px;
+}
+
+.eyebrow{
+    color:var(--primary);
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:11px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+}
+
+.eyebrow:before{
+    content:"";
+    width:28px;
+    height:2px;
+    background:var(--secondary);
+}
+
+h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(48px,6vw,88px);
+    line-height:.98;
+    letter-spacing:-.055em;
+    margin-bottom:27px;
+}
+
+h1 span{
+    color:var(--primary);
+}
+
+.desc{
+    color:var(--muted);
+    line-height:1.8;
+    font-size:16px;
+    max-width:560px;
+    margin-bottom:32px;
+}
+
+.actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    min-height:50px;
+    padding:0 22px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:7px;
+    font-size:14px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--primary);
+    color:#fff;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(71,152,153,.25);
+}
+
+.btn-outline{
+    border:1px solid var(--line);
+    color:var(--text);
+    background:#fff;
+}
+
+
+/* =========================================================
+   01 — POLAROID STORY
+========================================================= */
+
+.hero-1{
+    background:#f7f9f8;
+}
+
+.hero-1 .visual{
+    height:600px;
+    position:relative;
+}
+
+.photo-card{
+    position:absolute;
+    background:#fff;
+    padding:11px 11px 48px;
+    box-shadow:var(--shadow);
+}
+
+.photo-card img{
+    height:100%;
+}
+
+.photo-card span{
+    position:absolute;
+    left:17px;
+    bottom:14px;
+    font-family:"Playfair Display",serif;
+    font-size:18px;
+}
+
+.pc1{
+    width:280px;
+    height:350px;
+    left:0;
+    top:120px;
+    transform:rotate(-8deg);
+}
+
+.pc2{
+    width:300px;
+    height:390px;
+    left:29%;
+    top:20px;
+    z-index:3;
+    transform:rotate(2deg);
+}
+
+.pc3{
+    width:260px;
+    height:330px;
+    right:0;
+    top:150px;
+    transform:rotate(8deg);
+}
+
+
+/* =========================================================
+   02 — DOORWAY
+========================================================= */
+
+.hero-2{
+    background:#f6f8f7;
+}
+
+.hero-2 .visual{
+    height:600px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.door-frame{
+    width:68%;
+    height:570px;
+    background:#243637;
+    position:relative;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+}
+
+.door-frame:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(0,0,0,.15),transparent 60%);
+}
+
+.arrival{
+    position:absolute;
+    right:0;
+    bottom:40px;
+    background:#fff;
+    width:280px;
+    padding:24px;
+    z-index:5;
+    box-shadow:var(--shadow);
+}
+
+.arrival small{
+    color:var(--primary);
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:9px;
+    font-weight:700;
+}
+
+.arrival h3{
+    margin:9px 0;
+    font-size:21px;
+}
+
+.arrival p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   03 — GIANT NUMBER
+========================================================= */
+
+.hero-3 .visual{
+    position:relative;
+    height:600px;
+}
+
+.giant-number{
+    position:absolute;
+    right:0;
+    top:-20px;
+    font-size:390px;
+    line-height:1;
+    font-weight:700;
+    color:#edf3f2;
+}
+
+.number-photo{
+    position:absolute;
+    width:65%;
+    height:520px;
+    left:12%;
+    top:45px;
+    z-index:2;
+}
+
+.number-label{
+    position:absolute;
+    z-index:4;
+    left:0;
+    bottom:20px;
+    background:var(--primary);
+    color:#fff;
+    padding:18px 24px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.12em;
+}
+
+
+/* =========================================================
+   04 — FAMILY PHONE
+========================================================= */
+
+.hero-4{
+    background:#fff;
+}
+
+.hero-4 .visual{
+    height:600px;
+    position:relative;
+}
+
+.phone{
+    width:310px;
+    height:570px;
+    background:#172526;
+    border:9px solid #101b1b;
+    border-radius:42px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%) rotate(2deg);
+    padding:13px;
+    box-shadow:var(--shadow);
+    z-index:3;
+}
+
+.phone-screen{
+    width:100%;
+    height:100%;
+    background:#f7faf9;
+    border-radius:29px;
+    overflow:hidden;
+    padding:20px;
+}
+
+.phone-top{
+    display:flex;
+    justify-content:space-between;
+    font-size:10px;
+    color:var(--muted);
+    margin-bottom:25px;
+}
+
+.phone-title{
+    font-family:"Playfair Display",serif;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.phone-visit{
+    background:#fff;
+    padding:18px;
+    border-left:3px solid var(--primary);
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    margin-bottom:12px;
+}
+
+.phone-visit small{
+    color:var(--primary);
+    font-size:9px;
+    font-weight:700;
+}
+
+.phone-visit strong{
+    display:block;
+    margin:7px 0;
+}
+
+.phone-visit p{
+    font-size:10px;
+    color:var(--muted);
+    line-height:1.5;
+}
+
+.phone-photo{
+    position:absolute;
+    width:220px;
+    height:180px;
+    left:0;
+    top:50px;
+    z-index:2;
+    box-shadow:var(--shadow);
+}
+
+.phone-update{
+    position:absolute;
+    right:0;
+    bottom:70px;
+    width:210px;
+    background:#fff;
+    padding:20px;
+    box-shadow:var(--shadow);
+    z-index:4;
+}
+
+.phone-update span{
+    color:var(--secondary);
+    font-size:9px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   05 — CALENDAR
+========================================================= */
+
+.hero-5{
+    background:#f7f9f8;
+}
+
+.hero-5 .visual{
+    height:570px;
+    position:relative;
+}
+
+.calendar{
+    position:absolute;
+    inset:20px 0 0 0;
+    background:#fff;
+    box-shadow:var(--shadow);
+    padding:35px;
+}
+
+.calendar-head{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    border-bottom:1px solid var(--line);
+    padding-bottom:20px;
+}
+
+.calendar-month{
+    font-family:"Playfair Display",serif;
+    font-size:38px;
+}
+
+.calendar-label{
+    font-size:10px;
+    color:var(--muted);
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    margin-top:25px;
+}
+
+.calendar-day{
+    height:75px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:10px;
+    font-size:11px;
+    color:var(--muted);
+}
+
+.calendar-day.active{
+    background:var(--primary);
+    color:#fff;
+}
+
+.calendar-day.active strong{
+    display:block;
+    color:#fff;
+}
+
+.calendar-day strong{
+    color:var(--text);
+}
+
+.calendar-event{
+    margin-top:10px;
+    background:var(--secondary);
+    color:#fff;
+    padding:5px;
+    font-size:8px;
+}
+
+
+/* =========================================================
+   06 — MAP JOURNEY
+========================================================= */
+
+.hero-6 .visual{
+    height:580px;
+    position:relative;
+    background:#f2f6f5;
+    overflow:hidden;
+}
+
+.map-lines{
+    position:absolute;
+    inset:0;
+    opacity:.5;
+    background-image:
+        linear-gradient(25deg,transparent 48%,#d7e1df 49%,#d7e1df 51%,transparent 52%),
+        linear-gradient(-20deg,transparent 48%,#d7e1df 49%,#d7e1df 51%,transparent 52%);
+    background-size:120px 120px;
+}
+
+.route{
+    position:absolute;
+    width:65%;
+    height:220px;
+    left:15%;
+    top:30%;
+    border-top:3px dashed var(--primary);
+    border-right:3px dashed var(--primary);
+    border-radius:0 100px 0 0;
+    transform:rotate(8deg);
+}
+
+.map-point{
+    position:absolute;
+    width:150px;
+    background:#fff;
+    box-shadow:var(--shadow);
+    padding:10px;
+}
+
+.map-point img{
+    height:100px;
+}
+
+.map-point span{
+    display:block;
+    padding:10px 4px 3px;
+    font-size:10px;
+    font-weight:700;
+}
+
+.map-point.one{
+    left:0;
+    top:40px;
+}
+
+.map-point.two{
+    right:0;
+    top:180px;
+}
+
+.map-point.three{
+    left:25%;
+    bottom:10px;
+}
+
+.pin{
+    position:absolute;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:var(--secondary);
+    border:4px solid #fff;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+
+/* =========================================================
+   07 — ROOM / ARCHITECTURE
+========================================================= */
+
+.hero-7{
+    background:#fff;
+}
+
+.hero-7 .visual{
+    height:590px;
+    position:relative;
+}
+
+.room-image{
+    position:absolute;
+    right:0;
+    top:0;
+    width:75%;
+    height:540px;
+    overflow:hidden;
+}
+
+.room-label{
+    position:absolute;
+    left:0;
+    bottom:25px;
+    width:300px;
+    background:#fff;
+    padding:25px;
+    box-shadow:var(--shadow);
+    z-index:4;
+}
+
+.room-label small{
+    color:var(--primary);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+}
+
+.room-label h3{
+    font-family:"Playfair Display",serif;
+    font-size:27px;
+    margin:8px 0;
+}
+
+.room-label p{
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.6;
+}
+
+.room-line{
+    position:absolute;
+    left:0;
+    top:100px;
+    width:45%;
+    height:1px;
+    background:var(--secondary);
+}
+
+
+/* =========================================================
+   08 — NEWSPAPER
+========================================================= */
+
+.hero-8{
+    background:#f8f7f2;
+}
+
+.hero-8 .visual{
+    height:570px;
+}
+
+.paper{
+    height:550px;
+    background:#fff;
+    border:1px solid #ddd9cd;
+    padding:30px;
+    box-shadow:var(--shadow);
+    transform:rotate(1deg);
+}
+
+.paper-mast{
+    border-bottom:2px solid var(--dark);
+    text-align:center;
+    padding-bottom:12px;
+    font-family:"Playfair Display",serif;
+    font-size:30px;
+}
+
+.paper-meta{
+    display:flex;
+    justify-content:space-between;
+    font-size:8px;
+    color:var(--muted);
+    padding:8px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.paper-story{
+    display:grid;
+    grid-template-columns:1fr .75fr;
+    gap:22px;
+    margin-top:20px;
+}
+
+.paper-photo{
+    height:330px;
+}
+
+.paper-copy h3{
+    font-family:"Playfair Display",serif;
+    font-size:32px;
+    line-height:1.05;
+    margin-bottom:15px;
+}
+
+.paper-copy p{
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   09 — FAMILY CONSTELLATION
+========================================================= */
+
+.hero-9{
+    background:#f7f9f8;
+}
+
+.hero-9 .visual{
+    height:580px;
+    position:relative;
+}
+
+.constellation-line{
+    position:absolute;
+    height:1px;
+    background:#cddbd8;
+    width:72%;
+    left:14%;
+    top:50%;
+}
+
+.family-card{
+    position:absolute;
+    width:220px;
+    height:330px;
+    background:#fff;
+    box-shadow:var(--shadow);
+    z-index:2;
+}
+
+.family-card img{
+    height:245px;
+}
+
+.family-card div{
+    padding:15px;
+}
+
+.family-card small{
+    color:var(--primary);
+    font-size:9px;
+    text-transform:uppercase;
+    font-weight:700;
+}
+
+.family-card strong{
+    display:block;
+    margin-top:5px;
+}
+
+.family-card.f1{
+    left:0;
+    top:110px;
+}
+
+.family-card.f2{
+    left:50%;
+    top:25px;
+    transform:translateX(-50%);
+    z-index:4;
+}
+
+.family-card.f3{
+    right:0;
+    top:110px;
+}
+
+
+/* =========================================================
+   10 — CINEMATIC FULL VISUAL
+========================================================= */
+
+.hero-10{
+    background:#172526;
+    color:#fff;
+}
+
+.hero-10 .desc{
+    color:#b8c5c4;
+}
+
+.hero-10 .eyebrow{
+    color:#8dc2c1;
+}
+
+.hero-10 h1 span{
+    color:#8dc2c1;
+}
+
+.hero-10 .visual{
+    height:600px;
+    position:relative;
+}
+
+.cinematic{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+}
+
+.cinematic img{
+    object-position:center;
+}
+
+.cinematic:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(23,37,38,.35),transparent 65%);
+}
+
+.cine-card{
+    position:absolute;
+    z-index:4;
+    bottom:30px;
+    left:30px;
+    background:#fff;
+    color:var(--text);
+    width:280px;
+    padding:22px;
+}
+
+.cine-card small{
+    color:var(--primary);
+    font-size:9px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+.cine-card h3{
+    font-family:"Playfair Display",serif;
+    font-size:25px;
+    margin:7px 0;
+}
+
+.cine-card p{
+    color:var(--muted);
+    font-size:11px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .hero-inner{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .copy{
+        max-width:800px;
+    }
+
+    .visual{
+        max-width:800px;
+        width:100%;
+        margin:auto;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .nav-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .hero{
+        padding:60px 6%;
+    }
+
+    h1{
+        font-size:50px;
+    }
+
+    .hero .visual{
+        height:450px;
+    }
+
+    .pc1{
+        width:180px;
+        height:240px;
+        left:0;
+    }
+
+    .pc2{
+        width:200px;
+        height:270px;
+        left:27%;
+    }
+
+    .pc3{
+        width:170px;
+        height:230px;
+        right:0;
+    }
+
+    .door-frame{
+        width:72%;
+        height:430px;
+    }
+
+    .arrival{
+        width:210px;
+        padding:17px;
+        bottom:15px;
+    }
+
+    .giant-number{
+        font-size:260px;
+    }
+
+    .number-photo{
+        height:390px;
+    }
+
+    .phone{
+        transform:translate(-50%,-50%) scale(.75) rotate(2deg);
+    }
+
+    .phone-photo{
+        width:160px;
+        height:140px;
+    }
+
+    .phone-update{
+        width:170px;
+    }
+
+    .calendar{
+        padding:20px;
+        overflow:hidden;
+    }
+
+    .calendar-day{
+        height:55px;
+        padding:6px;
+    }
+
+    .calendar-event{
+        display:none;
+    }
+
+    .map-point{
+        width:115px;
+    }
+
+    .map-point img{
+        height:75px;
+    }
+
+    .room-image{
+        width:80%;
+        height:410px;
+    }
+
+    .room-label{
+        width:220px;
+        padding:16px;
+    }
+
+    .paper{
+        padding:18px;
+        height:430px;
+    }
+
+    .paper-mast{
+        font-size:23px;
+    }
+
+    .paper-photo{
+        height:250px;
+    }
+
+    .paper-copy h3{
+        font-size:22px;
+    }
+
+    .family-card{
+        width:145px;
+        height:250px;
+    }
+
+    .family-card img{
+        height:180px;
+    }
+
+    .family-card div{
+        padding:10px;
+        font-size:11px;
+    }
+
+    .family-card.f1,
+    .family-card.f3{
+        top:100px;
+    }
+
+    .family-card.f2{
+        top:30px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    h1{
+        font-size:43px;
+    }
+
+    .desc{
+        font-size:14px;
+    }
+
+    .hero .visual{
+        height:390px;
+    }
+
+    .pc1{
+        width:135px;
+        height:190px;
+    }
+
+    .pc2{
+        width:155px;
+        height:215px;
+    }
+
+    .pc3{
+        width:130px;
+        height:180px;
+    }
+
+    .pc1,
+    .pc3{
+        top:110px;
+    }
+
+    .pc2{
+        top:40px;
+    }
+
+    .door-frame{
+        height:380px;
+    }
+
+    .arrival{
+        width:175px;
+    }
+
+    .number-photo{
+        width:75%;
+        left:8%;
+    }
+
+    .calendar{
+        transform:scale(.9);
+        transform-origin:center;
+    }
+
+    .family-card{
+        width:105px;
+        height:210px;
+    }
+
+    .family-card img{
+        height:145px;
+    }
+
+    .family-card.f1{
+        left:-5px;
+    }
+
+    .family-card.f3{
+        right:-5px;
+    }
+
+    .cine-card{
+        width:210px;
+        padding:15px;
+        left:15px;
+        bottom:15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     STYLE SELECTOR
+========================================================= -->
+
+<header class="demo-nav">
+
+<div class="nav-inner">
+
+    <div class="logo">
+        Care <span>Companion</span>
+    </div>
+
+    <div class="nav-buttons">
+
+        <button class="active" data-hero="hero1">
+            01 Polaroid
+        </button>
+
+        <button data-hero="hero2">
+            02 Doorway
+        </button>
+
+        <button data-hero="hero3">
+            03 Number
+        </button>
+
+        <button data-hero="hero4">
+            04 Phone
+        </button>
+
+        <button data-hero="hero5">
+            05 Calendar
+        </button>
+
+        <button data-hero="hero6">
+            06 Map
+        </button>
+
+        <button data-hero="hero7">
+            07 Home
+        </button>
+
+        <button data-hero="hero8">
+            08 Newspaper
+        </button>
+
+        <button data-hero="hero9">
+            09 Family
+        </button>
+
+        <button data-hero="hero10">
+            10 Cinematic
+        </button>
+
+    </div>
+
+</div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO 01 — POLAROID
+========================================================= -->
+
+<section class="hero hero-1 active" id="hero1">
+
+<div class="hero-inner">
+
+<div class="copy">
+
+<div class="eyebrow">
+    Meaningful companionship
+</div>
+
+<h1>
+    The little moments
+    <span>matter.</span>
+</h1>
+
+<p class="desc">
+    Thoughtful companionship, dependable home visits and
+    meaningful everyday support that helps families stay
+    connected.
+</p>
+
+<div class="actions">
+
+<a href="#" class="btn btn-primary">
+    Explore Care
+</a>
+
+<a href="#" class="btn btn-outline">
+    How It Works
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visual">
+
+<div class="photo-card pc1">
+
+<img src="https://images.unsplash.com/photo-1544168190-79c17527004f?auto=format&fit=crop&w=700&q=85">
+
+<span>Morning Visit</span>
+
+</div>
+
+
+<div class="photo-card pc2">
+
+<img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=800&q=85">
+
+<span>Time Together</span>
+
+</div>
+
+
+<div class="photo-card pc3">
+
+<img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=700&q=85">
+
+<span>Garden Walk</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HERO 02 — DOORWAY
+========================================================= -->
+
+<section class="hero hero-2" id="hero2">
+
+<div class="hero-inner">
+
+<div class="copy">
+
+<div class="eyebrow">
+    Dependable home visits
+</div>
+
+<h1>
+    Someone reliable
+    <span>shows up.</span>
+</h1>
+
+<p class="desc">
+    Scheduled visits that bring conversation, reassurance
+    and everyday support into your loved one's home.
+</p>
+
+<div class="actions">
+
+<a href="#" class="btn btn-primary">
+    Schedule a Visit
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visual">
+
+<div class="door-frame">
+
+<img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1100&q=85">
+
+</div>
+
+<div class="arrival">
+
+<small>
+    Today's Visit
+</small>
+
+<h3>
+    Tuesday · 10:30 AM
+</h3>
+
+<p>
+    Your companion is scheduled to arrive
+    for today's visit.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HERO 03 — GIANT NUMBER
+========================================================= -->
+
+<section class="hero hero-3" id="hero3">
+
+<div class="hero-inner">
+
+<div class="copy">
+
+<div class="eyebrow">
+    Every visit matters
+</div>
+
+<h1>
+    One visit.
+    <span>Many moments.</span>
+</h1>
+
+<p class="desc">
+    From conversation and reading to walks and wellness
+    awareness, companionship can make an ordinary day
+    feel more connected.
+</p>
+
+<div class="actions">
+
+<a href="#" class="btn btn-primary">
+    Discover Services
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visual">
+
+<div class="giant-number">
+    01
+</div>
+
+<div class="number-photo">
+
+<img src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?auto=format&fit=crop&w=1000&q=85">
+
+</div>
+
+<div class="number-label">
+    ONE MEANINGFUL VISIT
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HERO 04 — FAMILY PHONE
+========================================================= -->
+
+<section class="hero hero-4" id="hero4">
+
+<div class="hero-inner">
+
+<div class="copy">
+
+<div class="eyebrow">
+    Family peace of mind
+</div>
+
+<h1>
+    Stay close,
+    <span>wherever you are.</span>
+</h1>
+
+<p class="desc">
+    View visit summaries, caregiver assignments, activity
+    logs and wellness observations from one simple family
+    dashboard.
+</p>
+
+<div class="actions">
+
+<a href="#" class="btn btn-primary">
+    See Family Dashboard
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visual">
+
+<div class="phone-photo">
+
+<img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=85">
+
+</div>
+
+
+<div class="phone">
+
+<div class="phone-screen">
+
+<div class="phone-top">
+    <span>9:41</span>
+    <span>CARE COMPANION</span>
+</div>
+
+<div class="phone-title">
+    Good morning.
+</div>
+
+<div class="phone-visit">
+
+<small>
+    TODAY'S VISIT
+</small>
+
+<strong>
+    Companion visit completed
+</strong>
+
+<p>
+    Conversation · Garden walk ·
+    Wellness check
+</p>
+
+</div>
+
+<div class="phone-visit">
+
+<small>
+    FAMILY UPDATE
+</small>
+
+<strong>
+    Summary ready
+</strong>
+
+<p>
+    View today's visit notes and activities.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="phone-update">
+
+<span>
+    LIVE UPDATE
+</span>
+
+<p style="margin-top:8px;font-size:12px;">
+    Today's visit has been completed.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HERO 05 — CALENDAR
+========================================================= -->
+
+<section class="hero hero-5" id="hero5">
+
+<div class="hero-inner">
+
+<div class="copy">
+
+<div class="eyebrow">
+    Care scheduled around life
+</div>
+
+<h1>
+    Their routine.
+    <span>Your peace of mind.</span>
+</h1>
+
+<p class="desc">
+    Schedule companionship, home visits, appointments and
+    everyday support around the routines that already feel
+    familiar.
+</p>
+
+<div class="actions">
+
+<a href="#" class="btn btn-primary">
+    Plan a Visit
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visual">
+
+<div class="calendar">
+
+<div class="calendar-head">
+
+<div class="calendar-month">
+    October
+</div>
+
+<div class="calendar-label">
+    CARE SCHEDULE
+</div>
+
+</div>
+
+
+<div class="calendar-grid">
+
+<div class="calendar-day"><strong>MON</strong></div>
+<div class="calendar-day"><strong>TUE</strong></div>
+<div class="calendar-day"><strong>WED</strong></div>
+<div class="calendar-day"><strong>THU</strong></div>
+<div class="calendar-day"><strong>FRI</strong></div>
+<div class="calendar-day"><strong>SAT</strong></div>
+<div class="calendar-day"><strong>SUN</strong></div>
+
+<div class="calendar-day">1</div>
+
+<div class="calendar-day active">
+    2
+    <div class="calendar-event">
+        VISIT
+    </div>
+</div>
+
+<div class="calendar-day">3</div>
+
+<div class="calendar-day">4</div>
+
+<div class="calendar-day">5</div>
+
+<div class="calendar-day active">
+    6
+    <div class="calendar-event">
+        WALK
+    </div>
+</div>
+
+<div class="calendar-day">7</div>
+
+<div class="calendar-day">8</div>
+
+<div class="calendar-day active">
+    9
+    <div class="calendar-event">
+        CHECK
+    </div>
+</div>
+
+<div class="calendar-day">10</div>
+
+<div class="calendar-day">11</div>
+
+<div class="calendar-day active">
+    12
+    <div class="calendar-event">
+        VISIT
+    </div>
+</div>
+
+<div class="calendar-day">13</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HERO 06 — MAP
+========================================================= -->
+
+<section class="hero hero-6" id="hero6">
+
+<div class="hero-inner">
+
+<div class="copy">
+
+<div class="eyebrow">
+    Support beyond the home
+</div>
+
+<h1>
+    Wherever the day
+    <span>takes them.</span>
+</h1>
+
+<p class="desc">
+    From home visits to garden walks, errands and appointment
+    assistance, companionship can move naturally with everyday life.
+</p>
+
+<div class="actions">
+
+<a href="#" class="btn btn-primary">
+    Explore Support
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visual">
+
+<div class="map-lines"></div>
+
+<div class="route"></div>
+
+
+<div class="map-point one">
+
+<img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=500&q=85">
+
+<span>
+    HOME VISIT
+</span>
+
+</div>
+
+
+<div class="map-point two">
+
+<img src="https://images.unsplash.com/photo-1513159446162-54eb8bdaa79b?auto=format&fit=crop&w=500&q=85">
+
+<span>
+    GARDEN WALK
+</span>
+
+</div>
+
+
+<div class="map-point three">
+
+<img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=500&q=85">
+
+<span>
+    FAMILY TIME
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HERO 07 — HOME ARCHITECTURE
+========================================================= -->
+
+<section class="hero hero-7" id="hero7">
+
+<div class="hero-inner">
+
+<div class="copy">
+
+<div class="eyebrow">
+    Care that fits home
+</div>
+
+<h1>
+    Comfort begins
+    <span>where they live.</span>
+</h1>
+
+<p class="desc">
+    Support built around familiar rooms, familiar routines
+    and the everyday activities that make home feel like home.
+</p>
+
+<div class="actions">
+
+<a href="#" class="btn btn-primary">
+    Explore Home Visits
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visual">
+
+<div class="room-line"></div>
+
+<div class="room-image">
+
+<img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1100&q=85">
+
+</div>
+
+<div class="room-label">
+
+<small>
+    A familiar setting
+</small>
+
+<h3>
+    Care without changing the rhythm of home.
+</h3>
+
+<p>
+    Conversation, reading, tea, simple activities
+    and meaningful companionship.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HERO 08 — NEWSPAPER
+========================================================= -->
+
+<section class="hero hero-8" id="hero8">
+
+<div class="hero-inner">
+
+<div class="copy">
+
+<div class="eyebrow">
+    The Care Journal
+</div>
+
+<h1>
+    Stories from
+    <span>everyday care.</span>
+</h1>
+
+<p class="desc">
+    Because meaningful care isn't always a grand gesture.
+    Sometimes it's simply being there, listening and sharing
+    an ordinary afternoon.
+</p>
+
+<div class="actions">
+
+<a href="#" class="btn btn-primary">
+    Our Care Philosophy
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visual">
+
+<div class="paper">
+
+<div class="paper-mast">
+    THE CARE JOURNAL
+</div>
+
+<div class="paper-meta">
+
+<span>
+    CARE COMPANION
+</span>
+
+<span>
+    EVERYDAY STORIES
+</span>
+
+</div>
+
+<div class="paper-story">
+
+<div class="paper-photo">
+
+<img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=900&q=85">
+
+</div>
+
+<div class="paper-copy">
+
+<h3>
+    The value of simply being there.
+</h3>
+
+<p>
+    A familiar companion can bring conversation,
+    encouragement and a sense of connection into
+    an ordinary day.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HERO 09 — FAMILY
+========================================================= -->
+
+<section class="hero hero-9" id="hero9">
+
+<div class="hero-inner">
+
+<div class="copy">
+
+<div class="eyebrow">
+    Connected care
+</div>
+
+<h1>
+    One circle of
+    <span>support.</span>
+</h1>
+
+<p class="desc">
+    Your loved one receives meaningful companionship.
+    Families receive clear updates. Everyone stays connected.
+</p>
+
+<div class="actions">
+
+<a href="#" class="btn btn-primary">
+    See How It Works
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visual">
+
+<div class="constellation-line"></div>
+
+
+<div class="family-card f1">
+
+<img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=500&q=85">
+
+<div>
+
+<small>
+    Family
+</small>
+
+<strong>
+    Stay informed
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="family-card f2">
+
+<img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=500&q=85">
+
+<div>
+
+<small>
+    Companion
+</small>
+
+<strong>
+    Be present
+</strong>
+
+</div>
+
+</div>
+
+
+<div class="family-card f3">
+
+<img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=500&q=85">
+
+<div>
+
+<small>
+    Loved One
+</small>
+
+<strong>
+    Feel supported
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HERO 10 — CINEMATIC
+========================================================= -->
+
+<section class="hero hero-10" id="hero10">
+
+<div class="hero-inner">
+
+<div class="copy">
+
+<div class="eyebrow">
+    Care Companion
+</div>
+
+<h1>
+    Presence that
+    <span>makes a difference.</span>
+</h1>
+
+<p class="desc">
+    Reliable companionship, thoughtful home visits and
+    meaningful family updates — designed around the person,
+    not simply the service.
+</p>
+
+<div class="actions">
+
+<a href="#" class="btn btn-primary">
+    Start a Conversation
+</a>
+
+<a href="#" class="btn btn-outline">
+    Our Approach
+</a>
+
+</div>
+
+</div>
+
+
+<div class="visual">
+
+<div class="cinematic">
+
+<img src="https://images.unsplash.com/photo-1516307365426-bea591f05011?auto=format&fit=crop&w=1200&q=90">
+
+</div>
+
+
+<div class="cine-card">
+
+<small>
+    Today's companionship
+</small>
+
+<h3>
+    A meaningful visit.
+</h3>
+
+<p>
+    Conversation, a gentle walk and time
+    spent together.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+const buttons = document.querySelectorAll(".nav-buttons button");
+const heroes = document.querySelectorAll(".hero");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const target = button.dataset.hero;
+
+        buttons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        heroes.forEach(hero => {
+            hero.classList.remove("active");
+        });
+
+        document.getElementById(target).classList.add("active");
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

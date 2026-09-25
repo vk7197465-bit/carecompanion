@@ -1,0 +1,847 @@
+<!-- =========================================================
+     CARE COMPANION — PREMIUM BLOG HERO
+     Left Content + Search | Right Image
+========================================================= -->
+
+<section class="cc-blog-hero">
+
+    <div class="cc-blog-container">
+
+        <!-- LEFT CONTENT -->
+        <div class="cc-blog-content">
+
+            <span class="cc-blog-eyebrow">
+                CARE COMPANION JOURNAL
+            </span>
+
+            <h1>
+                Helpful Stories for
+                <span>Better Everyday Care.</span>
+            </h1>
+
+            <p class="cc-blog-description">
+                Explore thoughtful guides, practical elderly-care tips,
+                family support ideas, wellness advice, and everyday
+                companionship insights from Care Companion.
+            </p>
+
+            <!-- SEARCH -->
+            <form class="cc-blog-search" id="blogSearchForm">
+
+                <i data-lucide="search"></i>
+
+                <input
+                    type="search"
+                    id="blogSearch"
+                    placeholder="Search care articles..."
+                    aria-label="Search blog articles"
+                >
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+            <!-- QUICK TOPICS -->
+            <div class="cc-blog-topics">
+
+                <span>Explore:</span>
+
+                <button type="button">Elder Care</button>
+                <button type="button">Wellness</button>
+                <button type="button">Family Support</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT IMAGE -->
+        <div class="cc-blog-visual">
+
+            <div class="cc-blog-image-wrap">
+
+                <img
+                    src="images/c11.jpeg"
+                    alt="Caregiver spending quality time with an elderly person"
+                >
+
+                <div class="cc-blog-image-overlay"></div>
+
+                <!-- FLOATING INFO -->
+                <div class="cc-blog-info">
+
+                    <div class="cc-blog-info-icon">
+                        <i data-lucide="book-open"></i>
+                    </div>
+
+                    <div>
+                        <strong>Care Insights</strong>
+                        <small>Practical guidance for families</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SMALL DECORATIVE CARD -->
+            <div class="cc-blog-side-card">
+
+                <div class="cc-blog-side-icon">
+                    <i data-lucide="heart-handshake"></i>
+                </div>
+
+                <div>
+                    <strong>Care With Confidence</strong>
+                    <span>Simple ideas. Meaningful support.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+    --primary: #479899;
+    --secondary: #E89651;
+
+    --blog-text: #18383A;
+    --blog-muted: #647577;
+    --blog-bg: #F7FBFB;
+    --blog-white: #FFFFFF;
+    --blog-border: #DCEAEA;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.cc-blog-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(232,150,81,.10),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #F7FBFB 0%,
+            #FFFFFF 65%
+        );
+
+    padding: 105px 20px 115px;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.cc-blog-container {
+    width: min(1240px, 100%);
+    margin: auto;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, .95fr)
+        minmax(460px, 1.05fr);
+
+    gap: 75px;
+    align-items: center;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.cc-blog-content {
+    max-width: 650px;
+}
+
+
+.cc-blog-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+
+    color: var(--primary);
+
+    margin-bottom: 20px;
+}
+
+
+.cc-blog-eyebrow::before {
+    content: "";
+    width: 32px;
+    height: 2px;
+
+    background: var(--secondary);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.cc-blog-content h1 {
+    margin: 0;
+
+    color: var(--blog-text);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(
+        42px,
+        5vw,
+        68px
+    );
+
+    line-height: 1.08;
+    font-weight: 700;
+
+    letter-spacing: -1.5px;
+}
+
+
+.cc-blog-content h1 span {
+    display: block;
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.cc-blog-description {
+    max-width: 600px;
+
+    margin: 25px 0 30px;
+
+    color: var(--blog-muted);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SEARCH BAR
+========================================================= */
+
+.cc-blog-search {
+    width: min(100%, 590px);
+
+    display: flex;
+    align-items: center;
+
+    min-height: 62px;
+
+    background: var(--blog-white);
+
+    border: 1px solid var(--blog-border);
+
+    border-radius: 14px;
+
+    padding: 7px;
+
+    box-shadow:
+        0 15px 40px rgba(38, 86, 88, .08);
+}
+
+
+.cc-blog-search > svg {
+    width: 21px;
+    height: 21px;
+
+    flex: 0 0 auto;
+
+    margin-left: 17px;
+
+    color: var(--primary);
+}
+
+
+.cc-blog-search input {
+    min-width: 0;
+    flex: 1;
+
+    height: 48px;
+
+    border: 0;
+    outline: 0;
+
+    padding: 0 14px;
+
+    background: transparent;
+
+    color: var(--blog-text);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+}
+
+
+.cc-blog-search input::placeholder {
+    color: #8A999A;
+}
+
+
+.cc-blog-search button {
+    flex: 0 0 auto;
+
+    height: 48px;
+
+    border: 0;
+    border-radius: 10px;
+
+    padding: 0 25px;
+
+    background: var(--primary);
+    color: #fff;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        transform .25s ease;
+}
+
+
+.cc-blog-search button:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TOPICS
+========================================================= */
+
+.cc-blog-topics {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+
+    margin-top: 18px;
+
+    font-family: "DM Sans", sans-serif;
+}
+
+
+.cc-blog-topics > span {
+    margin-right: 4px;
+
+    color: #7B898A;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+.cc-blog-topics button {
+    border: 1px solid var(--blog-border);
+
+    background: rgba(255,255,255,.75);
+
+    color: var(--blog-text);
+
+    border-radius: 30px;
+
+    padding: 7px 13px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+}
+
+
+.cc-blog-topics button:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: #fff;
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.cc-blog-visual {
+    position: relative;
+
+    min-width: 0;
+
+    padding: 12px 35px 30px 0;
+}
+
+
+.cc-blog-image-wrap {
+    position: relative;
+
+    width: 100%;
+
+    height: 500px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: #ddd;
+
+    box-shadow:
+        0 28px 65px rgba(35, 76, 78, .17);
+}
+
+
+.cc-blog-image-wrap img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition: transform .6s ease;
+}
+
+
+.cc-blog-image-wrap:hover img {
+    transform: scale(1.035);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.cc-blog-image-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 55%,
+            rgba(20,50,52,.30)
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   IMAGE INFO
+========================================================= */
+
+.cc-blog-info {
+    position: absolute;
+
+    left: 25px;
+    bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px 18px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.96);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.13);
+
+    font-family: "DM Sans", sans-serif;
+}
+
+
+.cc-blog-info-icon {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 11px;
+
+    background: rgba(71,152,153,.12);
+
+    color: var(--primary);
+}
+
+
+.cc-blog-info-icon svg {
+    width: 20px;
+}
+
+
+.cc-blog-info strong {
+    display: block;
+
+    color: var(--blog-text);
+
+    font-size: 13px;
+}
+
+
+.cc-blog-info small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #7A898A;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   SIDE CARD
+========================================================= */
+
+.cc-blog-side-card {
+    position: absolute;
+
+    right: 0;
+    top: 60px;
+
+    width: 225px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: #fff;
+
+    border: 1px solid rgba(220,234,234,.9);
+
+    box-shadow:
+        0 18px 45px rgba(32,76,78,.13);
+
+    font-family: "DM Sans", sans-serif;
+}
+
+
+.cc-blog-side-icon {
+    width: 40px;
+    height: 40px;
+
+    flex: 0 0 40px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 10px;
+
+    background: rgba(232,150,81,.13);
+
+    color: var(--secondary);
+}
+
+
+.cc-blog-side-icon svg {
+    width: 19px;
+}
+
+
+.cc-blog-side-card strong {
+    display: block;
+
+    color: var(--blog-text);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+
+.cc-blog-side-card span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #7B898A;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TABLET — iPad Mini
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    .cc-blog-hero {
+        padding: 85px 24px 90px;
+    }
+
+    .cc-blog-container {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(380px, .9fr);
+
+        gap: 45px;
+    }
+
+    .cc-blog-content h1 {
+        font-size: 48px;
+    }
+
+    .cc-blog-image-wrap {
+        height: 430px;
+    }
+
+    .cc-blog-visual {
+        padding-right: 20px;
+    }
+
+    .cc-blog-side-card {
+        right: -2px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET / NEST HUB
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .cc-blog-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cc-blog-content {
+        max-width: 720px;
+    }
+
+    .cc-blog-image-wrap {
+        height: 460px;
+    }
+
+    .cc-blog-visual {
+        max-width: 720px;
+        width: 100%;
+        margin: auto;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE — SAMSUNG S8+
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .cc-blog-hero {
+        padding: 65px 16px 70px;
+    }
+
+    .cc-blog-container {
+        gap: 38px;
+    }
+
+    .cc-blog-eyebrow {
+        font-size: 10px;
+        letter-spacing: 1.6px;
+    }
+
+    .cc-blog-content h1 {
+        font-size: 39px;
+        letter-spacing: -1px;
+    }
+
+    .cc-blog-description {
+        font-size: 14px;
+        line-height: 1.7;
+        margin: 19px 0 24px;
+    }
+
+    .cc-blog-search {
+        min-height: auto;
+        padding: 6px;
+        border-radius: 12px;
+    }
+
+    .cc-blog-search > svg {
+        margin-left: 10px;
+        width: 18px;
+    }
+
+    .cc-blog-search input {
+        height: 44px;
+        padding: 0 8px;
+        font-size: 13px;
+    }
+
+    .cc-blog-search button {
+        height: 44px;
+        padding: 0 15px;
+        border-radius: 9px;
+        font-size: 12px;
+    }
+
+    .cc-blog-topics {
+        gap: 7px;
+    }
+
+    .cc-blog-topics > span {
+        width: 100%;
+    }
+
+    .cc-blog-visual {
+        padding: 0;
+    }
+
+    .cc-blog-image-wrap {
+        height: 370px;
+        border-radius: 21px;
+    }
+
+    .cc-blog-info {
+        left: 14px;
+        bottom: 14px;
+        padding: 10px 13px;
+    }
+
+    .cc-blog-info-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .cc-blog-info strong {
+        font-size: 11px;
+    }
+
+    .cc-blog-info small {
+        font-size: 9px;
+    }
+
+    .cc-blog-side-card {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .cc-blog-content h1 {
+        font-size: 35px;
+    }
+
+    .cc-blog-search button {
+        padding: 0 12px;
+    }
+
+    .cc-blog-image-wrap {
+        height: 330px;
+    }
+
+}
+
+</style>
+
+
+<!-- =========================================================
+     LUCIDE
+========================================================= -->
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+
+    const searchForm =
+        document.getElementById("blogSearchForm");
+
+    const searchInput =
+        document.getElementById("blogSearch");
+
+    if (searchForm) {
+
+        searchForm.addEventListener("submit", function (e) {
+
+            e.preventDefault();
+
+            const query =
+                searchInput.value.trim();
+
+            if (!query) {
+                searchInput.focus();
+                return;
+            }
+
+            /*
+                Connect this to your actual blog search page.
+
+                Example:
+                window.location.href =
+                    "blog.html?search=" +
+                    encodeURIComponent(query);
+            */
+
+            console.log("Blog search:", query);
+
+        });
+
+    }
+
+});
+
+</script>

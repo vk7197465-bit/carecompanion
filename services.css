@@ -1,0 +1,5064 @@
+/* =========================================================
+   CARE COMPANION PRICING
+   BRAND COLORS ONLY
+========================================================= */
+
+:root{
+    --primary:#479899;
+    --secondary:#E89651;
+}
+/* LIGHT MODE */
+.light-theme {
+    --bg: #ffffff;
+    --text: #617071;
+    --dark:#479899 ;
+    --bg-card: #ffffff;
+    --border: rgba(71,152,153,.15);
+}
+
+/* DARK MODE */
+.dark-theme {
+    --bg: #101918;
+    --text: #B8C7C7;
+    --dark: #ffffff;
+    --bg-card: #192827;
+    --border: rgba(255,255,255,.10);
+}
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+.cc-service-hero {
+
+    --primary: #479899;
+    --secondary: #E89651;
+
+    width: 100%;
+    background:var(--bg);
+    overflow: hidden;
+    position: relative;
+
+    font-family: "DM Sans", sans-serif;
+
+}
+
+
+/* =========================================================
+   GOOGLE FONTS
+========================================================= */
+
+@import url(
+    'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap'
+);
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.cc-service-hero-inner {
+
+    width: min(1380px, 92%);
+    min-height: 690px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 65px 0 40px;
+
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.cc-service-hero-content {
+
+    position: relative;
+    z-index: 5;
+
+    max-width: 600px;
+
+}
+
+
+.cc-service-hero-eyebrow {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2.8px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.cc-service-hero-eyebrow span {
+
+    width: 38px;
+    height: 2px;
+
+    background: var(--secondary);
+
+    display: block;
+
+}
+
+
+.cc-service-hero-content h1 {
+
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(48px, 5vw, 78px);
+
+    font-weight: 500;
+
+    line-height: 0.98;
+
+    letter-spacing: -2.8px;
+
+    color: var(--primary);
+
+}
+
+
+.cc-service-hero-content h1 em {
+
+    color: var(--secondary);
+
+    font-style: italic;
+
+    display: block;
+
+}
+
+
+.cc-service-hero-description {
+
+    max-width: 510px;
+
+    margin: 30px 0 0;
+
+    color: var(--primary);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    opacity: .88;
+
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.cc-service-hero-actions {
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    margin-top: 34px;
+
+}
+
+
+.cc-service-primary-btn {
+
+    min-height: 54px;
+
+    padding: 0 23px;
+
+    background: var(--primary);
+    color: #fff;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: .4px;
+
+    transition: .3s ease;
+
+}
+
+
+.cc-service-primary-btn svg {
+
+    width: 17px;
+}
+
+
+
+
+.cc-service-text-btn {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+}
+
+
+.cc-service-text-btn svg {
+
+    width: 16px;
+
+    transition: .3s ease;
+
+}
+
+
+.cc-service-text-btn:hover svg {
+
+    transform: translateX(5px);
+
+}
+
+
+/* =========================================================
+   TRUST
+========================================================= */
+
+.cc-service-hero-trust {
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    margin-top: 55px;
+
+}
+
+
+.cc-service-trust-item {
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+
+.cc-service-trust-item svg {
+
+    width: 17px;
+    height: 17px;
+
+    color: var(--secondary);
+
+}
+
+
+.cc-service-trust-line {
+
+    width: 1px;
+    height: 18px;
+
+    background: var(--primary);
+
+    opacity: .25;
+
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+========================================================= */
+
+.cc-service-hero-visual {
+
+    height: 650px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+/* =========================================================
+   MAIN CIRCLE
+========================================================= */
+
+.cc-service-main-circle {
+
+    width: min(500px, 78%);
+    aspect-ratio: 1 / 1;
+
+    position: relative;
+
+    z-index: 3;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 12px solid #fff;
+
+    box-shadow:
+        0 0 0 1px var(--primary),
+        0 30px 80px rgba(71,152,153,.16);
+
+}
+
+
+.cc-service-main-circle img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 1s ease;
+
+}
+
+
+.cc-service-main-circle:hover img {
+
+    transform: scale(1.05);
+
+}
+
+
+.cc-service-circle-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(71,152,153,.08),
+            rgba(232,150,81,.18)
+        );
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   ORBIT RINGS
+========================================================= */
+
+.cc-service-orbit {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+}
+
+
+.cc-service-orbit-one {
+
+    width: 570px;
+    height: 570px;
+
+    border: 1px solid var(--primary);
+
+    opacity: .24;
+
+}
+
+
+.cc-service-orbit-two {
+
+    width: 635px;
+    height: 635px;
+
+    border: 1px dashed var(--secondary);
+
+    opacity: .48;
+
+    transform: rotate(-18deg);
+
+}
+
+
+/* =========================================================
+   ACCENT RING
+========================================================= */
+
+.cc-service-accent-ring {
+
+    position: absolute;
+
+    width: 535px;
+    height: 535px;
+
+    border-radius: 50%;
+
+    border: 3px solid var(--secondary);
+
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+
+    transform: rotate(35deg);
+
+    z-index: 4;
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   CENTER BADGE
+========================================================= */
+
+.cc-service-center-badge {
+
+    position: absolute;
+
+    width: 108px;
+    height: 108px;
+
+    border-radius: 50%;
+
+    background: var(--secondary);
+
+    color: #fff;
+
+    z-index: 6;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    right: 12%;
+    bottom: 11%;
+
+    box-shadow: 0 15px 35px rgba(232,150,81,.25);
+
+}
+
+
+.cc-service-badge-number {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 31px;
+
+    line-height: 1;
+
+}
+
+
+.cc-service-badge-text {
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    line-height: 1.25;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================================================
+   FLOATING SERVICE ITEMS
+========================================================= */
+
+.cc-service-float {
+
+    position: absolute;
+
+    z-index: 7;
+
+    background: #fff;
+
+    border: 1px solid var(--primary);
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 18px 12px 12px;
+
+    box-shadow: 0 15px 35px rgba(71,152,153,.13);
+
+}
+
+
+.cc-service-float-icon {
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+}
+
+
+.cc-service-float-icon svg {
+
+    width: 18px;
+}
+
+
+.cc-service-float strong {
+
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.cc-service-float span {
+
+    display: block;
+
+    color: var(--secondary);
+
+    font-size: 10px;
+
+    margin-top: 3px;
+
+}
+
+
+/* Positions */
+
+.cc-service-float-one {
+
+    top: 13%;
+
+    left: 3%;
+
+}
+
+
+.cc-service-float-two {
+
+    right: 0;
+
+    top: 42%;
+
+}
+
+
+.cc-service-float-three {
+
+    left: 7%;
+
+    bottom: 12%;
+
+}
+
+
+/* =========================================================
+   DECORATIVE DOTS
+========================================================= */
+
+.cc-service-dot {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+}
+
+
+.cc-service-dot-one {
+
+    width: 13px;
+    height: 13px;
+
+    background: var(--secondary);
+
+    top: 9%;
+    right: 19%;
+
+}
+
+
+.cc-service-dot-two {
+
+    width: 8px;
+    height: 8px;
+
+    background: var(--primary);
+
+    bottom: 18%;
+    right: 8%;
+
+}
+
+
+.cc-service-dot-three {
+
+    width: 18px;
+    height: 18px;
+
+    border: 2px solid var(--secondary);
+
+    top: 27%;
+    left: 10%;
+
+}
+
+
+/* =========================================================
+   BOTTOM SERVICE NAV
+========================================================= */
+
+.cc-service-hero-bottom {
+
+    width: min(1380px, 92%);
+
+    margin: 0 auto;
+
+    border-top: 1px solid var(--primary);
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+
+.cc-service-bottom-label {
+
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 0 22px;
+
+    border-right: 1px solid var(--primary);
+
+}
+
+
+.cc-service-bottom-label:first-child {
+
+    padding-left: 0;
+
+}
+
+
+.cc-service-bottom-label:last-child {
+
+    border-right: 0;
+
+}
+
+
+.cc-service-bottom-label span {
+
+    color: var(--secondary);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 20px;
+
+}
+
+
+.cc-service-bottom-label strong {
+
+    color: var(--primary);
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+[dir="rtl"] .cc-service-hero {
+
+    direction: rtl;
+
+}
+
+
+[dir="rtl"] .cc-service-hero-eyebrow {
+
+    flex-direction: row-reverse;
+
+}
+
+
+[dir="rtl"] .cc-service-hero-actions {
+
+    flex-direction: row-reverse;
+
+}
+
+
+[dir="rtl"] .cc-service-float-one {
+
+    left: auto;
+    right: 3%;
+
+}
+
+
+[dir="rtl"] .cc-service-float-three {
+
+    left: auto;
+    right: 7%;
+
+}
+
+
+[dir="rtl"] .cc-service-float-two {
+
+    right: auto;
+    left: 0;
+
+}
+
+
+[dir="rtl"] .cc-service-center-badge {
+
+    right: auto;
+    left: 12%;
+
+}
+
+
+[dir="rtl"] .cc-service-bottom-label {
+
+    border-right: 0;
+    border-left: 1px solid var(--primary);
+
+}
+
+
+[dir="rtl"] .cc-service-bottom-label:last-child {
+
+    border-left: 0;
+
+}
+
+
+/* =========================================================
+   TABLET — iPAD MINI / NEST HUB
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .cc-service-hero-inner {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 0;
+
+        min-height: 610px;
+
+        padding-top: 45px;
+
+    }
+
+
+    .cc-service-hero-content h1 {
+
+        font-size: clamp(45px, 6vw, 65px);
+
+    }
+
+
+    .cc-service-hero-description {
+
+        font-size: 14px;
+
+        max-width: 430px;
+
+    }
+
+
+    .cc-service-hero-visual {
+
+        height: 560px;
+
+    }
+
+
+    .cc-service-main-circle {
+
+        width: 370px;
+
+    }
+
+
+    .cc-service-orbit-one {
+
+        width: 430px;
+        height: 430px;
+
+    }
+
+
+    .cc-service-orbit-two {
+
+        width: 480px;
+        height: 480px;
+
+    }
+
+
+    .cc-service-accent-ring {
+
+        width: 400px;
+        height: 400px;
+
+    }
+
+
+    .cc-service-float {
+
+        transform: scale(.88);
+
+    }
+
+
+    .cc-service-float-one {
+
+        left: -3%;
+
+    }
+
+
+    .cc-service-float-two {
+
+        right: -5%;
+
+    }
+
+
+    .cc-service-float-three {
+
+        left: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .cc-service-hero-inner {
+
+        width: 90%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 55px 0 20px;
+
+    }
+
+
+    .cc-service-hero-content {
+
+        max-width: none;
+
+        text-align: center;
+
+    }
+
+
+    .cc-service-hero-eyebrow {
+
+        justify-content: center;
+
+    }
+
+
+    .cc-service-hero-content h1 {
+
+        font-size: clamp(43px, 12vw, 58px);
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .cc-service-hero-description {
+
+        margin: 24px auto 0;
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .cc-service-hero-actions {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 18px;
+
+        margin-top: 28px;
+
+    }
+
+
+    .cc-service-hero-trust {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+
+        margin-top: 30px;
+
+    }
+
+
+    .cc-service-hero-visual {
+
+        height: 455px;
+
+        margin-top: 15px;
+
+    }
+
+
+    .cc-service-main-circle {
+
+        width: 285px;
+
+        border-width: 8px;
+
+    }
+
+
+    .cc-service-orbit-one {
+
+        width: 330px;
+        height: 330px;
+
+    }
+
+
+    .cc-service-orbit-two {
+
+        width: 370px;
+        height: 370px;
+
+    }
+
+
+    .cc-service-accent-ring {
+
+        width: 305px;
+        height: 305px;
+
+    }
+
+
+    .cc-service-float {
+
+        padding: 8px 12px 8px 8px;
+
+        gap: 8px;
+
+        transform: scale(.75);
+
+        transform-origin: center;
+
+    }
+
+
+    .cc-service-float-one {
+
+        top: 8%;
+
+        left: -9%;
+
+    }
+
+
+    .cc-service-float-two {
+
+        right: -10%;
+
+        top: 43%;
+
+    }
+
+
+    .cc-service-float-three {
+
+        left: -5%;
+
+        bottom: 7%;
+
+    }
+
+
+    .cc-service-center-badge {
+
+        width: 82px;
+        height: 82px;
+
+        right: 4%;
+
+        bottom: 7%;
+
+    }
+
+
+    .cc-service-badge-number {
+
+        font-size: 24px;
+
+    }
+
+
+    .cc-service-badge-text {
+
+        font-size: 7px;
+
+    }
+
+
+    .cc-service-dot-one {
+
+        right: 10%;
+
+    }
+
+
+    .cc-service-dot-two {
+
+        right: 2%;
+
+    }
+
+
+    .cc-service-hero-bottom {
+
+        width: 90%;
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .cc-service-bottom-label {
+
+        min-height: 62px;
+
+        padding: 0 10px;
+
+    }
+
+
+    .cc-service-bottom-label:nth-child(2) {
+
+        border-right: 0;
+
+    }
+
+
+    .cc-service-bottom-label:nth-child(3),
+    .cc-service-bottom-label:nth-child(4) {
+
+        border-top: 1px solid var(--primary);
+
+    }
+
+
+    .cc-service-bottom-label strong {
+
+        font-size: 8px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SAMSUNG S8+ — 360px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .cc-service-hero-inner {
+
+        width: 88%;
+
+        padding-top: 42px;
+
+    }
+
+
+    .cc-service-hero-content h1 {
+
+        font-size: 42px;
+
+    }
+
+
+    .cc-service-hero-description {
+
+        font-size: 13px;
+
+    }
+
+
+    .cc-service-primary-btn {
+
+        width: 100%;
+
+    }
+
+
+    .cc-service-text-btn {
+
+        margin-top: 3px;
+
+    }
+
+
+    .cc-service-hero-visual {
+
+        height: 410px;
+
+    }
+
+
+    .cc-service-main-circle {
+
+        width: 245px;
+
+    }
+
+
+    .cc-service-orbit-one {
+
+        width: 285px;
+        height: 285px;
+
+    }
+
+
+    .cc-service-orbit-two {
+
+        width: 315px;
+        height: 315px;
+
+    }
+
+
+    .cc-service-accent-ring {
+
+        width: 265px;
+        height: 265px;
+
+    }
+
+
+    .cc-service-float {
+
+        transform: scale(.63);
+
+    }
+
+
+    .cc-service-float-one {
+
+        left: -13%;
+
+    }
+
+
+    .cc-service-float-two {
+
+        right: -14%;
+
+    }
+
+
+    .cc-service-float-three {
+
+        left: -10%;
+
+    }
+
+
+    .cc-service-center-badge {
+
+        width: 68px;
+        height: 68px;
+
+        right: 0;
+
+        bottom: 5%;
+
+    }
+
+
+    .cc-service-badge-number {
+
+        font-size: 20px;
+
+    }
+
+
+    .cc-service-hero-trust {
+
+        display: none;
+
+    }
+
+
+    .cc-service-bottom-label {
+
+        gap: 8px;
+
+        padding: 0 6px;
+
+    }
+
+
+    .cc-service-bottom-label span {
+
+        font-size: 16px;
+
+    }
+
+
+    .cc-service-bottom-label strong {
+
+        font-size: 7px;
+
+        letter-spacing: .8px;
+
+    }
+
+}
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+.cc-service-story {
+    width: 100%;
+    padding: 110px 6%;
+    background:var(--bg);
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CENTER HEADING
+========================================================= */
+
+.cc-story-heading {
+    max-width: 760px;
+    margin: 0 auto 75px;
+    text-align: center;
+}
+
+.cc-story-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    color: #E89651;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+}
+
+.cc-story-eyebrow span {
+    width: 30px;
+    height: 1px;
+    background: #E89651;
+}
+
+.cc-story-heading h2 {
+    margin: 20px 0 17px;
+
+    color: #479899;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 5vw, 64px);
+
+    font-weight: 500;
+    line-height: 1.05;
+
+    letter-spacing: -1.8px;
+}
+
+.cc-story-heading h2 em {
+    color: #E89651;
+    font-style: normal;
+}
+
+.cc-story-heading p {
+    max-width: 600px;
+    margin: auto;
+
+    color: #479899;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    opacity: .82;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.cc-story-layout {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.cc-story-image {
+    position: relative;
+
+    width: 100%;
+    height: 570px;
+
+    overflow: hidden;
+
+    border-radius: 6px;
+
+    background: #479899;
+}
+
+.cc-story-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(71,152,153,.25),
+        transparent 40%
+    );
+
+    pointer-events: none;
+}
+
+.cc-story-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform .7s ease;
+}
+
+.cc-story-image:hover img {
+    transform: scale(1.04);
+}
+
+
+/* IMAGE LABEL */
+
+.cc-image-label {
+    position: absolute;
+
+    left: 25px;
+    bottom: 25px;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 10px 15px;
+
+    background: #ffffff;
+
+    border-radius: 3px;
+}
+
+.cc-image-label span {
+    color: #479899;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.cc-image-label strong {
+    color: #E89651;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.cc-story-content {
+    max-width: 530px;
+}
+
+.cc-content-number {
+    display: block;
+
+    margin-bottom: 17px;
+
+    color: #E89651;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.cc-story-content h3 {
+    margin: 0 0 22px;
+
+    color: #479899;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(34px, 4vw, 48px);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -1px;
+}
+
+.cc-story-content h3 em {
+    display: block;
+
+    color: #E89651;
+
+    font-style: normal;
+}
+
+.cc-story-text {
+    margin: 0 0 32px;
+
+    color: #479899;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+
+    opacity: .82;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.cc-story-feature {
+    display: grid;
+
+    grid-template-columns: 48px 1fr;
+
+    gap: 17px;
+
+    padding: 20px 0;
+
+    border-top: 1px solid rgba(71,152,153,.18);
+}
+
+.cc-story-feature:last-of-type {
+    border-bottom: 1px solid rgba(71,152,153,.18);
+}
+
+.cc-feature-icon {
+    width: 45px;
+    height: 45px;
+
+    border: 1px solid rgba(71,152,153,.28);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #479899;
+
+    transition: .3s ease;
+}
+
+.cc-feature-icon i {
+    width: 18px;
+    height: 18px;
+}
+
+.cc-story-feature:hover .cc-feature-icon {
+    background: #479899;
+    color: #ffffff;
+}
+
+.cc-story-feature h4 {
+    margin: 0 0 6px;
+
+    color: #479899;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.cc-story-feature p {
+    margin: 0;
+
+    color: #479899;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+    opacity: .75;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.cc-story-button {
+    margin-top: 35px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    padding-bottom: 9px;
+
+    color: #479899;
+
+    border-bottom: 1px solid #479899;
+
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: .8px;
+
+    transition: .3s ease;
+}
+
+.cc-story-button i {
+    width: 16px;
+    height: 16px;
+
+    transition: .3s ease;
+}
+
+.cc-story-button:hover {
+    color: #E89651;
+    border-color: #E89651;
+}
+
+.cc-story-button:hover i {
+    transform: translate(4px,-4px);
+}
+
+
+/* =========================================================
+   TABLET — IPAD MINI
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 834px) {
+
+    .cc-service-story {
+        padding: 90px 5%;
+    }
+
+    .cc-story-heading {
+        margin-bottom: 55px;
+    }
+
+    .cc-story-layout {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+
+        max-width: 650px;
+    }
+
+    .cc-story-image {
+        height: 480px;
+    }
+
+    .cc-story-content {
+        max-width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   NEST HUB
+========================================================= */
+
+@media (min-width: 835px) and (max-width: 1024px) {
+
+    .cc-service-story {
+        padding: 90px 5%;
+    }
+
+    .cc-story-layout {
+        gap: 50px;
+    }
+
+    .cc-story-image {
+        height: 500px;
+    }
+
+    .cc-story-content h3 {
+        font-size: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE — SAMSUNG S8+
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .cc-service-story {
+        padding: 75px 20px;
+    }
+
+    .cc-story-heading {
+        margin-bottom: 50px;
+    }
+
+    .cc-story-heading h2 {
+        font-size: 39px;
+        letter-spacing: -1px;
+    }
+
+    .cc-story-heading p {
+        font-size: 12px;
+    }
+
+    .cc-story-layout {
+        display: flex;
+        flex-direction: column;
+
+        gap: 45px;
+    }
+
+    .cc-story-image {
+        height: 390px;
+    }
+
+    .cc-story-content {
+        width: 100%;
+    }
+
+    .cc-story-content h3 {
+        font-size: 35px;
+    }
+
+    .cc-story-text {
+        font-size: 12px;
+    }
+
+    .cc-story-feature {
+        grid-template-columns: 42px 1fr;
+        gap: 13px;
+    }
+
+    .cc-feature-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .cc-service-story {
+        padding: 65px 16px;
+    }
+
+    .cc-story-heading h2 {
+        font-size: 34px;
+    }
+
+    .cc-story-image {
+        height: 350px;
+    }
+
+    .cc-story-content h3 {
+        font-size: 31px;
+    }
+
+}
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.cc-service-showcase {
+    width: 100%;
+    padding: 105px 6%;
+    background: var(--bg);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.cc-showcase-heading {
+    width: min(700px, 100%);
+    margin: 0 auto 58px;
+    text-align: center;
+}
+
+.cc-showcase-eyebrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11px;
+
+    color: var(--secondary);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2.8px;
+}
+
+.cc-showcase-eyebrow span {
+    width: 28px;
+    height: 1px;
+
+    background: var(--secondary);
+}
+
+.cc-showcase-heading h2 {
+    margin: 18px 0 13px;
+
+    color: var(--primary);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 4.5vw, 58px);
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+}
+
+.cc-showcase-heading h2 em {
+    color: var(--secondary);
+    font-style: normal;
+}
+
+.cc-showcase-heading p {
+    max-width: 540px;
+
+    margin: auto;
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+    opacity: .72;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.cc-showcase-grid {
+    max-width: 1180px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.cc-showcase-card {
+    background:var(--bg);
+
+    border: 1px solid rgba(71,152,153,.18);
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.cc-showcase-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 45px rgba(71,152,153,.12);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.cc-showcase-image {
+    position: relative;
+
+    width: 100%;
+    height: 185px;
+
+    overflow: hidden;
+}
+
+.cc-showcase-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform .6s ease;
+}
+
+.cc-showcase-card:hover
+.cc-showcase-image img {
+    transform: scale(1.045);
+}
+
+
+/* NUMBER */
+
+.cc-showcase-number {
+    position: absolute;
+
+    top: 14px;
+    left: 14px;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--secondary);
+
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.cc-showcase-content {
+    padding: 20px 21px 21px;
+}
+
+.cc-showcase-label {
+    color: var(--secondary);
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.cc-showcase-content h3 {
+    margin: 8px 0 8px;
+
+    color: var(--primary);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 29px;
+
+    font-weight: 500;
+
+    line-height: 1;
+}
+
+.cc-showcase-content h3 em {
+    color: var(--secondary);
+    font-style: normal;
+}
+
+.cc-showcase-content p {
+    min-height: 38px;
+
+    margin: 0 0 17px;
+
+    color: var(--primary);
+
+    font-size: 10px;
+
+    line-height: 1.65;
+
+    opacity: .7;
+}
+
+
+/* =========================================================
+   READ MORE
+========================================================= */
+
+.cc-showcase-link {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-top: 13px;
+
+    border-top: 1px solid rgba(71,152,153,.15);
+
+    color: var(--primary);
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: .3s ease;
+}
+
+.cc-showcase-link i {
+    width: 15px;
+    height: 15px;
+
+    transition: transform .3s ease;
+}
+
+.cc-showcase-link:hover {
+    color: var(--secondary);
+}
+
+.cc-showcase-link:hover i {
+    transform: translate(3px,-3px);
+}
+
+
+/* =========================================================
+   IPAD MINI
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 834px) {
+
+    .cc-service-showcase {
+        padding: 85px 5%;
+    }
+
+    .cc-showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 700px;
+    }
+
+    .cc-showcase-card:last-child {
+        grid-column: 1 / -1;
+
+        width: calc(50% - 10px);
+
+        margin: auto;
+    }
+
+}
+
+
+/* =========================================================
+   NEST HUB
+========================================================= */
+
+@media (min-width: 835px) and (max-width: 1024px) {
+
+    .cc-service-showcase {
+        padding: 90px 5%;
+    }
+
+    .cc-showcase-grid {
+        gap: 15px;
+    }
+
+    .cc-showcase-image {
+        height: 165px;
+    }
+
+    .cc-showcase-content {
+        padding: 18px;
+    }
+
+    .cc-showcase-content h3 {
+        font-size: 26px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .cc-service-showcase {
+        padding: 75px 20px;
+    }
+
+    .cc-showcase-heading {
+        margin-bottom: 42px;
+    }
+
+    .cc-showcase-heading h2 {
+        font-size: 38px;
+    }
+
+    .cc-showcase-heading p {
+        font-size: 11px;
+    }
+
+    .cc-showcase-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 390px;
+
+        gap: 20px;
+    }
+
+    .cc-showcase-image {
+        height: 190px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .cc-service-showcase {
+        padding: 65px 16px;
+    }
+
+    .cc-showcase-heading h2 {
+        font-size: 34px;
+    }
+
+    .cc-showcase-image {
+        height: 175px;
+    }
+
+}
+
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:var(--bg);
+    font-family:"DM Sans",sans-serif;
+    color:var(--primary);
+}
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.cc-service-showcase{
+    width:100%;
+    padding:110px 7%;
+    overflow:hidden;
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.cc-service-heading{
+    max-width:760px;
+    margin:0 auto 75px;
+    text-align:center;
+}
+
+.cc-service-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    margin-bottom:20px;
+
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+
+    color:var(--secondary);
+}
+
+.cc-service-eyebrow::before,
+.cc-service-eyebrow::after{
+    content:"";
+
+    width:25px;
+    height:1px;
+
+    background:var(--secondary);
+}
+
+.cc-service-heading h2{
+    margin:0;
+
+    font-family:"Playfair Display",serif;
+    font-size:clamp(38px,5vw,64px);
+    line-height:1.05;
+    font-weight:600;
+
+    color:var(--primary);
+}
+
+.cc-service-heading h2 span{
+    color:var(--secondary);
+}
+
+.cc-service-heading p{
+    max-width:590px;
+
+    margin:22px auto 0;
+
+    font-size:15px;
+    line-height:1.8;
+
+    color:var(--primary);
+    opacity:.72;
+}
+
+/* =========================================================
+   SERVICE LIST
+========================================================= */
+
+.cc-service-list{
+    width:100%;
+    max-width:1220px;
+
+    margin:0 auto;
+}
+
+/* =========================================================
+   SERVICE ROW
+========================================================= */
+
+.cc-service-row{
+    display:grid;
+    grid-template-columns:42% 58%;
+
+    min-height:390px;
+
+    margin-bottom:45px;
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.cc-service-image{
+    padding:28px 45px 28px 0;
+}
+
+.cc-service-image img{
+    display:block;
+
+    width:100%;
+    height:330px;
+
+    object-fit:cover;
+
+    border-radius:4px;
+
+    transition:
+        transform .6s ease,
+        filter .6s ease;
+}
+
+.cc-service-row:hover .cc-service-image img{
+    transform:scale(1.025);
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.cc-service-content{
+    display:grid;
+
+    grid-template-columns:90px 1fr;
+    gap:25px;
+
+    align-items:center;
+
+    padding:45px 0 45px 45px;
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.cc-service-number{
+    align-self:start;
+
+    padding-top:5px;
+
+    font-family:"Playfair Display",serif;
+    font-size:54px;
+    line-height:1;
+
+    color:var(--secondary);
+}
+
+/* =========================================================
+   SERVICE INFORMATION
+========================================================= */
+
+.cc-service-info{
+    max-width:570px;
+}
+
+.cc-service-mini{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    margin-bottom:13px;
+
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    color:var(--primary);
+}
+
+.cc-service-mini i{
+    width:17px;
+    height:17px;
+
+    color:var(--secondary);
+}
+
+.cc-service-info h3{
+    margin:0 0 14px;
+
+    font-family:"Playfair Display",serif;
+    font-size:34px;
+    line-height:1.15;
+    font-weight:600;
+
+    color:var(--primary);
+}
+
+.cc-service-info p{
+    max-width:500px;
+
+    margin:0 0 23px;
+
+    font-size:14px;
+    line-height:1.8;
+
+    color:var(--primary);
+    opacity:.72;
+}
+
+/* =========================================================
+   READ MORE
+========================================================= */
+
+.cc-service-read{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1.3px;
+    text-transform:uppercase;
+
+    color:var(--primary);
+
+    transition:.3s ease;
+}
+
+.cc-service-read span{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:34px;
+    height:34px;
+
+    border:1px solid var(--secondary);
+    border-radius:50%;
+
+    transition:.3s ease;
+}
+
+.cc-service-read i{
+    width:15px;
+    height:15px;
+}
+
+.cc-service-read:hover{
+    color:var(--secondary);
+}
+
+.cc-service-read:hover span{
+    background:var(--secondary);
+    color:#fff;
+
+    transform:translateX(5px);
+}
+
+/* =========================================================
+   ACCENT
+========================================================= */
+
+.cc-service-info::after{
+    content:"";
+
+    display:block;
+
+}
+
+/* =========================================================
+   ALTERNATING SERVICE
+========================================================= */
+
+.cc-service-row:nth-child(even){
+    grid-template-columns:58% 42%;
+}
+
+.cc-service-row:nth-child(even) .cc-service-image{
+    order:2;
+
+    padding:28px 0 28px 45px;
+}
+
+.cc-service-row:nth-child(even) .cc-service-content{
+    order:1;
+
+    padding:45px 45px 45px 0;
+}
+
+/* =========================================================
+   TABLET
+   IPAD MINI / NEST HUB
+========================================================= */
+
+@media (max-width:1024px){
+
+    .cc-service-showcase{
+        padding:85px 5%;
+    }
+
+    .cc-service-heading{
+        margin-bottom:55px;
+    }
+
+    .cc-service-row{
+        grid-template-columns:44% 56%;
+
+        min-height:340px;
+
+        margin-bottom:35px;
+    }
+
+    .cc-service-row:nth-child(even){
+        grid-template-columns:56% 44%;
+    }
+
+    .cc-service-image{
+        padding:25px 30px 25px 0;
+    }
+
+    .cc-service-row:nth-child(even) .cc-service-image{
+        padding:25px 0 25px 30px;
+    }
+
+    .cc-service-image img{
+        height:285px;
+    }
+
+    .cc-service-content{
+        grid-template-columns:65px 1fr;
+
+        gap:18px;
+
+        padding:35px 0 35px 30px;
+    }
+
+    .cc-service-row:nth-child(even) .cc-service-content{
+        padding:35px 30px 35px 0;
+    }
+
+    .cc-service-number{
+        font-size:42px;
+    }
+
+    .cc-service-info h3{
+        font-size:29px;
+    }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:767px){
+
+    .cc-service-showcase{
+        padding:70px 20px;
+    }
+
+    .cc-service-heading{
+        margin-bottom:45px;
+    }
+
+    .cc-service-eyebrow{
+        font-size:10px;
+        letter-spacing:2px;
+    }
+
+    .cc-service-eyebrow::before,
+    .cc-service-eyebrow::after{
+        width:18px;
+    }
+
+    .cc-service-heading h2{
+        font-size:38px;
+        line-height:1.08;
+    }
+
+    .cc-service-heading p{
+        font-size:13px;
+        line-height:1.7;
+    }
+
+    /* SERVICE ROW */
+
+    .cc-service-row,
+    .cc-service-row:nth-child(even){
+        display:block;
+
+        min-height:auto;
+
+        margin-bottom:45px;
+    }
+
+    /* IMAGE */
+
+    .cc-service-image,
+    .cc-service-row:nth-child(even) .cc-service-image{
+        padding:0 0 25px;
+    }
+
+    .cc-service-image img{
+        width:100%;
+        height:220px;
+    }
+
+    /* CONTENT */
+
+    .cc-service-content,
+    .cc-service-row:nth-child(even) .cc-service-content{
+        display:grid;
+
+        grid-template-columns:55px 1fr;
+
+        gap:15px;
+
+        padding:5px 0 0;
+    }
+
+    .cc-service-number{
+        font-size:34px;
+    }
+
+    .cc-service-mini{
+        font-size:9px;
+        letter-spacing:1.6px;
+
+        margin-bottom:9px;
+    }
+
+    .cc-service-mini i{
+        width:14px;
+        height:14px;
+    }
+
+    .cc-service-info h3{
+        font-size:26px;
+
+        margin-bottom:10px;
+    }
+
+    .cc-service-info p{
+        font-size:13px;
+        line-height:1.7;
+
+        margin-bottom:18px;
+    }
+
+    .cc-service-read{
+        font-size:10px;
+        letter-spacing:1px;
+    }
+
+    .cc-service-read span{
+        width:30px;
+        height:30px;
+    }
+
+    .cc-service-info::after{
+        margin-top:22px;
+    }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+   SAMSUNG S8+
+========================================================= */
+
+@media (max-width:390px){
+
+    .cc-service-showcase{
+        padding:60px 17px;
+    }
+
+    .cc-service-heading h2{
+        font-size:34px;
+    }
+
+    .cc-service-heading p{
+        font-size:12px;
+    }
+
+    .cc-service-image img{
+        height:195px;
+    }
+
+    .cc-service-content,
+    .cc-service-row:nth-child(even) .cc-service-content{
+        grid-template-columns:48px 1fr;
+
+        gap:12px;
+    }
+
+    .cc-service-number{
+        font-size:29px;
+    }
+
+    .cc-service-info h3{
+        font-size:23px;
+    }
+
+    .cc-service-info p{
+        font-size:12px;
+    }
+
+}
+
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:var(--bg);
+    font-family:"DM Sans",sans-serif;
+    color:var(--primary);
+}
+
+/* =========================================================
+   PREMIUM CARE JOURNEY
+========================================================= */
+
+.cc-journey-section{
+    width:100%;
+    padding:55px 7%;
+    overflow:hidden;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.cc-journey-heading{
+    max-width:780px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.cc-journey-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    margin-bottom:20px;
+
+    color:var(--secondary);
+
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2.6px;
+    text-transform:uppercase;
+}
+
+.cc-journey-eyebrow::before,
+.cc-journey-eyebrow::after{
+    content:"";
+
+    width:25px;
+    height:1px;
+
+    background:var(--secondary);
+}
+
+.cc-journey-heading h2{
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(40px,5vw,64px);
+    line-height:1.06;
+    font-weight:600;
+
+    color:var(--primary);
+}
+
+.cc-journey-heading h2 span{
+    color:var(--secondary);
+}
+
+.cc-journey-heading p{
+    max-width:600px;
+
+    margin:22px auto 0;
+
+    font-size:14px;
+    line-height:1.8;
+
+    color:var(--primary);
+    opacity:.72;
+}
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.cc-journey-layout{
+    max-width:1220px;
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:48% 52%;
+
+    align-items:stretch;
+}
+
+/* =========================================================
+   IMAGE SIDE
+========================================================= */
+
+.cc-journey-visual{
+    position:relative;
+
+    min-height:570px;
+
+    padding-right:45px;
+}
+
+.cc-journey-image{
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    border-radius:4px;
+}
+
+.cc-journey-image img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:transform .8s ease;
+}
+
+.cc-journey-visual:hover .cc-journey-image img{
+    transform:scale(1.025);
+}
+
+/* =========================================================
+   IMAGE ACCENT
+========================================================= */
+
+.cc-journey-accent{
+    position:absolute;
+
+    right:5px;
+    bottom:35px;
+
+    width:125px;
+    height:125px;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    z-index:2;
+}
+
+.cc-journey-accent span{
+    display:block;
+
+    width:75px;
+
+    font-size:11px;
+    line-height:1.5;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+    color:#fff;
+}
+
+/* =========================================================
+   CONTENT SIDE
+========================================================= */
+
+.cc-journey-content{
+    padding:20px 0 20px 55px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.cc-journey-intro{
+    max-width:520px;
+
+    margin-bottom:42px;
+}
+
+.cc-journey-intro h3{
+    font-family:"Playfair Display",serif;
+
+    font-size:35px;
+    line-height:1.18;
+    font-weight:600;
+
+    color:var(--primary);
+
+    margin-bottom:16px;
+}
+
+.cc-journey-intro p{
+    font-size:14px;
+    line-height:1.8;
+
+    color:var(--primary);
+    opacity:.72;
+}
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.cc-journey-steps{
+    position:relative;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:0;
+}
+
+/* vertical line */
+
+.cc-journey-steps::before{
+    content:"";
+
+    position:absolute;
+
+    left:20px;
+    top:22px;
+    bottom:22px;
+
+    width:1px;
+
+    background:rgba(71,152,153,.22);
+}
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.cc-journey-step{
+    position:relative;
+
+    display:grid;
+    grid-template-columns:42px 1fr;
+
+    gap:22px;
+
+    padding:0 0 30px;
+}
+
+.cc-journey-step:last-child{
+    padding-bottom:0;
+}
+
+/* =========================================================
+   STEP NUMBER
+========================================================= */
+
+.cc-journey-step-number{
+    position:relative;
+    z-index:2;
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--primary);
+    border-radius:50%;
+
+    background:#fff;
+
+    font-size:11px;
+    font-weight:700;
+
+    color:var(--primary);
+
+    transition:.3s ease;
+}
+
+.cc-journey-step:hover .cc-journey-step-number{
+    background:var(--secondary);
+    border-color:var(--secondary);
+    color:#fff;
+}
+
+/* =========================================================
+   STEP CONTENT
+========================================================= */
+
+.cc-journey-step-content{
+    padding-top:2px;
+}
+
+.cc-journey-step-label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    margin-bottom:7px;
+
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1.8px;
+    text-transform:uppercase;
+
+    color:var(--secondary);
+}
+
+.cc-journey-step-label i{
+    width:14px;
+    height:14px;
+}
+
+.cc-journey-step h4{
+    margin:0 0 7px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:22px;
+    line-height:1.2;
+    font-weight:600;
+
+    color:var(--primary);
+}
+
+.cc-journey-step p{
+    max-width:430px;
+
+    font-size:13px;
+    line-height:1.7;
+
+    color:var(--primary);
+    opacity:.7;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cc-journey-cta{
+    margin-top:40px;
+}
+
+.cc-journey-button{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:13px 20px;
+
+    text-decoration:none !important;
+
+    background:var(--primary);
+    color:#fff;
+
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+
+    border-radius:2px;
+
+    transition:.3s ease;
+}
+
+.cc-journey-button i{
+    width:16px;
+    height:16px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1024px){
+
+    .cc-journey-section{
+        padding:90px 5%;
+    }
+
+    .cc-journey-heading{
+        margin-bottom:55px;
+    }
+
+    .cc-journey-layout{
+        grid-template-columns:46% 54%;
+    }
+
+    .cc-journey-visual{
+        min-height:500px;
+        padding-right:30px;
+    }
+
+    .cc-journey-image{
+        height:500px;
+    }
+
+    .cc-journey-accent{
+        width:100px;
+        height:100px;
+
+        right:-2px;
+        bottom:28px;
+    }
+
+    .cc-journey-accent span{
+        width:65px;
+        font-size:9px;
+    }
+
+    .cc-journey-content{
+        padding-left:35px;
+    }
+
+    .cc-journey-intro{
+        margin-bottom:32px;
+    }
+
+    .cc-journey-intro h3{
+        font-size:30px;
+    }
+
+    .cc-journey-step{
+        gap:17px;
+        padding-bottom:25px;
+    }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:767px){
+
+    .cc-journey-section{
+        padding:75px 20px;
+    }
+
+    .cc-journey-heading{
+        margin-bottom:45px;
+    }
+
+    .cc-journey-eyebrow{
+        font-size:9px;
+        letter-spacing:2px;
+    }
+
+    .cc-journey-eyebrow::before,
+    .cc-journey-eyebrow::after{
+        width:18px;
+    }
+
+    .cc-journey-heading h2{
+        font-size:38px;
+    }
+
+    .cc-journey-heading p{
+        font-size:13px;
+        line-height:1.7;
+    }
+
+    /* MAIN */
+
+    .cc-journey-layout{
+        display:block;
+    }
+
+    /* IMAGE */
+
+    .cc-journey-visual{
+        min-height:auto;
+
+        padding:0;
+        margin-bottom:45px;
+    }
+
+    .cc-journey-image{
+        height:360px;
+    }
+
+    .cc-journey-accent{
+        right:-5px;
+        bottom:-20px;
+
+        width:95px;
+        height:95px;
+    }
+
+    .cc-journey-accent span{
+        font-size:9px;
+    }
+
+    /* CONTENT */
+
+    .cc-journey-content{
+        padding:0;
+    }
+
+    .cc-journey-intro{
+        margin-bottom:35px;
+    }
+
+    .cc-journey-intro h3{
+        font-size:29px;
+    }
+
+    .cc-journey-intro p{
+        font-size:13px;
+    }
+
+    /* STEPS */
+
+    .cc-journey-step{
+        grid-template-columns:38px 1fr;
+
+        gap:15px;
+
+        padding-bottom:27px;
+    }
+
+    .cc-journey-steps::before{
+        left:18px;
+    }
+
+    .cc-journey-step-number{
+        width:38px;
+        height:38px;
+
+        font-size:10px;
+    }
+
+    .cc-journey-step h4{
+        font-size:21px;
+    }
+
+    .cc-journey-step p{
+        font-size:12px;
+    }
+
+    .cc-journey-cta{
+        margin-top:35px;
+    }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media(max-width:390px){
+
+    .cc-journey-section{
+        padding:60px 17px;
+    }
+
+    .cc-journey-heading h2{
+        font-size:34px;
+    }
+
+    .cc-journey-image{
+        height:315px;
+    }
+
+    .cc-journey-intro h3{
+        font-size:26px;
+    }
+
+    .cc-journey-step h4{
+        font-size:19px;
+    }
+
+}
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+.cc-journey-section {
+
+    --primary:#479899;
+    --secondary:#E89651;
+
+    width:100%;
+
+    background:var(--bg);
+
+    padding:115px 6vw 110px;
+
+    box-sizing:border-box;
+
+    overflow:hidden;
+
+}
+
+
+.cc-journey-section *,
+.cc-journey-section *::before,
+.cc-journey-section *::after {
+
+    box-sizing:border-box;
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.cc-journey-container {
+
+    width:100%;
+
+    max-width:1280px;
+
+    margin:0 auto;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.cc-journey-header {
+
+    max-width:700px;
+
+    margin:0 auto 82px;
+
+    text-align:center;
+
+}
+
+
+.cc-journey-eyebrow {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-bottom:19px;
+
+    color:var(--secondary);
+
+    font-family:"DM Sans",sans-serif;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:2.5px;
+
+    text-transform:uppercase;
+
+}
+
+
+
+
+.cc-journey-header h2 {
+
+    margin:0;
+
+    color:var(--primary);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(42px,5vw,66px);
+
+    font-weight:500;
+
+    line-height:1.04;
+
+    letter-spacing:-2.3px;
+
+}
+
+
+.cc-journey-header h2 em {
+
+    color:var(--secondary);
+
+    font-style:normal;
+
+}
+
+
+.cc-journey-header p {
+
+    max-width:570px;
+
+    margin:22px auto 0;
+
+    color:var(--primary);
+
+    font-family:"DM Sans",sans-serif;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   FLOW
+========================================================= */
+
+.cc-journey-flow {
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:26px;
+
+    width:100%;
+
+}
+
+
+/* =========================================================
+   CONNECTING LINE
+========================================================= */
+
+.cc-journey-line {
+
+    position:absolute;
+
+    top:26px;
+
+    left:8%;
+
+    right:8%;
+
+    height:1px;
+
+    background:rgba(71,152,153,.22);
+
+    z-index:0;
+
+}
+
+
+.cc-journey-line-fill {
+
+    width:100%;
+
+    height:1px;
+
+    background:var(--secondary);
+
+    transform-origin:left center;
+
+}
+
+
+/* =========================================================
+   STEP
+========================================================= */
+
+.cc-journey-step {
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    min-width:0;
+
+}
+
+
+/* =========================================================
+   SMALL ROUND NODE
+========================================================= */
+
+.cc-journey-node {
+
+    position:relative;
+
+    width:52px;
+
+    height:52px;
+
+    flex:0 0 52px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:27px;
+
+    background:var(--bg);
+
+    border:1px solid var(--primary);
+
+    border-radius:50%;
+
+    z-index:5;
+
+}
+
+
+.cc-journey-node::before {
+
+    content:"";
+
+    width:10px;
+
+    height:10px;
+
+    background:var(--secondary);
+
+    border-radius:50%;
+
+}
+
+
+.cc-journey-node span {
+
+    position:absolute;
+
+    top:-17px;
+
+    color:var(--primary);
+
+    font-family:"DM Sans",sans-serif;
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.cc-journey-card {
+
+    position:relative;
+
+    width:100%;
+
+    height:260px;
+
+    padding:25px 25px 22px;
+
+    background:var(--bg);
+
+    border:1px solid rgba(71,152,153,.18);
+
+    box-shadow:
+        0 16px 45px rgba(71,152,153,.065);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+
+}
+
+
+.cc-journey-card:hover {
+
+    transform:translateY(-6px);
+
+    border-color:var(--secondary);
+
+    box-shadow:
+        0 22px 55px rgba(71,152,153,.12);
+
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.cc-journey-top {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:20px;
+
+}
+
+
+.cc-journey-icon {
+
+    width:36px;
+
+    height:36px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:var(--secondary);
+
+}
+
+
+.cc-journey-icon svg {
+
+    width:20px;
+
+    height:20px;
+
+    stroke-width:1.6;
+
+}
+
+
+.cc-journey-top > span {
+
+    color:var(--primary);
+
+    font-family:"DM Sans",sans-serif;
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:1.6px;
+
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.cc-journey-card h3 {
+
+    max-width:220px;
+
+    margin:0 0 12px;
+
+    color:var(--primary);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:25px;
+
+    font-weight:500;
+
+    line-height:1.13;
+
+    letter-spacing:-.5px;
+
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.cc-journey-card p {
+
+    max-width:230px;
+
+    margin:0;
+
+    color:var(--primary);
+
+    font-family:"DM Sans",sans-serif;
+
+    font-size:11px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   LARGE CARD NUMBER
+========================================================= */
+
+.cc-journey-number {
+
+    position:absolute;
+
+    right:19px;
+
+    bottom:16px;
+
+    color:var(--primary);
+
+    opacity:.08;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:52px;
+
+    line-height:1;
+
+    pointer-events:none;
+
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.cc-journey-bottom {
+
+    display:grid;
+
+    grid-template-columns:1fr auto 1fr;
+
+    align-items:center;
+
+    gap:22px;
+
+    margin-top:75px;
+
+}
+
+
+.cc-journey-bottom-line {
+
+    height:1px;
+
+    background:rgba(71,152,153,.18);
+
+}
+
+
+.cc-journey-bottom-content {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:11px;
+
+    color:var(--primary);
+
+    font-family:"DM Sans",sans-serif;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:1.8px;
+
+    text-transform:uppercase;
+
+    white-space:nowrap;
+
+}
+
+
+.cc-journey-bottom-content svg {
+
+    width:15px;
+
+    height:15px;
+
+    color:var(--secondary);
+
+}
+
+
+.cc-journey-bottom-content b {
+
+    color:var(--secondary);
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   NEST HUB / TABLET
+========================================================= */
+
+@media (max-width:1024px) {
+
+    .cc-journey-section {
+
+        padding:95px 5vw;
+
+    }
+
+
+    .cc-journey-flow {
+
+        gap:18px;
+
+    }
+
+
+    .cc-journey-card {
+
+        height:270px;
+
+        padding:22px 19px;
+
+    }
+
+
+    .cc-journey-card h3 {
+
+        font-size:22px;
+
+    }
+
+
+    .cc-journey-card p {
+
+        font-size:10px;
+
+    }
+
+
+    .cc-journey-node {
+
+        width:48px;
+
+        height:48px;
+
+        flex-basis:48px;
+
+    }
+
+
+    .cc-journey-line {
+
+        top:24px;
+
+    }
+
+}
+
+
+/* =========================================================
+   IPAD MINI
+========================================================= */
+
+@media (min-width:768px) and (max-width:834px) {
+
+    .cc-journey-section {
+
+        padding:85px 30px;
+
+    }
+
+
+    .cc-journey-header {
+
+        margin-bottom:70px;
+
+    }
+
+
+    .cc-journey-header h2 {
+
+        font-size:47px;
+
+    }
+
+
+    .cc-journey-header p {
+
+        font-size:12px;
+
+    }
+
+
+    .cc-journey-flow {
+
+        gap:12px;
+
+    }
+
+
+    .cc-journey-node {
+
+        width:43px;
+
+        height:43px;
+
+        flex-basis:43px;
+
+        margin-bottom:22px;
+
+    }
+
+
+    .cc-journey-node::before {
+
+        width:8px;
+
+        height:8px;
+
+    }
+
+
+    .cc-journey-line {
+
+        top:21px;
+
+        left:8%;
+
+        right:8%;
+
+    }
+
+
+    .cc-journey-card {
+
+        height:250px;
+
+        padding:20px 16px;
+
+    }
+
+
+    .cc-journey-icon {
+
+        width:31px;
+
+        height:31px;
+
+    }
+
+
+    .cc-journey-icon svg {
+
+        width:18px;
+
+        height:18px;
+
+    }
+
+
+    .cc-journey-top {
+
+        margin-bottom:17px;
+
+    }
+
+
+    .cc-journey-top > span {
+
+        font-size:7px;
+
+        letter-spacing:1px;
+
+    }
+
+
+    .cc-journey-card h3 {
+
+        font-size:19px;
+
+    }
+
+
+    .cc-journey-card p {
+
+        font-size:9px;
+
+        line-height:1.65;
+
+    }
+
+
+    .cc-journey-number {
+
+        font-size:43px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:767px) {
+
+    .cc-journey-section {
+
+        padding:72px 20px 75px;
+
+    }
+
+
+    .cc-journey-header {
+
+        margin-bottom:60px;
+
+    }
+
+
+    .cc-journey-eyebrow {
+
+        font-size:8px;
+
+        letter-spacing:2px;
+
+    }
+
+
+    .cc-journey-eyebrow span {
+
+        width:19px;
+
+    }
+
+
+    .cc-journey-header h2 {
+
+        font-size:38px;
+
+        letter-spacing:-1.4px;
+
+    }
+
+
+    .cc-journey-header p {
+
+        font-size:12px;
+
+        line-height:1.7;
+
+    }
+
+
+    /* -----------------------------------------
+       VERTICAL FLOW
+    ----------------------------------------- */
+
+    .cc-journey-flow {
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:0;
+
+        padding-left:48px;
+
+    }
+
+
+    .cc-journey-line {
+
+        top:0;
+
+        bottom:0;
+
+        left:18px;
+
+        right:auto;
+
+        width:1px;
+
+        height:auto;
+
+    }
+
+
+    .cc-journey-line-fill {
+
+        width:1px;
+
+        height:100%;
+
+    }
+
+
+    .cc-journey-step {
+
+        width:100%;
+
+        display:block;
+
+        margin-bottom:42px;
+
+    }
+
+
+    .cc-journey-step:last-child {
+
+        margin-bottom:0;
+
+    }
+
+
+    .cc-journey-node {
+
+        position:absolute;
+
+        left:-48px;
+
+        top:23px;
+
+        width:38px;
+
+        height:38px;
+
+        margin:0;
+
+    }
+
+
+    .cc-journey-node::before {
+
+        width:8px;
+
+        height:8px;
+
+    }
+
+
+    .cc-journey-node span {
+
+        top:-17px;
+
+        font-size:7px;
+
+    }
+
+
+    .cc-journey-card {
+
+        height:220px;
+
+        padding:22px 20px;
+
+    }
+
+
+    .cc-journey-top {
+
+        margin-bottom:16px;
+
+    }
+
+
+    .cc-journey-icon {
+
+        width:32px;
+
+        height:32px;
+
+    }
+
+
+    .cc-journey-icon svg {
+
+        width:18px;
+
+        height:18px;
+
+    }
+
+
+    .cc-journey-card h3 {
+
+        font-size:24px;
+
+        max-width:250px;
+
+    }
+
+
+    .cc-journey-card p {
+
+        max-width:280px;
+
+        font-size:11px;
+
+    }
+
+
+    .cc-journey-number {
+
+        font-size:44px;
+
+        bottom:14px;
+
+        right:17px;
+
+    }
+
+
+    .cc-journey-bottom {
+
+        display:flex;
+
+        flex-direction:column;
+
+        margin-top:55px;
+
+        gap:16px;
+
+    }
+
+
+    .cc-journey-bottom-line {
+
+        width:100%;
+
+    }
+
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE — SAMSUNG S8+
+========================================================= */
+
+@media (max-width:380px) {
+
+    .cc-journey-section {
+
+        padding-left:16px;
+
+        padding-right:16px;
+
+    }
+
+
+    .cc-journey-header h2 {
+
+        font-size:34px;
+
+    }
+
+
+    .cc-journey-flow {
+
+        padding-left:44px;
+
+    }
+
+
+    .cc-journey-line {
+
+        left:17px;
+
+    }
+
+
+    .cc-journey-node {
+
+        left:-44px;
+
+        width:35px;
+
+        height:35px;
+
+    }
+
+
+    .cc-journey-node::before {
+
+        width:7px;
+
+        height:7px;
+
+    }
+
+
+    .cc-journey-card {
+
+        height:215px;
+
+        padding:20px 18px;
+
+    }
+
+
+    .cc-journey-card h3 {
+
+        font-size:22px;
+
+    }
+
+
+    .cc-journey-card p {
+
+        font-size:10px;
+
+    }
+
+
+    .cc-journey-top > span {
+
+        font-size:7px;
+
+    }
+
+
+    .cc-journey-bottom-content {
+
+        font-size:8px;
+
+        letter-spacing:1.2px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion:reduce) {
+
+    .cc-journey-card {
+
+        transition:none;
+
+    }
+
+}
+
+
+
+
+/* =========================================
+   PREMIUM BLACK CTA
+========================================= */
+
+.cc-black-cta{
+    padding:35px 5%;
+    background:var(--bg);
+}
+
+.cc-black-cta-box{
+    max-width:1200px;
+    min-height:190px;
+    margin:auto;
+
+    background:black;
+border-radius: 10px;
+    display:grid;
+    grid-template-columns:1fr auto;
+    align-items:center;
+border: 1px solid var(--primary);
+    padding:38px 48px;
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* decorative ring */
+
+.cc-black-cta-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border:1px solid rgba(232,150,81,.18);
+    border-radius:50%;
+
+    right:-110px;
+    top:-155px;
+}
+
+.cc-black-cta-box::after{
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    border:1px solid rgba(71,152,153,.16);
+    border-radius:50%;
+
+    right:55px;
+    bottom:-120px;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.cc-black-cta-content{
+    position:relative;
+    z-index:2;
+}
+
+.cc-black-cta-eyebrow{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    margin-bottom:11px;
+
+    color:rgba(255,255,255,.55);
+
+    font-family:"DM Sans",sans-serif;
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.cc-black-cta-eyebrow span{
+    width:24px;
+    height:1px;
+    background:var(--secondary);
+}
+
+.cc-black-cta h2{
+    max-width:650px;
+
+    margin:0;
+
+    color:#fff;
+
+    font-family:"Playfair Display",serif;
+    font-size:clamp(30px,3.5vw,48px);
+    line-height:1.05;
+    font-weight:500;
+    letter-spacing:-1.5px;
+}
+
+.cc-black-cta h2 em{
+    color:var(--secondary);
+    font-style:italic;
+}
+
+.cc-black-cta-text{
+    margin-top:12px;
+
+    color:rgba(255,255,255,.55);
+
+    font-family:"DM Sans",sans-serif;
+    font-size:13px;
+}
+
+/* =========================================
+   BUTTON AREA
+========================================= */
+
+.cc-black-cta-action{
+    position:relative;
+    z-index:3;
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.cc-black-cta-button{
+    min-width:150px;
+    height:46px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+border-radius: 10px;
+    background:var(--primary);
+    color:#fff;
+
+    text-decoration:none;
+
+    font-family:"DM Sans",sans-serif;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.5px;
+
+    transition:.3s ease;
+}
+
+.cc-black-cta-button i{
+    width:15px;
+    height:15px;
+}
+
+.cc-black-cta-button:hover{
+    transform:translateY(-2px);
+}
+
+/* small vertical detail */
+
+.cc-black-cta-mark{
+    width:42px;
+    height:42px;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.cc-black-cta-mark i{
+    width:17px;
+    height:17px;
+    color:var(--secondary);
+}
+
+
+/* =========================================
+   NEST HUB
+========================================= */
+
+@media(max-width:1024px){
+
+    .cc-black-cta{
+        padding:30px 4%;
+    }
+
+    .cc-black-cta-box{
+        min-height:175px;
+        padding:32px 35px;
+    }
+
+    .cc-black-cta h2{
+        font-size:36px;
+    }
+}
+
+
+/* =========================================
+   IPAD MINI
+========================================= */
+
+@media(max-width:834px){
+
+    .cc-black-cta{
+        padding:28px 4%;
+    }
+
+    .cc-black-cta-box{
+        grid-template-columns:1fr auto;
+        padding:30px;
+        min-height:165px;
+    }
+
+    .cc-black-cta h2{
+        font-size:30px;
+    }
+
+    .cc-black-cta-text{
+        font-size:12px;
+    }
+
+    .cc-black-cta-action{
+        gap:10px;
+    }
+
+    .cc-black-cta-button{
+        min-width:130px;
+    }
+}
+
+
+/* =========================================
+   SAMSUNG S8+ / MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .cc-black-cta{
+        padding:20px 15px;
+    }
+
+    .cc-black-cta-box{
+        display:block;
+        min-height:auto;
+        padding:28px 24px;
+    }
+
+    .cc-black-cta-box::before{
+        width:220px;
+        height:220px;
+        right:-100px;
+        top:-130px;
+    }
+
+    .cc-black-cta-eyebrow{
+        font-size:8px;
+        letter-spacing:1.5px;
+    }
+
+    .cc-black-cta h2{
+        font-size:29px;
+        line-height:1.08;
+    }
+
+    .cc-black-cta-text{
+        margin-top:10px;
+        font-size:12px;
+    }
+
+    .cc-black-cta-action{
+        margin-top:20px;
+    }
+
+    .cc-black-cta-button{
+        width:100%;
+        height:43px;
+    }
+
+    .cc-black-cta-mark{
+        display:none;
+    }
+}
+
+
+/* =========================================================
+   HOW CARE WORKS
+========================================================= */
+
+.how-care-works {
+  width: 100%;
+  padding: 120px 20px;
+  background:var(--bg);
+  font-family: "DM Sans", sans-serif;
+  overflow: hidden;
+}
+
+.care-container {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.care-heading {
+  max-width: 760px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.care-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  color:var(--secondary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+
+  margin-bottom: 18px;
+}
+
+.care-eyebrow span {
+  width: 26px;
+  height: 1px;
+  background: var(--secondary);
+  display: block;
+}
+
+.care-heading h2 {
+  margin: 0;
+
+  color: var(--primary);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1.08;
+  font-weight: 500;
+  letter-spacing: -1.5px;
+}
+
+.care-heading h2 em {
+  color: var(--secondary);
+  font-style: normal;
+}
+
+.care-heading p {
+  max-width: 650px;
+  margin: 20px auto 0;
+
+  color: #77747c;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.care-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  min-height: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid rgba(71, 152, 153, 0.14);
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 40px rgba(41, 37, 53, 0.055);
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease,
+    border-color .4s ease;
+}
+
+.care-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(71, 152, 153, 0.35);
+
+  box-shadow:
+    0 24px 60px rgba(41, 37, 53, 0.10);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.care-image {
+  position: relative;
+
+  width: 100%;
+  height: 245px;
+
+  overflow: hidden;
+
+  background: #f5f5f5;
+}
+
+.care-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(41,37,53,0) 55%,
+      rgba(41,37,53,.18) 100%
+    );
+
+  pointer-events: none;
+}
+
+.care-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+}
+
+.care-card:hover .care-image img {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.care-number {
+  position: absolute;
+
+  z-index: 2;
+
+  top: 18px;
+  right: 18px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #479899;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.12);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.care-content {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 28px 28px 30px;
+}
+
+.care-tag {
+  display: inline-block;
+
+  width: fit-content;
+
+  color: #E89651;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+
+  margin-bottom: 12px;
+}
+
+.care-content h3 {
+  margin: 0;
+
+  color: #292535;
+
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.care-content p {
+  margin: 14px 0 24px;
+
+  color: #77747c;
+
+  font-size: 14px;
+  line-height: 1.75;
+
+  /* Keeps content heights consistent */
+  min-height: 74px;
+}
+
+
+/* =========================================================
+   LEARN MORE
+========================================================= */
+
+.care-link {
+  margin-top: auto;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  width: fit-content;
+
+  color: #479899;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: color .3s ease;
+}
+
+.care-link i {
+  color: #E89651;
+
+  font-size: 14px;
+
+  transition:
+    transform .3s ease;
+}
+
+.care-link:hover {
+  color: #E89651;
+}
+
+.care-link:hover i {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .how-care-works {
+    padding: 90px 20px;
+  }
+
+  .care-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .how-care-works {
+    padding: 75px 16px;
+  }
+
+  .care-heading {
+    margin-bottom: 45px;
+  }
+
+  .care-heading h2 {
+    font-size: 38px;
+  }
+
+  .care-heading p {
+    font-size: 14px;
+  }
+
+  .care-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .care-image {
+    height: 230px;
+  }
+
+  .care-content {
+    padding: 25px;
+  }
+
+}
+
+
+
+
+
+

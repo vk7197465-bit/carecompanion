@@ -1,0 +1,3738 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Care Companion | Create Account</title>
+
+
+<!-- =========================================================
+     GOOGLE FONTS
+========================================================= -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet">
+
+
+<!-- =========================================================
+     BOOTSTRAP ICONS
+========================================================= -->
+<link rel="icon" type="image/svg+xml" href="images/v1.png">
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --primary:#479899;
+    --primary-dark:#479899;
+
+    --secondary:#E89651;
+
+    --bg:#f6faf9;
+    --surface:#ffffff;
+    --surface-soft:#f5f8f7;
+
+    --text:#292535;
+    --text-soft:#707879;
+
+    --border:#dfe8e6;
+
+    --shadow:
+        0 30px 80px rgba(40,80,80,.14),
+        0 8px 28px rgba(40,80,80,.08);
+
+    --transition:.28s ease;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html.dark{
+
+    --bg:black;
+
+    --surface:black;
+
+    --surface-soft:#172424;
+
+    --text:#f1f6f5;
+
+    --text-soft:#aab7b5;
+
+    --border:#2b3d3c;
+
+    --shadow:
+        0 30px 80px rgba(0,0,0,.48),
+        0 8px 28px rgba(0,0,0,.30);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+}
+
+
+body{
+
+    font-family:"Inter",sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    -webkit-font-smoothing:antialiased;
+
+    text-rendering:optimizeLegibility;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.auth-page{
+
+    position:relative;
+
+    width:100%;
+    height:100svh;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    overflow:hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.auth-background{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+
+.auth-background::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    top:-350px;
+    left:-250px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(71,152,153,.18),
+            transparent 68%
+        );
+}
+
+
+.auth-background::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    right:-320px;
+    bottom:-350px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(232,150,81,.14),
+            transparent 68%
+        );
+}
+
+
+/* =========================================================
+   DECORATIVE ORBS
+========================================================= */
+
+.orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+}
+
+
+.orb-one{
+
+    width:80px;
+    height:80px;
+
+    right:14%;
+    top:14%;
+
+    background:
+        rgba(71,152,153,.08);
+
+    animation:
+        floatOne 7s ease-in-out infinite;
+}
+
+
+.orb-two{
+
+    width:50px;
+    height:50px;
+
+    left:13%;
+    bottom:15%;
+
+    background:
+        rgba(232,150,81,.10);
+
+    animation:
+        floatTwo 8s ease-in-out infinite;
+}
+
+
+@keyframes floatOne{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+}
+
+
+@keyframes floatTwo{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(15px);
+    }
+}
+
+
+/* =========================================================
+   TOP CONTROLS
+========================================================= */
+
+.top-controls{
+
+    position:absolute;
+
+    top:20px;
+    right:24px;
+
+    display:flex;
+
+    gap:8px;
+
+    z-index:20;
+}
+
+
+.control-btn{
+
+    width:40px;
+    height:40px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(14px);
+
+    color:var(--text);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:var(--transition);
+}
+
+
+html.dark .control-btn{
+
+    background:
+        rgba(17,28,28,.90);
+}
+
+
+.control-btn:hover{
+
+    color:var(--primary);
+
+    border-color:var(--primary);
+
+    transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.signup-card{
+
+    position:relative;
+
+    z-index:5;
+
+    width:min(100%,520px);
+
+    min-height:730px;
+
+    padding:34px 44px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.98),
+            rgba(248,252,251,.97)
+        );
+
+    border:1px solid rgba(255,255,255,.85);
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+    backdrop-filter:blur(20px);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+
+html.dark .signup-card{
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(17,28,28,.98),
+            rgba(11,21,21,.98)
+        );
+
+    border-color:rgba(255,255,255,.05);
+}
+
+
+.signup-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    top:-170px;
+    right:-100px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(71,152,153,.13),
+            transparent 70%
+        );
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    margin-bottom:18px;
+}
+
+
+.logo-box{
+
+    width:58px;
+    height:58px;
+
+    flex-shrink:0;
+
+    border-radius:17px;
+
+    overflow:hidden;
+
+    background:var(--surface-soft);
+
+    border:1px solid var(--border);
+
+    box-shadow:
+        0 10px 24px rgba(71,152,153,.14);
+}
+
+
+.logo-box img{
+
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+}
+
+
+.brand-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+}
+
+
+.brand-name{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:26px;
+
+    line-height:1;
+
+    font-weight:600;
+
+    letter-spacing:-.5px;
+}
+
+
+.brand-primary{
+
+    color:var(--primary);
+}
+
+
+.brand-secondary{
+
+    color:var(--secondary);
+}
+
+
+.brand-tag{
+
+    color:var(--secondary);
+
+    font-size:10.5px;
+
+    font-weight:500;
+
+    letter-spacing:1.1px;
+
+    text-transform:uppercase;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.signup-intro{
+
+    text-align:center;
+
+    margin-bottom:18px;
+}
+
+
+.eyebrow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    color:var(--primary);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+    margin-bottom:7px;
+}
+
+
+.eyebrow-line{
+
+    width:22px;
+    height:1px;
+
+    background:var(--secondary);
+}
+
+
+.signup-intro h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:30px;
+
+    line-height:1.12;
+
+    font-weight:600;
+
+    letter-spacing:-.6px;
+
+    margin-bottom:6px;
+}
+
+
+.signup-intro p{
+
+    color:var(--text-soft);
+
+    font-size:13.5px;
+
+    line-height:1.5;
+
+    max-width:350px;
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.signup-form{
+
+    width:100%;
+}
+
+
+/* =========================================================
+   NAME ROW
+========================================================= */
+
+.name-row{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group{
+
+    margin-bottom:10px;
+}
+
+
+.form-label{
+
+    display:block;
+
+    margin-bottom:5px;
+
+    font-size:12.5px;
+
+    line-height:1.2;
+
+    font-weight:600;
+
+    color:var(--text);
+}
+
+
+.input-wrapper{
+
+    position:relative;
+}
+
+
+/* =========================================================
+   INPUT ICON
+========================================================= */
+
+.input-icon{
+
+    position:absolute;
+
+    left:14px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:var(--text-soft);
+
+    font-size:14px;
+
+    pointer-events:none;
+
+    transition:var(--transition);
+}
+
+
+html[dir="rtl"] .input-icon{
+
+    left:auto;
+
+    right:14px;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.form-input{
+
+    width:100%;
+
+    height:45px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:var(--surface-soft);
+
+    color:var(--text);
+
+    outline:none;
+
+    padding:0 41px;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:14px;
+
+    font-weight:400;
+
+    line-height:1;
+
+    transition:var(--transition);
+}
+
+
+.form-input::placeholder{
+
+    color:#929c9a;
+
+    opacity:1;
+}
+
+
+.form-input:focus{
+
+    border-color:var(--primary);
+
+    background:var(--surface);
+
+    box-shadow:
+        0 0 0 4px rgba(71,152,153,.09);
+}
+
+
+.input-wrapper:focus-within .input-icon{
+
+    color:var(--primary);
+}
+
+
+/* =========================================================
+   PASSWORD BUTTON
+========================================================= */
+
+.password-toggle{
+
+    position:absolute;
+
+    right:11px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    border:0;
+
+    background:transparent;
+
+    color:var(--text-soft);
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    padding:4px;
+}
+
+
+html[dir="rtl"] .password-toggle{
+
+    right:auto;
+
+    left:11px;
+}
+
+
+.password-toggle:hover{
+
+    color:var(--primary);
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.terms-row{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:8px;
+
+    margin:1px 0 13px;
+
+    color:var(--text-soft);
+
+    font-size:11.5px;
+
+    line-height:1.5;
+}
+
+
+.terms-row input{
+
+    width:14px;
+    height:14px;
+
+    flex-shrink:0;
+
+    margin-top:1px;
+
+    accent-color:var(--primary);
+
+    cursor:pointer;
+}
+
+
+.terms-row label{
+
+    cursor:pointer;
+}
+
+
+.terms-row a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    font-weight:600;
+}
+
+
+.terms-row a:hover{
+
+    color:var(--secondary);
+}
+
+
+/* =========================================================
+   CREATE ACCOUNT BUTTON
+========================================================= */
+
+.signup-btn{
+
+    width:100%;
+
+    height:47px;
+
+    border:0;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    color:#ffffff;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 11px 25px rgba(71,152,153,.23);
+
+    transition:var(--transition);
+}
+
+
+.signup-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 16px 30px rgba(71,152,153,.30);
+}
+
+
+.signup-btn:active{
+
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:15px 0 11px;
+
+    color:var(--text-soft);
+
+    font-size:12px;
+
+    font-weight:500;
+
+    letter-spacing:.7px;
+
+    text-transform:uppercase;
+}
+
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:var(--border);
+}
+
+
+/* =========================================================
+   SOCIAL BUTTONS
+========================================================= */
+
+.social-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:9px;
+}
+
+
+.social-btn{
+
+    width:100%;
+
+    height:40px;
+
+    border:1px solid var(--border);
+
+    border-radius:11px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    font-family:"Inter",sans-serif;
+
+    font-size:12.5px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+}
+
+
+.social-btn:hover{
+
+    border-color:var(--primary);
+
+    background:rgba(71,152,153,.06);
+
+    transform:translateY(-2px);
+}
+
+
+.social-google i{
+
+    color:#4285F4;
+
+    font-size:16px;
+}
+
+
+.social-apple i{
+
+    color:var(--text);
+
+    font-size:16px;
+}
+
+
+/* =========================================================
+   LOGIN LINK
+========================================================= */
+
+.login-line{
+
+    text-align:center;
+
+    margin-top:13px;
+
+    color:var(--text-soft);
+
+    font-size:12.5px;
+
+    line-height:1.4;
+}
+
+
+.login-line a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    margin-left:4px;
+}
+
+
+.login-line a:hover{
+
+    color:var(--secondary);
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.security-note{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin-top:10px;
+
+    color:var(--text-soft);
+
+    font-size:10.5px;
+}
+
+
+.security-note i{
+
+    color:var(--primary);
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+html[dir="rtl"] .form-label{
+
+    text-align:right;
+}
+
+
+html[dir="rtl"] .terms-row{
+
+    direction:rtl;
+}
+
+
+html[dir="rtl"] .login-line{
+
+    direction:rtl;
+}
+
+
+html[dir="rtl"] .login-line a{
+
+    margin-left:0;
+
+    margin-right:4px;
+}
+
+
+/* =========================================================
+   IPAD MINI
+   768 × 1024
+========================================================= */
+
+@media (min-width:600px) and (max-width:850px){
+
+    .auth-page{
+
+        padding:24px;
+    }
+
+
+    .signup-card{
+
+        width:570px;
+
+        min-height:780px;
+
+        padding:40px 52px;
+
+        border-radius:30px;
+    }
+
+
+    .logo-box{
+
+        width:66px;
+        height:66px;
+    }
+
+
+    .brand-name{
+
+        font-size:29px;
+    }
+
+
+    .brand-tag{
+
+        font-size:9px;
+    }
+
+
+    .signup-intro h1{
+
+        font-size:35px;
+    }
+
+
+    .signup-intro p{
+
+        font-size:12px;
+    }
+
+
+    .form-label{
+
+        font-size:11px;
+    }
+
+
+    .form-input{
+
+        height:49px;
+
+        font-size:13px;
+    }
+
+
+    .signup-btn{
+
+        height:51px;
+
+        font-size:13px;
+    }
+
+
+    .social-btn{
+
+        height:44px;
+
+        font-size:11px;
+    }
+
+
+    .login-line{
+
+        font-size:11px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:480px){
+
+    .auth-page{
+
+        padding:12px;
+    }
+
+
+    .top-controls{
+
+        top:10px;
+
+        right:11px;
+
+        gap:6px;
+    }
+
+
+    .control-btn{
+
+        width:35px;
+        height:35px;
+
+        border-radius:10px;
+
+        font-size:14px;
+    }
+
+
+    .signup-card{
+
+        width:100%;
+
+        min-height:0;
+
+        height:calc(100svh - 24px);
+
+        max-height:calc(100svh - 24px);
+
+        padding:20px 21px;
+
+        border-radius:23px;
+
+        justify-content:center;
+    }
+
+
+    /* BRAND */
+
+    .brand{
+
+        gap:9px;
+
+        margin-bottom:11px;
+    }
+
+
+    .logo-box{
+
+        width:47px;
+        height:47px;
+
+        border-radius:14px;
+    }
+
+
+    .brand-name{
+
+        font-size:20px;
+    }
+
+
+    .brand-tag{
+
+        font-size:7px;
+
+        letter-spacing:.8px;
+    }
+
+
+    /* INTRO */
+
+    .signup-intro{
+
+        margin-bottom:12px;
+    }
+
+
+    .eyebrow{
+
+        font-size:8px;
+
+        margin-bottom:5px;
+    }
+
+
+    .eyebrow-line{
+
+        width:18px;
+    }
+
+
+    .signup-intro h1{
+
+        font-size:25px;
+
+        margin-bottom:5px;
+    }
+
+
+    .signup-intro p{
+
+        font-size:10px;
+
+        line-height:1.4;
+    }
+
+
+    /* FORM */
+
+    .form-group{
+
+        margin-bottom:7px;
+    }
+
+
+    .name-row{
+
+        gap:8px;
+    }
+
+
+    .form-label{
+
+        font-size:9.5px;
+
+        margin-bottom:4px;
+    }
+
+
+    .form-input{
+
+        height:38px;
+
+        border-radius:10px;
+
+        font-size:10.5px;
+
+        padding-left:37px;
+
+        padding-right:37px;
+    }
+
+
+    .input-icon{
+
+        left:11px;
+
+        font-size:12.5px;
+    }
+
+
+    html[dir="rtl"] .input-icon{
+
+        left:auto;
+
+        right:11px;
+    }
+
+
+    .password-toggle{
+
+        right:8px;
+
+        font-size:13px;
+    }
+
+
+    html[dir="rtl"] .password-toggle{
+
+        right:auto;
+
+        left:8px;
+    }
+
+
+    /* TERMS */
+
+    .terms-row{
+
+        margin:1px 0 9px;
+
+        font-size:8.5px;
+
+        line-height:1.4;
+
+        gap:6px;
+    }
+
+
+    .terms-row input{
+
+        width:12px;
+        height:12px;
+    }
+
+
+    /* BUTTON */
+
+    .signup-btn{
+
+        height:40px;
+
+        border-radius:10px;
+
+        font-size:10.5px;
+    }
+
+
+    /* DIVIDER */
+
+    .divider{
+
+        margin:10px 0 7px;
+
+        font-size:7.5px;
+    }
+
+
+    /* SOCIAL */
+
+    .social-grid{
+
+        gap:7px;
+    }
+
+
+    .social-btn{
+
+        height:34px;
+
+        border-radius:9px;
+
+        font-size:9px;
+    }
+
+
+    .social-google i,
+    .social-apple i{
+
+        font-size:12px;
+    }
+
+
+    /* LOGIN */
+
+    .login-line{
+
+        margin-top:8px;
+
+        font-size:9px;
+    }
+
+
+    /* SECURITY */
+
+    .security-note{
+
+        margin-top:6px;
+
+        font-size:7.5px;
+    }
+}
+
+
+/* =========================================================
+   GALAXY S8
+   360 × 740
+========================================================= */
+
+@media (max-width:480px) and (max-height:760px){
+
+    .signup-card{
+height: 600px;
+        padding:15px 18px;
+
+        border-radius:21px;
+    }
+
+
+    /* BRAND */
+
+    .brand{
+
+        margin-bottom:8px;
+    }
+
+
+    .logo-box{
+
+        width:42px;
+        height:42px;
+
+        border-radius:12px;
+    }
+
+
+    .brand-name{
+
+        font-size:18px;
+    }
+
+
+    .brand-tag{
+
+        font-size:7.5px;
+    }
+
+
+    /* INTRO */
+
+    .signup-intro{
+
+        margin-bottom:8px;
+    }
+
+
+    .eyebrow{
+
+        font-size:8.5px;
+
+        margin-bottom:3px;
+    }
+
+
+    .signup-intro h1{
+
+        font-size:24px;
+
+        margin-bottom:3px;
+    }
+
+
+    .signup-intro p{
+
+        font-size:11px;
+    }
+
+
+    /* FORM */
+
+    .form-group{
+
+        margin-bottom:5px;
+    }
+
+
+    .form-label{
+
+        font-size:12px;
+
+        margin-bottom:3px;
+    }
+
+
+    .form-input{
+
+        height:34px;
+
+        font-size:11.5px;
+    }
+
+
+    .input-icon{
+
+        font-size:14px;
+    }
+
+
+    /* TERMS */
+
+    .terms-row{
+
+        margin:0 0 7px;
+
+        font-size:10px;
+
+        line-height:1.3;
+    }
+
+
+    /* BUTTON */
+
+    .signup-btn{
+
+        height:36px;
+
+        font-size:12px;
+    }
+
+
+    /* DIVIDER */
+
+    .divider{
+
+        margin:7px 0 5px;
+
+        font-size:9.5px;
+    }
+
+
+    /* SOCIAL */
+
+    .social-btn{
+
+        height:31px;
+
+        font-size:9.5px;
+    }
+
+
+    /* LOGIN */
+
+    .login-line{
+
+        margin-top:6px;
+
+        font-size:9.5px;
+    }
+
+
+    /* SECURITY */
+
+    .security-note{
+
+        margin-top:4px;
+
+        font-size:9px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL
+========================================================= */
+
+@media (max-width:360px){
+
+    .auth-page{
+
+        padding:8px;
+    }
+
+
+    .signup-card{
+
+        padding:13px 16px;
+
+        border-radius:19px;
+    }
+
+
+    .brand-name{
+
+        font-size:17px;
+    }
+
+
+    .brand-tag{
+
+        font-size:6px;
+    }
+
+
+    .signup-intro h1{
+
+        font-size:21px;
+    }
+
+
+    .signup-intro p{
+
+        font-size:8.5px;
+    }
+
+
+    .form-label{
+
+        font-size:8.5px;
+    }
+
+
+    .form-input{
+
+        height:33px;
+
+        font-size:9px;
+    }
+
+
+    .terms-row{
+
+        font-size:7.5px;
+    }
+
+
+    .signup-btn{
+
+        height:35px;
+    }
+
+
+    .social-btn{
+
+        height:30px;
+    }
+}
+
+
+/* =========================================================
+   NEST HUB
+   1024 × 600
+========================================================= */
+
+@media (min-width:850px) and (max-height:700px){
+
+    .auth-page{
+
+        padding:12px;
+    }
+
+
+    .top-controls{
+
+        top:12px;
+
+        right:15px;
+    }
+
+
+    .signup-card{
+
+        width:500px;
+
+        min-height:0;
+
+        height:calc(100svh - 24px);
+
+        max-height:576px;
+
+        padding:20px 38px;
+
+        border-radius:25px;
+
+        justify-content:center;
+    }
+
+
+    /* BRAND */
+
+    .brand{
+
+        margin-bottom:8px;
+    }
+
+
+    .logo-box{
+
+        width:45px;
+        height:45px;
+    }
+
+
+    .brand-name{
+
+        font-size:20px;
+    }
+
+
+    .brand-tag{
+
+        font-size:7px;
+    }
+
+
+    /* INTRO */
+
+    .signup-intro{
+
+        margin-bottom:8px;
+    }
+
+
+    .eyebrow{
+
+        font-size:7.5px;
+
+        margin-bottom:3px;
+    }
+
+
+    .signup-intro h1{
+
+        font-size:25px;
+
+        margin-bottom:3px;
+    }
+
+
+    .signup-intro p{
+
+        font-size:9.5px;
+    }
+
+
+    /* FORM */
+
+    .form-group{
+
+        margin-bottom:5px;
+    }
+
+
+    .form-label{
+
+        font-size:9px;
+
+        margin-bottom:3px;
+    }
+
+
+    .form-input{
+
+        height:34px;
+
+        font-size:10px;
+    }
+
+
+    /* TERMS */
+
+    .terms-row{
+
+        margin:0 0 7px;
+
+        font-size:8px;
+    }
+
+
+    /* BUTTON */
+
+    .signup-btn{
+
+        height:36px;
+
+        font-size:10px;
+    }
+
+
+    /* DIVIDER */
+
+    .divider{
+
+        margin:7px 0 5px;
+
+        font-size:7.5px;
+    }
+
+
+    /* SOCIAL */
+
+    .social-btn{
+
+        height:31px;
+
+        font-size:9px;
+    }
+
+
+    /* LOGIN */
+
+    .login-line{
+
+        margin-top:6px;
+
+        font-size:9px;
+    }
+
+
+    .security-note{
+
+        margin-top:4px;
+
+        font-size:7px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONE
+========================================================= */
+
+@media (max-height:500px) and (orientation:landscape){
+
+    .auth-page{
+
+        padding:8px;
+    }
+
+
+    .signup-card{
+
+        height:calc(100svh - 16px);
+
+        max-height:none;
+
+        padding:9px 28px;
+
+        border-radius:18px;
+    }
+
+
+    .brand{
+
+        margin-bottom:4px;
+    }
+
+
+    .logo-box{
+
+        width:32px;
+        height:32px;
+    }
+
+
+    .brand-name{
+
+        font-size:15px;
+    }
+
+
+    .brand-tag{
+
+        font-size:5px;
+    }
+
+
+    .eyebrow{
+
+        display:none;
+    }
+
+
+    .signup-intro{
+
+        margin-bottom:4px;
+    }
+
+
+    .signup-intro h1{
+
+        font-size:18px;
+
+        margin-bottom:2px;
+    }
+
+
+    .signup-intro p{
+
+        display:none;
+    }
+
+
+    .form-group{
+
+        margin-bottom:3px;
+    }
+
+
+    .form-label{
+
+        display:none;
+    }
+
+
+    .form-input{
+
+        height:27px;
+
+        font-size:9px;
+    }
+
+
+    .terms-row{
+
+        margin:1px 0 4px;
+
+        font-size:7px;
+    }
+
+
+    .signup-btn{
+
+        height:29px;
+
+        font-size:9px;
+    }
+
+
+    .divider{
+
+        margin:4px 0 3px;
+    }
+
+
+    .social-btn{
+
+        height:25px;
+
+        font-size:7.5px;
+    }
+
+
+    .login-line{
+
+        margin-top:3px;
+
+        font-size:7.5px;
+    }
+
+
+    .security-note{
+
+        display:none;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     PAGE
+========================================================= -->
+
+<main class="auth-page">
+
+
+    <!-- BACKGROUND -->
+
+    <div class="auth-background"></div>
+
+    <div class="orb orb-one"></div>
+
+    <div class="orb orb-two"></div>
+
+
+    <!-- =====================================================
+         TOP CONTROLS
+    ====================================================== -->
+
+    <div class="top-controls">
+
+        <button
+            class="control-btn"
+            id="directionBtn"
+            type="button"
+            aria-label="Change direction">
+
+            <i class="bi bi-arrow-left-right"></i>
+
+        </button>
+
+
+        <button
+            class="control-btn"
+            id="themeBtn"
+            type="button"
+            aria-label="Toggle dark mode">
+
+              <i data-lucide="moon"></i>
+
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         SIGN UP CARD
+    ====================================================== -->
+
+    <section class="signup-card">
+
+
+        <!-- =================================================
+             BRAND
+        ================================================== -->
+
+        <a href="index.html"
+           class="brand">
+
+            <div class="logo-box image-logo">
+
+                <img
+                    src="images/v1.png"
+                    alt="Care Companion">
+
+            </div>
+
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+
+                    <span class="brand-primary">
+                        Care
+                    </span>
+
+                    <span class="brand-secondary">
+                        Companion
+                    </span>
+
+                </span>
+
+
+                <span class="brand-tag">
+                    Compassion • Trust • Care
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- =================================================
+             INTRO
+        ================================================== -->
+
+        <div class="signup-intro">
+
+            <div class="eyebrow">
+
+                <span class="eyebrow-line"></span>
+
+                CREATE YOUR ACCOUNT
+
+                <span class="eyebrow-line"></span>
+
+            </div>
+
+
+            <h1>
+                Welcome to Care Companion
+            </h1>
+
+
+            <p>
+                Create your account and begin a
+                more personal care experience.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             FORM
+        ================================================== -->
+
+        <form
+            class="signup-form"
+            id="signupForm"
+            novalidate>
+
+
+            <!-- FIRST / LAST NAME -->
+
+            <div class="name-row">
+
+
+                <div class="form-group">
+
+                    <label
+                        class="form-label"
+                        for="firstName">
+
+                        First Name
+
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <input
+                            class="form-input"
+                            type="text"
+                            id="firstName"
+                            placeholder="First name"
+                            autocomplete="given-name"
+                            required>
+
+                        <i class="bi bi-person input-icon"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label
+                        class="form-label"
+                        for="lastName">
+
+                        Last Name
+
+                    </label>
+
+
+                    <div class="input-wrapper">
+
+                        <input
+                            class="form-input"
+                            type="text"
+                            id="lastName"
+                            placeholder="Last name"
+                            autocomplete="family-name"
+                            required>
+
+                        <i class="bi bi-person input-icon"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label
+                    class="form-label"
+                    for="email">
+
+                    Email Address
+
+                </label>
+
+
+                <div class="input-wrapper">
+
+                    <input
+                        class="form-input"
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required>
+
+                    <i class="bi bi-envelope input-icon"></i>
+
+                </div>
+
+            </div>
+
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+
+                <label
+                    class="form-label"
+                    for="phone">
+
+                    Phone Number
+
+                </label>
+
+
+                <div class="input-wrapper">
+
+                    <input
+                        class="form-input"
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        autocomplete="tel"
+                        required>
+
+                    <i class="bi bi-telephone input-icon"></i>
+
+                </div>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label
+                    class="form-label"
+                    for="password">
+
+                    Password
+
+                </label>
+
+
+                <div class="input-wrapper">
+
+                    <input
+                        class="form-input"
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        required>
+
+                    <i class="bi bi-lock input-icon"></i>
+
+
+                    <button
+                        class="password-toggle"
+                        id="passwordToggle"
+                        type="button"
+                        aria-label="Show password">
+
+                        <i class="bi bi-eye"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="form-group">
+
+                <label
+                    class="form-label"
+                    for="confirmPassword">
+
+                    Confirm Password
+
+                </label>
+
+
+                <div class="input-wrapper">
+
+                    <input
+                        class="form-input"
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        autocomplete="new-password"
+                        required>
+
+                    <i class="bi bi-shield-lock input-icon"></i>
+
+
+                    <button
+                        class="password-toggle"
+                        id="confirmPasswordToggle"
+                        type="button"
+                        aria-label="Show password">
+
+                        <i class="bi bi-eye"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TERMS -->
+
+            <div class="terms-row">
+
+                <input
+                    type="checkbox"
+                    id="terms"
+                    required>
+
+
+                <label for="terms">
+
+                    I agree to the
+
+                    <a href="terms.html">
+                        Terms & Conditions
+                    </a>
+
+                    and
+
+                    <a href="privacy.html">
+                        Privacy Policy
+                    </a>.
+
+                </label>
+
+            </div>
+
+
+            <!-- CREATE ACCOUNT -->
+
+            <button
+                class="signup-btn"
+                type="submit">
+
+                Create Account
+
+            </button>
+
+
+            <!-- DIVIDER -->
+
+            <div class="divider">
+
+                <span>
+                    Or continue with
+                </span>
+
+            </div>
+
+
+            <!-- SOCIAL -->
+
+            <div class="social-grid">
+
+
+                <button
+                    class="social-btn social-google"
+                    id="googleBtn"
+                    type="button">
+
+                    <i class="bi bi-google"></i>
+
+                    <span>
+                        Continue with Google
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="social-btn social-apple"
+                    id="appleBtn"
+                    type="button">
+
+                    <i class="bi bi-apple"></i>
+
+                    <span>
+                        Continue with Apple
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <div class="login-line">
+
+                <span>
+                    Already have an account?
+                </span>
+
+                <a href="login.html">
+                    Login 
+                </a>
+
+            </div>
+
+
+            <!-- SECURITY -->
+
+           
+
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<script>
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+const themeBtn =
+    document.getElementById("themeBtn");
+
+const themeIcon =
+    themeBtn.querySelector("i");
+
+
+function updateThemeIcon(){
+
+    const isDark =
+        document.documentElement
+        .classList
+        .contains("dark");
+
+
+    themeIcon.className =
+        isDark
+        ? "bi bi-sun"
+        : "bi bi-moon";
+}
+
+
+if(
+    localStorage.getItem("care-theme")
+    === "dark"
+){
+
+    document.documentElement
+        .classList
+        .add("dark");
+}
+
+
+updateThemeIcon();
+
+
+themeBtn.addEventListener(
+    "click",
+    function(){
+
+        document.documentElement
+            .classList
+            .toggle("dark");
+
+
+        const isDark =
+            document.documentElement
+            .classList
+            .contains("dark");
+
+
+        localStorage.setItem(
+            "care-theme",
+            isDark
+            ? "dark"
+            : "light"
+        );
+
+
+        updateThemeIcon();
+
+    }
+);
+
+
+/* =========================================================
+   RTL / LTR
+========================================================= */
+
+const directionBtn =
+    document.getElementById(
+        "directionBtn"
+    );
+
+
+const savedDirection =
+    localStorage.getItem(
+        "care-direction"
+    );
+
+
+if(savedDirection){
+
+    document.documentElement.dir =
+        savedDirection;
+
+}else{
+
+    document.documentElement.dir =
+        "ltr";
+}
+
+
+directionBtn.addEventListener(
+    "click",
+    function(){
+
+        const current =
+            document.documentElement.dir;
+
+
+        const next =
+            current === "ltr"
+            ? "rtl"
+            : "ltr";
+
+
+        document.documentElement.dir =
+            next;
+
+
+        localStorage.setItem(
+            "care-direction",
+            next
+        );
+
+    }
+);
+
+
+/* =========================================================
+   PASSWORD VISIBILITY
+========================================================= */
+
+function setupPasswordToggle(
+    inputId,
+    buttonId
+){
+
+    const input =
+        document.getElementById(
+            inputId
+        );
+
+
+    const button =
+        document.getElementById(
+            buttonId
+        );
+
+
+    const icon =
+        button.querySelector("i");
+
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            const showing =
+                input.type === "text";
+
+
+            input.type =
+                showing
+                ? "password"
+                : "text";
+
+
+            icon.className =
+                showing
+                ? "bi bi-eye"
+                : "bi bi-eye-slash";
+
+
+            button.setAttribute(
+                "aria-label",
+                showing
+                ? "Show password"
+                : "Hide password"
+            );
+
+        }
+    );
+}
+
+
+setupPasswordToggle(
+    "password",
+    "passwordToggle"
+);
+
+
+setupPasswordToggle(
+    "confirmPassword",
+    "confirmPasswordToggle"
+);
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+const signupForm =
+    document.getElementById(
+        "signupForm"
+    );
+
+
+signupForm.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        const password =
+            document.getElementById(
+                "password"
+            ).value;
+
+
+        const confirmPassword =
+            document.getElementById(
+                "confirmPassword"
+            ).value;
+
+
+        if(password !== confirmPassword){
+
+            alert(
+                "Passwords do not match."
+            );
+
+            return;
+        }
+
+
+        if(!signupForm.checkValidity()){
+
+            signupForm.reportValidity();
+
+            return;
+        }
+
+
+        /*
+            Connect your backend,
+            Firebase Authentication,
+            Supabase,
+            or API here.
+        */
+
+        console.log(
+            "Signup submitted successfully"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   GOOGLE
+========================================================= */
+
+document
+.getElementById("googleBtn")
+.addEventListener(
+    "click",
+    function(){
+
+        /*
+           Add Google OAuth here.
+        */
+
+        console.log(
+            "Google signup selected"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   APPLE
+========================================================= */
+
+document
+.getElementById("appleBtn")
+.addEventListener(
+    "click",
+    function(){
+
+        /*
+           Add Apple OAuth here.
+        */
+
+        console.log(
+            "Apple signup selected"
+        );
+
+    }
+);
+
+</script>
+<script>
+
+/* =========================================================
+   INITIALIZE LUCIDE
+========================================================= */
+
+if (typeof lucide !== "undefined") {
+    lucide.createIcons();
+}
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const header =
+    document.getElementById("header");
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const mobilePanel =
+    document.getElementById("mobilePanel");
+
+const themeBtn =
+    document.getElementById("themeBtn");
+
+const rtlBtn =
+    document.getElementById("rtlBtn");
+
+const homeDropdown =
+    document.getElementById("homeDropdown");
+
+const homeToggle =
+    document.getElementById("homeToggle");
+
+const mobileHomeBtn =
+    document.getElementById("mobileHomeBtn");
+
+const mobileHomeDropdown =
+    document.getElementById("mobileHomeDropdown");
+
+const newsletterInput =
+    document.getElementById("newsletterInput");
+
+const newsletterButton =
+    document.getElementById("newsletterButton");
+
+
+/* =========================================================
+   HEADER SCROLL
+========================================================= */
+
+if (header) {
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            if (window.scrollY > 25) {
+
+                header.classList.add("scrolled");
+
+            } else {
+
+                header.classList.remove("scrolled");
+
+            }
+
+        },
+        {
+            passive: true
+        }
+    );
+
+}
+
+
+/* =========================================================
+   MOBILE MENU ICON
+========================================================= */
+
+function setMenuIcon(open) {
+
+    if (!menuBtn) return;
+
+    menuBtn.innerHTML = open
+
+        ? '<i data-lucide="x"></i>'
+
+        : '<i data-lucide="menu"></i>';
+
+    if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+    }
+
+    menuBtn.setAttribute(
+        "aria-expanded",
+        open ? "true" : "false"
+    );
+
+}
+
+
+/* =========================================================
+   OPEN MOBILE MENU
+========================================================= */
+
+function openMenu() {
+
+    if (!mobilePanel) return;
+
+    mobilePanel.classList.add("active");
+
+    setMenuIcon(true);
+
+}
+
+
+/* =========================================================
+   CLOSE MOBILE MENU
+========================================================= */
+
+function closeMenu() {
+
+    if (!mobilePanel) return;
+
+    mobilePanel.classList.remove("active");
+
+    setMenuIcon(false);
+
+
+    /* Close mobile Home dropdown */
+
+    if (mobileHomeDropdown) {
+
+        mobileHomeDropdown.classList.remove(
+            "active"
+        );
+
+    }
+
+
+    if (mobileHomeBtn) {
+
+        mobileHomeBtn.classList.remove(
+            "open"
+        );
+
+        mobileHomeBtn.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   TOGGLE MOBILE MENU
+========================================================= */
+
+function toggleMenu() {
+
+    if (!mobilePanel) return;
+
+    if (
+        mobilePanel.classList.contains(
+            "active"
+        )
+    ) {
+
+        closeMenu();
+
+    } else {
+
+        openMenu();
+
+    }
+
+}
+
+
+/* =========================================================
+   MENU BUTTON
+========================================================= */
+
+if (menuBtn) {
+
+    menuBtn.addEventListener(
+        "click",
+        function (event) {
+
+            event.stopPropagation();
+
+            toggleMenu();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   DESKTOP HOME DROPDOWN
+========================================================= */
+
+if (
+    homeToggle &&
+    homeDropdown
+) {
+
+    homeToggle.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            homeDropdown.classList.toggle(
+                "open"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   MOBILE HOME DROPDOWN
+========================================================= */
+
+if (
+    mobileHomeBtn &&
+    mobileHomeDropdown
+) {
+
+    mobileHomeBtn.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+
+            const isOpen =
+                mobileHomeDropdown.classList.toggle(
+                    "active"
+                );
+
+
+            mobileHomeBtn.classList.toggle(
+                "open",
+                isOpen
+            );
+
+
+            mobileHomeBtn.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE DESKTOP DROPDOWN OUTSIDE
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+        if (
+            homeDropdown &&
+            !homeDropdown.contains(
+                event.target
+            )
+        ) {
+
+            homeDropdown.classList.remove(
+                "open"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   MOBILE LINKS
+========================================================= */
+
+document
+    .querySelectorAll(
+        ".mobile-panel > a"
+    )
+    .forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    closeMenu();
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   MOBILE HOME SUBMENU LINKS
+========================================================= */
+
+document
+    .querySelectorAll(
+        ".mobile-dropdown a"
+    )
+    .forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    closeMenu();
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   CLICK OUTSIDE MOBILE PANEL
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function (event) {
+
+        if (
+            mobilePanel &&
+            mobilePanel.classList.contains(
+                "active"
+            ) &&
+
+            !mobilePanel.contains(
+                event.target
+            ) &&
+
+            menuBtn &&
+            !menuBtn.contains(
+                event.target
+            )
+        ) {
+
+            closeMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeMenu();
+
+            if (homeDropdown) {
+
+                homeDropdown.classList.remove(
+                    "open"
+                );
+
+            }
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   GLOBAL DARK / LIGHT MODE
+=========================================================
+
+   IMPORTANT:
+
+   ALL PAGES USE:
+
+   care-theme
+
+   Do NOT use:
+   careHeavenTheme
+   care-theme-page
+   services-theme
+   pricing-theme
+
+========================================================= */
+
+
+/* Read saved theme */
+
+let darkMode =
+    localStorage.getItem(
+        "care-theme"
+    ) === "dark";
+
+
+/* =========================================================
+   APPLY THEME
+========================================================= */
+
+function applyTheme() {
+
+    const root =
+        document.documentElement;
+
+
+    if (darkMode) {
+
+        /* =====================================
+           DARK
+        ===================================== */
+
+        root.classList.add(
+            "dark"
+        );
+
+        root.setAttribute(
+            "data-theme",
+            "dark"
+        );
+
+
+        /* Global CSS variables */
+
+        root.style.setProperty(
+            "--bg",
+            "#111017"
+        );
+
+        root.style.setProperty(
+            "--surface",
+            "#191720"
+        );
+
+        root.style.setProperty(
+            "--surface-soft",
+            "#211D29"
+        );
+
+        root.style.setProperty(
+            "--text",
+            "#F8F5FA"
+        );
+
+        root.style.setProperty(
+            "--muted",
+            "#B9B2C2"
+        );
+
+        root.style.setProperty(
+            "--border",
+            "rgba(255,255,255,.11)"
+        );
+
+
+        /* Theme icon */
+
+        if (themeBtn) {
+
+            themeBtn.innerHTML =
+                '<i data-lucide="sun"></i>';
+
+        }
+
+
+    } else {
+
+        /* =====================================
+           LIGHT
+        ===================================== */
+
+        root.classList.remove(
+            "dark"
+        );
+
+        root.setAttribute(
+            "data-theme",
+            "light"
+        );
+
+
+        /* Global CSS variables */
+
+        root.style.setProperty(
+            "--bg",
+            "#FBF8F4"
+        );
+
+        root.style.setProperty(
+            "--surface",
+            "#FFFFFF"
+        );
+
+        root.style.setProperty(
+            "--surface-soft",
+            "#F5F0EA"
+        );
+
+        root.style.setProperty(
+            "--text",
+            "#292535"
+        );
+
+        root.style.setProperty(
+            "--muted",
+            "#777180"
+        );
+
+        root.style.setProperty(
+            "--border",
+            "rgba(91,75,138,.14)"
+        );
+
+
+        /* Theme icon */
+
+        if (themeBtn) {
+
+            themeBtn.innerHTML =
+                '<i data-lucide="moon"></i>';
+
+        }
+
+    }
+
+
+    /* Rebuild Lucide icons */
+
+    if (
+        typeof lucide !== "undefined"
+    ) {
+
+        lucide.createIcons();
+
+    }
+
+}
+
+
+/* =========================================================
+   APPLY SAVED THEME ON PAGE LOAD
+========================================================= */
+
+applyTheme();
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+if (themeBtn) {
+
+    themeBtn.addEventListener(
+        "click",
+        function () {
+
+
+            /* Toggle */
+
+            darkMode =
+                !darkMode;
+
+
+            /* Save globally */
+
+            localStorage.setItem(
+                "care-theme",
+                darkMode
+                    ? "dark"
+                    : "light"
+            );
+
+
+            /* Apply */
+
+            applyTheme();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   GLOBAL RTL / LTR
+=========================================================
+
+   IMPORTANT:
+
+   ALL PAGES USE:
+
+   care-direction
+
+========================================================= */
+
+
+/* Read saved direction */
+
+let rtlMode =
+    localStorage.getItem(
+        "care-direction"
+    ) === "rtl";
+
+
+/* =========================================================
+   APPLY DIRECTION
+========================================================= */
+
+function applyDirection() {
+
+    const root =
+        document.documentElement;
+
+
+    if (rtlMode) {
+
+        root.setAttribute(
+            "dir",
+            "rtl"
+        );
+
+    } else {
+
+        root.setAttribute(
+            "dir",
+            "ltr"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   APPLY SAVED DIRECTION ON PAGE LOAD
+========================================================= */
+
+applyDirection();
+
+
+/* =========================================================
+   RTL BUTTON
+========================================================= */
+
+if (rtlBtn) {
+
+    rtlBtn.addEventListener(
+        "click",
+        function () {
+
+
+            /* Toggle RTL */
+
+            rtlMode =
+                !rtlMode;
+
+
+            /* Save globally */
+
+            localStorage.setItem(
+                "care-direction",
+                rtlMode
+                    ? "rtl"
+                    : "ltr"
+            );
+
+
+            /* Apply */
+
+            applyDirection();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+if (
+    newsletterButton &&
+    newsletterInput
+) {
+
+    newsletterButton.addEventListener(
+        "click",
+        function () {
+
+
+            const email =
+                newsletterInput.value.trim();
+
+
+            /* Empty */
+
+            if (!email) {
+
+                newsletterInput.focus();
+
+                newsletterInput.style.outline =
+                    "2px solid rgba(232,150,81,.6)";
+
+
+                setTimeout(
+                    function () {
+
+                        newsletterInput.style.outline =
+                            "none";
+
+                    },
+                    1200
+                );
+
+                return;
+
+            }
+
+
+            /* Basic email validation */
+
+            if (
+                !email.includes("@") ||
+                !email.includes(".")
+            ) {
+
+                newsletterInput.focus();
+
+                return;
+
+            }
+
+
+            /* Success icon */
+
+            newsletterButton.innerHTML =
+                '<i data-lucide="check"></i>';
+
+
+            if (
+                typeof lucide !== "undefined"
+            ) {
+
+                lucide.createIcons();
+
+            }
+
+
+            newsletterInput.value = "";
+
+
+            /* Restore button */
+
+            setTimeout(
+                function () {
+
+                    newsletterButton.innerHTML =
+                        '<i data-lucide="arrow-up-right"></i>';
+
+
+                    if (
+                        typeof lucide !== "undefined"
+                    ) {
+
+                        lucide.createIcons();
+
+                    }
+
+                },
+                2200
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   FOOTER REVEAL
+========================================================= */
+
+const footer =
+    document.querySelector(
+        ".care-footer"
+    );
+
+
+if (
+    footer &&
+    "IntersectionObserver" in window
+) {
+
+    const footerObserver =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(
+                    function (entry) {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            footer.style.animation =
+                                "footerReveal .9s cubic-bezier(.2,.8,.2,1) both";
+
+
+                            footerObserver.unobserve(
+                                footer
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+            {
+                threshold: 0.08
+            }
+        );
+
+
+    footerObserver.observe(
+        footer
+    );
+
+}
+
+
+/* =========================================================
+   DEMO HASH LINKS
+========================================================= */
+
+document
+    .querySelectorAll(
+        'a[href="#"]'
+    )
+    .forEach(
+        function (link) {
+
+            link.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   INITIAL MENU STATE
+========================================================= */
+
+setMenuIcon(false);
+
+
+/* =========================================================
+   FINAL GLOBAL STATE CHECK
+========================================================= */
+
+console.log(
+    "Care Companion Theme:",
+    darkMode
+        ? "Dark"
+        : "Light"
+);
+
+console.log(
+    "Care Companion Direction:",
+    rtlMode
+        ? "RTL"
+        : "LTR"
+);
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,5762 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Care Companion | Family Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="images/v1.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+/* =========================================================
+   CARE COMPANION — DASHBOARD
+========================================================= */
+
+:root{
+    --primary:#479899;
+    --secondary:#E89651;
+
+    --primary-dark:#397D7E;
+    --secondary-dark:#D77F3B;
+
+    --bg:#F6F8F8;
+    --surface:#FFFFFF;
+    --surface-soft:#F0F5F5;
+
+    --text:#202D31;
+    --muted:#718084;
+
+    --border:rgba(32,45,49,.10);
+
+    --sidebar:#FFFFFF;
+
+    --success:#4E9B72;
+    --warning:#D99545;
+    --danger:#D86565;
+
+    --shadow:
+        0 18px 50px rgba(35,55,60,.08);
+
+    --shadow-small:
+        0 8px 25px rgba(35,55,60,.07);
+
+    --radius:20px;
+
+    --transition:.3s cubic-bezier(.2,.8,.2,1);
+}
+
+/* LIGHT MODE */
+.light-theme {
+    --bg: #ffffff;
+    --text: #617071;
+    --dark:#479899 ;
+    --bg-card: #ffffff;
+    --border: rgba(71,152,153,.15);
+}
+
+/* DARK MODE */
+.dark-theme {
+    --bg: #101918;
+    --text: #B8C7C7;
+    --dark: #ffffff;
+    --bg-card: #192827;
+    --border: rgba(255,255,255,.10);
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    font-family:"DM Sans",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    border:0;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.dashboard-app{
+    min-height:100vh;
+    display:flex;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.dashboard-sidebar{
+
+    position:fixed;
+
+    top:0;
+    bottom:0;
+    left:0;
+
+    width:265px;
+
+    display:flex;
+    flex-direction:column;
+
+    background:var(--sidebar);
+
+    border-right:1px solid var(--border);
+
+    z-index:1000;
+
+    transition:
+        transform .35s ease,
+        background .3s ease;
+}
+
+
+/* RTL */
+
+html[dir="rtl"] .dashboard-sidebar{
+    left:auto;
+    right:0;
+
+    border-right:0;
+    border-left:1px solid var(--border);
+}
+
+
+/* =========================================================
+   SIDEBAR BRAND
+========================================================= */
+
+.sidebar-brand{
+
+    height:88px;
+
+    padding:18px 22px;
+
+    display:flex;
+    align-items:center;
+
+    border-bottom:1px solid var(--border);
+}
+
+.sidebar-brand .brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.logo-box{
+
+    width:46px;
+    height:46px;
+
+    flex:0 0 46px;
+
+    display:grid;
+    place-items:center;
+
+    overflow:hidden;
+
+    background:transparent;
+
+    border-radius:13px;
+}
+
+.logo-box img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+.brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.05;
+}
+
+.brand-name{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:21px;
+    font-weight:700;
+
+    white-space:nowrap;
+}
+
+.brand-primary{
+    color:var(--primary);
+}
+
+.brand-secondary{
+    color:var(--secondary);
+}
+
+.brand-tag{
+
+    margin-top:5px;
+
+    color:var(--secondary);
+
+    font-size:7px;
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   SIDEBAR NAV
+========================================================= */
+
+.sidebar-nav{
+
+    flex:1;
+
+    padding:20px 13px;
+
+    overflow-y:auto;
+}
+
+.sidebar-nav::-webkit-scrollbar{
+    width:4px;
+}
+
+.sidebar-nav::-webkit-scrollbar-thumb{
+    background:rgba(71,152,153,.20);
+    border-radius:10px;
+}
+
+
+/* NAV LABEL */
+
+.nav-label{
+
+    padding:0 13px 9px;
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:.13em;
+
+    text-transform:uppercase;
+}
+
+
+/* NAV ITEM */
+
+.dashboard-nav-item{
+
+    width:100%;
+
+    min-height:47px;
+
+    margin-bottom:5px;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:11px 13px;
+
+    border-radius:13px;
+
+    background:transparent;
+
+    color:var(--muted);
+
+    font-size:13px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    text-align:left;
+
+    transition:var(--transition);
+
+    position:relative;
+}
+
+html[dir="rtl"] .dashboard-nav-item{
+    text-align:right;
+}
+
+.dashboard-nav-item i,
+.dashboard-nav-item svg{
+
+    width:18px;
+    height:18px;
+
+    flex:0 0 18px;
+
+    color:var(--primary);
+
+    transition:var(--transition);
+}
+
+
+/* HOVER */
+
+.dashboard-nav-item:hover{
+
+    color:var(--primary);
+
+    background:var(--surface-soft);
+
+    transform:translateX(3px);
+}
+
+html[dir="rtl"] .dashboard-nav-item:hover{
+    transform:translateX(-3px);
+}
+
+
+/* ACTIVE */
+
+.dashboard-nav-item.active{
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    box-shadow:
+        0 9px 22px rgba(71,152,153,.20);
+}
+
+.dashboard-nav-item.active svg{
+    color:#FFFFFF;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom{
+
+    padding:13px;
+
+    border-top:1px solid var(--border);
+}
+
+.logout-btn{
+
+    color:var(--danger);
+
+    margin:0;
+
+}
+
+.logout-btn svg{
+    color:var(--danger);
+}
+
+.logout-btn:hover{
+
+    background:rgba(216,101,101,.08);
+
+    color:var(--danger);
+}
+
+
+/* =========================================================
+   MAIN AREA
+========================================================= */
+
+.dashboard-main{
+
+    width:calc(100% - 265px);
+
+    min-height:100vh;
+
+    margin-left:265px;
+}
+
+html[dir="rtl"] .dashboard-main{
+
+    margin-left:0;
+    margin-right:265px;
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.dashboard-topbar{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:800;
+
+    height:78px;
+
+    padding:0 30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+
+    background:
+        rgba(246,248,248,.90);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+}
+
+html[data-theme="dark"] .dashboard-topbar{
+
+    background:
+        rgba(15,18,23,.92);
+}
+
+
+/* MOBILE MENU */
+
+.mobile-dashboard-menu{
+
+    display:none;
+
+    width:42px;
+    height:42px;
+
+    place-items:center;
+
+    border-radius:12px;
+
+    color:#FFFFFF;
+
+    background:var(--primary);
+
+    cursor:pointer;
+}
+
+
+/* TOP TITLE */
+
+.topbar-title{
+
+    min-width:0;
+}
+
+.topbar-title small{
+
+    display:block;
+
+    margin-bottom:2px;
+
+    color:var(--muted);
+
+    font-size:11px;
+}
+
+.topbar-title strong{
+
+    font-size:16px;
+    font-weight:700;
+}
+
+
+/* TOP ACTIONS */
+
+.topbar-actions{
+
+    display:flex;
+    align-items:center;
+
+    gap:9px;
+}
+
+
+/* ACTION BUTTON */
+
+.top-action{
+
+    position:relative;
+
+    width:42px;
+    height:42px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+}
+
+.top-action:hover{
+
+    color:#FFFFFF;
+
+    background:var(--primary);
+
+    border-color:var(--primary);
+
+    transform:translateY(-2px);
+}
+
+.top-action svg{
+
+    width:18px;
+    height:18px;
+}
+
+
+/* NOTIFICATION DOT */
+
+.notification-dot{
+
+    position:absolute;
+
+    top:8px;
+    right:8px;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    border:2px solid var(--surface);
+}
+
+
+/* PROFILE */
+
+.profile-button{
+
+    display:flex;
+    align-items:center;
+
+    gap:10px;
+
+    padding:5px 10px 5px 5px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:var(--surface);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+}
+
+html[dir="rtl"] .profile-button{
+    padding:5px 5px 5px 10px;
+}
+
+.profile-button:hover{
+    border-color:rgba(71,152,153,.35);
+}
+
+.profile-avatar{
+
+    width:32px;
+    height:32px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+}
+
+.profile-avatar svg{
+
+    width:16px;
+    height:16px;
+}
+
+.profile-info{
+
+    text-align:left;
+}
+
+html[dir="rtl"] .profile-info{
+    text-align:right;
+}
+
+.profile-info strong{
+
+    display:block;
+
+    font-size:11px;
+    font-weight:700;
+}
+
+.profile-info span{
+
+    display:block;
+
+    margin-top:2px;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.dashboard-content{
+
+    width:100%;
+
+    max-width:1500px;
+
+    margin:0 auto;
+
+    padding:32px;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.dashboard-page{
+
+    display:none;
+
+    animation:
+        pageIn .4s ease both;
+}
+
+.dashboard-page.active{
+    display:block;
+}
+
+@keyframes pageIn{
+
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.page-heading{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:25px;
+}
+
+.eyebrow{
+
+    margin-bottom:8px;
+
+    color:var(--secondary);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+}
+
+.page-heading h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:32px;
+
+    line-height:1.15;
+
+    letter-spacing:-.5px;
+}
+
+.page-heading p{
+
+    max-width:650px;
+
+    margin-top:7px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   WELCOME CARD
+========================================================= */
+
+.welcome-card{
+
+    position:relative;
+
+    min-height:210px;
+
+    margin-bottom:25px;
+
+    padding:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:30px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(71,152,153,.15);
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            115deg,
+            rgba(71,152,153,.12),
+            rgba(230,150,81,.07),
+            var(--surface)
+        );
+
+    box-shadow:var(--shadow);
+}
+
+.welcome-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:280px;
+    height:280px;
+
+    right:-100px;
+    top:-130px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(71,152,153,.15);
+}
+
+html[dir="rtl"] .welcome-card::after{
+
+    right:auto;
+    left:-100px;
+}
+
+.welcome-content{
+    position:relative;
+    z-index:2;
+}
+
+.welcome-content .eyebrow{
+    margin-bottom:7px;
+}
+
+.welcome-content h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:29px;
+
+    margin-bottom:8px;
+}
+
+.welcome-content p{
+
+    max-width:590px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.75;
+}
+
+.welcome-badge{
+
+    margin-top:17px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 12px;
+
+    border-radius:30px;
+
+    background:rgba(78,155,114,.09);
+
+    color:var(--success);
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+.welcome-badge span{
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--success);
+}
+
+
+/* =========================================================
+   METRICS
+========================================================= */
+
+.metrics-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:16px;
+
+    margin-bottom:25px;
+}
+
+.metric-card{
+
+    position:relative;
+
+    padding:20px;
+
+    min-height:145px;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    background:var(--surface);
+
+    box-shadow:var(--shadow-small);
+
+    overflow:hidden;
+
+    transition:var(--transition);
+}
+
+.metric-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow);
+}
+
+.metric-top{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+}
+
+.metric-icon{
+
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:12px;
+
+    color:var(--primary);
+
+    background:
+        rgba(71,152,153,.09);
+}
+
+.metric-icon.orange{
+
+    color:var(--secondary);
+
+    background:
+        rgba(232,150,81,.10);
+}
+
+.metric-icon svg{
+
+    width:19px;
+    height:19px;
+}
+
+.metric-label{
+
+    margin-top:16px;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.07em;
+}
+
+.metric-value{
+
+    margin-top:3px;
+
+    font-size:27px;
+
+    font-weight:700;
+
+    letter-spacing:-.5px;
+}
+
+.metric-note{
+
+    margin-top:4px;
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.content-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1.35fr
+        .85fr;
+
+    gap:20px;
+
+    margin-bottom:25px;
+}
+
+.content-card{
+
+    min-width:0;
+
+    padding:23px;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    background:var(--surface);
+
+    box-shadow:var(--shadow-small);
+}
+
+.card-header{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.card-header h3{
+
+    font-size:15px;
+
+    font-weight:700;
+}
+
+.card-header span{
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+.view-link{
+
+    color:var(--primary);
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   NEXT VISIT
+========================================================= */
+
+.next-visit{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:var(--surface-soft);
+
+    border:1px solid var(--border);
+}
+
+.visit-date{
+
+    width:55px;
+    height:58px;
+
+    flex:0 0 55px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+}
+
+.visit-date strong{
+
+    font-size:18px;
+}
+
+.visit-date span{
+
+    font-size:8px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+}
+
+.visit-details{
+    min-width:0;
+    flex:1;
+}
+
+.visit-details h4{
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+.visit-details p{
+
+    margin-top:4px;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.5;
+}
+
+.visit-time{
+
+    padding:7px 9px;
+
+    border-radius:9px;
+
+    color:var(--secondary);
+
+    background:rgba(232,150,81,.10);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   CAREGIVER
+========================================================= */
+
+.caregiver-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+}
+
+.caregiver-avatar{
+
+    width:52px;
+    height:52px;
+
+    display:grid;
+    place-items:center;
+
+    flex:0 0 52px;
+
+    border-radius:15px;
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--secondary),
+            var(--primary)
+        );
+}
+
+.caregiver-avatar svg{
+
+    width:22px;
+    height:22px;
+}
+
+.caregiver-info{
+
+    min-width:0;
+    flex:1;
+}
+
+.caregiver-info h4{
+
+    font-size:13px;
+}
+
+.caregiver-info p{
+
+    margin-top:3px;
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+.status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    margin-top:6px;
+
+    color:var(--success);
+
+    font-size:9px;
+
+    font-weight:700;
+}
+
+.status span{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--success);
+}
+
+
+/* =========================================================
+   WELLNESS
+========================================================= */
+
+.wellness-score{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    padding:17px;
+
+    border-radius:15px;
+
+    background:var(--surface-soft);
+
+    border:1px solid var(--border);
+}
+
+.score-ring{
+
+    width:82px;
+    height:82px;
+
+    flex:0 0 82px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        conic-gradient(
+            var(--primary) 0 84%,
+            rgba(71,152,153,.12) 84% 100%
+        );
+
+    position:relative;
+}
+
+.score-ring::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:8px;
+
+    border-radius:50%;
+
+    background:var(--surface);
+}
+
+.score-ring strong{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:19px;
+}
+
+.score-info h4{
+
+    font-size:13px;
+}
+
+.score-info p{
+
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   ACTIVITY
+========================================================= */
+
+.activity-list{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:3px;
+}
+
+.activity-row{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:11px 7px;
+
+    border-bottom:1px solid var(--border);
+}
+
+.activity-row:last-child{
+    border-bottom:0;
+}
+
+.activity-icon{
+
+    width:35px;
+    height:35px;
+
+    display:grid;
+    place-items:center;
+
+    flex:0 0 35px;
+
+    border-radius:10px;
+
+    color:var(--primary);
+
+    background:rgba(71,152,153,.08);
+}
+
+.activity-icon.orange{
+
+    color:var(--secondary);
+
+    background:rgba(232,150,81,.09);
+}
+
+.activity-icon svg{
+
+    width:16px;
+    height:16px;
+}
+
+.activity-text{
+    flex:1;
+}
+
+.activity-text strong{
+
+    display:block;
+
+    font-size:11px;
+}
+
+.activity-text span{
+
+    display:block;
+
+    margin-top:2px;
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+.activity-time{
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+.data-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:650px;
+}
+
+.data-table th{
+
+    padding:12px;
+
+    color:var(--muted);
+
+    background:var(--surface-soft);
+
+    font-size:9px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.06em;
+
+    text-align:left;
+}
+
+html[dir="rtl"] .data-table th{
+    text-align:right;
+}
+
+.data-table td{
+
+    padding:15px 12px;
+
+    border-bottom:1px solid var(--border);
+
+    font-size:11px;
+}
+
+.data-table tr:last-child td{
+    border-bottom:0;
+}
+
+.table-status{
+
+    display:inline-flex;
+
+    padding:5px 8px;
+
+    border-radius:8px;
+
+    font-size:8px;
+
+    font-weight:700;
+}
+
+.table-status.completed{
+
+    color:var(--success);
+
+    background:rgba(78,155,114,.10);
+}
+
+.table-status.upcoming{
+
+    color:var(--primary);
+
+    background:rgba(71,152,153,.10);
+}
+
+.table-status.pending{
+
+    color:var(--warning);
+
+    background:rgba(217,149,69,.10);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    min-height:40px;
+
+    padding:0 15px;
+
+    border-radius:11px;
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    font-size:10px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    box-shadow:
+        0 8px 20px rgba(71,152,153,.16);
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(71,152,153,.24);
+}
+
+.secondary-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    min-height:40px;
+
+    padding:0 15px;
+
+    border-radius:11px;
+
+    color:var(--primary);
+
+    background:var(--surface-soft);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+}
+
+.secondary-btn:hover{
+    background:rgba(71,152,153,.12);
+}
+
+.primary-btn svg,
+.secondary-btn svg{
+    width:15px;
+    height:15px;
+}
+
+
+/* =========================================================
+   PAGE TOOLBAR
+========================================================= */
+
+.page-toolbar{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:18px;
+}
+
+.toolbar-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+
+/* =========================================================
+   VISIT CARDS
+========================================================= */
+
+.visit-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+}
+
+.visit-card{
+
+    padding:19px;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    background:var(--surface);
+
+    transition:var(--transition);
+}
+
+.visit-card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-small);
+}
+
+.visit-card-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:15px;
+}
+
+.visit-card-date{
+
+    color:var(--primary);
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+.visit-card h4{
+
+    font-size:14px;
+}
+
+.visit-card p{
+
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+.visit-card-footer{
+
+    margin-top:17px;
+
+    padding-top:12px;
+
+    border-top:1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+}
+
+.visit-card-footer span{
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+========================================================= */
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:16px;
+}
+
+.summary-card{
+
+    padding:20px;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    background:var(--surface);
+}
+
+.summary-card-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:14px;
+}
+
+.summary-card-header .mini-icon{
+
+    width:34px;
+    height:34px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:10px;
+
+    color:var(--primary);
+
+    background:rgba(71,152,153,.08);
+}
+
+.mini-icon svg{
+    width:16px;
+    height:16px;
+}
+
+.summary-card-header h3{
+
+    font-size:13px;
+}
+
+.summary-card p{
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.8;
+}
+
+.observation{
+
+    margin-top:13px;
+
+    padding:11px;
+
+    border-left:3px solid var(--secondary);
+
+    background:rgba(232,150,81,.06);
+
+    color:var(--text);
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+html[dir="rtl"] .observation{
+
+    border-left:0;
+    border-right:3px solid var(--secondary);
+}
+
+
+/* =========================================================
+   WELLNESS REPORT
+========================================================= */
+
+.report-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        .9fr 1.1fr;
+
+    gap:18px;
+}
+
+.report-score-card{
+
+    padding:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    background:var(--surface);
+}
+
+.big-score{
+
+    width:145px;
+    height:145px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        conic-gradient(
+            var(--primary) 0 84%,
+            rgba(71,152,153,.10) 84%
+        );
+
+    position:relative;
+}
+
+.big-score::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border-radius:50%;
+
+    background:var(--surface);
+}
+
+.big-score div{
+
+    position:relative;
+
+    z-index:2;
+}
+
+.big-score strong{
+
+    display:block;
+
+    font-size:34px;
+}
+
+.big-score span{
+
+    color:var(--muted);
+
+    font-size:9px;
+}
+
+.report-score-card h3{
+
+    margin-top:18px;
+
+    font-size:15px;
+}
+
+.report-score-card p{
+
+    max-width:300px;
+
+    margin-top:6px;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+
+/* REPORT ITEMS */
+
+.report-items{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.report-item{
+
+    padding:14px;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    background:var(--surface);
+}
+
+.report-item-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:9px;
+}
+
+.report-item-top strong{
+    font-size:11px;
+}
+
+.report-value{
+
+    color:var(--primary);
+
+    font-size:10px;
+
+    font-weight:700;
+}
+
+.progress{
+
+    height:7px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:var(--surface-soft);
+}
+
+.progress span{
+
+    display:block;
+
+    height:100%;
+
+    border-radius:20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+}
+
+
+/* =========================================================
+   CAREGIVER PROFILE
+========================================================= */
+
+.caregiver-profile{
+
+    display:grid;
+
+    grid-template-columns:
+        .8fr 1.2fr;
+
+    gap:20px;
+}
+
+.caregiver-profile-main{
+
+    padding:28px;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    background:var(--surface);
+}
+
+.large-avatar{
+
+    width:85px;
+    height:85px;
+
+    margin:0 auto 15px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:25px;
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            var(--secondary)
+        );
+}
+
+.large-avatar svg{
+
+    width:32px;
+    height:32px;
+}
+
+.caregiver-profile-main h3{
+
+    font-size:17px;
+}
+
+.caregiver-profile-main p{
+
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+.assignment-status{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    margin-top:15px;
+
+    padding:7px 10px;
+
+    border-radius:20px;
+
+    color:var(--success);
+
+    background:rgba(78,155,114,.09);
+
+    font-size:9px;
+
+    font-weight:700;
+}
+
+.assignment-status span{
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--success);
+}
+
+.assignment-details{
+
+    padding:22px;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    background:var(--surface);
+}
+
+.detail-row{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:14px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.detail-row:first-child{
+    padding-top:0;
+}
+
+.detail-row:last-child{
+    padding-bottom:0;
+    border-bottom:0;
+}
+
+.detail-row span{
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+.detail-row strong{
+
+    font-size:11px;
+
+    text-align:right;
+}
+
+html[dir="rtl"] .detail-row strong{
+    text-align:left;
+}
+
+
+/* =========================================================
+   PAYMENTS
+========================================================= */
+
+.payment-summary{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.payment-box{
+
+    padding:20px;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    background:var(--surface);
+}
+
+.payment-box span{
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.07em;
+}
+
+.payment-box strong{
+
+    display:block;
+
+    margin-top:7px;
+
+    font-size:23px;
+}
+
+
+/* =========================================================
+   NOTIFICATIONS
+========================================================= */
+
+.notification-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.notification-card{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:14px;
+
+    padding:17px;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    background:var(--surface);
+
+    transition:var(--transition);
+}
+
+.notification-card:hover{
+
+    transform:translateX(3px);
+
+    box-shadow:var(--shadow-small);
+}
+
+html[dir="rtl"] .notification-card:hover{
+    transform:translateX(-3px);
+}
+
+.notification-icon{
+
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    flex:0 0 40px;
+
+    border-radius:12px;
+
+    color:var(--primary);
+
+    background:rgba(71,152,153,.09);
+}
+
+.notification-icon.orange{
+
+    color:var(--secondary);
+
+    background:rgba(232,150,81,.09);
+}
+
+.notification-card h4{
+    font-size:12px;
+}
+
+.notification-card p{
+
+    margin-top:4px;
+
+    color:var(--muted);
+
+    font-size:10px;
+
+    line-height:1.6;
+}
+
+.notification-card time{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:var(--muted);
+
+    font-size:8px;
+}
+
+
+/* =========================================================
+   PROFILE PAGE
+========================================================= */
+
+.profile-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        .75fr 1.25fr;
+
+    gap:20px;
+}
+
+.profile-card{
+
+    padding:28px;
+
+    text-align:center;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    background:var(--surface);
+}
+
+.profile-big-avatar{
+
+    width:80px;
+    height:80px;
+
+    margin:0 auto 14px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:24px;
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            var(--secondary)
+        );
+}
+
+.profile-big-avatar svg{
+
+    width:30px;
+    height:30px;
+}
+
+.profile-card h3{
+    font-size:17px;
+}
+
+.profile-card p{
+
+    margin-top:5px;
+
+    color:var(--muted);
+
+    font-size:10px;
+}
+
+.profile-form{
+
+    padding:24px;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    background:var(--surface);
+}
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:16px;
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:7px;
+}
+
+.form-group.full{
+    grid-column:1 / -1;
+}
+
+.form-group label{
+
+    color:var(--muted);
+
+    font-size:9px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.06em;
+}
+
+.form-group input{
+
+    width:100%;
+
+    height:43px;
+
+    padding:0 12px;
+
+    outline:0;
+
+    border:1px solid var(--border);
+
+    border-radius:11px;
+
+    background:var(--surface-soft);
+
+    color:var(--text);
+
+    font-size:11px;
+}
+
+.form-group input:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 3px rgba(71,152,153,.08);
+}
+
+.form-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:20px;
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.dashboard-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:900;
+
+    background:rgba(0,0,0,.40);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s ease;
+}
+
+.dashboard-overlay.active{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"]{
+
+    color-scheme:dark;
+
+    --bg:#0F1217;
+
+    --surface:#171B22;
+
+    --surface-soft:#1D232B;
+
+    --text:#F3F6F6;
+
+    --muted:#9AA7AA;
+
+    --border:rgba(255,255,255,.10);
+
+    --sidebar:#13171D;
+
+    --shadow:
+        0 18px 55px rgba(0,0,0,.30);
+
+    --shadow-small:
+        0 8px 28px rgba(0,0,0,.22);
+}
+
+html[data-theme="dark"] .welcome-card{
+
+    background:
+        linear-gradient(
+            115deg,
+            rgba(71,152,153,.13),
+            rgba(232,150,81,.07),
+            var(--surface)
+        );
+}
+
+html[data-theme="dark"] .score-ring::before,
+html[data-theme="dark"] .big-score::before{
+    background:var(--surface);
+}
+
+html[data-theme="dark"] .dashboard-topbar{
+    background:rgba(15,18,23,.93);
+}
+
+html[data-theme="dark"] .profile-button,
+html[data-theme="dark"] .top-action{
+    background:var(--surface);
+}
+
+
+/* =========================================================
+   RESPONSIVE SYSTEM
+   SAMSUNG S8
+   IPAD MINI
+   NEST HUB
+========================================================= */
+
+
+/* =========================================================
+   NEST HUB / SMALL DESKTOP
+   1024 × 600
+========================================================= */
+
+@media (max-width:1100px){
+
+    .dashboard-sidebar{
+        width:220px;
+    }
+
+    .dashboard-main{
+        width:calc(100% - 220px);
+        margin-left:220px;
+    }
+
+    html[dir="rtl"] .dashboard-main{
+        margin-left:0;
+        margin-right:220px;
+    }
+
+    .dashboard-content{
+        padding:26px;
+    }
+
+    .dashboard-topbar{
+        padding:0 24px;
+    }
+
+    .metrics-grid{
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+        gap:14px;
+    }
+
+    .content-grid{
+        grid-template-columns:
+            minmax(0,1.15fr)
+            minmax(280px,.85fr);
+        gap:16px;
+    }
+
+    .metric-card{
+        min-height:135px;
+    }
+
+    .welcome-card{
+        min-height:190px;
+        padding:26px;
+    }
+
+    .welcome-content h2{
+        font-size:27px;
+    }
+}
+
+
+/* =========================================================
+   NEST HUB HEIGHT OPTIMIZATION
+   1024 × 600
+========================================================= */
+
+@media (min-width:901px)
+       and (max-width:1100px)
+       and (max-height:700px){
+
+    .dashboard-topbar{
+        height:68px;
+    }
+
+    .dashboard-content{
+        padding:20px 24px 28px;
+    }
+
+    .page-heading{
+        margin-bottom:18px;
+    }
+
+    .page-heading h1{
+        font-size:28px;
+    }
+
+    .welcome-card{
+        min-height:160px;
+        padding:22px;
+        margin-bottom:18px;
+    }
+
+    .welcome-content h2{
+        font-size:25px;
+        margin-bottom:5px;
+    }
+
+    .welcome-content p{
+        font-size:12px;
+        line-height:1.6;
+    }
+
+    .welcome-badge{
+        margin-top:12px;
+    }
+
+    .metrics-grid{
+        margin-bottom:18px;
+    }
+
+    .metric-card{
+        min-height:120px;
+        padding:17px;
+    }
+
+    .content-grid{
+        margin-bottom:18px;
+    }
+
+    .content-card{
+        padding:19px;
+    }
+}
+
+
+/* =========================================================
+   IPAD MINI
+   768 × 1024
+========================================================= */
+
+@media (max-width:900px){
+
+    .dashboard-sidebar{
+        width:285px;
+        transform:translateX(-105%);
+        box-shadow:
+            0 20px 60px rgba(0,0,0,.15);
+    }
+
+    html[dir="rtl"] .dashboard-sidebar{
+        transform:translateX(105%);
+    }
+
+    .dashboard-sidebar.open{
+        transform:translateX(0);
+    }
+
+    html[dir="rtl"] .dashboard-sidebar.open{
+        transform:translateX(0);
+    }
+
+    .dashboard-main{
+        width:100%;
+        margin-left:0;
+        margin-right:0;
+    }
+
+    html[dir="rtl"] .dashboard-main{
+        margin-left:0;
+        margin-right:0;
+    }
+
+    .mobile-dashboard-menu{
+        display:grid;
+    }
+
+    .dashboard-topbar{
+        height:72px;
+        padding:0 22px;
+    }
+
+    .dashboard-content{
+        padding:28px 24px 35px;
+    }
+
+    .page-heading{
+        margin-bottom:22px;
+    }
+
+    .page-heading h1{
+        font-size:30px;
+    }
+
+    .welcome-card{
+        min-height:190px;
+        padding:26px;
+        margin-bottom:22px;
+    }
+
+    .metrics-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+        gap:14px;
+        margin-bottom:22px;
+    }
+
+    .metric-card{
+        min-height:135px;
+        padding:18px;
+    }
+
+    .content-grid{
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .caregiver-profile,
+    .profile-layout,
+    .report-grid{
+        grid-template-columns:1fr;
+    }
+
+    .visit-grid,
+    .summary-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .payment-summary{
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+    }
+
+    .form-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+
+
+/* =========================================================
+   IPAD MINI PORTRAIT
+   768 × 1024
+========================================================= */
+
+@media (min-width:700px)
+       and (max-width:900px){
+
+    .dashboard-content{
+        max-width:100%;
+        padding-left:28px;
+        padding-right:28px;
+    }
+
+    .page-heading{
+        align-items:flex-end;
+        flex-direction:row;
+    }
+
+    .page-heading h1{
+        font-size:31px;
+    }
+
+    .welcome-card{
+        flex-direction:row;
+        align-items:center;
+    }
+
+    .welcome-content{
+        max-width:72%;
+    }
+
+    .visit-grid,
+    .summary-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .payment-summary{
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   SAMSUNG S8 / 360 × 740
+========================================================= */
+
+@media (max-width:650px){
+
+    .dashboard-topbar{
+        height:64px;
+        padding:0 11px;
+        gap:7px;
+    }
+
+    .topbar-title{
+        display:none;
+    }
+
+    .topbar-actions{
+        margin-left:auto;
+        gap:6px;
+    }
+
+    html[dir="rtl"] .topbar-actions{
+        margin-left:0;
+        margin-right:auto;
+    }
+
+    .top-action{
+        width:36px;
+        height:36px;
+        border-radius:10px;
+    }
+
+    .profile-button{
+        width:36px;
+        height:36px;
+        padding:3px;
+        justify-content:center;
+        border-radius:10px;
+    }
+
+    .profile-info{
+        display:none;
+    }
+
+    .profile-avatar{
+        width:28px;
+        height:28px;
+        border-radius:8px;
+    }
+
+    .mobile-dashboard-menu{
+        width:36px;
+        height:36px;
+        border-radius:10px;
+    }
+
+    .dashboard-content{
+        width:100%;
+        padding:18px 11px 28px;
+    }
+
+    .page-heading{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:8px;
+        margin-bottom:17px;
+    }
+
+    .eyebrow{
+        font-size:9px;
+        margin-bottom:5px;
+    }
+
+    .page-heading h1{
+        font-size:25px;
+        line-height:1.15;
+    }
+
+    .page-heading p{
+        max-width:100%;
+        font-size:10px;
+        line-height:1.6;
+    }
+
+    .welcome-card{
+        min-height:auto;
+        padding:19px;
+        margin-bottom:17px;
+        border-radius:19px;
+        gap:18px;
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .welcome-content{
+        width:100%;
+    }
+
+    .welcome-content h2{
+        font-size:23px;
+        line-height:1.2;
+    }
+
+    .welcome-content p{
+        font-size:10px;
+        line-height:1.65;
+    }
+
+    .welcome-badge{
+        margin-top:12px;
+        padding:7px 10px;
+        font-size:9px;
+    }
+
+    .metrics-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+        gap:9px;
+        margin-bottom:17px;
+    }
+
+    .metric-card{
+        min-height:112px;
+        padding:13px;
+        border-radius:15px;
+    }
+
+    .metric-icon{
+        width:33px;
+        height:33px;
+        border-radius:10px;
+    }
+
+    .metric-label{
+        margin-top:12px;
+        font-size:8px;
+    }
+
+    .metric-value{
+        font-size:21px;
+    }
+
+    .metric-note{
+        font-size:8px;
+    }
+
+    .content-grid{
+        grid-template-columns:1fr;
+        gap:13px;
+        margin-bottom:17px;
+    }
+
+    .content-card{
+        padding:15px;
+        border-radius:16px;
+    }
+
+    .card-header{
+        margin-bottom:15px;
+    }
+
+    .card-header h3{
+        font-size:14px;
+    }
+
+    .visit-grid,
+    .summary-grid{
+        grid-template-columns:1fr;
+        gap:11px;
+    }
+
+    .payment-summary{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+        gap:13px;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .page-toolbar{
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+    }
+
+    .toolbar-actions{
+        width:100%;
+    }
+}
+
+
+/* =========================================================
+   SAMSUNG S8 — 360px
+========================================================= */
+
+@media (max-width:390px){
+
+    .dashboard-topbar{
+        padding:0 9px;
+    }
+
+    .dashboard-content{
+        padding-left:9px;
+        padding-right:9px;
+    }
+
+    .metrics-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+        gap:8px;
+    }
+
+    .metric-card{
+        min-height:106px;
+        padding:12px;
+    }
+
+    .metric-icon{
+        width:31px;
+        height:31px;
+    }
+
+    .metric-value{
+        font-size:20px;
+    }
+
+    .metric-label{
+        font-size:7.5px;
+    }
+
+    .metric-note{
+        font-size:7.5px;
+    }
+
+    .welcome-card{
+        padding:17px;
+    }
+
+    .welcome-content h2{
+        font-size:21px;
+    }
+
+    .content-card{
+        padding:14px;
+    }
+
+    .visit-time{
+        display:none;
+    }
+
+    .next-visit{
+        gap:10px;
+        padding:12px;
+    }
+
+    .visit-date{
+        width:48px;
+        height:52px;
+        flex-basis:48px;
+    }
+
+    .visit-date strong{
+        font-size:16px;
+    }
+
+    .visit-details h4{
+        font-size:12px;
+    }
+
+    .sidebar-brand{
+        padding-left:17px;
+        padding-right:17px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   320px AND BELOW
+========================================================= */
+
+@media (max-width:340px){
+
+    .metrics-grid{
+        grid-template-columns:1fr;
+    }
+
+    .metric-card{
+        min-height:100px;
+    }
+
+    .dashboard-content{
+        padding-left:8px;
+        padding-right:8px;
+    }
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONE
+========================================================= */
+
+@media (max-width:900px)
+       and (orientation:landscape)
+       and (max-height:500px){
+
+    .dashboard-topbar{
+        height:58px;
+    }
+
+    .dashboard-content{
+        padding-top:15px;
+        padding-bottom:20px;
+    }
+
+    .page-heading{
+        margin-bottom:14px;
+    }
+
+    .welcome-card{
+        padding:16px 18px;
+    }
+
+    .metrics-grid{
+        grid-template-columns:
+            repeat(4,minmax(0,1fr));
+    }
+
+    .metric-card{
+        min-height:100px;
+    }
+}/* =========================================================
+   RTL TABLE
+========================================================= */
+
+html[dir="rtl"] .data-table th,
+html[dir="rtl"] .data-table td{
+    text-align:right;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+
+        scroll-behavior:auto !important;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="dashboard-app">
+
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+<aside class="dashboard-sidebar" id="dashboardSidebar">
+
+
+    <!-- BRAND -->
+
+    <div class="sidebar-brand">
+
+        <a href="index.html" class="brand">
+
+            <div class="logo-box">
+
+                <img
+                    src="images/v1.png"
+                    alt="Care Companion"
+                >
+
+            </div>
+
+            <div class="brand-text">
+
+                <div class="brand-name">
+
+                    <span class="brand-primary">
+                        Care
+                    </span>
+
+                    <span class="brand-secondary">
+                        Companion
+                    </span>
+
+                </div>
+
+                <span class="brand-tag">
+                    Compassion • Trust • Care
+                </span>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- NAV -->
+
+    <nav class="sidebar-nav">
+
+        <div class="nav-label">
+            Family Care
+        </div>
+
+
+        <button
+            class="dashboard-nav-item active"
+            data-page="overview">
+
+            <i data-lucide="layout-dashboard"></i>
+
+            <span>Overview</span>
+
+        </button>
+
+
+        <button
+            class="dashboard-nav-item"
+            data-page="schedule">
+
+            <i data-lucide="calendar-days"></i>
+
+            <span>Visit Schedule</span>
+
+        </button>
+
+
+        <button
+            class="dashboard-nav-item"
+            data-page="summaries">
+
+            <i data-lucide="clipboard-check"></i>
+
+            <span>Visit Summaries</span>
+
+        </button>
+
+
+        <button
+            class="dashboard-nav-item"
+            data-page="activity">
+
+            <i data-lucide="activity"></i>
+
+            <span>Activity Logs</span>
+
+        </button>
+
+
+        <button
+            class="dashboard-nav-item"
+            data-page="caregiver">
+
+            <i data-lucide="user-round-check"></i>
+
+            <span>Caregiver Assignment</span>
+
+        </button>
+
+
+        <button
+            class="dashboard-nav-item"
+            data-page="wellness">
+
+            <i data-lucide="heart-pulse"></i>
+
+            <span>Wellness Reports</span>
+
+        </button>
+
+
+        <div class="nav-label" style="margin-top:20px;">
+            Account
+        </div>
+
+
+        <button
+            class="dashboard-nav-item"
+            data-page="payments">
+
+            <i data-lucide="wallet-cards"></i>
+
+            <span>Payments</span>
+
+        </button>
+
+
+        <button
+            class="dashboard-nav-item"
+            data-page="notifications">
+
+            <i data-lucide="bell"></i>
+
+            <span>Notifications</span>
+
+        </button>
+
+
+        <button
+            class="dashboard-nav-item"
+            data-page="profile">
+
+            <i data-lucide="user-round"></i>
+
+            <span>Profile</span>
+
+        </button>
+
+    </nav>
+
+
+    <!-- LOGOUT -->
+
+    <div class="sidebar-bottom">
+
+        <button
+            class="dashboard-nav-item logout-btn"
+            id="logoutBtn">
+
+            <i data-lucide="log-out"></i>
+
+            <span>Logout</span>
+
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- OVERLAY -->
+
+<div
+    class="dashboard-overlay"
+    id="dashboardOverlay">
+</div>
+
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
+<main class="dashboard-main">
+
+
+    <!-- TOPBAR -->
+
+    <header class="dashboard-topbar">
+
+
+        <div style="display:flex;align-items:center;gap:12px;">
+
+            <button
+                class="mobile-dashboard-menu"
+                id="dashboardMenu">
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+
+            <div class="topbar-title">
+
+                <small>
+                    Family Portal
+                </small>
+
+                <strong>
+                    Care Companion Dashboard
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="topbar-actions">
+
+
+            <!-- NOTIFICATIONS -->
+
+            <button
+                class="top-action"
+                id="notificationButton"
+                title="Notifications">
+
+                <i data-lucide="bell"></i>
+
+                <span class="notification-dot"></span>
+
+            </button>
+
+
+            <!-- RTL -->
+
+            <button
+                class="top-action"
+                id="rtlButton"
+                title="Toggle RTL">
+
+                <i data-lucide="arrow-left-right"></i>
+
+            </button>
+
+
+            <!-- THEME -->
+
+            <button
+                class="top-action"
+                id="themeButton"
+                title="Toggle theme">
+
+                <i data-lucide="moon"></i>
+
+            </button>
+
+
+            <!-- PROFILE -->
+
+            <button
+                class="profile-button"
+                id="profileButton">
+
+                <div class="profile-avatar">
+
+                    <i data-lucide="user"></i>
+
+                </div>
+
+                <div class="profile-info">
+
+                    <strong>
+                        Family Account
+                    </strong>
+
+                    <span>
+                        Family Member
+                    </span>
+
+                </div>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         CONTENT
+    ================================================== -->
+
+    <div class="dashboard-content">
+
+
+        <!-- =================================================
+             OVERVIEW
+        ================================================== -->
+
+        <section
+            class="dashboard-page active"
+            id="page-overview">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Family Dashboard
+                    </div>
+
+                    <h1>
+                        User Dashboard
+                    </h1>
+
+                    <p>
+                        Stay connected with every companion visit,
+                        wellness update, activity and family care detail.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- WELCOME -->
+
+            <div class="welcome-card">
+
+                <div class="welcome-content">
+
+                    <div class="eyebrow">
+                        Welcome back
+                    </div>
+
+                    <h2>
+                        Good morning, Family
+                    </h2>
+
+                    <p>
+                        Your care overview is ready. Review today's
+                        scheduled visit, recent observations and the
+                        latest wellbeing information for your loved one.
+                    </p>
+
+                    <div class="welcome-badge">
+
+                        <span></span>
+
+                        Care plan is active
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- METRICS -->
+
+            <div class="metrics-grid">
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+
+                        <div class="metric-icon">
+                            <i data-lucide="calendar-check"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="metric-label">
+                        Upcoming Visits
+                    </div>
+
+                    <div class="metric-value">
+                        03
+                    </div>
+
+                    <div class="metric-note">
+                        Scheduled this week
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+
+                        <div class="metric-icon orange">
+                            <i data-lucide="check-circle-2"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="metric-label">
+                        Completed Visits
+                    </div>
+
+                    <div class="metric-value">
+                        18
+                    </div>
+
+                    <div class="metric-note">
+                        Visits completed
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+
+                        <div class="metric-icon">
+                            <i data-lucide="heart-pulse"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="metric-label">
+                        Wellness Checks
+                    </div>
+
+                    <div class="metric-value">
+                        06
+                    </div>
+
+                    <div class="metric-note">
+                        Reports available
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+
+                        <div class="metric-icon orange">
+                            <i data-lucide="indian-rupee"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="metric-label">
+                        Service Payments
+                    </div>
+
+                    <div class="metric-value">
+                        ₹8,500
+                    </div>
+
+                    <div class="metric-note">
+                        Current service period
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTENT GRID -->
+
+            <div class="content-grid">
+
+
+                <!-- NEXT VISIT -->
+
+                <div class="content-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            Next Companion Visit
+                        </h3>
+
+                        <span>
+                            Upcoming
+                        </span>
+
+                    </div>
+
+
+                    <div class="next-visit">
+
+                        <div class="visit-date">
+
+                            <strong>
+                                18
+                            </strong>
+
+                            <span>
+                                Sep
+                            </span>
+
+                        </div>
+
+
+                        <div class="visit-details">
+
+                            <h4>
+                                Home Companion Visit
+                            </h4>
+
+                            <p>
+                                Conversation, light walking,
+                                reading and general safety check.
+                            </p>
+
+                        </div>
+
+
+                        <div class="visit-time">
+                            4:00 PM
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAREGIVER -->
+
+                <div class="content-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            Assigned Companion
+                        </h3>
+
+                        <a
+                            href="#"
+                            class="view-link"
+                            data-page-link="caregiver">
+
+                            View Details
+                        </a>
+
+                    </div>
+
+
+                    <div class="caregiver-card">
+
+                        <div class="caregiver-avatar">
+
+                            <i data-lucide="user-round"></i>
+
+                        </div>
+
+                        <div class="caregiver-info">
+
+                            <h4>
+                                Sarah Thomas
+                            </h4>
+
+                            <p>
+                                Primary Family Companion
+                            </p>
+
+                            <div class="status">
+
+                                <span></span>
+
+                                Assignment Active
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WELLNESS + ACTIVITY -->
+
+            <div class="content-grid">
+
+
+                <div class="content-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            Wellness Snapshot
+                        </h3>
+
+                        <a
+                            href="#"
+                            class="view-link"
+                            data-page-link="wellness">
+
+                            Full Report
+                        </a>
+
+                    </div>
+
+
+                    <div class="wellness-score">
+
+                        <div class="score-ring">
+
+                            <strong>
+                                84
+                            </strong>
+
+                        </div>
+
+                        <div class="score-info">
+
+                            <h4>
+                                General wellbeing
+                            </h4>
+
+                            <p>
+                                Recent visits indicate that the
+                                family member is comfortable and
+                                maintaining regular daily activities.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <div class="card-header">
+
+                        <h3>
+                            Recent Activity
+                        </h3>
+
+                        <a
+                            href="#"
+                            class="view-link"
+                            data-page-link="activity">
+
+                            View Logs
+                        </a>
+
+                    </div>
+
+
+                    <div class="activity-list">
+
+
+                        <div class="activity-row">
+
+                            <div class="activity-icon">
+                                <i data-lucide="footprints"></i>
+                            </div>
+
+                            <div class="activity-text">
+
+                                <strong>
+                                    Morning Walk
+                                </strong>
+
+                                <span>
+                                    Companion visit activity
+                                </span>
+
+                            </div>
+
+                            <div class="activity-time">
+                                Today
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-row">
+
+                            <div class="activity-icon orange">
+                                <i data-lucide="book-open"></i>
+                            </div>
+
+                            <div class="activity-text">
+
+                                <strong>
+                                    Reading Time
+                                </strong>
+
+                                <span>
+                                    Shared reading activity
+                                </span>
+
+                            </div>
+
+                            <div class="activity-time">
+                                Yesterday
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-row">
+
+                            <div class="activity-icon">
+                                <i data-lucide="shopping-bag"></i>
+                            </div>
+
+                            <div class="activity-text">
+
+                                <strong>
+                                    Grocery Assistance
+                                </strong>
+
+                                <span>
+                                    Small household errand
+                                </span>
+
+                            </div>
+
+                            <div class="activity-time">
+                                Sep 16
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             VISIT SCHEDULE
+        ================================================== -->
+
+        <section
+            class="dashboard-page"
+            id="page-schedule">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Visit Management
+                    </div>
+
+                    <h1>
+                        Visit Schedule
+                    </h1>
+
+                    <p>
+                        Manage upcoming companion visits and keep
+                        track of completed appointments.
+                    </p>
+
+                </div>
+
+
+                <button class="primary-btn">
+
+                    <i data-lucide="plus"></i>
+
+                    Schedule Visit
+
+                </button>
+
+            </div>
+
+
+            <div class="visit-grid">
+
+
+                <div class="visit-card">
+
+                    <div class="visit-card-top">
+
+                        <span class="visit-card-date">
+                            SEP 18 • 4:00 PM
+                        </span>
+
+                        <span class="table-status upcoming">
+                            Upcoming
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Companion Home Visit
+                    </h4>
+
+                    <p>
+                        Conversation, reading and general
+                        comfort and safety check.
+                    </p>
+
+                    <div class="visit-card-footer">
+
+                        <span>
+                            Sarah Thomas
+                        </span>
+
+                        <span>
+                            90 minutes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visit-card">
+
+                    <div class="visit-card-top">
+
+                        <span class="visit-card-date">
+                            SEP 20 • 10:30 AM
+                        </span>
+
+                        <span class="table-status upcoming">
+                            Upcoming
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Wellness Check
+                    </h4>
+
+                    <p>
+                        General wellbeing observation and
+                        family update after the visit.
+                    </p>
+
+                    <div class="visit-card-footer">
+
+                        <span>
+                            Sarah Thomas
+                        </span>
+
+                        <span>
+                            60 minutes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visit-card">
+
+                    <div class="visit-card-top">
+
+                        <span class="visit-card-date">
+                            SEP 22 • 3:00 PM
+                        </span>
+
+                        <span class="table-status upcoming">
+                            Upcoming
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Errand Assistance
+                    </h4>
+
+                    <p>
+                        Grocery support and assistance with
+                        a small household errand.
+                    </p>
+
+                    <div class="visit-card-footer">
+
+                        <span>
+                            Sarah Thomas
+                        </span>
+
+                        <span>
+                            90 minutes
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visit-card">
+
+                    <div class="visit-card-top">
+
+                        <span class="visit-card-date">
+                            SEP 16 • 4:00 PM
+                        </span>
+
+                        <span class="table-status completed">
+                            Completed
+                        </span>
+
+                    </div>
+
+                    <h4>
+                        Social Companion Visit
+                    </h4>
+
+                    <p>
+                        Conversation, games and reading followed
+                        by a family update.
+                    </p>
+
+                    <div class="visit-card-footer">
+
+                        <span>
+                            Sarah Thomas
+                        </span>
+
+                        <span>
+                            Summary Available
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             VISIT SUMMARIES
+        ================================================== -->
+
+        <section
+            class="dashboard-page"
+            id="page-summaries">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Visit Records
+                    </div>
+
+                    <h1>
+                        Visit Summaries
+                    </h1>
+
+                    <p>
+                        Review meaningful notes and observations
+                        recorded after companion visits.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-grid">
+
+
+                <article class="summary-card">
+
+                    <div class="summary-card-header">
+
+                        <div class="mini-icon">
+                            <i data-lucide="clipboard-check"></i>
+                        </div>
+
+                        <h3>
+                            September 16 • Companion Visit
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        The visit included conversation, reading
+                        and a short indoor walking activity.
+                        The family member appeared comfortable
+                        throughout the scheduled visit.
+                    </p>
+
+                    <div class="observation">
+
+                        Family observation:
+                        Regular engagement and conversation
+                        were noted during the visit.
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <div class="summary-card-header">
+
+                        <div class="mini-icon">
+                            <i data-lucide="heart-handshake"></i>
+                        </div>
+
+                        <h3>
+                            September 14 • Home Visit
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Companion checked general comfort,
+                        assisted with a small household activity
+                        and provided a family update.
+                    </p>
+
+                    <div class="observation">
+
+                        Safety observation:
+                        Home environment was reported as
+                        comfortable during the visit.
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <div class="summary-card-header">
+
+                        <div class="mini-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+
+                        <h3>
+                            September 12 • Social Visit
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Time was spent reading and discussing
+                        familiar topics. Companion recorded
+                        positive participation in the activity.
+                    </p>
+
+                    <div class="observation">
+
+                        Activity note:
+                        Reading activity completed as planned.
+
+                    </div>
+
+                </article>
+
+
+                <article class="summary-card">
+
+                    <div class="summary-card-header">
+
+                        <div class="mini-icon">
+                            <i data-lucide="shopping-bag"></i>
+                        </div>
+
+                        <h3>
+                            September 10 • Errand Assistance
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Grocery assistance was completed and
+                        the companion returned with the requested
+                        household items.
+                    </p>
+
+                    <div class="observation">
+
+                        Family update:
+                        Errand completed successfully.
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACTIVITY LOGS
+        ================================================== -->
+
+        <section
+            class="dashboard-page"
+            id="page-activity">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Daily Care Record
+                    </div>
+
+                    <h1>
+                        Activity Logs
+                    </h1>
+
+                    <p>
+                        A clear record of activities completed
+                        during companion visits.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <div class="card-header">
+
+                    <h3>
+                        Recent Activities
+                    </h3>
+
+                    <span>
+                        Updated regularly
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrap">
+
+                    <table class="data-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Activity
+                                </th>
+
+                                <th>
+                                    Companion
+                                </th>
+
+                                <th>
+                                    Visit Type
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    Sep 18
+                                </td>
+
+                                <td>
+                                    Conversation & Reading
+                                </td>
+
+                                <td>
+                                    Sarah Thomas
+                                </td>
+
+                                <td>
+                                    Social Visit
+                                </td>
+
+                                <td>
+                                    <span class="table-status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    Sep 17
+                                </td>
+
+                                <td>
+                                    Indoor Walking
+                                </td>
+
+                                <td>
+                                    Sarah Thomas
+                                </td>
+
+                                <td>
+                                    Companion Visit
+                                </td>
+
+                                <td>
+                                    <span class="table-status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    Sep 16
+                                </td>
+
+                                <td>
+                                    Grocery Assistance
+                                </td>
+
+                                <td>
+                                    Sarah Thomas
+                                </td>
+
+                                <td>
+                                    Errand Assistance
+                                </td>
+
+                                <td>
+                                    <span class="table-status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    Sep 15
+                                </td>
+
+                                <td>
+                                    General Wellness Check
+                                </td>
+
+                                <td>
+                                    Sarah Thomas
+                                </td>
+
+                                <td>
+                                    Wellness Visit
+                                </td>
+
+                                <td>
+                                    <span class="table-status completed">
+                                        Completed
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CAREGIVER
+        ================================================== -->
+
+        <section
+            class="dashboard-page"
+            id="page-caregiver">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Care Team
+                    </div>
+
+                    <h1>
+                        Caregiver Assignment
+                    </h1>
+
+                    <p>
+                        View the companion assigned to your family
+                        member and their current assignment details.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="caregiver-profile">
+
+
+                <div class="caregiver-profile-main">
+
+                    <div class="large-avatar">
+
+                        <i data-lucide="user-round"></i>
+
+                    </div>
+
+                    <h3>
+                        Sarah Thomas
+                    </h3>
+
+                    <p>
+                        Primary Family Companion
+                    </p>
+
+                    <div class="assignment-status">
+
+                        <span></span>
+
+                        Active Assignment
+
+                    </div>
+
+                </div>
+
+
+                <div class="assignment-details">
+
+                    <div class="detail-row">
+
+                        <span>
+                            Assignment
+                        </span>
+
+                        <strong>
+                            Primary Companion
+                        </strong>
+
+                    </div>
+
+                    <div class="detail-row">
+
+                        <span>
+                            Visit Coverage
+                        </span>
+
+                        <strong>
+                            Monday – Saturday
+                        </strong>
+
+                    </div>
+
+                    <div class="detail-row">
+
+                        <span>
+                            Primary Services
+                        </span>
+
+                        <strong>
+                            Companionship & Wellness Checks
+                        </strong>
+
+                    </div>
+
+                    <div class="detail-row">
+
+                        <span>
+                            Current Status
+                        </span>
+
+                        <strong style="color:var(--success);">
+                            Available for Scheduled Visits
+                        </strong>
+
+                    </div>
+
+                    <div class="detail-row">
+
+                        <span>
+                            Family Updates
+                        </span>
+
+                        <strong>
+                            After scheduled visits
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WELLNESS
+        ================================================== -->
+
+        <section
+            class="dashboard-page"
+            id="page-wellness">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Wellbeing Monitoring
+                    </div>
+
+                    <h1>
+                        Wellness Reports
+                    </h1>
+
+                    <p>
+                        Review general wellbeing observations and
+                        information that may need family attention.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="report-grid">
+
+
+                <div class="report-score-card">
+
+                    <div class="big-score">
+
+                        <div>
+
+                            <strong>
+                                84
+                            </strong>
+
+                            <span>
+                                Wellness
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <h3>
+                        General Wellbeing
+                    </h3>
+
+                    <p>
+                        Recent observations indicate a comfortable
+                        routine with regular engagement in daily
+                        activities.
+                    </p>
+
+                </div>
+
+
+                <div class="report-items">
+
+
+                    <div class="report-item">
+
+                        <div class="report-item-top">
+
+                            <strong>
+                                Daily Comfort
+                            </strong>
+
+                            <span class="report-value">
+                                Good
+                            </span>
+
+                        </div>
+
+                        <div class="progress">
+                            <span style="width:88%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-item">
+
+                        <div class="report-item-top">
+
+                            <strong>
+                                Social Engagement
+                            </strong>
+
+                            <span class="report-value">
+                                Good
+                            </span>
+
+                        </div>
+
+                        <div class="progress">
+                            <span style="width:82%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-item">
+
+                        <div class="report-item-top">
+
+                            <strong>
+                                Activity Participation
+                            </strong>
+
+                            <span class="report-value">
+                                Good
+                            </span>
+
+                        </div>
+
+                        <div class="progress">
+                            <span style="width:86%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="report-item">
+
+                        <div class="report-item-top">
+
+                            <strong>
+                                Family Communication
+                            </strong>
+
+                            <span class="report-value">
+                                Regular
+                            </span>
+
+                        </div>
+
+                        <div class="progress">
+                            <span style="width:91%;"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card" style="margin-top:20px;">
+
+                <div class="card-header">
+
+                    <h3>
+                        Latest Wellness Observation
+                    </h3>
+
+                    <span>
+                        Sep 18, 2026
+                    </span>
+
+                </div>
+
+                <p style="
+                    color:var(--muted);
+                    font-size:11px;
+                    line-height:1.8;
+                ">
+
+                    During the latest scheduled visit, the companion
+                    recorded that the family member was comfortable,
+                    participated in conversation and completed the
+                    planned light activity. Any concerns requiring
+                    family attention should be communicated through
+                    the appropriate care update.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PAYMENTS
+        ================================================== -->
+
+        <section
+            class="dashboard-page"
+            id="page-payments">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Billing & Services
+                    </div>
+
+                    <h1>
+                        Payment History
+                    </h1>
+
+                    <p>
+                        Review previous payments and service history
+                        associated with your family care plan.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="payment-summary">
+
+
+                <div class="payment-box">
+
+                    <span>
+                        Current Period
+                    </span>
+
+                    <strong>
+                        ₹8,500
+                    </strong>
+
+                </div>
+
+
+                <div class="payment-box">
+
+                    <span>
+                        Completed Payments
+                    </span>
+
+                    <strong>
+                        05
+                    </strong>
+
+                </div>
+
+
+                <div class="payment-box">
+
+                    <span>
+                        Service Status
+                    </span>
+
+                    <strong style="
+                        color:var(--success);
+                        font-size:17px;
+                    ">
+                        Active
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <div class="card-header">
+
+                    <h3>
+                        Payment History
+                    </h3>
+
+                    <span>
+                        Recent transactions
+                    </span>
+
+                </div>
+
+
+                <div class="table-wrap">
+
+                    <table class="data-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Date
+                                </th>
+
+                                <th>
+                                    Service
+                                </th>
+
+                                <th>
+                                    Amount
+                                </th>
+
+                                <th>
+                                    Method
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    Sep 01, 2026
+                                </td>
+
+                                <td>
+                                    Companion Visits
+                                </td>
+
+                                <td>
+                                    ₹8,500
+                                </td>
+
+                                <td>
+                                    Online Payment
+                                </td>
+
+                                <td>
+                                    <span class="table-status completed">
+                                        Paid
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    Aug 01, 2026
+                                </td>
+
+                                <td>
+                                    Companion Visits
+                                </td>
+
+                                <td>
+                                    ₹8,500
+                                </td>
+
+                                <td>
+                                    Online Payment
+                                </td>
+
+                                <td>
+                                    <span class="table-status completed">
+                                        Paid
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>
+                                    Jul 01, 2026
+                                </td>
+
+                                <td>
+                                    Wellness Monitoring
+                                </td>
+
+                                <td>
+                                    ₹6,500
+                                </td>
+
+                                <td>
+                                    Online Payment
+                                </td>
+
+                                <td>
+                                    <span class="table-status completed">
+                                        Paid
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             NOTIFICATIONS
+        ================================================== -->
+
+        <section
+            class="dashboard-page"
+            id="page-notifications">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Family Updates
+                    </div>
+
+                    <h1>
+                        Notifications
+                    </h1>
+
+                    <p>
+                        Important reminders, visit updates and
+                        family care notifications in one place.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-list">
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon">
+
+                        <i data-lucide="calendar-clock"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Upcoming companion visit
+                        </h4>
+
+                        <p>
+                            Sarah Thomas is scheduled for the next
+                            home companion visit on September 18 at 4:00 PM.
+                        </p>
+
+                        <time>
+                            Today
+                        </time>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon orange">
+
+                        <i data-lucide="clipboard-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            New visit summary available
+                        </h4>
+
+                        <p>
+                            The latest companion visit summary has
+                            been added to your family dashboard.
+                        </p>
+
+                        <time>
+                            Yesterday
+                        </time>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon">
+
+                        <i data-lucide="heart-pulse"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Wellness report updated
+                        </h4>
+
+                        <p>
+                            A new wellness observation is available
+                            for your review.
+                        </p>
+
+                        <time>
+                            Sep 16
+                        </time>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-card">
+
+                    <div class="notification-icon orange">
+
+                        <i data-lucide="receipt"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            Payment history updated
+                        </h4>
+
+                        <p>
+                            Your latest service payment has been
+                            recorded in the payment history.
+                        </p>
+
+                        <time>
+                            Sep 01
+                        </time>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROFILE
+        ================================================== -->
+
+        <section
+            class="dashboard-page"
+            id="page-profile">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Account Settings
+                    </div>
+
+                    <h1>
+                        Family Profile
+                    </h1>
+
+                    <p>
+                        Review your family account information and
+                        keep important contact details up to date.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-layout">
+
+
+                <div class="profile-card">
+
+                    <div class="profile-big-avatar">
+
+                        <i data-lucide="user"></i>
+
+                    </div>
+
+                    <h3>
+                        Family Account
+                    </h3>
+
+                    <p>
+                        Care Companion Family Member
+                    </p>
+
+                    <div class="assignment-status">
+
+                        <span></span>
+
+                        Account Active
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-form">
+
+                    <div class="card-header">
+
+                        <h3>
+                            Account Information
+                        </h3>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label>
+                                First Name
+                            </label>
+
+                            <input
+                                type="text"
+                                value="Family"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Last Name
+                            </label>
+
+                            <input
+                                type="text"
+                                value="Member"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                value="care@example.com"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Phone
+                            </label>
+
+                            <input
+                                type="tel"
+                                value="+91 98765 43210"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Family Member Receiving Care
+                            </label>
+
+                            <input
+                                type="text"
+                                value="Family Care Member"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button class="primary-btn">
+
+                            <i data-lucide="save"></i>
+
+                            Save Changes
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   GLOBAL CARE COMPANION THEME + DIRECTION
+   Shared by EVERY page including Dashboard
+========================================================= */
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const themeButton =
+    document.getElementById("themeButton");
+
+const rtlButton =
+    document.getElementById("rtlButton");
+
+
+/* =========================================================
+   GLOBAL STORAGE KEYS
+=========================================================
+
+   DO NOT CHANGE THESE KEYS.
+
+   Every page must use:
+
+   Theme     → care-theme
+   Direction → care-direction
+
+========================================================= */
+
+
+/* =========================================================
+   READ SAVED THEME
+========================================================= */
+
+let darkMode =
+    localStorage.getItem("care-theme") === "dark";
+
+
+/* =========================================================
+   APPLY GLOBAL THEME
+========================================================= */
+
+function applyGlobalTheme() {
+
+    const root =
+        document.documentElement;
+
+
+    if (darkMode) {
+
+        /* DARK MODE */
+
+        root.classList.add("dark");
+
+        root.setAttribute(
+            "data-theme",
+            "dark"
+        );
+
+
+        root.style.setProperty(
+            "--bg",
+            "#111017"
+        );
+
+        root.style.setProperty(
+            "--surface",
+            "#191720"
+        );
+
+        root.style.setProperty(
+            "--surface-soft",
+            "#211D29"
+        );
+
+        root.style.setProperty(
+            "--text",
+            "#F8F5FA"
+        );
+
+        root.style.setProperty(
+            "--muted",
+            "#B9B2C2"
+        );
+
+        root.style.setProperty(
+            "--border",
+            "rgba(255,255,255,.11)"
+        );
+
+
+        /* Dashboard theme icon */
+
+        if (themeButton) {
+
+            themeButton.innerHTML =
+                '<i data-lucide="sun"></i>';
+
+        }
+
+
+    } else {
+
+        /* LIGHT MODE */
+
+        root.classList.remove("dark");
+
+        root.setAttribute(
+            "data-theme",
+            "light"
+        );
+
+
+        root.style.setProperty(
+            "--bg",
+            "#FBF8F4"
+        );
+
+        root.style.setProperty(
+            "--surface",
+            "#FFFFFF"
+        );
+
+        root.style.setProperty(
+            "--surface-soft",
+            "#F5F0EA"
+        );
+
+        root.style.setProperty(
+            "--text",
+            "#292535"
+        );
+
+        root.style.setProperty(
+            "--muted",
+            "#777180"
+        );
+
+        root.style.setProperty(
+            "--border",
+            "rgba(71,152,153,.14)"
+        );
+
+
+        /* Dashboard theme icon */
+
+        if (themeButton) {
+
+            themeButton.innerHTML =
+                '<i data-lucide="moon"></i>';
+
+        }
+
+    }
+
+
+    /* Rebuild Lucide icons */
+
+    if (
+        typeof lucide !== "undefined"
+    ) {
+
+        lucide.createIcons();
+
+    }
+
+}
+
+
+/* =========================================================
+   APPLY SAVED THEME ON LOAD
+========================================================= */
+
+applyGlobalTheme();
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+if (themeButton) {
+
+    themeButton.addEventListener(
+        "click",
+        function () {
+
+            darkMode =
+                !darkMode;
+
+
+            /* SAVE FOR ENTIRE WEBSITE */
+
+            localStorage.setItem(
+                "care-theme",
+                darkMode
+                    ? "dark"
+                    : "light"
+            );
+
+
+            /* APPLY */
+
+            applyGlobalTheme();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   READ SAVED DIRECTION
+========================================================= */
+
+let rtlMode =
+    localStorage.getItem(
+        "care-direction"
+    ) === "rtl";
+
+
+/* =========================================================
+   APPLY GLOBAL DIRECTION
+========================================================= */
+
+function applyGlobalDirection() {
+
+    const root =
+        document.documentElement;
+
+
+    root.setAttribute(
+        "dir",
+        rtlMode
+            ? "rtl"
+            : "ltr"
+    );
+
+
+    /*
+       Optional body attribute.
+       Useful if you have dashboard-specific RTL CSS.
+    */
+
+    document.body.setAttribute(
+        "dir",
+        rtlMode
+            ? "rtl"
+            : "ltr"
+    );
+
+
+    /* Change RTL button icon */
+
+ if (rtlButton) {
+
+    rtlButton.innerHTML =
+        '<i data-lucide="arrow-left-right"></i>';
+
+    lucide.createIcons();
+
+}
+
+    /* Rebuild icon */
+
+    if (
+        typeof lucide !== "undefined"
+    ) {
+
+        lucide.createIcons();
+
+    }
+
+}
+
+
+/* =========================================================
+   APPLY SAVED DIRECTION ON DASHBOARD LOAD
+========================================================= */
+
+applyGlobalDirection();
+
+
+/* =========================================================
+   RTL BUTTON
+========================================================= */
+
+if (rtlButton) {
+
+    rtlButton.addEventListener(
+        "click",
+        function () {
+
+            rtlMode =
+                !rtlMode;
+
+
+            /* SAVE GLOBALLY */
+
+            localStorage.setItem(
+                "care-direction",
+                rtlMode
+                    ? "rtl"
+                    : "ltr"
+            );
+
+
+            /* APPLY */
+
+            applyGlobalDirection();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   CROSS-PAGE STATE LISTENER
+=========================================================
+
+   If another page changes localStorage while this
+   page is open, update this page automatically.
+
+========================================================= */
+
+window.addEventListener(
+    "storage",
+    function (event) {
+
+
+        /* THEME CHANGED */
+
+        if (
+            event.key === "care-theme"
+        ) {
+
+            darkMode =
+                event.newValue === "dark";
+
+            applyGlobalTheme();
+
+        }
+
+
+        /* DIRECTION CHANGED */
+
+        if (
+            event.key === "care-direction"
+        ) {
+
+            rtlMode =
+                event.newValue === "rtl";
+
+            applyGlobalDirection();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   DEBUG
+========================================================= */
+
+console.log(
+    "Care Companion Theme:",
+    darkMode
+        ? "Dark"
+        : "Light"
+);
+
+console.log(
+    "Care Companion Direction:",
+    rtlMode
+        ? "RTL"
+        : "LTR"
+);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,3724 @@
+
+
+/* =========================================================
+   CARE COMPANION PRICING
+   BRAND COLORS ONLY
+========================================================= */
+
+:root{
+    --primary:#479899;
+    --secondary:#E89651;
+}
+/* LIGHT MODE */
+.light-theme {
+    --bg: #ffffff;
+    
+}
+
+/* DARK MODE */
+.dark-theme {
+    --bg: #101918;
+    --text: #B8C7C7;
+    --dark: #ffffff;
+    --bg-card: #192827;
+    --border: rgba(255,255,255,.10);
+}
+
+/* =========================================================
+   BASE
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:var(--bg);
+    color:#161616;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.cc-price-hero{
+
+    position:relative;
+
+    min-height:680px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+    background:
+        url("images/c10 .png")
+        center/cover
+        no-repeat;
+}
+
+
+/* =========================================
+   HERO IMAGE FALLBACK
+========================================= */
+
+.cc-price-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-2;
+
+    background:
+        url("images/c10 .png")
+        center/cover
+        no-repeat;
+
+}
+
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.cc-price-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.82) 0%,
+            rgba(0,0,0,.68) 42%,
+            rgba(0,0,0,.38) 72%,
+            rgba(0,0,0,.18) 100%
+        );
+
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.cc-price-hero-inner{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(1180px,90%);
+
+    margin:auto;
+
+    padding:110px 0;
+
+    color:#fff;
+
+}
+
+
+.cc-price-hero-content{
+
+    max-width:780px;
+
+}
+
+
+/* =========================================
+   EYEBROW
+========================================= */
+
+.cc-price-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:10px 17px;
+
+    border:1px solid rgba(255,255,255,.38);
+
+    border-radius:100px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1.8px;
+
+    text-transform:uppercase;
+
+}
+
+
+.cc-price-eyebrow svg{
+
+    width:16px;
+
+    height:16px;
+
+    color:var(--secondary);
+
+}
+
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.cc-price-hero h1{
+
+    margin-top:24px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(48px,6vw,76px);
+
+    line-height:1.05;
+
+    color:#fff;
+
+    letter-spacing:-2.5px;
+
+    font-weight:600;
+
+    text-shadow:0 4px 25px rgba(0,0,0,.30);
+
+}
+
+
+.cc-price-hero h1 span{
+
+    display:inline-block;
+
+    color:var(--secondary);
+
+    min-width:270px;
+
+    border-right:2px solid var(--secondary);
+
+    padding-right:8px;
+
+}
+
+
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
+
+.cc-price-hero p{
+
+    max-width:650px;
+
+    margin-top:25px;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:rgba(255,255,255,.90);
+
+    text-shadow:0 2px 12px rgba(0,0,0,.35);
+
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.cc-price-hero-actions{
+
+    display:flex;
+
+    gap:14px;
+
+    margin-top:35px;
+
+}
+
+
+.cc-hero-primary,
+.cc-hero-secondary{
+
+    min-height:52px;
+
+    padding:0 25px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    border-radius:12px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.35s ease;
+
+}
+
+
+/* PRIMARY */
+
+.cc-hero-primary{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    border:1px solid var(--primary);
+
+}
+
+
+/* SECONDARY */
+
+.cc-hero-secondary{
+
+    background:rgba(255,255,255,.10);
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    backdrop-filter:blur(10px);
+
+    -webkit-backdrop-filter:blur(10px);
+
+}
+
+
+/* HOVER */
+
+.cc-hero-primary:hover,
+.cc-hero-secondary:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+.cc-hero-primary:hover{
+
+    background:var(--secondary);
+
+    border-color:var(--secondary);
+
+}
+
+
+.cc-hero-secondary:hover{
+
+    background:var(--secondary);
+
+    border-color:var(--secondary);
+
+    color:#fff;
+
+}
+
+
+/* =========================================
+   HERO MINI INFO
+========================================= */
+
+.cc-hero-trust{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:24px;
+
+    margin-top:40px;
+
+}
+
+
+.cc-hero-trust-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    color:rgba(255,255,255,.92);
+
+}
+
+
+.cc-hero-trust-item svg{
+
+    width:17px;
+
+    height:17px;
+
+    color:var(--secondary);
+
+    flex-shrink:0;
+
+}
+
+
+/* =========================================
+   TABLET / NEST HUB
+========================================= */
+
+@media (max-width:1024px){
+
+    .cc-price-hero{
+
+        min-height:620px;
+
+    }
+
+    .cc-price-hero-inner{
+
+        width:88%;
+
+        padding:90px 0;
+
+    }
+
+    .cc-price-hero h1{
+
+        font-size:clamp(46px,7vw,66px);
+
+    }
+
+}
+
+
+/* =========================================
+   IPAD MINI
+========================================= */
+
+@media (max-width:834px){
+
+    .cc-price-hero{
+
+        min-height:610px;
+
+    }
+
+    .cc-price-hero-inner{
+
+        width:90%;
+
+        padding:85px 0;
+
+    }
+
+    .cc-price-hero-content{
+
+        max-width:650px;
+
+    }
+
+    .cc-price-hero h1{
+
+        font-size:clamp(43px,7.5vw,60px);
+
+        letter-spacing:-2px;
+
+    }
+
+    .cc-price-hero p{
+
+        font-size:16px;
+
+        max-width:580px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width:600px){
+
+    .cc-price-hero{
+
+        min-height:650px;
+
+        background-position:center;
+
+    }
+
+    .cc-price-hero::after{
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,.84),
+                rgba(0,0,0,.70)
+            );
+
+    }
+
+    .cc-price-hero-inner{
+
+        width:88%;
+
+        padding:75px 0;
+
+    }
+
+    .cc-price-eyebrow{
+
+        padding:9px 13px;
+
+        font-size:10px;
+
+        letter-spacing:1.4px;
+
+    }
+
+    .cc-price-hero h1{
+
+        margin-top:20px;
+
+        font-size:clamp(39px,11vw,52px);
+
+        line-height:1.08;
+
+        letter-spacing:-1.5px;
+
+    }
+
+    .cc-price-hero h1 span{
+
+        min-width:0;
+
+    }
+
+    .cc-price-hero p{
+
+        margin-top:20px;
+
+        font-size:15px;
+
+        line-height:1.7;
+
+    }
+
+    .cc-price-hero-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:10px;
+
+        margin-top:28px;
+
+        max-width:280px;
+
+    }
+
+    .cc-hero-primary,
+    .cc-hero-secondary{
+
+        width:100%;
+
+        min-height:50px;
+
+    }
+
+    .cc-hero-trust{
+
+        gap:13px 20px;
+
+        margin-top:30px;
+
+    }
+
+}
+
+
+/* =========================================
+   SAMSUNG S8+
+========================================= */
+
+@media (max-width:390px){
+
+    .cc-price-hero{
+
+        min-height:670px;
+
+    }
+
+    .cc-price-hero-inner{
+
+        width:90%;
+
+        padding:65px 0;
+
+    }
+
+    .cc-price-hero h1{
+
+        font-size:39px;
+
+    }
+
+    .cc-price-hero p{
+
+        font-size:14px;
+
+    }
+
+    .cc-hero-trust{
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        gap:11px;
+
+    }
+
+}
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.cc-price-section{
+
+    padding:105px 0;
+
+    background:var(--bg);
+}
+
+
+.cc-price-container{
+
+    width:min(1180px,90%);
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   CENTERED SECTION HEADING
+========================================================= */
+
+.cc-section-heading{
+
+    max-width:700px;
+
+    margin:0 auto 58px;
+
+    text-align:center;
+}
+
+
+.cc-section-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--secondary);
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+
+.cc-section-eyebrow::before,
+.cc-section-eyebrow::after{
+
+    content:"";
+
+    width:28px;
+
+    height:1px;
+
+    background:var(--secondary);
+}
+
+
+.cc-section-heading h2{
+
+    margin-top:16px;
+
+  color:var(--primary);
+
+    font-size:clamp(35px,4vw,50px);
+
+    line-height:1.12;
+
+    letter-spacing:-1.5px;
+
+    font-weight:600;
+}
+
+
+.cc-section-heading h2 span{
+    color:var(--secondary);
+}
+
+
+.cc-section-heading p{
+
+    max-width:620px;
+
+    margin:17px auto 0;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:#666666;
+}
+
+
+/* =========================================================
+   PRICING CARDS
+========================================================= */
+
+.cc-pricing-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:25px;
+
+    align-items:stretch;
+}
+
+
+/* CARD */
+
+.cc-plan{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:455px;
+
+    padding:32px 30px 30px;
+
+    background:var(--bg);
+
+    border:1px solid rgba(71,152,153,.18);
+
+    border-radius:22px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.06);
+
+    overflow:hidden;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        border-color .4s ease;
+}
+
+
+.cc-plan:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 25px 60px rgba(71,152,153,.15);
+}
+
+
+/* TOP ACCENT */
+
+.cc-plan::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:var(--primary);
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.4s ease;
+}
+
+
+.cc-plan:hover::before{
+    transform:scaleX(1);
+}
+
+
+/* POPULAR */
+
+.cc-plan.cc-popular{
+
+    border:1.5px solid var(--primary);
+
+    box-shadow:
+        0 22px 60px rgba(71,152,153,.16);
+}
+
+
+.cc-plan.cc-popular::before{
+
+    transform:scaleX(1);
+
+    background:var(--secondary);
+}
+
+
+/* POPULAR LABEL */
+
+.cc-popular-label{
+
+    position:absolute;
+
+    top:17px;
+
+    right:17px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:7px 11px;
+
+    border-radius:100px;
+
+    background:white;
+
+    color:var(--primary);
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+}
+
+
+.cc-popular-label svg{
+
+    width:12px;
+    height:12px;
+}
+
+
+/* PLAN ICON */
+
+.cc-plan-icon{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:rgba(71,152,153,.10);
+
+    color:var(--primary);
+
+    margin-bottom:23px;
+}
+
+
+.cc-plan-icon svg{
+
+    width:23px;
+    height:23px;
+}
+
+
+/* PLAN NAME */
+
+.cc-plan h3{
+
+    font-size:22px;
+
+    font-weight:700;
+}
+
+
+/* DESCRIPTION */
+
+.cc-plan-description{
+
+    margin-top:8px;
+
+    min-height:48px;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    color:#707070;
+}
+
+
+/* PRICE */
+
+.cc-plan-price{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:5px;
+
+    margin-top:24px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+
+.cc-plan-price strong{
+
+    color:var(--primary);
+
+    font-size:38px;
+
+    line-height:1;
+
+    letter-spacing:-1.5px;
+}
+
+
+.cc-popular .cc-plan-price strong{
+
+    color:var(--secondary);
+}
+
+
+.cc-plan-price span{
+
+    padding-bottom:4px;
+
+    font-size:12px;
+
+    color:#777777;
+}
+
+
+/* FEATURES */
+
+.cc-plan-features{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:13px;
+
+    margin:23px 0 28px;
+}
+
+
+.cc-plan-features li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:13px;
+
+    line-height:1.4;
+
+    color:#444444;
+}
+
+
+.cc-plan-features svg{
+
+    flex:0 0 auto;
+
+    width:17px;
+
+    height:17px;
+
+    padding:3px;
+
+    border-radius:50%;
+
+    background:rgba(71,152,153,.11);
+
+    color:var(--primary);
+
+    stroke-width:3;
+}
+
+
+/* BUTTON BASE */
+
+.cc-plan-btn{
+
+    width:100%;
+
+    min-height:49px;
+
+    margin-top:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    border-radius:11px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    transition:.35s ease;
+}
+
+
+/* SECONDARY BUTTON
+   NON-POPULAR PLANS
+*/
+
+.cc-secondary-btn{
+
+    color:var(--primary);
+
+    background:white;
+
+    border:1px solid rgba(232,150,81,.35);
+}
+
+
+.cc-secondary-btn:hover{
+
+    color:#ffffff;
+
+    background:var(--secondary);
+
+    border-color:var(--secondary);
+
+    transform:translateY(-3px);
+}
+
+
+/* PRIMARY BUTTON
+   POPULAR PLAN
+*/
+
+.cc-primary-btn{
+
+    color:#ffffff;
+
+    background:var(--primary);
+
+    border:1px solid var(--primary);
+
+    box-shadow:
+        0 10px 25px rgba(71,152,153,.20);
+}
+
+
+.cc-primary-btn:hover{
+
+    background:var(--secondary);
+
+    border-color:var(--secondary);
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(232,150,81,.22);
+}
+
+
+/* =========================================================
+   VALUE STRIP
+========================================================= */
+
+.cc-value-section{
+
+    padding:90px 0;
+
+    background:
+       
+        var(--bg);
+}
+
+
+.cc-value-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:16px;
+}
+
+
+.cc-value-item{
+
+    padding:28px 22px;
+
+    background:var(--bg);
+
+    border:1px solid rgba(71,152,153,.13);
+
+    border-radius:18px;
+
+    text-align:center;
+
+    transition:.35s ease;
+}
+
+
+.cc-value-item:hover{
+
+    transform:translateY(-7px);
+
+    border-color:var(--secondary);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.07);
+}
+
+
+.cc-value-icon{
+
+    width:50px;
+
+    height:50px;
+
+    margin:0 auto 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:var(--primary);
+
+    color:#ffffff;
+}
+
+
+.cc-value-icon svg{
+
+    width:22px;
+    height:22px;
+}
+
+
+.cc-value-item h3{
+
+    font-size:16px;
+
+    margin-bottom:7px;
+}
+
+
+.cc-value-item p{
+
+    font-size:12px;
+
+    line-height:1.6;
+
+    color:#777777;
+}
+
+
+
+
+/* =========================================================
+   COMPARISON SECTION
+========================================================= */
+
+.cc-compare-section {
+
+    padding: 105px 0;
+
+    background: var(--bg);
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.cc-compare-section .cc-price-container {
+
+    width: 92%;
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   CENTERED HEADING
+========================================================= */
+
+.cc-compare-heading {
+
+    max-width: 760px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.cc-compare-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    color: var(--secondary);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.3px;
+
+}
+
+
+/* EYEBROW LINES */
+
+.cc-compare-eyebrow::before,
+.cc-compare-eyebrow::after {
+
+    content: "";
+
+    width: 31px;
+
+    height: 2px;
+
+    display: block;
+
+    background:
+        
+            var(--secondary)
+        ;
+
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.cc-compare-heading h2 {
+
+    margin: 0;
+
+    color:var(--primary);
+
+
+    font-size: clamp(35px, 5vw, 50px);
+
+    font-weight: 600;
+
+    line-height: 1.08;
+
+    
+}
+
+
+.cc-compare-heading h2 span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--secondary);
+
+    
+
+}
+
+
+/* =========================================================
+   HEADING DESCRIPTION
+========================================================= */
+
+.cc-compare-heading > p {
+
+    max-width: 650px;
+
+    margin: 22px auto 0;
+
+    color: #6d7474;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   COMPARISON LAYOUT
+========================================================= */
+
+.cc-compare-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, .85fr)
+        minmax(0, 1.15fr);
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.cc-compare-copy {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   LARGE NUMBER
+========================================================= */
+
+.cc-compare-number {
+
+    margin-bottom: -1px;
+
+    color: var(--primary);
+
+
+    font-size: 50px;
+
+    font-weight: 600;
+
+    line-height: .8;
+
+}
+
+
+/* =========================================================
+   LEFT HEADING
+========================================================= */
+
+.cc-compare-copy h3 {
+
+    position: relative;
+
+    margin: 0;
+
+    color: var(--primary);
+
+    
+
+    font-size: 42px;
+
+    font-weight: 500;
+
+    line-height: 1.15;
+
+    letter-spacing: -1.4px;
+
+}
+
+
+.cc-compare-copy h3 span {
+
+    display: block;
+
+    color: var(--primary);
+
+  
+
+}
+
+
+/* =========================================================
+   LEFT DESCRIPTION
+========================================================= */
+
+.cc-compare-copy > p {
+
+    max-width: 460px;
+
+    margin: 20px 0 0;
+
+    color: #6d6d6d;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   POINTS
+========================================================= */
+
+.cc-compare-points {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    margin: 27px 0 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+.cc-compare-points li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.cc-compare-points li svg {
+
+    width: 18px;
+
+    height: 18px;
+
+    color: var(--secondary);
+
+    stroke-width: 2;
+
+}
+
+
+/* =========================================================
+   COMPARISON TABLE
+========================================================= */
+
+.cc-compare-box {
+
+    overflow: hidden;
+
+    border: 1px solid rgba(71,152,153,.15);
+
+    border-radius: 20px;
+
+    background:var(--bg);
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.06);
+
+}
+
+
+/* =========================================================
+   ROW
+========================================================= */
+
+.cc-compare-row {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(65px, .8fr)
+        minmax(65px, .8fr);
+
+    min-height: 61px;
+
+    align-items: center;
+
+    border-bottom: 1px solid rgba(0,0,0,.07);
+
+}
+
+
+.cc-compare-row:last-child {
+
+    border-bottom: 0;
+
+}
+
+
+.cc-compare-row > div {
+
+    min-width: 0;
+
+    padding: 13px 16px;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.cc-compare-header {
+
+    min-height: 57px;
+
+    color: #ffffff;
+
+    background: var(--primary);
+
+    font-weight: 700;
+
+}
+
+
+.cc-compare-header > div {
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   FEATURE NAME
+========================================================= */
+
+.cc-compare-row .feature-name {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--primary);
+
+    font-weight: 600;
+
+}
+
+
+.cc-compare-row .feature-name svg {
+
+    width: 17px;
+
+    height: 17px;
+
+    flex: 0 0 17px;
+
+    color: var(--primary);
+
+}
+
+
+/* =========================================================
+   CHECK
+========================================================= */
+
+.cc-compare-row .check {
+
+    text-align: center;
+
+    color: var(--primary);
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+
+.cc-compare-row .highlight {
+
+    text-align: center;
+
+    color: var(--secondary);
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .cc-compare-section {
+
+        padding: 80px 0;
+
+    }
+
+
+    .cc-compare-heading {
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .cc-compare-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .cc-compare-copy {
+
+        max-width: 620px;
+
+        margin: 0 auto;
+
+        text-align: center;
+
+    }
+
+
+    .cc-compare-copy > p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .cc-compare-points {
+
+        align-items: center;
+
+    }
+
+
+    .cc-compare-number {
+
+        font-size: 80px;
+
+    }
+
+
+    .cc-compare-box {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .cc-compare-section {
+
+        padding: 65px 0;
+
+    }
+
+
+    .cc-compare-section .cc-price-container {
+
+        width: 90%;
+
+    }
+
+
+    .cc-compare-heading {
+
+        margin-bottom: 42px;
+
+    }
+
+
+    .cc-compare-eyebrow {
+
+        gap: 8px;
+
+        font-size: 9px;
+
+        letter-spacing: 1.7px;
+
+    }
+
+
+    .cc-compare-eyebrow::before,
+    .cc-compare-eyebrow::after {
+
+        width: 22px;
+
+    }
+
+
+    .cc-compare-heading h2 {
+
+        font-size: 35px;
+
+        letter-spacing: -1px;
+
+    }
+
+
+    .cc-compare-heading > p {
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .cc-compare-number {
+
+        font-size: 68px;
+
+    }
+
+
+    .cc-compare-copy h3 {
+
+        font-size: 34px;
+
+    }
+
+
+    .cc-compare-copy > p {
+
+        font-size: 13px;
+
+    }
+
+
+    .cc-compare-box {
+
+        border-radius: 15px;
+
+    }
+
+
+    .cc-compare-row {
+
+        grid-template-columns:
+            minmax(0, 1.35fr)
+            minmax(50px, .7fr)
+            minmax(50px, .7fr);
+
+        min-height: 55px;
+
+    }
+
+
+    .cc-compare-row > div {
+
+        padding: 10px 8px;
+
+        font-size: 10px;
+
+    }
+
+
+    .cc-compare-header > div {
+
+        font-size: 9px;
+
+    }
+
+
+    .cc-compare-row .feature-name {
+
+        gap: 6px;
+
+    }
+
+
+    .cc-compare-row .feature-name svg {
+
+        width: 15px;
+
+        height: 15px;
+
+        flex-basis: 15px;
+
+    }
+
+}
+
+
+/* =========================================================
+   360PX
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .cc-compare-heading h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .cc-compare-copy h3 {
+
+        font-size: 31px;
+
+    }
+
+
+    .cc-compare-row > div {
+
+        padding: 9px 6px;
+
+        font-size: 9px;
+
+    }
+
+
+    .cc-compare-header > div {
+
+        font-size: 8px;
+
+    }
+
+}
+
+
+
+
+
+
+/* =========================================================
+   FAMILY PEACE SECTION
+========================================================= */
+
+.cc-peace-section {
+
+    width: 100%;
+    padding: 105px 0;
+    background:var(--bg);
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.cc-peace-section .cc-container {
+
+    width: 92%;
+    max-width: 1180px;
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   CENTER HEADING
+========================================================= */
+
+.cc-peace-heading {
+
+    max-width: 760px;
+    margin: 0 auto 65px;
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.cc-peace-heading .cc-eyebrow {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    color: var(--primary);
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+
+}
+
+
+.cc-peace-heading .cc-eyebrow span {
+
+    width: 34px;
+    height: 2px;
+
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.cc-peace-heading h2 {
+
+    margin: 0;
+
+    color:var(--primary);
+
+
+    font-size: clamp(35px, 5vw, 52px);
+
+    font-weight: 600;
+
+    line-height: 1.08;
+
+ 
+
+}
+
+
+.cc-peace-heading h2 span{
+
+    display: block;
+
+  
+
+    color: var(--secondary);
+
+    font-style: italic;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.cc-peace-heading p {
+
+    max-width: 650px;
+
+    margin: 23px auto 0;
+
+    color: var(--primary);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   LOWER LAYOUT
+========================================================= */
+
+.cc-peace-layout {
+
+    display: grid;
+
+    grid-template-columns: 0.72fr 1.28fr;
+
+    align-items: center;
+
+    gap: 65px;
+
+}
+
+
+/* =========================================================
+   FEATURE LIST
+========================================================= */
+
+.cc-peace-list {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+
+}
+
+
+.cc-peace-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-height: 64px;
+
+    padding: 13px 17px;
+
+    border: 1px solid rgba(71,152,153,.13);
+
+    border-radius: 13px;
+
+    background: rgba(71,152,153,.035);
+
+    transition: .3s ease;
+    color: var(--primary);
+
+}
+
+
+.cc-peace-item:hover {
+
+    transform: translateX(5px);
+
+    border-color: rgba(232,150,81,.4);
+
+    box-shadow:
+        0 14px 30px rgba(71,152,153,.09);
+
+}
+
+
+.cc-peace-item i {
+
+    width: 21px;
+    height: 21px;
+
+    flex: 0 0 21px;
+
+    color: var(--secondary);
+
+    stroke-width: 1.8;
+
+}
+
+
+.cc-peace-item span {
+
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.cc-peace-images {
+
+    position: relative;
+
+    min-height: 500px;
+
+}
+
+
+/* =========================================================
+   LARGE IMAGE
+========================================================= */
+
+.cc-peace-image {
+
+    position: absolute;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.13);
+
+}
+
+
+.cc-peace-large {
+
+    top: 0;
+    right: 0;
+
+    width: 78%;
+    height: 425px;
+
+}
+
+
+.cc-peace-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .8s ease;
+
+}
+
+
+.cc-peace-image:hover img {
+
+    transform: scale(1.05);
+
+}
+
+
+/* =========================================================
+   SMALL IMAGE
+========================================================= */
+
+.cc-peace-small {
+
+    left: 0;
+    bottom: 0;
+
+    width: 46%;
+    height: 220px;
+
+    padding: 7px;
+
+    border: none;
+
+    background: var(--bg);
+
+    box-shadow:
+        0 22px 50px rgba(0,0,0,.16);
+
+}
+
+
+.cc-peace-small img {
+
+    border-radius: 17px;
+
+}
+
+
+/* =========================================================
+   FLOATING NOTE
+========================================================= */
+
+.cc-floating-note {
+
+    position: absolute;
+
+    right: -5px;
+    bottom: 55px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 12px 17px 12px 12px;
+
+    border: 1px solid rgba(71,152,153,.15);
+
+    border-radius: 14px;
+
+    background: var(--bg);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.12);
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+.cc-floating-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+.cc-floating-icon i {
+
+    width: 18px;
+    height: 18px;
+
+}
+
+
+.cc-floating-text {
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+}
+
+
+.cc-floating-text strong {
+
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 800;
+
+}
+
+
+.cc-floating-text span {
+
+    color: var(--secondary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .cc-peace-section {
+
+        padding: 80px 0;
+
+    }
+
+
+    .cc-peace-heading {
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .cc-peace-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .cc-peace-list {
+
+        max-width: 600px;
+
+        margin: 0 auto;
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+
+    .cc-peace-images {
+
+        max-width: 680px;
+
+        width: 100%;
+
+        margin: auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .cc-peace-section {
+
+        padding: 65px 0;
+
+    }
+
+
+    .cc-peace-heading {
+
+        margin-bottom: 42px;
+
+    }
+
+
+    .cc-peace-heading .cc-eyebrow {
+
+        font-size: 9px;
+
+        letter-spacing: 1.7px;
+
+        gap: 9px;
+
+    }
+
+
+    .cc-peace-heading .cc-eyebrow span {
+
+        width: 22px;
+
+    }
+
+
+    .cc-peace-heading h2 {
+
+        font-size: clamp(34px, 10vw, 43px);
+
+        letter-spacing: -1px;
+
+    }
+
+
+    .cc-peace-heading p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .cc-peace-list {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .cc-peace-images {
+
+        min-height: 370px;
+
+    }
+
+
+    .cc-peace-large {
+
+        width: 82%;
+
+        height: 300px;
+
+    }
+
+
+    .cc-peace-small {
+
+        width: 48%;
+
+        height: 165px;
+
+    }
+
+
+    .cc-floating-note {
+
+        right: 0;
+
+        bottom: 35px;
+
+        padding: 9px 12px 9px 9px;
+
+    }
+
+
+    .cc-floating-icon {
+
+        width: 36px;
+        height: 36px;
+
+    }
+
+}
+
+
+/* =========================================================
+   360px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .cc-peace-heading h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .cc-peace-images {
+
+        min-height: 325px;
+
+    }
+
+
+    .cc-peace-large {
+
+        height: 265px;
+
+    }
+
+
+    .cc-peace-small {
+
+        height: 140px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.cc-faq-section{
+
+    padding:105px 0;
+
+    background:
+        var(--bg);
+}
+
+
+.cc-faq-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:18px;
+
+    max-width:900px;
+
+    margin:auto;
+}
+
+
+.cc-faq{
+
+    background:var(--bg);
+
+    border:1px solid rgba(71,152,153,.13);
+
+    border-radius:17px;
+
+    overflow:hidden;
+}
+
+
+.cc-faq-question{
+
+    width:100%;
+
+    min-height:70px;
+
+    padding:18px 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    border:0;
+
+    background:var(--bg);
+
+    text-align:left;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:700;
+}
+
+
+.cc-faq-question svg{
+
+    flex:0 0 auto;
+
+    width:18px;
+
+    height:18px;
+
+    color:var(--primary);
+
+    transition:.3s ease;
+}
+
+
+.cc-faq-answer{
+
+    display:grid;
+
+    grid-template-rows:0fr;
+
+    transition:.35s ease;
+}
+
+
+.cc-faq-answer-inner{
+
+    overflow:hidden;
+
+    padding:0 20px;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    color:#707070;
+}
+
+
+.cc-faq.active .cc-faq-answer{
+
+    grid-template-rows:1fr;
+}
+
+
+.cc-faq.active .cc-faq-answer-inner{
+
+    padding-bottom:19px;
+}
+
+
+.cc-faq.active .cc-faq-question svg{
+
+    transform:rotate(180deg);
+
+    color:var(--secondary);
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.cc-pricing-cta{
+
+    position:relative;
+
+    min-height:420px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:
+        url("images/care-family.jpg")
+        center/cover
+        no-repeat;
+}
+
+
+.cc-pricing-cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(0,0,0,.80),
+            rgba(71,152,153,.72)
+        );
+}
+
+
+.cc-cta-inner{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(800px,90%);
+
+    text-align:center;
+
+    color:#ffffff;
+}
+
+
+.cc-cta-icon{
+
+    width:60px;
+
+    height:60px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+}
+
+
+.cc-cta-icon svg{
+
+    width:28px;
+
+    height:28px;
+}
+
+
+.cc-cta-inner h2{
+
+    margin-top:23px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(35px,4vw,52px);
+
+    line-height:1.12;
+}
+
+
+.cc-cta-inner h2 span{
+
+    color:var(--secondary);
+}
+
+
+.cc-cta-inner p{
+
+    max-width:600px;
+
+    margin:17px auto 0;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:#f2f2f2;
+}
+
+
+.cc-cta-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:13px;
+
+    margin-top:30px;
+}
+
+
+.cc-cta-primary,
+.cc-cta-secondary{
+
+    min-height:49px;
+
+    padding:0 23px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    border-radius:11px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    transition:.35s ease;
+}
+
+
+.cc-cta-primary{
+
+    color:#ffffff;
+
+    background:var(--primary);
+
+    border:1px solid var(--primary);
+}
+
+
+.cc-cta-secondary{
+
+    color:#ffffff;
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.45);
+}
+
+
+.cc-cta-primary:hover,
+.cc-cta-secondary:hover{
+
+    transform:translateY(-4px);
+
+    background:var(--secondary);
+
+    border-color:var(--secondary);
+}
+
+
+/* =========================================================
+   DESKTOP LARGE
+========================================================= */
+
+@media(min-width:1200px){
+
+    .cc-pricing-grid{
+        gap:30px;
+    }
+
+    .cc-plan{
+        min-height:465px;
+    }
+}
+
+
+/* =========================================================
+   NEST HUB
+   835–1024 WIDTH / SHORT HEIGHT
+========================================================= */
+
+@media
+screen and
+(min-width:835px) and
+(max-width:1100px) and
+(max-height:700px){
+
+    .cc-price-hero{
+        min-height:600px;
+    }
+
+    .cc-price-hero-inner{
+        padding:80px 0;
+    }
+
+    .cc-price-hero h1{
+        font-size:54px;
+    }
+
+    .cc-price-hero p{
+        font-size:15px;
+    }
+
+    .cc-price-section,
+    .cc-compare-section,
+    .cc-faq-section{
+        padding:75px 0;
+    }
+
+    .cc-section-heading{
+        margin-bottom:38px;
+    }
+
+    .cc-section-heading h2{
+        font-size:38px;
+    }
+
+    .cc-plan{
+        min-height:390px;
+        padding:25px 22px;
+    }
+
+    .cc-plan-icon{
+        width:42px;
+        height:42px;
+        margin-bottom:17px;
+    }
+
+    .cc-plan h3{
+        font-size:19px;
+    }
+
+    .cc-plan-description{
+        font-size:11px;
+    }
+
+    .cc-plan-price{
+        margin-top:17px;
+        padding-bottom:15px;
+    }
+
+    .cc-plan-price strong{
+        font-size:30px;
+    }
+
+    .cc-plan-features{
+        gap:9px;
+        margin:17px 0 20px;
+    }
+
+    .cc-plan-features li{
+        font-size:10px;
+    }
+
+    .cc-plan-btn{
+        min-height:42px;
+        font-size:11px;
+    }
+
+    .cc-value-section{
+        padding:65px 0;
+    }
+
+    .cc-compare-layout{
+        gap:40px;
+    }
+
+    .cc-compare-copy h2{
+        font-size:38px;
+    }
+
+    .cc-compare-number{
+        font-size:75px;
+    }
+
+    .cc-compare-row{
+        min-height:52px;
+    }
+
+    .cc-compare-row > div{
+        font-size:10px;
+    }
+}
+
+
+/* =========================================================
+   IPAD MINI
+   768–834
+========================================================= */
+
+@media
+screen and
+(min-width:768px) and
+(max-width:834px){
+
+    .cc-price-hero{
+        min-height:720px;
+
+        text-align:center;
+    }
+
+    .cc-price-hero-inner{
+        padding:100px 0;
+    }
+
+    .cc-price-hero-content{
+        max-width:650px;
+        margin:auto;
+    }
+
+    .cc-price-eyebrow{
+        justify-content:center;
+    }
+
+    .cc-price-hero h1{
+        font-size:52px;
+    }
+
+    .cc-price-hero h1 span{
+        min-width:220px;
+    }
+
+    .cc-price-hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .cc-price-hero-actions{
+        justify-content:center;
+    }
+
+    .cc-hero-trust{
+        justify-content:center;
+    }
+
+
+    .cc-price-section{
+        padding:80px 0;
+    }
+
+    .cc-section-heading{
+        margin-bottom:45px;
+    }
+
+    .cc-section-heading h2{
+        font-size:40px;
+    }
+
+
+    .cc-pricing-grid{
+        grid-template-columns:1fr;
+
+        max-width:520px;
+
+        margin:auto;
+
+        gap:20px;
+    }
+
+    .cc-plan{
+        min-height:430px;
+    }
+
+    .cc-plan.cc-popular{
+        order:-1;
+    }
+
+
+    .cc-value-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .cc-compare-section{
+        padding:85px 0;
+    }
+
+    .cc-compare-layout{
+        grid-template-columns:1fr;
+
+        gap:45px;
+    }
+
+    .cc-compare-copy{
+        text-align:center;
+    }
+
+    .cc-compare-copy p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .cc-compare-points{
+        align-items:center;
+    }
+
+    .cc-compare-copy h2{
+        font-size:42px;
+    }
+
+
+    .cc-faq-grid{
+        grid-template-columns:1fr;
+        max-width:650px;
+    }
+}
+
+
+/* =========================================================
+   SAMSUNG GALAXY S8
+   360px
+========================================================= */
+
+@media(max-width:767px){
+
+    .cc-price-hero{
+
+        min-height:700px;
+
+        text-align:center;
+
+        background-position:center;
+    }
+
+
+    .cc-price-hero::after{
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0,0,0,.78),
+                rgba(71,152,153,.68)
+            );
+    }
+
+
+    .cc-price-hero-inner{
+
+        width:90%;
+
+        padding:85px 0 70px;
+    }
+
+
+    .cc-price-hero-content{
+
+        max-width:100%;
+    }
+
+
+    .cc-price-eyebrow{
+
+        font-size:9px;
+
+        letter-spacing:1.3px;
+
+        padding:9px 13px;
+    }
+
+
+    .cc-price-hero h1{
+
+        margin-top:20px;
+
+        font-size:36px;
+
+        line-height:1.15;
+
+        letter-spacing:-1px;
+    }
+
+
+    .cc-price-hero h1 span{
+
+        min-width:0;
+
+        display:inline;
+
+        padding-right:5px;
+    }
+
+
+    .cc-price-hero p{
+
+        margin-top:18px;
+
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+
+    .cc-price-hero-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:11px;
+
+        margin-top:27px;
+    }
+
+
+    .cc-hero-primary,
+    .cc-hero-secondary{
+
+        width:100%;
+
+        min-height:48px;
+
+        font-size:12px;
+    }
+
+
+    .cc-hero-trust{
+
+        justify-content:center;
+
+        gap:13px 17px;
+
+        margin-top:28px;
+    }
+
+
+    .cc-hero-trust-item{
+
+        font-size:10px;
+    }
+
+
+    /* SECTION */
+
+    .cc-price-section,
+    .cc-compare-section,
+    .cc-faq-section{
+
+        padding:70px 0;
+    }
+
+
+    .cc-price-container{
+
+        width:90%;
+    }
+
+
+    .cc-section-heading{
+
+        margin-bottom:35px;
+    }
+
+
+    .cc-section-eyebrow{
+
+        font-size:9px;
+
+        letter-spacing:1.5px;
+    }
+
+
+    .cc-section-eyebrow::before,
+    .cc-section-eyebrow::after{
+
+        width:18px;
+    }
+
+
+    .cc-section-heading h2{
+
+        margin-top:13px;
+
+        font-size:30px;
+
+        letter-spacing:-.8px;
+    }
+
+
+    .cc-section-heading p{
+
+        margin-top:12px;
+
+        font-size:12px;
+
+        line-height:1.7;
+    }
+
+
+    /* CARDS */
+
+    .cc-pricing-grid{
+
+        grid-template-columns:1fr;
+
+        gap:17px;
+    }
+
+
+    .cc-plan{
+
+        min-height:auto;
+
+        padding:27px 21px;
+
+        border-radius:19px;
+    }
+
+
+    .cc-plan.cc-popular{
+
+        transform:none;
+    }
+
+
+    .cc-popular-label{
+
+        top:14px;
+
+        right:14px;
+
+        font-size:7px;
+
+        padding:6px 9px;
+    }
+
+
+    .cc-plan-icon{
+
+        width:44px;
+
+        height:44px;
+
+        border-radius:12px;
+
+        margin-bottom:18px;
+    }
+
+
+    .cc-plan-icon svg{
+
+        width:20px;
+
+        height:20px;
+    }
+
+
+    .cc-plan h3{
+
+        font-size:20px;
+    }
+
+
+    .cc-plan-description{
+
+        min-height:auto;
+
+        margin-top:7px;
+
+        font-size:12px;
+    }
+
+
+    .cc-plan-price{
+
+        margin-top:20px;
+
+        padding-bottom:17px;
+    }
+
+
+    .cc-plan-price strong{
+
+        font-size:34px;
+    }
+
+
+    .cc-plan-price span{
+
+        font-size:10px;
+
+        padding-bottom:3px;
+    }
+
+
+    .cc-plan-features{
+
+        gap:12px;
+
+        margin:20px 0 24px;
+    }
+
+
+    .cc-plan-features li{
+
+        font-size:11px;
+    }
+
+
+    .cc-plan-features svg{
+
+        width:16px;
+
+        height:16px;
+    }
+
+
+    .cc-plan-btn{
+
+        min-height:46px;
+
+        font-size:11px;
+
+        border-radius:10px;
+    }
+
+
+    /* VALUE */
+
+    .cc-value-section{
+
+        padding:65px 0;
+    }
+
+
+    .cc-value-grid{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:10px;
+    }
+
+
+    .cc-value-item{
+
+        padding:21px 12px;
+
+        border-radius:15px;
+    }
+
+
+    .cc-value-icon{
+
+        width:42px;
+
+        height:42px;
+
+        margin-bottom:13px;
+
+        border-radius:12px;
+    }
+
+
+    .cc-value-icon svg{
+
+        width:19px;
+
+        height:19px;
+    }
+
+
+    .cc-value-item h3{
+
+        font-size:13px;
+    }
+
+
+    .cc-value-item p{
+
+        font-size:10px;
+    }
+
+
+    /* COMPARISON */
+
+    .cc-compare-layout{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+    }
+
+
+    .cc-compare-copy{
+
+        text-align:center;
+    }
+
+
+    .cc-compare-number{
+
+        font-size:72px;
+
+        margin-bottom:-18px;
+    }
+
+
+    .cc-compare-copy h2{
+
+        font-size:31px;
+    }
+
+
+    .cc-compare-copy p{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+        font-size:13px;
+    }
+
+
+    .cc-compare-points{
+
+        align-items:center;
+    }
+
+
+    .cc-compare-points li{
+
+        font-size:11px;
+    }
+
+
+    .cc-compare-box{
+
+        width:100%;
+
+        overflow-x:auto;
+
+        border-radius:16px;
+    }
+
+
+    .cc-compare-row{
+
+        min-width:470px;
+
+        grid-template-columns:
+            1.4fr .8fr .8fr;
+    }
+
+
+    .cc-compare-row > div{
+
+        font-size:10px;
+
+        padding:12px 10px;
+    }
+
+
+    /* FAQ */
+
+    .cc-faq-grid{
+
+        grid-template-columns:1fr;
+
+        gap:11px;
+    }
+
+
+    .cc-faq-question{
+
+        min-height:62px;
+
+        padding:15px;
+
+        font-size:12px;
+    }
+
+
+    .cc-faq-answer-inner{
+
+        padding:0 15px;
+
+        font-size:11px;
+    }
+
+
+    .cc-faq.active .cc-faq-answer-inner{
+
+        padding-bottom:15px;
+    }
+
+
+    /* CTA */
+
+    .cc-pricing-cta{
+
+        min-height:470px;
+
+        background-position:center;
+    }
+
+
+    .cc-cta-inner{
+
+        width:90%;
+    }
+
+
+    .cc-cta-icon{
+
+        width:55px;
+
+        height:55px;
+    }
+
+
+    .cc-cta-icon svg{
+
+        width:25px;
+
+        height:25px;
+    }
+
+
+    .cc-cta-inner h2{
+
+        font-size:32px;
+    }
+
+
+    .cc-cta-inner p{
+
+        font-size:13px;
+
+        line-height:1.7;
+    }
+
+
+    .cc-cta-actions{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        margin-top:25px;
+    }
+
+
+    .cc-cta-primary,
+    .cc-cta-secondary{
+
+        width:100%;
+
+        min-height:47px;
+
+        font-size:11px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media(max-width:380px){
+
+    .cc-price-hero{
+
+        min-height:680px;
+    }
+
+
+    .cc-price-hero h1{
+
+        font-size:33px;
+    }
+
+
+    .cc-price-hero p{
+
+        font-size:13px;
+    }
+
+
+    .cc-section-heading h2{
+
+        font-size:28px;
+    }
+
+
+    .cc-plan{
+
+        padding:24px 18px;
+    }
+
+
+    .cc-plan-price strong{
+
+        font-size:32px;
+    }
+
+
+    .cc-value-item{
+
+        padding:19px 9px;
+    }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        scroll-behavior:auto !important;
+
+        transition:none !important;
+
+        animation:none !important;
+    }
+}
+

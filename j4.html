@@ -1,0 +1,2709 @@
+```html
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>ASTRAVISTA | Planetarium & Observatory Visitor Center</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet">
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+<style>
+
+/* =========================================================
+   ASTRAVISTA
+   PLANETARIUM & OBSERVATORY VISITOR CENTER
+========================================================= */
+
+:root{
+
+    /* ================= BRAND ================= */
+
+    --primary:#5B5FEF;
+    --primary-dark:#4549D7;
+
+    --secondary:#F5B544;
+    --secondary-dark:#D99A24;
+
+
+    /* ================= LIGHT ================= */
+
+    --page:#F6F7FC;
+
+    --surface:#FFFFFF;
+    --surface-soft:#F0F1FF;
+
+    --text:#15182E;
+    --text-soft:#626A82;
+
+    --border:rgba(21,24,46,.10);
+
+    --header:rgba(255,255,255,.90);
+
+    --footer:#0D1024;
+    --footer-soft:#171B36;
+
+    --footer-text:#F7F8FF;
+    --footer-muted:#A8AEC6;
+
+
+    /* ================= EFFECTS ================= */
+
+    --shadow:
+        0 18px 55px rgba(27,31,83,.11);
+
+    --primary-shadow:
+        0 12px 30px rgba(91,95,239,.25);
+
+    --radius:16px;
+
+    --speed:.28s ease;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html.dark{
+
+    --page:#070916;
+
+    --surface:#11142A;
+    --surface-soft:#181C37;
+
+    --text:#F6F7FF;
+    --text-soft:#A5ABC2;
+
+    --border:rgba(255,255,255,.10);
+
+    --header:rgba(7,9,22,.91);
+
+    --footer:#04050D;
+    --footer-soft:#0E1122;
+
+    --footer-text:#F8F9FF;
+    --footer-muted:#949AB3;
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.38);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:"DM Sans",sans-serif;
+
+    background:var(--page);
+    color:var(--text);
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+ul{
+    list-style:none;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.av-header{
+
+    position:sticky;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    z-index:9999;
+
+    background:var(--header);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-bottom:1px solid var(--border);
+
+    transition:var(--speed);
+}
+
+
+/* =========================================================
+   NAV CONTAINER
+========================================================= */
+
+.av-nav{
+
+    width:100%;
+    max-width:1440px;
+
+    height:82px;
+
+    margin:auto;
+
+    padding:0 34px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.av-logo{
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+
+/* =========================================================
+   COSMIC LOGO MARK
+========================================================= */
+
+.av-logo-symbol{
+
+    position:relative;
+
+    width:46px;
+    height:46px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    box-shadow:var(--primary-shadow);
+
+    overflow:hidden;
+}
+
+
+/* orbital ring */
+
+.av-logo-symbol::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:29px;
+    height:15px;
+
+    border:
+
+        1.5px solid
+        rgba(255,255,255,.92);
+
+    border-radius:50%;
+
+    transform:rotate(-32deg);
+}
+
+
+/* second orbital ring */
+
+.av-logo-symbol::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:38px;
+    height:13px;
+
+    border:
+
+        1.5px solid
+        rgba(245,181,68,.95);
+
+    border-radius:50%;
+
+    transform:rotate(-32deg);
+}
+
+
+/* planet */
+
+.av-planet{
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    position:relative;
+
+    z-index:3;
+
+    box-shadow:
+        0 0 12px
+        rgba(255,255,255,.75);
+}
+
+
+/* star */
+
+.av-star{
+
+    position:absolute;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+
+    top:9px;
+    right:9px;
+
+    box-shadow:
+        0 0 8px
+        var(--secondary);
+}
+
+
+/* =========================================================
+   LOGO TEXT
+========================================================= */
+
+.av-logo-copy{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    line-height:1;
+}
+
+.av-logo-name{
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    letter-spacing:.10em;
+
+    color:var(--text);
+}
+
+.av-logo-tag{
+
+    margin-top:6px;
+
+    font-size:7.5px;
+
+    font-weight:700;
+
+    letter-spacing:.20em;
+
+    color:var(--secondary);
+}
+
+
+/* =========================================================
+   DESKTOP NAV
+========================================================= */
+
+.av-main-nav{
+
+    margin-left:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:3px;
+}
+
+
+/* nav item */
+
+.av-nav-item{
+
+    position:relative;
+}
+
+
+/* nav link */
+
+.av-nav-link{
+
+    height:44px;
+
+    padding:0 13px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    border-radius:11px;
+
+    color:var(--text-soft);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+    transition:var(--speed);
+}
+
+.av-nav-link:hover{
+
+    color:var(--primary);
+
+    background:var(--surface-soft);
+}
+
+.av-nav-link.active{
+
+    color:var(--primary);
+
+    background:var(--surface-soft);
+}
+
+.av-nav-link svg{
+
+    width:15px;
+    height:15px;
+
+    stroke-width:2;
+}
+
+
+/* =========================================================
+   HOME DROPDOWN
+========================================================= */
+
+.av-home-dropdown{
+
+    position:absolute;
+
+    top:calc(100% + 12px);
+
+    left:0;
+
+    width:235px;
+
+    padding:9px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    box-shadow:var(--shadow);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+        translateY(8px);
+
+    transition:
+        opacity .22s ease,
+        visibility .22s ease,
+        transform .22s ease;
+}
+
+.av-nav-item:hover
+.av-home-dropdown,
+.av-nav-item.dropdown-open
+.av-home-dropdown{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+        translateY(0);
+}
+
+
+/* dropdown link */
+
+.av-dropdown-link{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:12px;
+
+    border-radius:11px;
+
+    color:var(--text-soft);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:var(--speed);
+}
+
+.av-dropdown-link:hover{
+
+    background:var(--surface-soft);
+
+    color:var(--primary);
+}
+
+.av-dropdown-icon{
+
+    width:33px;
+    height:33px;
+
+    flex-shrink:0;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:9px;
+
+    background:var(--surface-soft);
+
+    color:var(--primary);
+}
+
+.av-dropdown-icon svg{
+
+    width:16px;
+    height:16px;
+}
+
+.av-dropdown-title{
+
+    display:block;
+
+    color:var(--text);
+
+    font-weight:700;
+
+    font-size:12.5px;
+}
+
+.av-dropdown-desc{
+
+    display:block;
+
+    margin-top:3px;
+
+    color:var(--text-soft);
+
+    font-size:10px;
+
+    font-weight:500;
+}
+
+
+/* dropdown divider */
+
+.av-dropdown-divider{
+
+    height:1px;
+
+    background:var(--border);
+
+    margin:7px 5px;
+}
+
+
+/* =========================================================
+   RIGHT ACTIONS
+========================================================= */
+
+.av-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    flex-shrink:0;
+}
+
+
+/* icon button */
+
+.av-tool{
+
+    width:40px;
+    height:40px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:1px solid var(--border);
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    border-radius:11px;
+
+    cursor:pointer;
+
+    transition:var(--speed);
+}
+
+.av-tool:hover{
+
+    color:var(--primary);
+
+    border-color:
+        rgba(91,95,239,.35);
+
+    transform:
+        translateY(-2px);
+}
+
+.av-tool svg{
+
+    width:17px;
+    height:17px;
+}
+
+
+/* =========================================================
+   DASHBOARD BUTTON
+========================================================= */
+
+.av-dashboard{
+
+    height:42px;
+
+    padding:0 16px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    border-radius:11px;
+
+    background:
+        var(--surface-soft);
+
+    color:var(--primary);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    transition:var(--speed);
+}
+
+.av-dashboard:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+}
+
+.av-dashboard svg{
+
+    width:16px;
+    height:16px;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.av-login{
+
+    height:42px;
+
+    padding:0 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:7px;
+
+    border-radius:11px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    box-shadow:
+        0 9px 22px
+        rgba(91,95,239,.23);
+
+    transition:var(--speed);
+}
+
+.av-login:hover{
+
+    background:var(--primary-dark);
+
+    transform:
+        translateY(-2px);
+}
+
+.av-login svg{
+
+    width:16px;
+    height:16px;
+}
+
+
+/* =========================================================
+   MOBILE BUTTON
+========================================================= */
+
+.av-mobile-toggle{
+
+    display:none;
+
+    width:40px;
+    height:40px;
+
+    border:1px solid var(--border);
+
+    border-radius:11px;
+
+    background:var(--surface);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    place-items:center;
+}
+
+.av-mobile-toggle svg{
+
+    width:19px;
+    height:19px;
+}
+
+
+/* =========================================================
+   MOBILE PANEL
+========================================================= */
+
+.av-mobile-panel{
+
+    display:none;
+
+    position:absolute;
+
+    top:100%;
+
+    left:0;
+    right:0;
+
+    padding:12px;
+
+    background:var(--surface);
+
+    border-bottom:
+        1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    max-height:
+        calc(100vh - 68px);
+
+    overflow-y:auto;
+}
+
+
+/* mobile link */
+
+.av-mobile-link{
+
+    width:100%;
+
+    min-height:47px;
+
+    padding:0 13px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-radius:11px;
+
+    color:var(--text-soft);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:var(--speed);
+}
+
+.av-mobile-link:hover{
+
+    background:var(--surface-soft);
+
+    color:var(--primary);
+}
+
+
+/* mobile home */
+
+.av-mobile-home{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+.av-mobile-home-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+}
+
+.av-mobile-home-left svg{
+
+    width:16px;
+}
+
+.av-mobile-arrow{
+
+    width:34px;
+    height:34px;
+
+    border:0;
+
+    border-radius:9px;
+
+    background:transparent;
+
+    color:inherit;
+
+    display:grid;
+
+    place-items:center;
+
+    cursor:pointer;
+}
+
+
+/* mobile submenu */
+
+.av-mobile-submenu{
+
+    display:none;
+
+    padding:
+        2px 0
+        7px 25px;
+}
+
+.av-mobile-submenu.open{
+
+    display:block;
+}
+
+.av-mobile-submenu a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    min-height:40px;
+
+    padding:0 12px;
+
+    border-radius:9px;
+
+    color:var(--text-soft);
+
+    font-size:12px;
+
+    font-weight:600;
+}
+
+.av-mobile-submenu a:hover{
+
+    color:var(--primary);
+
+    background:var(--surface-soft);
+}
+
+.av-mobile-submenu svg{
+
+    width:15px;
+
+    color:var(--primary);
+}
+
+
+/* mobile login */
+
+.av-mobile-login{
+
+    width:100%;
+
+    margin-top:8px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.av-footer{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:var(--footer);
+
+    color:var(--footer-text);
+}
+
+
+/* cosmic decoration */
+
+.av-footer-orbit-one{
+
+    position:absolute;
+
+    width:470px;
+    height:470px;
+
+    border:1px solid
+        rgba(91,95,239,.16);
+
+    border-radius:50%;
+
+    right:-230px;
+
+    top:-270px;
+
+    pointer-events:none;
+}
+
+.av-footer-orbit-two{
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    border:1px solid
+        rgba(245,181,68,.11);
+
+    border-radius:50%;
+
+    left:-180px;
+
+    bottom:-240px;
+
+    pointer-events:none;
+}
+
+
+/* footer container */
+
+.av-footer-container{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:1440px;
+
+    margin:auto;
+
+    padding:
+        74px 34px
+        28px;
+}
+
+
+/* =========================================================
+   FOOTER GRID
+========================================================= */
+
+.av-footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1.55fr
+        1fr
+        1fr
+        1.25fr;
+
+    gap:55px;
+
+    padding-bottom:52px;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.av-footer-brand{
+
+    max-width:380px;
+}
+
+.av-footer-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:11px;
+
+    margin-bottom:20px;
+}
+
+.av-footer-logo
+.av-logo-symbol{
+
+    width:43px;
+    height:43px;
+}
+
+.av-footer-logo
+.av-logo-name{
+
+    color:#fff;
+
+    font-size:20px;
+}
+
+.av-footer-logo
+.av-logo-tag{
+
+    font-size:7px;
+}
+
+
+.av-footer-description{
+
+    color:var(--footer-muted);
+
+    font-size:12.5px;
+
+    line-height:1.9;
+
+    max-width:350px;
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.av-socials{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-top:22px;
+}
+
+.av-social{
+
+    width:35px;
+    height:35px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+    border-radius:10px;
+
+    color:var(--footer-muted);
+
+    transition:var(--speed);
+}
+
+.av-social:hover{
+
+    background:var(--primary);
+
+    border-color:var(--primary);
+
+    color:#fff;
+
+    transform:
+        translateY(-3px);
+}
+
+.av-social svg{
+
+    width:15px;
+    height:15px;
+}
+
+
+/* =========================================================
+   FOOTER TITLE
+========================================================= */
+
+.av-footer-title{
+
+    color:#fff;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.08em;
+
+    margin-bottom:20px;
+}
+
+.av-footer-title::after{
+
+    content:"";
+
+    display:block;
+
+    width:27px;
+    height:2px;
+
+    margin-top:8px;
+
+    border-radius:20px;
+
+    background:var(--secondary);
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+.av-footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:11px;
+}
+
+.av-footer-links a{
+
+    width:max-content;
+
+    color:var(--footer-muted);
+
+    font-size:12px;
+
+    transition:var(--speed);
+}
+
+.av-footer-links a:hover{
+
+    color:var(--secondary);
+
+    transform:
+        translateX(4px);
+}
+
+
+/* =========================================================
+   VISIT INFORMATION
+========================================================= */
+
+.av-visit-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+}
+
+.av-visit-row{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    color:var(--footer-muted);
+
+    font-size:11.5px;
+
+    line-height:1.6;
+}
+
+.av-visit-row svg{
+
+    width:16px;
+    height:16px;
+
+    flex-shrink:0;
+
+    color:var(--secondary);
+
+    margin-top:2px;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.av-footer-bottom{
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+    padding-top:21px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.av-copyright{
+
+    color:var(--footer-muted);
+
+    font-size:10.5px;
+}
+
+.av-legal{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.av-legal a{
+
+    color:var(--footer-muted);
+
+    font-size:10.5px;
+
+    transition:var(--speed);
+}
+
+.av-legal a:hover{
+
+    color:var(--secondary);
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+html[dir="rtl"] .av-home-dropdown{
+
+    left:auto;
+
+    right:0;
+}
+
+html[dir="rtl"] .av-footer-links a:hover{
+
+    transform:
+        translateX(-4px);
+}
+
+html[dir="rtl"] .av-main-nav{
+
+    margin-left:0;
+
+    margin-right:auto;
+}
+
+
+/* =========================================================
+   1100px — NEST HUB / SMALL DESKTOP
+========================================================= */
+
+@media(max-width:1100px){
+
+    .av-nav{
+
+        height:76px;
+
+        padding:
+            0 24px;
+
+        gap:15px;
+    }
+
+    .av-nav-link{
+
+        padding:0 8px;
+
+        font-size:12px;
+    }
+
+    .av-dashboard{
+
+        display:none;
+    }
+
+    .av-footer-container{
+
+        padding-left:24px;
+        padding-right:24px;
+    }
+
+    .av-footer-grid{
+
+        grid-template-columns:
+            1.3fr
+            1fr
+            1fr;
+
+        gap:40px;
+    }
+
+    .av-footer-brand{
+
+        grid-column:
+            span 3;
+
+        max-width:650px;
+    }
+}
+
+
+/* =========================================================
+   834px — IPAD MINI
+========================================================= */
+
+@media(max-width:834px){
+
+    .av-nav{
+
+        height:72px;
+
+        padding:
+            0 18px;
+    }
+
+    .av-main-nav{
+
+        display:none;
+    }
+
+    .av-mobile-toggle{
+
+        display:grid;
+    }
+
+    .av-mobile-panel{
+
+        display:block;
+
+        opacity:0;
+
+        visibility:hidden;
+
+        transform:
+            translateY(-7px);
+
+        transition:
+            opacity .25s ease,
+            visibility .25s ease,
+            transform .25s ease;
+    }
+
+    .av-mobile-panel.open{
+
+        opacity:1;
+
+        visibility:visible;
+
+        transform:
+            translateY(0);
+    }
+
+    .av-actions{
+
+        margin-left:auto;
+    }
+
+    html[dir="rtl"] .av-actions{
+
+        margin-left:0;
+
+        margin-right:auto;
+    }
+
+    .av-footer-grid{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:38px 28px;
+    }
+
+    .av-footer-brand{
+
+        grid-column:
+            span 2;
+    }
+}
+
+
+/* =========================================================
+   600px — SAMSUNG S8+
+========================================================= */
+
+@media(max-width:600px){
+
+    .av-nav{
+
+        height:68px;
+
+        padding:
+            0 13px;
+    }
+
+    .av-logo{
+
+        gap:9px;
+    }
+
+    .av-logo-symbol{
+
+        width:39px;
+        height:39px;
+
+        border-radius:12px;
+    }
+
+    .av-logo-symbol::before{
+
+        width:24px;
+        height:12px;
+    }
+
+    .av-logo-symbol::after{
+
+        width:31px;
+        height:10px;
+    }
+
+    .av-logo-name{
+
+        font-size:17px;
+    }
+
+    .av-logo-tag{
+
+        font-size:6px;
+
+        margin-top:4px;
+    }
+
+    .av-tool{
+
+        width:37px;
+        height:37px;
+    }
+
+    .av-login{
+
+        display:none;
+    }
+
+    .av-mobile-toggle{
+
+        width:37px;
+        height:37px;
+    }
+
+    .av-mobile-panel{
+
+        padding:
+            10px 12px 14px;
+    }
+
+    .av-footer-container{
+
+        padding:
+            55px 18px
+            23px;
+    }
+
+    .av-footer-grid{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:
+            32px 18px;
+    }
+
+    .av-footer-brand{
+
+        grid-column:
+            span 2;
+    }
+
+    .av-footer-description{
+
+        font-size:12px;
+    }
+
+    .av-footer-bottom{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+        gap:14px;
+    }
+
+    .av-legal{
+
+        flex-wrap:wrap;
+
+        gap:14px;
+    }
+}
+
+
+/* =========================================================
+   380px — SMALL PHONES
+========================================================= */
+
+@media(max-width:380px){
+
+    .av-logo-tag{
+
+        display:none;
+    }
+
+    .av-logo-name{
+
+        font-size:16px;
+    }
+
+    .av-tool{
+
+        display:none;
+    }
+
+    .av-footer-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .av-footer-brand{
+
+        grid-column:auto;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="av-header">
+
+<nav class="av-nav">
+
+
+<!-- =======================================================
+     LOGO
+======================================================= -->
+
+<a href="index.html"
+   class="av-logo">
+
+    <span class="av-logo-symbol">
+
+        <span class="av-planet"></span>
+
+        <span class="av-star"></span>
+
+    </span>
+
+    <span class="av-logo-copy">
+
+        <span class="av-logo-name">
+            ASTRAVISTA
+        </span>
+
+        <span class="av-logo-tag">
+            PLANETARIUM • OBSERVATORY
+        </span>
+
+    </span>
+
+</a>
+
+
+<!-- =======================================================
+     DESKTOP NAVIGATION
+======================================================= -->
+
+<ul class="av-main-nav">
+
+
+<!-- HOME -->
+<li class="av-nav-item"
+    id="avHomeItem">
+
+    <a href="index.html"
+       class="av-nav-link active"
+       id="avHomeLink">
+
+        <i data-lucide="house"></i>
+
+        <span>Home</span>
+
+        <i data-lucide="chevron-down"></i>
+
+    </a>
+
+
+    <!-- HOME DROPDOWN -->
+    <div class="av-home-dropdown">
+
+
+        <a href="index.html"
+           class="av-dropdown-link">
+
+            <span class="av-dropdown-icon">
+                <i data-lucide="sparkles"></i>
+            </span>
+
+            <span>
+
+                <span class="av-dropdown-title">
+                    Home 1
+                </span>
+
+                <span class="av-dropdown-desc">
+                    Discover the universe
+                </span>
+
+            </span>
+
+        </a>
+
+
+        <a href="home-2.html"
+           class="av-dropdown-link">
+
+            <span class="av-dropdown-icon">
+                <i data-lucide="orbit"></i>
+            </span>
+
+            <span>
+
+                <span class="av-dropdown-title">
+                    Home 2
+                </span>
+
+                <span class="av-dropdown-desc">
+                    Explore the night sky
+                </span>
+
+            </span>
+
+        </a>
+
+
+        <div class="av-dropdown-divider"></div>
+
+
+        <a href="events.html"
+           class="av-dropdown-link">
+
+            <span class="av-dropdown-icon">
+                <i data-lucide="stars"></i>
+            </span>
+
+            <span>
+
+                <span class="av-dropdown-title">
+                    Celestial Events
+                </span>
+
+                <span class="av-dropdown-desc">
+                    Upcoming sky events
+                </span>
+
+            </span>
+
+        </a>
+
+    </div>
+
+</li>
+
+
+<!-- SHOWS -->
+<li class="av-nav-item">
+
+    <a href="shows.html"
+       class="av-nav-link">
+
+        <i data-lucide="clapperboard"></i>
+
+        <span>Shows & Programs</span>
+
+    </a>
+
+</li>
+
+
+<!-- SCHOOL -->
+<li class="av-nav-item">
+
+    <a href="school-programs.html"
+       class="av-nav-link">
+
+        <i data-lucide="graduation-cap"></i>
+
+        <span>School Programs</span>
+
+    </a>
+
+</li>
+
+
+<!-- MEMBERSHIP -->
+<li class="av-nav-item">
+
+    <a href="membership.html"
+       class="av-nav-link">
+
+        <i data-lucide="badge-check"></i>
+
+        <span>Membership</span>
+
+    </a>
+
+</li>
+
+
+<!-- DASHBOARD -->
+<li class="av-nav-item">
+
+    <a href="dashboard.html"
+       class="av-nav-link">
+
+        <i data-lucide="layout-dashboard"></i>
+
+        <span>Dashboard</span>
+
+    </a>
+
+</li>
+
+</ul>
+
+
+<!-- =======================================================
+     ACTIONS
+======================================================= -->
+
+<div class="av-actions">
+
+
+<!-- THEME -->
+<button
+    type="button"
+    class="av-tool"
+    id="avThemeBtn"
+    aria-label="Toggle theme"
+    title="Light / Dark">
+
+    <i data-lucide="moon"></i>
+
+</button>
+
+
+<!-- RTL -->
+<button
+    type="button"
+    class="av-tool"
+    id="avDirectionBtn"
+    aria-label="Toggle direction"
+    title="LTR / RTL">
+
+    <i data-lucide="languages"></i>
+
+</button>
+
+
+<!-- LOGIN -->
+<a href="login.html"
+   class="av-login">
+
+    <i data-lucide="log-in"></i>
+
+    <span>Visitor Login</span>
+
+</a>
+
+
+<!-- MOBILE -->
+<button
+    type="button"
+    class="av-mobile-toggle"
+    id="avMobileBtn"
+    aria-label="Open menu">
+
+    <i data-lucide="menu"></i>
+
+</button>
+
+</div>
+
+</nav>
+
+
+<!-- =======================================================
+     MOBILE NAVIGATION
+======================================================= -->
+
+<div class="av-mobile-panel"
+     id="avMobilePanel">
+
+
+<!-- MOBILE HOME -->
+
+<div>
+
+    <div class="av-mobile-link av-mobile-home">
+
+        <a href="index.html"
+           class="av-mobile-home-left">
+
+            <i data-lucide="house"></i>
+
+            <span>Home</span>
+
+        </a>
+
+
+        <button
+            type="button"
+            class="av-mobile-arrow"
+            id="avMobileHomeBtn">
+
+            <i data-lucide="chevron-down"></i>
+
+        </button>
+
+    </div>
+
+
+    <div class="av-mobile-submenu"
+         id="avMobileHomeDropdown">
+
+
+        <a href="index.html">
+
+            <i data-lucide="sparkles"></i>
+
+            <span>Home 1</span>
+
+        </a>
+
+
+        <a href="home-2.html">
+
+            <i data-lucide="orbit"></i>
+
+            <span>Home 2</span>
+
+        </a>
+
+
+        <a href="events.html">
+
+            <i data-lucide="stars"></i>
+
+            <span>Celestial Events</span>
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- SHOWS -->
+
+<a href="shows.html"
+   class="av-mobile-link">
+
+    <span>Shows & Programs</span>
+
+    <i data-lucide="chevron-right"></i>
+
+</a>
+
+
+<!-- SCHOOL -->
+
+<a href="school-programs.html"
+   class="av-mobile-link">
+
+    <span>School Programs</span>
+
+    <i data-lucide="chevron-right"></i>
+
+</a>
+
+
+<!-- MEMBERSHIP -->
+
+<a href="membership.html"
+   class="av-mobile-link">
+
+    <span>Membership</span>
+
+    <i data-lucide="chevron-right"></i>
+
+</a>
+
+
+<!-- DASHBOARD -->
+
+<a href="dashboard.html"
+   class="av-mobile-link">
+
+    <span>Visitor Dashboard</span>
+
+    <i data-lucide="chevron-right"></i>
+
+</a>
+
+
+<!-- LOGIN -->
+
+<a href="login.html"
+   class="av-login av-mobile-login">
+
+    <i data-lucide="log-in"></i>
+
+    <span>Visitor Login</span>
+
+</a>
+
+</div>
+
+</header>
+
+
+
+<!-- =========================================================
+     PAGE CONTENT PLACEHOLDER
+========================================================= -->
+
+<main style="min-height:620px;"></main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="av-footer">
+
+
+<!-- DECORATIVE ORBITS -->
+
+<span class="av-footer-orbit-one"></span>
+<span class="av-footer-orbit-two"></span>
+
+
+<div class="av-footer-container">
+
+
+<div class="av-footer-grid">
+
+
+<!-- =====================================================
+     BRAND
+===================================================== -->
+
+<div class="av-footer-brand">
+
+
+<a href="index.html"
+   class="av-footer-logo">
+
+    <span class="av-logo-symbol">
+
+        <span class="av-planet"></span>
+
+        <span class="av-star"></span>
+
+    </span>
+
+    <span class="av-logo-copy">
+
+        <span class="av-logo-name">
+            ASTRAVISTA
+        </span>
+
+        <span class="av-logo-tag">
+            VISITOR CENTER
+        </span>
+
+    </span>
+
+</a>
+
+
+<p class="av-footer-description">
+
+    Discover immersive planetarium experiences,
+    explore the night sky, join stargazing sessions,
+    and connect with the universe at ASTRAVISTA.
+
+</p>
+
+
+<div class="av-socials">
+
+
+<a href="#"
+   class="av-social"
+   aria-label="Instagram">
+
+    <i data-lucide="instagram"></i>
+
+</a>
+
+
+<a href="#"
+   class="av-social"
+   aria-label="Facebook">
+
+    <i data-lucide="facebook"></i>
+
+</a>
+
+
+<a href="#"
+   class="av-social"
+   aria-label="Youtube">
+
+    <i data-lucide="youtube"></i>
+
+</a>
+
+
+<a href="#"
+   class="av-social"
+   aria-label="Twitter">
+
+    <i data-lucide="twitter"></i>
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     EXPLORE
+===================================================== -->
+
+<div>
+
+<h3 class="av-footer-title">
+    Explore
+</h3>
+
+
+<ul class="av-footer-links">
+
+    <li>
+        <a href="index.html">
+            Home 1
+        </a>
+    </li>
+
+    <li>
+        <a href="home-2.html">
+            Home 2
+        </a>
+    </li>
+
+    <li>
+        <a href="shows.html">
+            Shows & Programs
+        </a>
+    </li>
+
+    <li>
+        <a href="school-programs.html">
+            School Programs
+        </a>
+    </li>
+
+    <li>
+        <a href="membership.html">
+            Membership
+        </a>
+    </li>
+
+</ul>
+
+</div>
+
+
+
+<!-- =====================================================
+     VISITOR
+===================================================== -->
+
+<div>
+
+<h3 class="av-footer-title">
+    Visitor
+</h3>
+
+
+<ul class="av-footer-links">
+
+    <li>
+        <a href="events.html">
+            Celestial Events
+        </a>
+    </li>
+
+    <li>
+        <a href="tickets.html">
+            Tickets
+        </a>
+    </li>
+
+    <li>
+        <a href="booking.html">
+            Book a Session
+        </a>
+    </li>
+
+    <li>
+        <a href="dashboard.html">
+            Visitor Dashboard
+        </a>
+    </li>
+
+    <li>
+        <a href="login.html">
+            Visitor Login
+        </a>
+    </li>
+
+</ul>
+
+</div>
+
+
+
+<!-- =====================================================
+     VISIT
+===================================================== -->
+
+<div>
+
+<h3 class="av-footer-title">
+    Visit ASTRAVISTA
+</h3>
+
+
+<div class="av-visit-list">
+
+
+<div class="av-visit-row">
+
+    <i data-lucide="map-pin"></i>
+
+    <span>
+        Planetarium & Observatory Visitor Center<br>
+        Observatory Campus
+    </span>
+
+</div>
+
+
+<div class="av-visit-row">
+
+    <i data-lucide="clock-3"></i>
+
+    <span>
+        Tuesday – Sunday<br>
+        10:00 AM – 9:00 PM
+    </span>
+
+</div>
+
+
+<div class="av-visit-row">
+
+    <i data-lucide="phone"></i>
+
+    <span>
+        +91 00000 00000
+    </span>
+
+</div>
+
+
+<div class="av-visit-row">
+
+    <i data-lucide="mail"></i>
+
+    <span>
+        hello@astravista.example
+    </span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER BOTTOM
+===================================================== -->
+
+<div class="av-footer-bottom">
+
+
+<p class="av-copyright">
+
+    © 2026 ASTRAVISTA Planetarium & Observatory.
+    All rights reserved.
+
+</p>
+
+
+<div class="av-legal">
+
+    <a href="privacy.html">
+        Privacy
+    </a>
+
+    <a href="terms.html">
+        Terms
+    </a>
+
+    <a href="accessibility.html">
+        Accessibility
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   ASTRAVISTA HEADER SCRIPT
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        /* =================================================
+           LUCIDE
+        ================================================= */
+
+        if(window.lucide){
+            lucide.createIcons();
+        }
+
+
+        /* =================================================
+           THEME
+        ================================================= */
+
+        const themeBtn =
+            document.getElementById(
+                "avThemeBtn"
+            );
+
+        const savedTheme =
+            localStorage.getItem(
+                "astravista-theme"
+            );
+
+
+        if(savedTheme === "dark"){
+
+            document.documentElement
+                .classList
+                .add("dark");
+
+        }
+
+
+        function refreshThemeIcon(){
+
+            if(!themeBtn) return;
+
+
+            themeBtn.innerHTML =
+                document.documentElement
+                    .classList
+                    .contains("dark")
+
+                ? '<i data-lucide="sun"></i>'
+
+                : '<i data-lucide="moon"></i>';
+
+
+            if(window.lucide){
+                lucide.createIcons();
+            }
+
+        }
+
+
+        refreshThemeIcon();
+
+
+        themeBtn?.addEventListener(
+            "click",
+            function(){
+
+                document.documentElement
+                    .classList
+                    .toggle("dark");
+
+
+                const dark =
+                    document.documentElement
+                        .classList
+                        .contains("dark");
+
+
+                localStorage.setItem(
+                    "astravista-theme",
+                    dark
+                        ? "dark"
+                        : "light"
+                );
+
+
+                refreshThemeIcon();
+
+            }
+        );
+
+
+        /* =================================================
+           RTL / LTR
+        ================================================= */
+
+        const directionBtn =
+            document.getElementById(
+                "avDirectionBtn"
+            );
+
+
+        const savedDirection =
+            localStorage.getItem(
+                "astravista-direction"
+            );
+
+
+        if(savedDirection){
+
+            document.documentElement.dir =
+                savedDirection;
+
+        }
+
+
+        directionBtn?.addEventListener(
+            "click",
+            function(){
+
+                const current =
+                    document.documentElement.dir;
+
+
+                const next =
+                    current === "rtl"
+                        ? "ltr"
+                        : "rtl";
+
+
+                document.documentElement.dir =
+                    next;
+
+
+                localStorage.setItem(
+                    "astravista-direction",
+                    next
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           DESKTOP HOME DROPDOWN
+        ================================================= */
+
+        const homeItem =
+            document.getElementById(
+                "avHomeItem"
+            );
+
+        const homeLink =
+            document.getElementById(
+                "avHomeLink"
+            );
+
+
+        homeLink?.addEventListener(
+            "click",
+            function(event){
+
+                event.preventDefault();
+
+                homeItem.classList.toggle(
+                    "dropdown-open"
+                );
+
+            }
+        );
+
+
+        /* =================================================
+           MOBILE MENU
+        ================================================= */
+
+        const mobileBtn =
+            document.getElementById(
+                "avMobileBtn"
+            );
+
+        const mobilePanel =
+            document.getElementById(
+                "avMobilePanel"
+            );
+
+
+        mobileBtn?.addEventListener(
+            "click",
+            function(){
+
+                const open =
+                    mobilePanel.classList
+                        .toggle("open");
+
+
+                mobileBtn.innerHTML =
+                    open
+
+                    ? '<i data-lucide="x"></i>'
+
+                    : '<i data-lucide="menu"></i>';
+
+
+                if(window.lucide){
+                    lucide.createIcons();
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           MOBILE HOME DROPDOWN
+        ================================================= */
+
+        const mobileHomeBtn =
+            document.getElementById(
+                "avMobileHomeBtn"
+            );
+
+        const mobileHomeDropdown =
+            document.getElementById(
+                "avMobileHomeDropdown"
+            );
+
+
+        mobileHomeBtn?.addEventListener(
+            "click",
+            function(event){
+
+                event.preventDefault();
+
+                event.stopPropagation();
+
+
+                const open =
+                    mobileHomeDropdown
+                        .classList
+                        .toggle("open");
+
+
+                mobileHomeBtn.innerHTML =
+                    open
+
+                    ? '<i data-lucide="chevron-up"></i>'
+
+                    : '<i data-lucide="chevron-down"></i>';
+
+
+                if(window.lucide){
+                    lucide.createIcons();
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           CLOSE DESKTOP DROPDOWN
+        ================================================= */
+
+        document.addEventListener(
+            "click",
+            function(event){
+
+                if(
+                    homeItem &&
+                    !homeItem.contains(
+                        event.target
+                    )
+                ){
+
+                    homeItem.classList.remove(
+                        "dropdown-open"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           ESCAPE
+        ================================================= */
+
+        document.addEventListener(
+            "keydown",
+            function(event){
+
+                if(event.key !== "Escape"){
+                    return;
+                }
+
+
+                homeItem?.classList.remove(
+                    "dropdown-open"
+                );
+
+
+                mobilePanel?.classList.remove(
+                    "open"
+                );
+
+
+                if(mobileBtn){
+
+                    mobileBtn.innerHTML =
+                        '<i data-lucide="menu"></i>';
+
+                    if(window.lucide){
+                        lucide.createIcons();
+                    }
+
+                }
+
+            }
+        );
+
+
+        /* =================================================
+           CLOSE MOBILE AFTER LINK CLICK
+        ================================================= */
+
+        document
+            .querySelectorAll(
+                ".av-mobile-panel a"
+            )
+            .forEach(
+                function(link){
+
+                    link.addEventListener(
+                        "click",
+                        function(){
+
+                            mobilePanel
+                                ?.classList
+                                .remove("open");
+
+                            if(mobileBtn){
+
+                                mobileBtn.innerHTML =
+                                    '<i data-lucide="menu"></i>';
+
+                                if(window.lucide){
+                                    lucide.createIcons();
+                                }
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
+```

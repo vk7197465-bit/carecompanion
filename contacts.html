@@ -1,0 +1,2238 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Care Heaven | Premium Responsive Header & Footer</title>
+
+<!-- =========================================================
+     GOOGLE FONTS
+========================================================= -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet">
+
+<!-- =========================================================
+     LUCIDE
+========================================================= -->
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="contact.css">
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/>
+
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="care-header" id="header">
+
+    <div class="header-inner">
+
+
+        <!-- BRAND -->
+
+        <a href="#" class="brand">
+<div class="logo-box image-logo">
+    <img src="images/v1.png" alt="">
+</div>
+
+            <div class="brand-text">
+
+<span class="brand-name">
+    <span class="brand-primary">Care</span>
+    <span class="brand-secondary">Companion</span>
+</span>                <span class="brand-tag">
+                    Compassion • Trust • Care
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- =================================================
+             DESKTOP NAVIGATION
+        ================================================== -->
+
+        <nav class="main-nav">
+ 
+
+            <!-- HOME DROPDOWN -->
+
+            <div class="dropdown" id="homeDropdown">
+
+                <a href="#"
+                   class="nav-link"
+                   id="homeToggle">
+
+                    Home
+
+                    <i data-lucide="chevron-down"
+                       class="nav-arrow">
+                    </i>
+
+                </a>
+
+
+                <div class="dropdown-menu">
+
+                    <div class="dropdown-title">
+                        Explore Home
+                    </div>
+
+
+                    <a href="index.html"
+                       class="dropdown-item">
+
+                        <i data-lucide="house"></i>
+
+                        Home 1
+
+                    </a>
+
+
+                    <a href="home.html"
+                       class="dropdown-item">
+
+                        <i data-lucide="heart"></i>
+
+                        Home 2
+
+                    </a>
+
+
+                    
+                </div>
+
+            </div>
+
+
+       
+
+            <a href="services.html"
+               class="nav-link">
+                Services
+            </a>
+
+            <a href="pricing.html"
+               class="nav-link">
+                Pricing
+            </a>
+
+            <a href="blog.html"
+               class="nav-link">
+                Blog
+            </a>
+
+            <a href="contact.html"
+               class="nav-link">
+                Contact
+            </a>
+
+            <a href="dashboard.html"
+               class="nav-link">
+                Dashboard
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             HEADER ACTIONS
+        ================================================== -->
+
+        <div class="header-actions">
+
+
+            <!-- THEME -->
+
+            <button
+                class="icon-btn"
+                id="themeBtn"
+                type="button"
+                title="Toggle theme"
+                aria-label="Toggle theme">
+
+                <i data-lucide="moon"></i>
+
+            </button>
+
+
+            <!-- RTL -->
+
+            <button
+                class="icon-btn"
+                id="rtlBtn"
+                type="button"
+                title="RTL / LTR"
+                aria-label="Toggle RTL">
+                <i data-lucide="arrow-left-right"></i>
+
+ 
+            </button>
+
+
+            <!-- DESKTOP LOGIN -->
+
+            <a href="login.html"
+               class="login-btn desktop-login">
+
+
+                <span>Login</span>
+
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false">
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         RESPONSIVE MOBILE / TABLET PANEL
+    ====================================================== -->
+
+    <div class="mobile-panel"
+         id="mobilePanel">
+
+
+        <!-- HOME -->
+
+        <div class="mobile-nav-group">
+
+
+            <button
+                class="mobile-nav-dropdown"
+                id="mobileHomeBtn"
+                type="button"
+                aria-expanded="false">
+
+                <span>
+
+                    <i data-lucide="house"></i>
+
+                    Home
+
+                </span>
+
+
+                <i data-lucide="chevron-down"
+                   class="mobile-chevron">
+                </i>
+
+            </button>
+
+
+            <!-- HOME SUBMENU -->
+
+            <div class="mobile-dropdown"
+                 id="mobileHomeDropdown">
+
+
+                <a href="index.html">
+
+                    <i data-lucide="sparkles"></i>
+
+                    Home 1
+
+                </a>
+
+
+                <a href="home.html">
+
+                    <i data-lucide="heart-handshake"></i>
+
+                    Home 2
+
+                </a>
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+ 
+
+
+        <a href="services.html">
+
+            <i data-lucide="heart-pulse"></i>
+
+            Services
+
+        </a>
+
+
+        <a href="pricing.html">
+
+            <i data-lucide="badge-indian-rupee"></i>
+
+            Pricing
+
+        </a>
+
+
+        <a href="blog.html">
+
+            <i data-lucide="newspaper"></i>
+
+            Blog
+
+        </a>
+
+
+        <a href="contact.html">
+
+            <i data-lucide="phone"></i>
+
+            Contact
+
+        </a>
+
+
+        <a href="dashboard.html">
+
+            <i data-lucide="layout-dashboard"></i>
+
+            Dashboard
+
+        </a>
+
+
+        <!-- MOBILE LOGIN -->
+
+        <a href="login.html"
+           class="mobile-login">
+
+            <i data-lucide="log-in"></i>
+
+            Login
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="contact-hero">
+
+<div class="container">
+
+<div class="hero-grid">
+
+<div class="hero-content">
+
+<span class="eyebrow">
+    <i class="bi bi-chat-heart"></i>
+    We're here for you
+</span>
+
+<h1>
+    Let's make care<br>
+    feel <span>closer.</span>
+</h1>
+
+<p>
+    Have a question about our companion visits, wellness
+    check-ins, or family care services? Our team is ready
+    to listen and help you find the right support for your
+    loved one.
+</p>
+
+<div class="hero-actions">
+
+<a href="#contact-form" class="btn btn-primary">
+    Start a Conversation
+    <i class="bi bi-arrow-right"></i>
+</a>
+
+<a href="tel:+18001234567" class="btn btn-secondary">
+    <i class="bi bi-telephone"></i>
+    Call Our Care Team
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<div class="hero-card-top">
+
+<div class="hero-card-title">
+    Care Team Support
+</div>
+
+<div class="status">
+    <span class="status-dot"></span>
+    Available
+</div>
+
+</div>
+
+
+<div class="support-box">
+
+<div class="support-icon">
+    <i class="bi bi-headset"></i>
+</div>
+
+<div>
+
+<h3>
+    Speak with a care coordinator
+</h3>
+
+<p>
+    Get personalized guidance for choosing
+    the right companion care for your family.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="hero-mini-grid">
+
+<div class="mini-card">
+
+<i class="bi bi-clock"></i>
+
+<strong>
+    Quick Response
+</strong>
+
+<span>
+    We aim to respond promptly
+</span>
+
+</div>
+
+
+<div class="mini-card">
+
+<i class="bi bi-heart"></i>
+
+<strong>
+    Compassion First
+</strong>
+
+<span>
+    Every conversation matters
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT INFORMATION
+========================================================= -->
+
+<section class="section contact-info">
+
+<div class="container">
+
+<div class="info-heading">
+
+<span class="eyebrow">
+    <i class="bi bi-send"></i>
+    Contact information
+</span>
+
+<h2 class="section-title">
+    Reach us <span>your way.</span>
+</h2>
+
+<p class="section-description">
+    Choose the option that works best for you.
+    Our care team is happy to answer questions,
+    explain our services, and help you get started.
+</p>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<div class="info-icon">
+    <i class="bi bi-telephone"></i>
+</div>
+
+<h3>
+    Call us
+</h3>
+
+<p>
+    Talk directly with our care coordination team.
+</p>
+
+<a href="tel:+18001234567" class="info-link">
+    +1 (800) 123-4567
+    <i class="bi bi-arrow-up-right"></i>
+</a>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+    <i class="bi bi-envelope"></i>
+</div>
+
+<h3>
+    Email us
+</h3>
+
+<p>
+    Send us your questions and we'll get back to you.
+</p>
+
+<a href="mailto:care@example.com" class="info-link">
+    care@example.com
+    <i class="bi bi-arrow-up-right"></i>
+</a>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+    <i class="bi bi-geo-alt"></i>
+</div>
+
+<h3>
+    Service area
+</h3>
+
+<p>
+    We provide companion and home visit services
+    across selected local communities.
+</p>
+
+<a href="#service-area" class="info-link">
+    View service areas
+    <i class="bi bi-arrow-down"></i>
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT FORM
+========================================================= -->
+
+<section class="section form-section" id="contact-form">
+
+<div class="container">
+
+<div class="form-grid">
+
+
+<div class="form-intro">
+
+<span class="eyebrow">
+    <i class="bi bi-pencil-square"></i>
+    Send an enquiry
+</span>
+
+<h2>
+    Tell us how we can
+    <span>help.</span>
+</h2>
+
+<p>
+    Share a few details about what you're looking for.
+    A member of our care team will review your enquiry
+    and help you understand the next steps.
+</p>
+
+
+<ul class="promise-list">
+
+<li>
+    <i class="bi bi-check-circle-fill"></i>
+    Personalized guidance based on your family's needs
+</li>
+
+<li>
+    <i class="bi bi-check-circle-fill"></i>
+    Clear information about our services and pricing
+</li>
+
+<li>
+    <i class="bi bi-check-circle-fill"></i>
+    No pressure — we're here to answer your questions
+</li>
+
+<li>
+    <i class="bi bi-check-circle-fill"></i>
+    Confidential and respectful communication
+</li>
+
+</ul>
+
+</div>
+
+
+
+<div class="contact-form">
+
+<div class="form-title">
+    Contact our care team
+</div>
+
+<div class="form-subtitle">
+    Fields marked with <strong>*</strong> are required.
+</div>
+
+
+<form id="careContactForm">
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>
+    Your name <span>*</span>
+</label>
+
+<input
+    type="text"
+    class="form-control"
+    placeholder="Enter your name"
+    required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    Email address <span>*</span>
+</label>
+
+<input
+    type="email"
+    class="form-control"
+    placeholder="you@example.com"
+    required
+>
+
+</div>
+
+</div>
+
+
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label>
+    Phone number
+</label>
+
+<input
+    type="tel"
+    class="form-control"
+    placeholder="+1 (000) 000-0000"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+    How can we help?
+</label>
+
+<select class="form-control">
+
+<option value="">
+    Select a service
+</option>
+
+<option>
+    Companion Visit
+</option>
+
+<option>
+    Wellness Check
+</option>
+
+<option>
+    Errand Assistance
+</option>
+
+<option>
+    Family Support
+</option>
+
+<option>
+    Pricing Information
+</option>
+
+<option>
+    General Question
+</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label>
+    Message <span>*</span>
+</label>
+
+<textarea
+    class="form-control"
+    placeholder="Tell us a little about what you need..."
+    required
+></textarea>
+
+</div>
+
+
+<button
+    type="submit"
+    class="btn btn-primary submit-btn"
+>
+    Send Message
+    <i class="bi bi-arrow-right"></i>
+</button>
+
+<div class="form-note">
+    Your information is used only to respond to your enquiry.
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICE AREA
+========================================================= -->
+
+
+<section class="cc-location-section" id="location">
+
+    <div class="cc-location-container">
+
+        <!-- =================================================
+             SECTION HEADING
+        ================================================== -->
+
+        <div class="cc-location-heading">
+
+            <div class="cc-location-eyebrow">
+                <span></span>
+                OUR SERVICE AREA
+                <span></span>
+            </div>
+
+            <h2>
+                Care That Feels
+                <em>Closer to Home</em>
+            </h2>
+
+            <p>
+                Connecting families with trusted companionship
+                and home visit support where it matters most.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             MAP + INFORMATION
+        ================================================== -->
+
+        <div class="cc-location-grid">
+
+            <!-- MAP -->
+            <div class="cc-map-wrapper">
+
+                <div class="cc-map">
+
+                    <iframe
+                        src="https://www.google.com/maps?q=Hyderabad%2C%20Telangana%2C%20India&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Care Companion service location">
+                    </iframe>
+
+                    <div class="cc-map-pin">
+
+                        <div class="cc-pin-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+
+                        <div>
+                            <strong>Care Companion</strong>
+                            <span>Hyderabad, Telangana</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INFORMATION -->
+            <div class="cc-location-content">
+
+                <div class="cc-location-tag">
+                    <i data-lucide="navigation"></i>
+                    Serving Families Locally
+                </div>
+
+                <h3>
+                    Support begins
+                    <span>where you are.</span>
+                </h3>
+
+                <p>
+                    Our companion services are designed to bring
+                    dependable human connection and everyday support
+                    directly into the comfort of home.
+                </p>
+
+
+                <div class="cc-location-items">
+
+                    <div class="cc-location-item">
+
+                        <div class="cc-item-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+
+                        <div>
+                            <strong>Service Location</strong>
+                            <span>Hyderabad, Telangana</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="cc-location-item">
+
+                        <div class="cc-item-icon">
+                            <i data-lucide="home"></i>
+                        </div>
+
+                        <div>
+                            <strong>Home Visits</strong>
+                            <span>Companionship at home</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="cc-location-item">
+
+                        <div class="cc-item-icon">
+                            <i data-lucide="clock-3"></i>
+                        </div>
+
+                        <div>
+                            <strong>Flexible Scheduling</strong>
+                            <span>Visits arranged around your needs</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a href="contact.html" class="cc-location-button">
+                    Find Support Near You
+                    <i data-lucide="arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="section faq-section">
+
+<div class="container">
+
+<div class="info-heading">
+
+<span class="eyebrow">
+    <i class="bi bi-question-circle"></i>
+    Frequently asked
+</span>
+
+<h2 class="section-title">
+    Questions before you <span>reach out?</span>
+</h2>
+
+<p class="section-description">
+    Here are a few answers to common questions
+    families ask before contacting our care team.
+</p>
+
+</div>
+
+
+<div class="faq-wrapper">
+
+
+<div class="faq-item active">
+
+<button class="faq-question">
+
+<span>
+    How quickly will someone respond to my enquiry?
+</span>
+
+<i class="bi bi-plus-lg"></i>
+
+</button>
+
+<div class="faq-answer">
+    Our care team reviews enquiries regularly and
+    will respond as soon as possible during our
+    normal support hours.
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+    Can I ask about care for a specific family member?
+</span>
+
+<i class="bi bi-plus-lg"></i>
+
+</button>
+
+<div class="faq-answer">
+    Yes. You can share your general requirements
+    with our care team, and we can explain which
+    services may be suitable.
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+    Can you help me understand your pricing?
+</span>
+
+<i class="bi bi-plus-lg"></i>
+
+</button>
+
+<div class="faq-answer">
+    Absolutely. Contact our team and we can explain
+    the available service options and applicable
+    pricing for your area.
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+    Can I request a particular caregiver?
+</span>
+
+<i class="bi bi-plus-lg"></i>
+
+</button>
+
+<div class="faq-answer">
+    Caregiver preferences can be discussed with
+    our coordination team. Availability depends
+    on the service area and schedule.
+</div>
+
+</div>
+
+
+
+<div class="faq-item">
+
+<button class="faq-question">
+
+<span>
+    Is this service for medical emergencies?
+</span>
+
+<i class="bi bi-plus-lg"></i>
+
+</button>
+
+<div class="faq-answer">
+    No. Companion and home visit services are not
+    a replacement for emergency medical care.
+    For an immediate medical emergency, contact
+    your local emergency services.
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="final-cta">
+
+<div class="container">
+
+<div class="cta-box">
+
+<div class="cta-content">
+
+<h2>
+    Not sure where to start?
+</h2>
+
+<p>
+    That's okay. Talk to our care team and we'll
+    help you understand your options.
+</p>
+
+</div>
+
+
+<a href="tel:+18001234567"
+   class="btn">
+
+    <i class="bi bi-telephone"></i>
+    Talk to Our Team
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* FAQ */
+
+document.querySelectorAll(".faq-question").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const item = button.parentElement;
+
+        document.querySelectorAll(".faq-item").forEach(other => {
+
+            if(other !== item){
+                other.classList.remove("active");
+            }
+
+        });
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+
+/* FORM */
+
+document
+.getElementById("careContactForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const button = this.querySelector("button");
+
+    button.innerHTML =
+        '<i class="bi bi-check-circle"></i> Message Sent';
+
+    button.style.background =
+        "var(--primary-dark)";
+
+});
+
+</script>
+
+
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="care-footer">
+
+
+    <div class="footer-orb one"></div>
+
+    <div class="footer-orb two"></div>
+
+
+    <div class="footer-container">
+
+
+        <div class="footer-top">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+
+                <a href="#"
+                   class="brand">
+
+<div class="logo-box image-logo">
+    <img src="images/v1.png" alt="">
+</div>
+
+                    <div class="brand-text">
+<span class="brand-name">
+    <span class="brand-primary">Care</span>
+    <span class="brand-secondary">Companion</span>
+</span>
+                        <span class="brand-tag">
+                            Compassion • Trust • Care
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <p class="footer-description">
+
+                    Compassionate elderly companionship and
+                    trusted home visit services designed to bring
+                    comfort, safety and peace of mind to families.
+
+                </p>
+
+
+                <div class="footer-badge">
+
+                    <span></span>
+
+                    Trusted Care • Every Visit
+
+                </div>
+
+
+<div class="socials">
+
+    <a href="#"
+       class="social"
+       aria-label="Facebook">
+
+        <i class="bi bi-facebook"></i>
+
+    </a>
+
+    <a href="#"
+       class="social"
+       aria-label="Instagram">
+
+        <i class="bi bi-instagram"></i>
+
+    </a>
+
+    <a href="#"
+       class="social"
+       aria-label="LinkedIn">
+
+        <i class="bi bi-linkedin"></i>
+
+    </a>
+
+    <a href="#"
+       class="social"
+       aria-label="YouTube">
+
+        <i class="bi bi-youtube"></i>
+
+    </a>
+
+</div>
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="services.html">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="pricing.html">
+                            Pricing
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- SERVICES -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Our Services
+                </h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#">
+                            Companion Visits
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Wellness Monitoring
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Errand Assistance
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Safety Checks
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Family Dashboard
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Stay Connected
+                </h3>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+
+                        <i data-lucide="map-pin"></i>
+
+                    </div>
+
+                    <span>
+                        Bengaluru, Karnataka, India
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+
+                        <i data-lucide="phone"></i>
+
+                    </div>
+
+                    <span>
+                        +91 98765 43210
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+
+                        <i data-lucide="mail"></i>
+
+                    </div>
+
+                    <span>
+                        care@carecompanion.com
+                    </span>
+
+                </div>
+
+
+                <!-- NEWSLETTER -->
+
+                <div class="newsletter">
+
+                    <div class="newsletter-box">
+
+                        <input
+                            id="newsletterInput"
+                            type="email"
+                            placeholder="Your email address"
+                            autocomplete="email"
+                        >
+
+
+                        <button
+                            id="newsletterButton"
+                            type="button"
+                            aria-label="Subscribe">
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+
+            <div class="copyright">
+
+                © 2026 Care Heaven.
+                All rights reserved.
+
+            </div>
+
+
+            <div class="footer-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Service
+                </a>
+
+                <a href="#">
+                    Accessibility
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+/* =========================================================
+   CARE COMPANION — GLOBAL HEADER SYSTEM
+   ONE THEME + ONE RTL STATE ACROSS ALL PAGES
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =====================================================
+       LUCIDE
+    ===================================================== */
+
+    if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+    }
+
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const root = document.documentElement;
+
+    const header =
+        document.getElementById("header");
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const mobilePanel =
+        document.getElementById("mobilePanel");
+
+    const themeBtn =
+        document.getElementById("themeBtn");
+
+    const rtlBtn =
+        document.getElementById("rtlBtn");
+
+    const homeDropdown =
+        document.getElementById("homeDropdown");
+
+    const homeToggle =
+        document.getElementById("homeToggle");
+
+    const mobileHomeBtn =
+        document.getElementById("mobileHomeBtn");
+
+    const mobileHomeDropdown =
+        document.getElementById("mobileHomeDropdown");
+
+    const newsletterInput =
+        document.getElementById("newsletterInput");
+
+    const newsletterButton =
+        document.getElementById("newsletterButton");
+
+
+    /* =====================================================
+       IMPORTANT
+       USE ONLY THESE TWO STORAGE KEYS
+    ===================================================== */
+
+    let darkMode =
+        localStorage.getItem("care-theme") === "dark";
+
+    let rtlMode =
+        localStorage.getItem("care-direction") === "rtl";
+
+
+    /* =====================================================
+       THEME
+    ===================================================== */
+
+    function applyTheme() {
+
+        if (darkMode) {
+
+            root.classList.add("dark");
+
+            root.setAttribute(
+                "data-theme",
+                "dark"
+            );
+
+            root.style.setProperty(
+                "--bg",
+                "#111017"
+            );
+
+            root.style.setProperty(
+                "--surface",
+                "#191720"
+            );
+
+            root.style.setProperty(
+                "--surface-soft",
+                "#211D29"
+            );
+
+            root.style.setProperty(
+                "--text",
+                "#F8F5FA"
+            );
+
+            root.style.setProperty(
+                "--muted",
+                "#B9B2C2"
+            );
+
+            root.style.setProperty(
+                "--border",
+                "rgba(255,255,255,.11)"
+            );
+
+            if (themeBtn) {
+
+                themeBtn.innerHTML =
+                    '<i data-lucide="sun"></i>';
+
+            }
+
+        } else {
+
+            root.classList.remove("dark");
+
+            root.setAttribute(
+                "data-theme",
+                "light"
+            );
+
+            root.style.setProperty(
+                "--bg",
+                "#FBF8F4"
+            );
+
+            root.style.setProperty(
+                "--surface",
+                "#FFFFFF"
+            );
+
+            root.style.setProperty(
+                "--surface-soft",
+                "#F5F0EA"
+            );
+
+            root.style.setProperty(
+                "--text",
+                "#292535"
+            );
+
+            root.style.setProperty(
+                "--muted",
+                "#777180"
+            );
+
+            root.style.setProperty(
+                "--border",
+                "rgba(71,152,153,.14)"
+            );
+
+            if (themeBtn) {
+
+                themeBtn.innerHTML =
+                    '<i data-lucide="moon"></i>';
+
+            }
+        }
+
+        if (typeof lucide !== "undefined") {
+            lucide.createIcons();
+        }
+    }
+
+
+    /* =====================================================
+       RTL / LTR
+    ===================================================== */
+
+    function applyDirection() {
+
+        root.setAttribute(
+            "dir",
+            rtlMode ? "rtl" : "ltr"
+        );
+
+        root.setAttribute(
+            "data-direction",
+            rtlMode ? "rtl" : "ltr"
+        );
+    }
+
+
+    /* =====================================================
+       INITIAL GLOBAL STATE
+    ===================================================== */
+
+    applyTheme();
+    applyDirection();
+
+
+    /* =====================================================
+       THEME BUTTON
+    ===================================================== */
+
+    if (themeBtn) {
+
+        themeBtn.addEventListener(
+            "click",
+            function () {
+
+                darkMode = !darkMode;
+
+                localStorage.setItem(
+                    "care-theme",
+                    darkMode
+                        ? "dark"
+                        : "light"
+                );
+
+                applyTheme();
+
+            }
+        );
+    }
+
+
+    /* =====================================================
+       RTL BUTTON
+    ===================================================== */
+
+    if (rtlBtn) {
+
+        rtlBtn.addEventListener(
+            "click",
+            function () {
+
+                rtlMode = !rtlMode;
+
+                localStorage.setItem(
+                    "care-direction",
+                    rtlMode
+                        ? "rtl"
+                        : "ltr"
+                );
+
+                applyDirection();
+
+            }
+        );
+    }
+
+
+    /* =====================================================
+       HEADER SCROLL
+    ===================================================== */
+
+    if (header) {
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (window.scrollY > 25) {
+
+                    header.classList.add(
+                        "scrolled"
+                    );
+
+                } else {
+
+                    header.classList.remove(
+                        "scrolled"
+                    );
+
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+    }
+
+
+    /* =====================================================
+       MOBILE MENU ICON
+    ===================================================== */
+
+    function setMenuIcon(open) {
+
+        if (!menuBtn) return;
+
+        menuBtn.innerHTML =
+            open
+                ? '<i data-lucide="x"></i>'
+                : '<i data-lucide="menu"></i>';
+
+        if (typeof lucide !== "undefined") {
+            lucide.createIcons();
+        }
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            open ? "true" : "false"
+        );
+    }
+
+
+    /* =====================================================
+       OPEN MOBILE MENU
+    ===================================================== */
+
+    function openMenu() {
+
+        if (!mobilePanel) return;
+
+        mobilePanel.classList.add(
+            "active"
+        );
+
+        setMenuIcon(true);
+    }
+
+
+    /* =====================================================
+       CLOSE MOBILE MENU
+    ===================================================== */
+
+    function closeMenu() {
+
+        if (!mobilePanel) return;
+
+        mobilePanel.classList.remove(
+            "active"
+        );
+
+        setMenuIcon(false);
+
+        if (mobileHomeDropdown) {
+
+            mobileHomeDropdown.classList.remove(
+                "active"
+            );
+        }
+
+        if (mobileHomeBtn) {
+
+            mobileHomeBtn.classList.remove(
+                "open"
+            );
+
+            mobileHomeBtn.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+        }
+    }
+
+
+    /* =====================================================
+       MOBILE MENU BUTTON
+    ===================================================== */
+
+    if (menuBtn) {
+
+        menuBtn.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                if (
+                    mobilePanel &&
+                    mobilePanel.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    closeMenu();
+
+                } else {
+
+                    openMenu();
+
+                }
+            }
+        );
+    }
+
+
+    /* =====================================================
+       DESKTOP HOME DROPDOWN
+    ===================================================== */
+
+    if (
+        homeToggle &&
+        homeDropdown
+    ) {
+
+        homeToggle.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                homeDropdown.classList.toggle(
+                    "open"
+                );
+            }
+        );
+    }
+
+
+    /* =====================================================
+       MOBILE HOME DROPDOWN
+    ===================================================== */
+
+    if (
+        mobileHomeBtn &&
+        mobileHomeDropdown
+    ) {
+
+        mobileHomeBtn.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                const isOpen =
+                    mobileHomeDropdown.classList.toggle(
+                        "active"
+                    );
+
+                mobileHomeBtn.classList.toggle(
+                    "open",
+                    isOpen
+                );
+
+                mobileHomeBtn.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                        ? "true"
+                        : "false"
+                );
+            }
+        );
+    }
+
+
+    /* =====================================================
+       CLOSE DESKTOP DROPDOWN
+    ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                homeDropdown &&
+                !homeDropdown.contains(
+                    event.target
+                )
+            ) {
+
+                homeDropdown.classList.remove(
+                    "open"
+                );
+            }
+        }
+    );
+
+
+    /* =====================================================
+       MOBILE NORMAL LINKS
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            ".mobile-panel > a"
+        )
+        .forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        closeMenu();
+
+                    }
+                );
+            }
+        );
+
+
+    /* =====================================================
+       MOBILE HOME LINKS
+    ===================================================== */
+
+    document
+        .querySelectorAll(
+            ".mobile-dropdown a"
+        )
+        .forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        closeMenu();
+
+                    }
+                );
+            }
+        );
+
+
+    /* =====================================================
+       CLICK OUTSIDE MOBILE MENU
+    ===================================================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                mobilePanel &&
+                mobilePanel.classList.contains(
+                    "active"
+                ) &&
+                !mobilePanel.contains(
+                    event.target
+                ) &&
+                menuBtn &&
+                !menuBtn.contains(
+                    event.target
+                )
+            ) {
+
+                closeMenu();
+            }
+        }
+    );
+
+
+    /* =====================================================
+       ESC KEY
+    ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeMenu();
+
+                if (homeDropdown) {
+
+                    homeDropdown.classList.remove(
+                        "open"
+                    );
+                }
+            }
+        }
+    );
+
+
+    /* =====================================================
+       NEWSLETTER
+    ===================================================== */
+
+    if (
+        newsletterButton &&
+        newsletterInput
+    ) {
+
+        newsletterButton.addEventListener(
+            "click",
+            function () {
+
+                const email =
+                    newsletterInput.value.trim();
+
+
+                if (!email) {
+
+                    newsletterInput.focus();
+
+                    newsletterInput.style.outline =
+                        "2px solid rgba(232,150,81,.6)";
+
+                    setTimeout(
+                        function () {
+
+                            newsletterInput.style.outline =
+                                "none";
+
+                        },
+                        1200
+                    );
+
+                    return;
+                }
+
+
+                if (
+                    !email.includes("@") ||
+                    !email.includes(".")
+                ) {
+
+                    newsletterInput.focus();
+
+                    return;
+                }
+
+
+                newsletterButton.innerHTML =
+                    '<i data-lucide="check"></i>';
+
+                if (
+                    typeof lucide !== "undefined"
+                ) {
+
+                    lucide.createIcons();
+
+                }
+
+
+                newsletterInput.value = "";
+
+
+                setTimeout(
+                    function () {
+
+                        newsletterButton.innerHTML =
+                            '<i data-lucide="arrow-up-right"></i>';
+
+                        if (
+                            typeof lucide !== "undefined"
+                        ) {
+
+                            lucide.createIcons();
+
+                        }
+
+                    },
+                    2200
+                );
+            }
+        );
+    }
+
+
+    /* =====================================================
+       FOOTER REVEAL
+    ===================================================== */
+
+    const footer =
+        document.querySelector(
+            ".care-footer"
+        );
+
+    if (
+        footer &&
+        "IntersectionObserver" in window
+    ) {
+
+        const footerObserver =
+            new IntersectionObserver(
+                function (entries) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                footer.style.animation =
+                                    "footerReveal .9s cubic-bezier(.2,.8,.2,1) both";
+
+                                footerObserver.unobserve(
+                                    footer
+                                );
+                            }
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.08
+                }
+            );
+
+        footerObserver.observe(
+            footer
+        );
+    }
+
+
+    /* =====================================================
+       INITIAL MENU STATE
+    ===================================================== */
+
+    setMenuIcon(false);
+
+
+    /* =====================================================
+       DEBUG
+    ===================================================== */
+
+    console.log(
+        "Care Companion Theme:",
+        darkMode ? "Dark" : "Light"
+    );
+
+    console.log(
+        "Care Companion Direction:",
+        rtlMode ? "RTL" : "LTR"
+    );
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,4976 @@
+
+ 
+:root{
+
+--primary: #479899;       /* Teal */
+    --secondary: #E89651;     /* Orange */
+    --primary-dark:#479899;
+
+   
+    --secondary-light:#E89651;
+
+    --bg:#FBF8F4;
+    --surface:#FFFFFF;
+    --surface-soft:#F5F0EA;
+
+    --text:#292535;
+    --muted:black;
+
+    --border:rgba(91,75,138,.14);
+
+    --shadow:
+        0 20px 60px rgba(48,38,72,.12);
+
+    --shadow-hover:
+        0 25px 80px rgba(48,38,72,.20);
+
+    --transition:
+        .4s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    font-family:"DM Sans",sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    -webkit-tap-highlight-color:transparent;
+}
+
+a{
+    -webkit-tap-highlight-color:transparent;
+}
+
+img,
+svg,
+video{
+    max-width:100%;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.care-header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:9999;
+
+    padding:18px 35px;
+
+    background:rgba(251,248,244,.84);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border-bottom:
+        1px solid rgba(91,75,138,.10);
+
+    transition:var(--transition);
+
+}
+
+.care-header.scrolled{
+
+    padding-top:11px;
+    padding-bottom:11px;
+
+    background:rgba(255,255,255,.95);
+
+    box-shadow:
+        0 12px 40px rgba(40,30,60,.10);
+
+}
+
+
+/* =========================================================
+   HEADER INNER
+========================================================= */
+
+.header-inner{
+
+    width:100%;
+
+    max-width:1450px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    flex-shrink:0;
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+.logo-box{
+
+    width:48px;
+    height:48px;
+
+    display:grid;
+
+    place-items:center;
+
+    flex-shrink:0;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:16px;
+
+    color:white;
+
+
+
+    box-shadow:
+        0 10px 30px rgba(91,75,138,.25);
+
+    transition:var(--transition);
+
+}
+
+.logo-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:70px;
+    height:70px;
+
+    border:
+        1px solid rgba(255,255,255,.45);
+
+    border-radius:50%;
+
+    animation:
+        logoOrbit 5s linear infinite;
+
+}
+
+.logo-box::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-30px;
+
+ 
+
+    transform:translateX(-100%);
+
+    animation:
+        logoShine 4s infinite;
+
+}
+
+.logo-box svg{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+
+.brand-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-width:0;
+
+    line-height:1.1;
+
+}
+
+.brand-name{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:25px;
+
+    font-weight:700;
+
+    letter-spacing:-.5px;
+
+    white-space:nowrap;
+
+}
+
+.brand-tag{
+
+    margin-top:4px;
+
+    color:var(--secondary);
+
+    font-size:8px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    white-space:nowrap;
+
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.main-nav{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:4px;
+
+    min-width:0;
+
+}
+
+.nav-link{
+
+    position:relative;
+    margin-left: 17px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:12px 14px;
+
+    border-radius:12px;
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+    transition:var(--transition);
+
+}
+
+.nav-link::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:12px;
+    right:12px;
+    bottom:6px;
+
+    height:2px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    transform:scaleX(0);
+
+    transition:var(--transition);
+
+}
+
+.nav-link:hover{
+
+    color:var(--primary);
+
+    background:
+        rgba(91,75,138,.07);
+
+}
+
+.nav-link:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+.nav-arrow{
+
+    width:15px;
+    height:15px;
+
+    transition:.3s ease;
+
+}
+
+
+/* =========================================================
+   SIMPLE PREMIUM AUTO-WIDTH DROPDOWN
+========================================================= */
+
+.dropdown {
+    position: relative;
+}
+
+/* Hover bridge */
+.dropdown::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: 100%;
+    height: 12px;
+    background: transparent;
+    z-index: 999;
+}
+
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    left: 50%;
+
+    /* AUTO WIDTH */
+    width: max-content;
+    min-width: 180px;
+    max-width: 280px;
+
+    padding: 6px;
+
+    background: #fff;
+
+    border: 1px solid rgba(71, 152, 153, 0.15);
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 25px rgba(30, 50, 55, 0.10);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translate(-50%, 6px);
+
+    transition:
+        opacity .18s ease,
+        visibility .18s ease,
+        transform .22s ease;
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   OPEN ON HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+    .dropdown:hover .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        transform: translate(-50%, 0);
+    }
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.dropdown-title {
+    padding: 6px 9px 5px;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: .1em;
+    text-transform: uppercase;
+
+    color: var(--primary, #479899);
+}
+
+
+/* =========================================================
+   MENU ITEMS
+========================================================= */
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 10px;
+
+    border-radius: 8px;
+
+    white-space: nowrap;
+
+    color: var(--text, #292535);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background .18s ease,
+        color .18s ease;
+}
+
+
+/* =========================================================
+   ITEM HOVER
+========================================================= */
+
+.dropdown-item:hover {
+    background: rgba(71, 152, 153, 0.08);
+    color: var(--primary, #479899);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.dropdown-item svg,
+.dropdown-item i {
+    width: 14px;
+    height: 14px;
+
+    flex: 0 0 14px;
+
+    color: var(--secondary, #E89651);
+}
+
+
+/* =========================================================
+   SMALL ARROW / POINTER
+========================================================= */
+
+.dropdown-menu::before {
+    content: "";
+
+    position: absolute;
+
+    top: -5px;
+    left: 50%;
+
+    width: 9px;
+    height: 9px;
+
+    background: #fff;
+
+    border-left: 1px solid rgba(71, 152, 153, 0.15);
+    border-top: 1px solid rgba(71, 152, 153, 0.15);
+
+    transform: translateX(-50%) rotate(45deg);
+}
+
+
+/* =========================================================
+   MOBILE / TOUCH
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown::after {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media screen and
+(min-width: 900px) and
+(max-width: 1100px) and
+(hover: hover) and
+(pointer: fine) {
+
+    .dropdown-menu {
+        min-width: 170px;
+    }
+
+    .dropdown-item {
+        font-size: 11px;
+        padding: 7px 9px;
+    }
+
+}/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.header-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    flex-shrink:0;
+
+}
+
+.icon-btn{
+
+    width:42px;
+    height:42px;
+
+    display:grid;
+
+    place-items:center;
+
+    flex-shrink:0;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:13px;
+
+    background:
+        rgba(255,255,255,.65);
+
+    color:var(--text);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.icon-btn:hover{
+
+    color:white;
+
+    background:var(--primary);
+
+    transform:
+        translateY(-3px)
+        rotate(3deg);
+
+    box-shadow:
+        0 10px 25px rgba(91,75,138,.25);
+
+}
+
+.icon-btn svg{
+
+    width:18px;
+    height:18px;
+
+}
+
+.login-btn{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:12px 19px;
+
+    overflow:hidden;
+
+    border-radius:13px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    box-shadow:
+        0 10px 25px rgba(91,75,138,.22);
+
+    transition:var(--transition);
+
+}
+
+.login-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            110deg,
+            transparent 20%,
+            rgba(255,255,255,.35) 50%,
+            transparent 80%
+        );
+
+    transform:translateX(-120%);
+
+    transition:.7s ease;
+
+}
+
+.login-btn:hover::before{
+
+    transform:translateX(120%);
+
+}
+
+.login-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(91,75,138,.32);
+
+}
+
+.login-btn svg{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+/* =========================================================
+   HAMBURGER
+========================================================= */
+
+.menu-btn{
+
+    display:none;
+
+    width:44px;
+    height:44px;
+
+    place-items:center;
+
+    flex-shrink:0;
+
+    border:0;
+
+    border-radius:13px;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.menu-btn svg{
+
+    width:21px;
+    height:21px;
+
+}
+
+.menu-btn:hover{
+
+    transform:
+        translateY(-3px)
+        rotate(2deg);
+
+    box-shadow:
+        0 12px 28px rgba(91,75,138,.30);
+
+}
+
+
+/* =========================================================
+   MOBILE PANEL
+========================================================= */
+
+.mobile-panel{
+
+    position:absolute;
+
+    top:100%;
+
+    left:20px;
+    right:20px;
+
+    margin-top:12px;
+
+    padding:15px;
+
+    max-width:calc(100vw - 40px);
+
+    max-height:calc(100dvh - 90px);
+
+    overflow-y:auto;
+
+    overscroll-behavior:contain;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.98);
+
+    box-shadow:var(--shadow);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transform:
+        translateY(-15px)
+        scale(.98);
+
+    transition:var(--transition);
+
+}
+
+.mobile-panel.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+.mobile-panel::-webkit-scrollbar{
+    width:5px;
+}
+
+.mobile-panel::-webkit-scrollbar-thumb{
+
+    background:
+        rgba(91,75,138,.25);
+
+    border-radius:10px;
+
+}
+
+
+/* =========================================================
+   MOBILE LINKS
+========================================================= */
+
+.mobile-panel > a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-height:48px;
+
+    padding:13px 14px;
+
+    border-radius:13px;
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+}
+
+.mobile-panel > a svg{
+
+    width:18px;
+    height:18px;
+
+    color:var(--primary);
+
+    flex-shrink:0;
+
+}
+
+.mobile-panel > a:hover{
+
+    background:var(--surface-soft);
+
+    color:var(--primary);
+
+    transform:translateX(5px);
+
+}
+
+
+/* =========================================================
+   MOBILE HOME BUTTON
+========================================================= */
+
+.mobile-nav-group{
+
+    width:100%;
+
+}
+
+.mobile-nav-dropdown{
+
+    width:100%;
+
+    min-height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:13px 14px;
+
+    border:0;
+
+    border-radius:13px;
+
+    background:transparent;
+
+    color:var(--text);
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+.mobile-nav-dropdown > span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.mobile-nav-dropdown svg{
+
+    width:18px;
+    height:18px;
+
+}
+
+.mobile-nav-dropdown:hover{
+
+    background:var(--surface-soft);
+
+    color:var(--primary);
+
+}
+
+.mobile-chevron{
+
+    transition:.35s ease;
+
+}
+
+.mobile-nav-dropdown.open .mobile-chevron{
+
+    transform:rotate(180deg);
+
+}
+
+
+/* =========================================================
+   MOBILE HOME SUBMENU
+========================================================= */
+
+.mobile-dropdown{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    padding-left:28px;
+
+    transition:
+        max-height .45s ease,
+        opacity .3s ease,
+        padding .35s ease;
+
+}
+
+.mobile-dropdown.active{
+
+    max-height:250px;
+
+    opacity:1;
+
+    padding-top:5px;
+
+    padding-bottom:5px;
+
+}
+
+.mobile-dropdown a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    min-height:43px;
+
+    padding:10px 12px;
+
+    border-radius:11px;
+
+    color:var(--muted);
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+}
+
+.mobile-dropdown a svg{
+
+    width:17px;
+    height:17px;
+
+    color:var(--primary);
+
+}
+
+.mobile-dropdown a:hover{
+
+    background:var(--surface-soft);
+
+    color:var(--primary);
+
+    transform:translateX(4px);
+
+}
+
+
+/* =========================================================
+   MOBILE LOGIN
+========================================================= */
+
+.mobile-login{
+
+    display:flex !important;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    width:100%;
+
+    margin-top:10px;
+
+    padding:14px !important;
+
+    border-top:
+        1px solid var(--border);
+
+    border-radius:13px !important;
+
+    color:white !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        ) !important;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+/* =========================================================
+   PREMIUM WHITE FOOTER
+========================================================= */
+
+.care-footer{
+    position:relative;
+    overflow:hidden;
+
+    width:100%;
+
+    padding:80px 35px 25px;
+
+    color:black;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(216,155,106,.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(91,75,138,.08),
+            transparent 35%
+        ),
+        #FFFFFF;
+
+    border-top:
+        1px solid rgba(91,75,138,.10);
+
+}
+
+
+/* =========================================================
+   FOOTER CONTAINER
+========================================================= */
+
+.footer-container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:1450px;
+
+    margin:0 auto;
+
+}
+
+
+/* =========================================================
+   FOOTER TOP GRID
+========================================================= */
+
+.footer-top{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        1.45fr
+        .9fr
+        1fr
+        1.15fr;
+
+    gap:50px;
+
+    align-items:start;
+
+    padding-bottom:55px;
+
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.footer-brand{
+
+    min-width:0;
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+
+/* Footer brand should not inherit header width issues */
+
+.footer-brand .brand{
+
+    width:max-content;
+
+    max-width:100%;
+
+}
+
+
+/* Footer logo */
+
+.footer-brand .logo-box{
+
+    width:48px;
+    height:48px;
+
+    flex-shrink:0;
+
+}
+
+
+/* Footer brand name */
+
+.footer-brand .brand-name{
+
+    color:var(--text);
+
+}
+
+
+/* Footer brand tag */
+
+.footer-brand .brand-tag{
+
+    color:var(--secondary);
+
+}
+
+
+/* =========================================================
+   FOOTER DESCRIPTION
+========================================================= */
+
+.footer-description{
+
+    width:100%;
+
+    max-width:390px;
+
+    margin-top:20px;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================================================
+   FOOTER BADGE
+========================================================= */
+
+.footer-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-top:23px;
+
+    padding:9px 13px;
+
+    border:
+        1px solid rgba(91,75,138,.12);
+
+    border-radius:30px;
+
+    background:
+        rgba(91,75,138,.045);
+
+    color:var(--text);
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+/* Badge dot */
+
+.footer-badge span{
+
+    width:7px;
+    height:7px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:#67B98A;
+
+    box-shadow:
+        0 0 12px rgba(103,185,138,.45);
+
+    animation:
+        pulse 2s infinite;
+
+}
+
+
+/* =========================================================
+   SOCIAL ICONS - PERFECT ALIGNMENT
+========================================================= */
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+
+    margin-top: 22px;
+
+    width: 100%;
+}
+
+
+/* INDIVIDUAL SOCIAL BUTTON */
+
+.social {
+    width: 44px;
+    height: 44px;
+
+    min-width: 44px;
+    min-height: 44px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+
+    color: var(--primary);
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    text-decoration: none;
+
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform .3s ease,
+        color .3s ease,
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+/* ICON */
+
+.social i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+
+    font-size: 19px;
+    line-height: 1;
+
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    z-index: 2;
+
+    transition:
+        transform .3s ease;
+}
+
+
+/* PREMIUM HOVER */
+
+.social:hover {
+    color: #ffffff;
+
+    background: var(--primary);
+    border-color: var(--primary);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 25px rgba(71,152,153,.22);
+}
+
+
+.social:hover i {
+    transform: scale(1.12);
+}
+
+
+/* =========================================================
+   SUBTLE HOVER SHINE
+========================================================= */
+
+.social::before {
+    content: "";
+
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+
+    top: -45px;
+    left: -65px;
+
+    background: rgba(255,255,255,.16);
+
+    transform: rotate(25deg);
+
+    transition:
+        left .45s ease;
+}
+
+
+.social:hover::before {
+    left: 55px;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .social {
+    background: var(--surface);
+    border-color: rgba(255,255,255,.10);
+    color: var(--primary);
+}
+
+html[data-theme="dark"] .social:hover {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+
+    box-shadow:
+        0 12px 28px rgba(71,152,153,.28);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .socials {
+        justify-content: flex-start;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .social {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+        min-height: 42px;
+
+        border-radius: 12px;
+    }
+
+    .social i {
+        width: 19px;
+        height: 19px;
+        font-size: 18px;
+    }
+
+}
+
+
+/* =========================================================
+   SAMSUNG S8 / SMALL MOBILE
+========================================================= */
+
+@media (min-width: 320px) and (max-width: 380px) {
+
+    .socials {
+        gap: 8px;
+        margin-top: 18px;
+    }
+
+    .social {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+        min-height: 38px;
+
+        border-radius: 11px;
+    }
+
+    .social i {
+        width: 17px;
+        height: 17px;
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 319px) {
+
+    .socials {
+        gap: 7px;
+    }
+
+    .social {
+        width: 36px;
+        height: 36px;
+
+        min-width: 36px;
+        min-height: 36px;
+    }
+
+    .social i {
+        width: 16px;
+        height: 16px;
+        font-size: 15px;
+    }
+
+}
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column{
+
+    min-width:0;
+
+    width:100%;
+
+}
+
+
+.footer-column h3{
+
+    margin:0 0 20px;
+
+    min-height:30px;
+
+    color:var(--text);
+
+    font-size:14px;
+
+    font-weight:700;
+
+}
+
+
+.footer-column h3::after{
+
+    content:"";
+
+    display:block;
+
+    width:28px;
+    height:2px;
+
+    margin-top:8px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+.footer-links{
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+
+}
+
+
+.footer-links li{
+
+    margin:0 0 12px;
+
+    padding:0;
+
+}
+
+
+.footer-links a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    color:var(--muted);
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    transition:.35s ease;
+
+}
+
+
+.footer-links a::before{
+
+    content:"";
+
+    width:0;
+    height:1px;
+
+    flex:none;
+
+    background:var(--secondary);
+
+    transition:.35s ease;
+
+}
+
+
+.footer-links a:hover{
+
+    color:var(--primary);
+
+    transform:translateX(5px);
+
+}
+
+
+.footer-links a:hover::before{
+
+    width:12px;
+
+}
+
+
+/* =========================================================
+   CONTACT ITEMS
+========================================================= */
+
+.contact-item{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    margin-bottom:17px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.6;
+
+}
+
+
+.contact-icon{
+
+    width:35px;
+    height:35px;
+
+    display:grid;
+
+    place-items:center;
+
+    flex:none;
+
+    border:
+        1px solid rgba(216,155,106,.18);
+
+    border-radius:11px;
+
+    color:var(--secondary);
+
+    background:
+        rgba(216,155,106,.08);
+
+}
+
+
+.contact-icon svg{
+
+    width:17px;
+    height:17px;
+
+}
+
+
+.contact-item span{
+
+    flex:1;
+
+    min-width:0;
+
+    padding-top:5px;
+
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.newsletter{
+
+    width:100%;
+
+    margin-top:23px;
+
+}
+
+
+.newsletter-box{
+
+    width:100%;
+
+    min-height:50px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:5px;
+
+    border:
+        1px solid rgba(91,75,138,.14);
+
+    border-radius:13px;
+
+    background:
+        #FFFFFF;
+
+    box-shadow:
+        0 8px 25px rgba(48,38,72,.06);
+
+}
+
+
+.newsletter-box input{
+
+    min-width:0;
+
+    flex:1;
+
+    padding:10px;
+
+    border:0;
+
+    outline:0;
+
+    background:transparent;
+
+    color:var(--text);
+
+    font-size:12px;
+
+}
+
+
+.newsletter-box input::placeholder{
+
+    color:#9A949F;
+
+}
+
+
+.newsletter-box button{
+
+    width:40px;
+    height:40px;
+
+    display:grid;
+
+    place-items:center;
+
+    flex:none;
+
+    border:0;
+
+    border-radius:9px;
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+}
+
+
+.newsletter-box button svg{
+
+    width:17px;
+    height:17px;
+
+}
+
+
+.newsletter-box button:hover{
+
+    background:var(--secondary);
+
+    transform:scale(1.05);
+
+    box-shadow:
+        0 8px 20px rgba(216,155,106,.25);
+
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:25px;
+
+    margin-top:0;
+
+    padding-top:23px;
+
+    border-top:
+        1px solid rgba(91,75,138,.10);
+
+}
+
+
+.copyright{
+
+    flex:1;
+
+    min-width:0;
+
+    color:#8A8491;
+
+    font-size:11px;
+
+}
+
+
+.footer-bottom-links{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    flex-wrap:wrap;
+
+    gap:22px;
+
+}
+
+
+.footer-bottom-links a{
+
+    color:#8A8491;
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    transition:.3s ease;
+
+}
+
+
+.footer-bottom-links a:hover{
+
+    color:var(--primary);
+
+}
+
+
+/* =========================================================
+   FOOTER RTL
+========================================================= */
+
+html[dir="rtl"] .footer-links a:hover{
+
+    transform:translateX(-5px);
+
+}
+
+
+/* =========================================================
+   FOOTER LARGE DESKTOP
+========================================================= */
+
+@media screen and (min-width:1400px){
+
+    .care-footer{
+
+        padding-left:42px;
+        padding-right:42px;
+
+    }
+
+    .footer-container{
+
+        max-width:1500px;
+
+    }
+
+    .footer-top{
+
+        grid-template-columns:
+            1.45fr
+            .9fr
+            1fr
+            1.15fr;
+
+        gap:65px;
+
+    }
+
+}
+
+
+/* =========================================================
+   FOOTER DESKTOP
+========================================================= */
+
+@media screen and
+(min-width:1101px) and
+(max-width:1399px){
+
+    .care-footer{
+
+        padding-left:28px;
+        padding-right:28px;
+
+    }
+
+    .footer-top{
+
+        grid-template-columns:
+            1.35fr
+            .9fr
+            .95fr
+            1.1fr;
+
+        gap:35px;
+
+    }
+
+}
+
+
+/* =========================================================
+   NEST HUB
+   801 - 1100
+========================================================= */
+
+@media screen and
+(min-width:801px) and
+(max-width:1100px){
+
+    .care-footer{
+
+        padding:55px 25px 22px;
+
+    }
+
+    .footer-top{
+
+        grid-template-columns:
+            1.2fr
+            1fr
+            1fr;
+
+        gap:32px;
+
+    }
+
+    .footer-top .footer-column:last-child{
+
+        grid-column:1 / -1;
+
+        max-width:650px;
+
+    }
+
+    .footer-brand{
+
+        max-width:100%;
+
+    }
+
+    .footer-description{
+
+        max-width:600px;
+
+        font-size:13px;
+
+    }
+
+}
+
+
+/* =========================================================
+   IPAD MINI
+   601 - 800
+========================================================= */
+
+@media screen and
+(min-width:601px) and
+(max-width:800px){
+
+    .care-footer{
+
+        padding:60px 25px 22px;
+
+    }
+
+    .footer-top{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:38px 30px;
+
+    }
+
+    .footer-brand{
+
+        grid-column:1 / -1;
+
+        max-width:600px;
+
+    }
+
+    .footer-column:last-child{
+
+        grid-column:1 / -1;
+
+        max-width:650px;
+
+    }
+
+    .footer-description{
+
+        max-width:600px;
+
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:14px;
+
+    }
+
+    .footer-bottom-links{
+
+        justify-content:flex-start;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   381 - 600
+========================================================= */
+
+@media screen and
+(min-width:381px) and
+(max-width:600px){
+
+    .care-footer{
+
+        padding:55px 15px 20px;
+
+    }
+
+    .footer-top{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .footer-brand,
+    .footer-column:last-child{
+
+        grid-column:auto;
+
+    }
+
+    .footer-brand{
+
+        max-width:100%;
+
+    }
+
+    .footer-description{
+
+        margin-top:17px;
+
+        max-width:100%;
+
+        font-size:13px;
+
+        line-height:1.75;
+
+    }
+
+    .footer-column h3{
+
+        margin-bottom:15px;
+
+        font-size:13px;
+
+    }
+
+    .footer-links a{
+
+        font-size:12px;
+
+    }
+
+    .contact-item{
+
+        font-size:12px;
+
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:13px;
+
+    }
+
+    .footer-bottom-links{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+        gap:9px 17px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SAMSUNG S8
+   320 - 380
+========================================================= */
+
+@media screen and
+(min-width:320px) and
+(max-width:380px){
+
+    .care-footer{
+
+        padding:45px 10px 17px;
+
+    }
+
+    .footer-top{
+
+        width:100%;
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+    }
+
+    .footer-brand,
+    .footer-column,
+    .footer-column:last-child{
+
+        width:100%;
+
+        max-width:100%;
+
+        grid-column:auto !important;
+
+    }
+
+    .footer-brand .brand{
+
+        max-width:100%;
+
+    }
+
+    .footer-brand .brand-name{
+
+        font-size:18px;
+
+    }
+
+    .footer-brand .brand-tag{
+
+        font-size:6px;
+
+    }
+
+    .footer-description{
+
+        margin-top:15px;
+
+        font-size:12px;
+
+        line-height:1.7;
+
+    }
+
+    .footer-badge{
+
+        margin-top:16px;
+
+        padding:8px 10px;
+
+        font-size:10px;
+
+    }
+
+    .socials{
+
+        gap:6px;
+
+        margin-top:16px;
+
+    }
+
+    .social{
+
+        width:34px;
+        height:34px;
+
+        border-radius:9px;
+
+    }
+
+    .footer-column h3{
+
+        margin-bottom:14px;
+
+        font-size:13px;
+
+    }
+
+    .footer-links li{
+
+        margin-bottom:9px;
+
+    }
+
+    .footer-links a{
+
+        font-size:12px;
+
+    }
+
+    .contact-item{
+
+        gap:9px;
+
+        margin-bottom:12px;
+
+        font-size:11px;
+
+    }
+
+    .contact-icon{
+
+        width:31px;
+        height:31px;
+
+        border-radius:9px;
+
+    }
+
+    .newsletter{
+
+        margin-top:17px;
+
+    }
+
+    .newsletter-box{
+
+        padding:4px;
+
+    }
+
+    .newsletter-box input{
+
+        padding:8px;
+
+        font-size:11px;
+
+    }
+
+    .newsletter-box button{
+
+        width:34px;
+        height:34px;
+
+    }
+
+    .footer-bottom{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:11px;
+
+    }
+
+    .footer-bottom-links{
+
+        justify-content:flex-start;
+
+        gap:7px 14px;
+
+    }
+
+    .copyright,
+    .footer-bottom-links a{
+
+        font-size:9px;
+
+    }
+
+   
+}
+
+
+/* =========================================================
+   BELOW 320
+========================================================= */
+
+@media screen and
+(max-width:319px){
+
+    .care-footer{
+
+        padding-left:8px;
+        padding-right:8px;
+
+    }
+
+    .footer-top{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footer-brand,
+    .footer-column{
+
+        width:100%;
+
+        max-width:100%;
+
+    }
+
+}
+/* =========================================================
+   LARGE DESKTOP
+   1400+
+========================================================= */
+
+@media screen and (min-width:1400px){
+
+    .care-header{
+        padding-left:42px;
+        padding-right:42px;
+    }
+
+    .header-inner{
+        max-width:1500px;
+    }
+
+    .main-nav{
+        gap:7px;
+    }
+
+    .nav-link{
+        padding:12px 16px;
+        font-size:14px;
+    }
+
+    .footer-top{
+        grid-template-columns:
+            1.45fr
+            .9fr
+            1fr
+            1.15fr;
+
+        gap:65px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+   1101 - 1399
+========================================================= */
+
+@media screen and
+(min-width:1101px) and
+(max-width:1399px){
+
+    .care-header{
+        padding-left:28px;
+        padding-right:28px;
+    }
+
+    .header-inner{
+        gap:16px;
+    }
+
+    .main-nav{
+        gap:1px;
+    }
+
+    .nav-link{
+        padding:11px 10px;
+        font-size:13px;
+    }
+
+    .header-actions{
+        gap:6px;
+    }
+
+    .icon-btn{
+        width:40px;
+        height:40px;
+    }
+
+    .login-btn{
+        padding:11px 15px;
+    }
+
+    .footer-top{
+        grid-template-columns:
+            1.35fr
+            .9fr
+            .95fr
+            1.1fr;
+
+        gap:35px;
+    }
+
+}
+
+
+/* =========================================================
+   NEST HUB
+   801 - 1100
+   1024 × 600
+========================================================= */
+
+@media screen and
+(min-width:801px) and
+(max-width:1100px){
+
+    .care-header{
+        padding:11px 20px;
+    }
+
+    .header-inner{
+        max-width:100%;
+        gap:12px;
+    }
+
+    /* BRAND */
+
+    .brand{
+        gap:9px;
+    }
+
+    .logo-box{
+        width:42px;
+        height:42px;
+        border-radius:13px;
+    }
+
+    .logo-box svg{
+        width:20px;
+        height:20px;
+    }
+
+    .brand-name{
+        font-size:21px;
+    }
+
+    .brand-tag{
+        font-size:8px;
+        letter-spacing:1.3px;
+    }
+
+    /* HIDE DESKTOP */
+
+    .main-nav{
+        display:none !important;
+    }
+
+    .desktop-login{
+        display:none !important;
+    }
+
+    /* ACTIONS */
+
+    .header-actions{
+        margin-left:auto;
+        gap:7px;
+    }
+
+    .icon-btn{
+        width:39px;
+        height:39px;
+        border-radius:11px;
+    }
+
+    /* HAMBURGER */
+
+    .menu-btn{
+        display:grid !important;
+        width:42px;
+        height:42px;
+        border-radius:12px;
+    }
+
+    /* PANEL */
+
+    .mobile-panel{
+        left:16px;
+        right:16px;
+
+        max-width:
+            calc(100vw - 32px);
+
+        max-height:
+            calc(100dvh - 75px);
+
+        padding:13px;
+
+        border-radius:20px;
+    }
+
+    .mobile-panel > a{
+        min-height:47px;
+        padding:12px 14px;
+        font-size:14px;
+    }
+
+    .mobile-nav-dropdown{
+        min-height:47px;
+        padding:12px 14px;
+        font-size:14px;
+    }
+
+    .mobile-dropdown{
+        padding-left:28px;
+    }
+
+    .mobile-dropdown a{
+        min-height:41px;
+        padding:9px 11px;
+        font-size:13px;
+    }
+
+    .mobile-login{
+        padding:13px !important;
+    }
+
+    /* FOOTER */
+
+    .care-footer{
+        padding:55px 25px 22px;
+    }
+
+    .footer-top{
+        grid-template-columns:
+            1.2fr
+            1fr
+            1fr;
+
+        gap:32px;
+    }
+
+    .footer-top .footer-column:last-child{
+        grid-column:1 / -1;
+    }
+
+    .footer-brand{
+        max-width:100%;
+    }
+
+    .footer-description{
+        font-size:13px;
+    }
+
+}
+
+
+/* =========================================================
+   NEST HUB LANDSCAPE
+   801 - 1100
+   HEIGHT BELOW 700
+========================================================= */
+
+@media screen and
+(min-width:801px) and
+(max-width:1100px) and
+(max-height:700px){
+
+    .care-header{
+        padding-top:8px;
+        padding-bottom:8px;
+    }
+
+    .care-header.scrolled{
+        padding-top:6px;
+        padding-bottom:6px;
+    }
+
+    .logo-box{
+        width:38px;
+        height:38px;
+        border-radius:11px;
+    }
+
+    .brand-name{
+        font-size:19px;
+    }
+
+    .brand-tag{
+        font-size:7px;
+        margin-top:2px;
+    }
+
+    .icon-btn{
+        width:36px;
+        height:36px;
+    }
+
+    .menu-btn{
+        width:38px;
+        height:38px;
+    }
+
+    .mobile-panel{
+        max-height:
+            calc(100dvh - 55px);
+    }
+
+}
+
+
+/* =========================================================
+   iPAD MINI
+   601 - 800
+========================================================= */
+
+@media screen and
+(min-width:601px) and
+(max-width:800px){
+
+    .care-header{
+        padding:14px 20px;
+    }
+
+    .header-inner{
+        gap:12px;
+    }
+
+    /* HIDE DESKTOP */
+
+    .main-nav{
+        display:none !important;
+    }
+
+    .desktop-login{
+        display:none !important;
+    }
+
+    /* BRAND */
+
+    .logo-box{
+        width:44px;
+        height:44px;
+        border-radius:14px;
+    }
+
+    .brand{
+        gap:10px;
+    }
+
+    .brand-name{
+        font-size:22px;
+    }
+
+    .brand-tag{
+        font-size:8px;
+        letter-spacing:1.5px;
+    }
+
+    /* ACTIONS */
+
+    .header-actions{
+        margin-left:auto;
+        gap:7px;
+    }
+
+    .icon-btn{
+        width:40px;
+        height:40px;
+        border-radius:12px;
+    }
+
+    /* HAMBURGER */
+
+    .menu-btn{
+        display:grid !important;
+        width:42px;
+        height:42px;
+        border-radius:12px;
+    }
+
+    /* PANEL */
+
+    .mobile-panel{
+        left:16px;
+        right:16px;
+
+        max-width:
+            calc(100vw - 32px);
+
+        max-height:
+            calc(100dvh - 82px);
+
+        padding:12px;
+
+        border-radius:20px;
+    }
+
+    .mobile-panel > a{
+        min-height:48px;
+        padding:13px 14px;
+        font-size:14px;
+    }
+
+    .mobile-nav-dropdown{
+        min-height:48px;
+        padding:13px 14px;
+        font-size:14px;
+    }
+
+    .mobile-dropdown{
+        padding-left:28px;
+    }
+
+    .mobile-dropdown.active{
+        max-height:240px;
+    }
+
+    .mobile-dropdown a{
+        min-height:43px;
+        padding:10px 12px;
+        font-size:13px;
+    }
+
+    .mobile-login{
+        padding:14px !important;
+    }
+
+    /* FOOTER */
+
+    .care-footer{
+        padding:60px 25px 22px;
+    }
+
+    .footer-top{
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:38px 30px;
+    }
+
+    .footer-brand{
+        grid-column:1 / -1;
+        max-width:600px;
+    }
+
+    .footer-column:last-child{
+        grid-column:1 / -1;
+    }
+
+    .footer-description{
+        max-width:600px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+    }
+
+    .footer-bottom-links{
+        flex-wrap:wrap;
+        gap:10px 20px;
+    }
+
+}
+
+
+/* =========================================================
+   iPAD MINI PORTRAIT
+========================================================= */
+
+@media screen and
+(min-width:601px) and
+(max-width:800px) and
+(min-height:801px){
+
+    .care-header{
+        padding-top:15px;
+        padding-bottom:15px;
+    }
+
+    .mobile-panel{
+        max-height:
+            calc(100dvh - 88px);
+    }
+
+    .care-footer{
+        padding-top:70px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   381 - 600
+========================================================= */
+
+@media screen and
+(min-width:381px) and
+(max-width:600px){
+
+    .care-header{
+        padding:11px 15px;
+    }
+
+    .header-inner{
+        gap:8px;
+    }
+
+    .brand{
+        gap:8px;
+        min-width:0;
+    }
+
+    .logo-box{
+        width:40px;
+        height:40px;
+        border-radius:13px;
+    }
+
+    .logo-box svg{
+        width:19px;
+        height:19px;
+    }
+
+    .brand-text{
+        min-width:0;
+    }
+
+    .brand-name{
+        font-size:19px;
+    }
+
+    .brand-tag{
+        font-size:7px;
+        letter-spacing:1.15px;
+    }
+
+    /* HIDE DESKTOP */
+
+    .main-nav{
+        display:none !important;
+    }
+
+    .desktop-login{
+        display:none !important;
+    }
+
+    /* ACTIONS */
+
+    .header-actions{
+        margin-left:auto;
+        gap:5px;
+    }
+
+    .icon-btn{
+        width:37px;
+        height:37px;
+        border-radius:11px;
+    }
+
+    .icon-btn svg{
+        width:16px;
+        height:16px;
+    }
+
+    .menu-btn{
+        display:grid !important;
+        width:39px;
+        height:39px;
+        border-radius:11px;
+    }
+
+    .menu-btn svg{
+        width:19px;
+        height:19px;
+    }
+
+    /* PANEL */
+
+    .mobile-panel{
+        left:10px;
+        right:10px;
+
+        max-width:
+            calc(100vw - 20px);
+
+        max-height:
+            calc(100dvh - 72px);
+
+        padding:10px;
+
+        border-radius:18px;
+    }
+
+    .mobile-panel > a{
+        min-height:45px;
+        padding:12px;
+        font-size:13px;
+    }
+
+    .mobile-nav-dropdown{
+        min-height:45px;
+        padding:12px;
+        font-size:13px;
+    }
+
+    .mobile-dropdown{
+        padding-left:23px;
+    }
+
+    .mobile-dropdown.active{
+        max-height:210px;
+    }
+
+    .mobile-dropdown a{
+        min-height:39px;
+        padding:9px 10px;
+        font-size:12px;
+    }
+
+    .mobile-login{
+        margin-top:7px;
+        padding:12px !important;
+        font-size:13px !important;
+    }
+
+    /* FOOTER */
+
+    .care-footer{
+        padding:55px 15px 20px;
+    }
+
+    .footer-top{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .footer-brand,
+    .footer-column:last-child{
+        grid-column:auto;
+    }
+
+    .footer-brand{
+        max-width:100%;
+    }
+
+    .footer-description{
+        margin-top:17px;
+        font-size:13px;
+        line-height:1.75;
+    }
+
+    .contact-item{
+        font-size:12px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:13px;
+    }
+
+    .footer-bottom-links{
+        width:100%;
+        flex-wrap:wrap;
+        gap:9px 17px;
+    }
+
+}
+
+
+/* =========================================================
+   SAMSUNG S8
+   320 - 380
+========================================================= */
+
+@media screen and
+(min-width:320px) and
+(max-width:380px){
+
+    .care-header{
+        padding:9px 10px;
+    }
+
+    .header-inner{
+        gap:6px;
+    }
+
+    .brand{
+        gap:7px;
+        min-width:0;
+    }
+
+    .logo-box{
+        width:36px;
+        height:36px;
+        border-radius:11px;
+    }
+
+    .logo-box svg{
+        width:17px;
+        height:17px;
+    }
+
+    .brand-name{
+        font-size:17px;
+        letter-spacing:-.3px;
+    }
+
+    .brand-tag{
+        font-size:6px;
+        letter-spacing:.9px;
+        margin-top:2px;
+    }
+
+    /* HIDE DESKTOP */
+
+    .main-nav{
+        display:none !important;
+    }
+
+    .desktop-login{
+        display:none !important;
+    }
+
+    /* ACTIONS */
+
+    .header-actions{
+        margin-left:auto;
+        gap:4px;
+    }
+
+    .icon-btn{
+        width:34px;
+        height:34px;
+        border-radius:10px;
+    }
+
+    .icon-btn svg{
+        width:15px;
+        height:15px;
+    }
+
+    .menu-btn{
+        display:grid !important;
+        width:36px;
+        height:36px;
+        border-radius:10px;
+    }
+
+    .menu-btn svg{
+        width:18px;
+        height:18px;
+    }
+
+    /* PANEL */
+
+    .mobile-panel{
+        left:8px;
+        right:8px;
+
+        max-width:
+            calc(100vw - 16px);
+
+        max-height:
+            calc(100dvh - 64px);
+
+        padding:8px;
+
+        border-radius:16px;
+
+        box-shadow:
+            0 18px 45px rgba(40,30,60,.18);
+    }
+
+    .mobile-panel > a{
+        min-height:42px;
+        padding:10px;
+        gap:9px;
+        font-size:12px;
+        border-radius:10px;
+    }
+
+    .mobile-panel > a svg{
+        width:16px;
+        height:16px;
+    }
+
+    .mobile-nav-dropdown{
+        min-height:42px;
+        padding:10px;
+        font-size:12px;
+        border-radius:10px;
+    }
+
+    .mobile-nav-dropdown > span{
+        gap:9px;
+    }
+
+    .mobile-nav-dropdown svg{
+        width:16px;
+        height:16px;
+    }
+
+    .mobile-dropdown{
+        padding-left:20px;
+    }
+
+    .mobile-dropdown.active{
+        max-height:180px;
+    }
+
+    .mobile-dropdown a{
+        min-height:35px;
+        padding:8px 9px;
+        gap:8px;
+        font-size:11px;
+        border-radius:9px;
+    }
+
+    .mobile-dropdown a svg{
+        width:14px;
+        height:14px;
+    }
+
+    .mobile-login{
+        margin-top:5px;
+        padding:10px !important;
+        font-size:12px !important;
+        border-radius:10px !important;
+    }
+
+    /* FOOTER */
+
+    .care-footer{
+        padding:45px 10px 17px;
+    }
+
+    .footer-top{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .footer-brand{
+        max-width:100%;
+    }
+
+    .footer-brand .brand-name{
+        font-size:18px;
+    }
+
+    .footer-brand .brand-tag{
+        font-size:6px;
+    }
+
+    .footer-description{
+        margin-top:15px;
+        font-size:12px;
+        line-height:1.7;
+    }
+
+    .footer-badge{
+        margin-top:16px;
+        padding:8px 10px;
+        font-size:10px;
+    }
+
+    .socials{
+        gap:6px;
+        margin-top:16px;
+    }
+
+    .social{
+        width:34px;
+        height:34px;
+        border-radius:9px;
+    }
+
+    .footer-column h3{
+        margin-bottom:14px;
+        font-size:13px;
+    }
+
+    .footer-links li{
+        margin-bottom:9px;
+    }
+
+    .footer-links a{
+        font-size:12px;
+    }
+
+    .contact-item{
+        gap:9px;
+        margin-bottom:12px;
+        font-size:11px;
+    }
+
+    .contact-icon{
+        width:31px;
+        height:31px;
+        border-radius:9px;
+    }
+
+    .newsletter{
+        margin-top:17px;
+    }
+
+    .newsletter-box{
+        padding:4px;
+    }
+
+    .newsletter-box input{
+        padding:8px;
+        font-size:11px;
+    }
+
+    .newsletter-box button{
+        width:34px;
+        height:34px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:11px;
+    }
+
+    .footer-bottom-links{
+        flex-wrap:wrap;
+        gap:7px 14px;
+    }
+
+    .copyright,
+    .footer-bottom-links a{
+        font-size:9px;
+    }
+
+    .footer-orb.one{
+        width:100px;
+        height:100px;
+    }
+
+    .footer-orb.two{
+        width:130px;
+        height:130px;
+    }
+
+}
+
+
+/* =========================================================
+   BELOW 320
+========================================================= */
+
+@media screen and
+(max-width:319px){
+
+    .care-header{
+        padding:8px 7px;
+    }
+
+    .brand{
+        gap:5px;
+    }
+
+    .logo-box{
+        width:33px;
+        height:33px;
+        border-radius:10px;
+    }
+
+    .brand-name{
+        font-size:15px;
+    }
+
+    .brand-tag{
+        display:none;
+    }
+
+    .main-nav,
+    .desktop-login{
+        display:none !important;
+    }
+
+    .header-actions{
+        gap:3px;
+    }
+
+    .icon-btn{
+        width:31px;
+        height:31px;
+    }
+
+    .menu-btn{
+        display:grid !important;
+        width:33px;
+        height:33px;
+    }
+
+    .mobile-panel{
+        left:6px;
+        right:6px;
+
+        max-width:
+            calc(100vw - 12px);
+
+        padding:7px;
+    }
+
+    .care-footer{
+        padding-left:8px;
+        padding-right:8px;
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE PHONES
+========================================================= */
+
+@media screen and
+(max-width:800px) and
+(orientation:landscape){
+
+    .care-header{
+        padding-top:7px;
+        padding-bottom:7px;
+    }
+
+    .logo-box{
+        width:34px;
+        height:34px;
+        border-radius:10px;
+    }
+
+    .brand-name{
+        font-size:16px;
+    }
+
+    .brand-tag{
+        display:none;
+    }
+
+    .icon-btn{
+        width:32px;
+        height:32px;
+    }
+
+    .menu-btn{
+        width:34px;
+        height:34px;
+    }
+
+    .mobile-panel{
+        max-height:
+            calc(100dvh - 55px);
+
+        overflow-y:auto;
+    }
+
+    .mobile-panel > a,
+    .mobile-link,
+    .mobile-nav-dropdown{
+        min-height:38px;
+        padding:8px 10px;
+    }
+
+    .mobile-dropdown a{
+        min-height:32px;
+        padding:6px 9px;
+    }
+
+}
+
+
+/* =========================================================
+   SHORT SCREEN
+========================================================= */
+
+@media screen and
+(max-width:1100px) and
+(max-height:650px){
+
+    .mobile-panel{
+        max-height:
+            calc(100dvh - 60px);
+
+        overflow-y:auto;
+    }
+
+}
+
+
+/* =========================================================
+   RTL MOBILE
+========================================================= */
+
+@media screen and
+(max-width:1100px){
+
+    html[dir="rtl"] .mobile-dropdown{
+        padding-left:0;
+        padding-right:28px;
+    }
+
+}
+
+@media screen and
+(max-width:600px){
+
+    html[dir="rtl"] .mobile-dropdown{
+        padding-right:20px;
+    }
+
+}
+
+@media screen and
+(max-width:380px){
+
+    html[dir="rtl"] .mobile-dropdown{
+        padding-right:20px;
+    }
+
+}
+
+
+/* =========================================================
+   TOUCH
+========================================================= */
+
+@media (hover:none) and
+(pointer:coarse){
+
+    .nav-link:hover,
+    .icon-btn:hover,
+    .login-btn:hover,
+    .mobile-panel > a:hover,
+    .mobile-dropdown a:hover,
+    .footer-links a:hover,
+    .social:hover{
+
+        transform:none;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+/* =========================================================
+   IMAGE LOGO
+========================================================= */
+
+/* =========================================================
+   HEADER IMAGE LOGO — TRANSPARENT
+========================================================= */
+
+.logo-box.image-logo{
+    width:48px;
+    height:48px;
+
+    padding:0;
+    margin:0;
+
+    display:grid;
+    place-items:center;
+
+    background:transparent !important;
+
+    border:0;
+    border-radius:0;
+
+    overflow:visible;
+
+    box-shadow:none;
+}
+
+/* Remove old logo animations */
+.logo-box.image-logo::before,
+.logo-box.image-logo::after{
+    display:none !important;
+    content:none;
+}
+
+/* Transparent logo image */
+.logo-box.image-logo img{
+    width:100%;
+    height:100%;
+
+    display:block;
+
+    object-fit:contain;
+
+    background:transparent !important;
+
+    border:0;
+    border-radius:0;
+
+    position:relative;
+    z-index:2;
+
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        filter .4s ease;
+}
+
+/* Hover */
+.brand:hover .logo-box.image-logo img{
+    transform:scale(1.06);
+
+    filter:
+        drop-shadow(
+            0 7px 14px
+            rgba(71,152,153,.20)
+        );
+}
+/* =========================================================
+   PREMIUM DARK MODE
+   GLOBAL + RESPONSIVE
+========================================================= */
+
+html[data-theme="dark"]{
+
+    color-scheme:dark;
+
+    --primary: #479899;       /* Teal */
+    --secondary: #E89651;     /* Orange */
+;
+    --primary-dark:#479899;
+
+    --secondary:#E6A878;
+    --secondary-light:#F4C6A3;
+
+    --bg:#0F1117;
+    --surface:#171A23;
+    --surface-soft:#1D212C;
+
+    --text:#F7F4FA;
+    --muted:black;
+
+    --border:rgba(255,255,255,.12);
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.40);
+
+    --shadow-hover:
+        0 25px 80px rgba(0,0,0,.55);
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+html[data-theme="dark"] body{
+
+    background:#0F1117;
+
+    color:#F7F4FA;
+
+}
+
+
+/* =========================================================
+   HEADER — DARK
+========================================================= */
+
+html[data-theme="dark"] .care-header{
+
+    background:
+        rgba(15,17,23,.94);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.09);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.20);
+
+}
+
+
+html[data-theme="dark"] .care-header.scrolled{
+
+    background:
+        rgba(15,17,23,.98);
+
+    box-shadow:
+        0 14px 45px rgba(0,0,0,.40);
+
+}
+
+
+/* =========================================================
+   BRAND — DARK
+========================================================= */
+
+html[data-theme="dark"] .brand-name{
+
+    color:#FFFFFF;
+
+}
+
+
+html[data-theme="dark"] .brand-tag{
+
+    color:#E6A878;
+
+}
+
+
+/* IMAGE LOGO */
+
+html[data-theme="dark"] .logo-box.image-logo{
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.40);
+
+}
+
+
+/* =========================================================
+   DESKTOP NAV — DARK
+========================================================= */
+
+html[data-theme="dark"] .nav-link{
+
+    color:#EDE9F2;
+
+}
+
+
+html[data-theme="dark"] .nav-link:hover{
+
+    color:#E6A878;
+
+    background:
+        rgba(255,255,255,.055);
+
+}
+
+
+html[data-theme="dark"] .nav-link::before{
+
+    background:
+        linear-gradient(
+            90deg,
+         #479899      /* Teal */
+,
+            #E6A878
+        );
+
+}
+
+
+html[data-theme="dark"] .nav-arrow{
+
+    color:#C8C1D1;
+
+}
+
+
+/* =========================================================
+   DROPDOWN — DARK
+========================================================= */
+
+html[data-theme="dark"] .dropdown-menu{
+
+    background:#191C25;
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.55);
+
+}
+
+
+html[data-theme="dark"] .dropdown-menu::before{
+
+    background:#191C25;
+
+    border-left-color:
+        rgba(255,255,255,.12);
+
+    border-top-color:
+        rgba(255,255,255,.12);
+
+}
+
+
+html[data-theme="dark"] .dropdown-title{
+
+    color:#E6A878;
+
+}
+
+
+html[data-theme="dark"] .dropdown-item{
+
+    color:#EDEAF2;
+
+}
+
+
+html[data-theme="dark"] .dropdown-item svg{
+
+    color: #479899;       /* Teal */
+;
+
+}
+
+
+html[data-theme="dark"] .dropdown-item:hover{
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(168,149,216,.15),
+            rgba(230,168,120,.08)
+        );
+
+}
+
+
+/* =========================================================
+   HEADER ICON BUTTONS — DARK
+========================================================= */
+
+html[data-theme="dark"] .icon-btn{
+
+    color:#F7F4FA;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border-color:
+        rgba(255,255,255,.12);
+
+}
+
+
+html[data-theme="dark"] .icon-btn:hover{
+
+    color:#FFFFFF;
+
+    background: #479899;       /* Teal */
+;
+
+    box-shadow:
+        0 10px 30px rgba(128,108,181,.35);
+
+}
+
+
+/* =========================================================
+   LOGIN — DARK
+========================================================= */
+
+html[data-theme="dark"] .login-btn{
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+                #479899      /* Teal */
+
+        );
+
+    box-shadow:
+        0 10px 30px rgba(128,108,181,.30);
+
+}
+
+
+/* =========================================================
+   HAMBURGER — DARK
+========================================================= */
+
+html[data-theme="dark"] .menu-btn{
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg, #479899 
+        );
+
+}
+
+
+/* =========================================================
+   MOBILE PANEL — DARK
+========================================================= */
+
+html[data-theme="dark"] .mobile-panel{
+
+    background:
+        rgba(18,21,28,.98);
+
+    border:
+        1px solid rgba(255,255,255,.11);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.60);
+
+}
+
+
+html[data-theme="dark"] .mobile-panel > a{
+
+    color:#F1EDF5;
+
+}
+
+
+html[data-theme="dark"] .mobile-panel > a svg{
+
+    color: #479899 ;
+
+}
+
+
+html[data-theme="dark"] .mobile-panel > a:hover{
+
+    color:#FFFFFF;
+
+    background:#1D212C;
+
+}
+
+
+html[data-theme="dark"] .mobile-nav-dropdown{
+
+    color:#F1EDF5;
+
+}
+
+
+html[data-theme="dark"] .mobile-nav-dropdown:hover{
+
+    color:#FFFFFF;
+
+    background:#1D212C;
+
+}
+
+
+html[data-theme="dark"] .mobile-nav-dropdown svg{
+
+    color: #479899 ;
+
+}
+
+
+html[data-theme="dark"] .mobile-dropdown a{
+
+    color:#BDB8C7;
+
+}
+
+
+html[data-theme="dark"] .mobile-dropdown a svg{
+
+    color: #479899 ;
+
+}
+
+
+html[data-theme="dark"] .mobile-dropdown a:hover{
+
+    color:#FFFFFF;
+
+    background:#242936;
+
+}
+
+
+html[data-theme="dark"] .mobile-login{
+
+    color:#FFFFFF !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #479899 
+        ) !important;
+
+    border-top-color:
+        rgba(255,255,255,.10);
+
+}
+
+
+/* =========================================================
+   FOOTER — DARK
+========================================================= */
+
+html[data-theme="dark"] .care-footer{
+
+    color:#F7F4FA;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 10%,
+            rgba(230,168,120,.09),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 92% 85%,
+            rgba(168,149,216,.10),
+            transparent 35%
+        ),
+
+        #0F1117;
+
+    border-top:
+        1px solid rgba(255,255,255,.09);
+
+}
+
+
+html[data-theme="dark"] .footer-description{
+
+    color:#B8B3C2;
+
+}
+
+
+html[data-theme="dark"] .footer-column h3{
+
+    color:#FFFFFF;
+
+}
+
+
+html[data-theme="dark"] .footer-links a{
+
+    color:#BDB8C7;
+
+}
+
+
+html[data-theme="dark"] .footer-links a:hover{
+
+    color:#E6A878;
+
+}
+
+
+html[data-theme="dark"] .contact-item{
+
+    color:#BDB8C7;
+
+}
+
+
+html[data-theme="dark"] .contact-icon{
+
+    color:#E6A878;
+
+    background:
+        rgba(230,168,120,.09);
+
+    border-color:
+        rgba(230,168,120,.18);
+
+}
+
+
+html[data-theme="dark"] .footer-badge{
+
+    color:#EAE6F0;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border-color:
+        rgba(255,255,255,.12);
+
+}
+
+
+/* =========================================================
+   SOCIAL — DARK
+========================================================= */
+
+html[data-theme="dark"] .social{
+
+    color:#DDD8E7;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border-color:
+        rgba(255,255,255,.11);
+
+}
+
+
+html[data-theme="dark"] .social:hover{
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            #479899 
+        );
+
+}
+
+
+/* =========================================================
+   NEWSLETTER — DARK
+========================================================= */
+
+html[data-theme="dark"] .newsletter-box{
+
+    background:#191C25;
+
+    border-color:
+        rgba(255,255,255,.12);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.30);
+
+}
+
+
+html[data-theme="dark"] .newsletter-box input{
+
+    color:#FFFFFF;
+
+}
+
+
+html[data-theme="dark"] .newsletter-box input::placeholder{
+
+    color:#85808F;
+
+}
+
+
+html[data-theme="dark"] .newsletter-box button{
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            #479899 
+        );
+
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM — DARK
+========================================================= */
+
+html[data-theme="dark"] .footer-bottom{
+
+    border-top-color:
+        rgba(255,255,255,.10);
+
+}
+
+
+html[data-theme="dark"] .copyright,
+html[data-theme="dark"] .footer-bottom-links a{
+
+    color:#85808F;
+
+}
+
+
+html[data-theme="dark"] .footer-bottom-links a:hover{
+
+    color:#E6A878;
+
+}
+
+
+/* =========================================================
+   ORBS — DARK
+========================================================= */
+
+html[data-theme="dark"] .footer-orb.one{
+
+    border-color:
+        rgba(230,168,120,.15);
+
+}
+
+
+html[data-theme="dark"] .footer-orb.two{
+
+    border-color:
+        rgba(168,149,216,.15);
+
+}
+
+
+/* =========================================================
+   DEMO CONTENT — DARK
+========================================================= */
+
+html[data-theme="dark"] main{
+
+    background:#0F1117;
+
+}
+
+
+html[data-theme="dark"] main > div > div{
+
+    color: #479899 ;
+
+    background:
+        rgba(168,149,216,.10) !important;
+
+}
+
+
+html[data-theme="dark"] main h1{
+
+    color:#FFFFFF;
+
+}
+
+
+html[data-theme="dark"] main p{
+
+    color:#B8B3C2 !important;
+
+}
+
+
+/* =========================================================
+   SAMSUNG S8 DARK MODE
+   320px - 380px
+========================================================= */
+
+@media screen and
+(min-width:320px) and
+(max-width:380px){
+
+    html[data-theme="dark"] .care-header{
+
+        background:
+            rgba(15,17,23,.98);
+
+        border-bottom:
+            1px solid rgba(255,255,255,.10);
+
+    }
+
+
+    html[data-theme="dark"] .mobile-panel{
+
+        background:#12151C;
+
+        border:
+            1px solid rgba(255,255,255,.12);
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.65);
+
+    }
+
+
+    html[data-theme="dark"] .mobile-panel > a,
+    html[data-theme="dark"] .mobile-nav-dropdown{
+
+        color:#F4F1F7;
+
+    }
+
+
+    html[data-theme="dark"] .mobile-panel > a:hover,
+    html[data-theme="dark"] .mobile-nav-dropdown:hover{
+
+        background:#1D212C;
+
+        color:#FFFFFF;
+
+    }
+
+
+    html[data-theme="dark"] .mobile-dropdown a{
+
+        color:#BDB8C7;
+
+    }
+
+
+    html[data-theme="dark"] .mobile-dropdown a:hover{
+
+        background:#242936;
+
+        color:#FFFFFF;
+
+    }
+
+
+    html[data-theme="dark"] .icon-btn{
+
+        background:
+            rgba(255,255,255,.07);
+
+        border-color:
+            rgba(255,255,255,.13);
+
+        color:#FFFFFF;
+
+    }
+
+
+    html[data-theme="dark"] .menu-btn{
+
+        background:
+            linear-gradient(
+                135deg, #479899 
+            );
+
+    }
+
+
+    html[data-theme="dark"] .care-footer{
+
+        background:
+            radial-gradient(
+                circle at 15% 10%,
+                rgba(230,168,120,.08),
+                transparent 35%
+            ),
+            #0F1117;
+
+    }
+
+
+    html[data-theme="dark"] .footer-description,
+    html[data-theme="dark"] .contact-item{
+
+        color:#AAA4B5;
+
+    }
+
+
+    html[data-theme="dark"] .footer-links a{
+
+        color:#BDB8C7;
+
+    }
+
+
+    html[data-theme="dark"] .newsletter-box{
+
+        background:#191C25;
+
+        border-color:
+            rgba(255,255,255,.12);
+
+    }
+
+
+    html[data-theme="dark"] .newsletter-box input{
+
+        color:#FFFFFF;
+
+    }
+
+}
+
+
+/* =========================================================
+   IPAD MINI DARK MODE
+   601px - 800px
+========================================================= */
+
+@media screen and
+(min-width:601px) and
+(max-width:800px){
+
+    html[data-theme="dark"] .care-header{
+
+        background:
+            rgba(15,17,23,.97);
+
+        border-bottom:
+            1px solid rgba(255,255,255,.10);
+
+    }
+
+
+    html[data-theme="dark"] .mobile-panel{
+
+        background:#12151C;
+
+        border-color:
+            rgba(255,255,255,.12);
+
+        box-shadow:
+            0 25px 60px rgba(0,0,0,.60);
+
+    }
+
+
+    html[data-theme="dark"] .mobile-panel > a,
+    html[data-theme="dark"] .mobile-nav-dropdown{
+
+        color:#F1EDF5;
+
+    }
+
+
+    html[data-theme="dark"] .mobile-panel > a:hover,
+    html[data-theme="dark"] .mobile-nav-dropdown:hover{
+
+        background:#1D212C;
+
+    }
+
+
+    html[data-theme="dark"] .mobile-dropdown{
+
+        border-left:
+            1px solid rgba(168,149,216,.18);
+
+    }
+
+
+    html[dir="rtl"][data-theme="dark"]
+    .mobile-dropdown{
+
+        border-left:0;
+
+        border-right:
+            1px solid rgba(168,149,216,.18);
+
+    }
+
+
+    html[data-theme="dark"] .care-footer{
+
+        background:
+            radial-gradient(
+                circle at 10% 10%,
+                rgba(230,168,120,.08),
+                transparent 30%
+            ),
+            radial-gradient(
+                circle at 90% 90%,
+                rgba(168,149,216,.09),
+                transparent 35%
+            ),
+            #0F1117;
+
+    }
+
+
+    html[data-theme="dark"] .footer-column h3{
+
+        color:#FFFFFF;
+
+    }
+
+
+    html[data-theme="dark"] .footer-links a,
+    html[data-theme="dark"] .contact-item{
+
+        color:#B8B3C2;
+
+    }
+
+}
+
+
+/* =========================================================
+   NEST HUB DARK MODE
+   801px - 1100px
+========================================================= */
+
+@media screen and
+(min-width:801px) and
+(max-width:1100px){
+
+    html[data-theme="dark"] .care-header{
+
+        background:
+            rgba(15,17,23,.98);
+
+        border-bottom:
+            1px solid rgba(255,255,255,.10);
+
+    }
+
+
+    html[data-theme="dark"] .mobile-panel{
+
+        background:#12151C;
+
+        border:
+            1px solid rgba(255,255,255,.12);
+
+        box-shadow:
+            0 25px 60px rgba(0,0,0,.65);
+
+    }
+
+
+    html[data-theme="dark"] .mobile-panel > a,
+    html[data-theme="dark"] .mobile-nav-dropdown{
+
+        color:#F4F1F7;
+
+    }
+
+
+    html[data-theme="dark"] .mobile-panel > a:hover,
+    html[data-theme="dark"] .mobile-nav-dropdown:hover{
+
+        background:#1D212C;
+
+        color:#FFFFFF;
+
+    }
+
+
+    html[data-theme="dark"] .mobile-dropdown a{
+
+        color:#BDB8C7;
+
+    }
+
+
+    html[data-theme="dark"] .mobile-dropdown a:hover{
+
+        background:#242936;
+
+        color:#FFFFFF;
+
+    }
+
+
+    html[data-theme="dark"] .care-footer{
+
+        background:
+            radial-gradient(
+                circle at 10% 10%,
+                rgba(230,168,120,.08),
+                transparent 30%
+            ),
+            radial-gradient(
+                circle at 90% 90%,
+                rgba(168,149,216,.09),
+                transparent 35%
+            ),
+            #0F1117;
+
+    }
+
+
+    html[data-theme="dark"] .footer-description{
+
+        color:#B8B3C2;
+
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP DARK MODE
+   1101px+
+========================================================= */
+
+@media screen and
+(min-width:1101px){
+
+    html[data-theme="dark"] .care-header{
+
+        background:
+            rgba(15,17,23,.94);
+
+    }
+
+
+    html[data-theme="dark"] .care-header.scrolled{
+
+        background:
+            rgba(15,17,23,.98);
+
+    }
+
+
+    html[data-theme="dark"] .dropdown-menu{
+
+        background:#191C25;
+
+    }
+
+
+    html[data-theme="dark"] .care-footer{
+
+        background:
+            radial-gradient(
+                circle at 10% 15%,
+                rgba(230,168,120,.09),
+                transparent 30%
+            ),
+            radial-gradient(
+                circle at 90% 85%,
+                rgba(168,149,216,.10),
+                transparent 35%
+            ),
+            #0F1117;
+
+    }
+
+}
+
+
+/* =========================================================
+   DARK MODE — LANDSCAPE
+========================================================= */
+
+@media screen and
+(max-width:800px) and
+(orientation:landscape){
+
+    html[data-theme="dark"] .care-header{
+
+        background:
+            rgba(15,17,23,.99);
+
+    }
+
+
+    html[data-theme="dark"] .mobile-panel{
+
+        background:#12151C;
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.70);
+
+    }
+
+}
+
+
+/* =========================================================
+   DARK MODE — SHORT SCREEN
+========================================================= */
+
+@media screen and
+(max-width:1100px) and
+(max-height:650px){
+
+    html[data-theme="dark"] .mobile-panel{
+
+        background:#12151C;
+
+        border-color:
+            rgba(255,255,255,.12);
+
+    }
+
+}
+
+
+/* =========================================================
+   DARK MODE — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion:reduce){
+
+    html[data-theme="dark"] *{
+
+        transition-duration:.01ms !important;
+
+    }
+
+}
+
+/* BRAND NAME */
+
+.brand-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.3px;
+}
+
+
+/* CARE */
+
+.brand-primary {
+    color: var(--primary);
+}
+
+
+/* COMPANION */
+
+.brand-secondary {
+    color: var(--secondary);
+}
+
+
+
+
+/* =========================================================
+   THEME TRANSITION
+========================================================= */
+
+html {
+    transition:
+        background-color .25s ease,
+        color .25s ease;
+}
+
+body,
+.care-header,
+.care-footer,
+.mobile-panel,
+.dropdown-menu,
+.dropdown-item,
+.mobile-dropdown,
+.nav-link,
+.mobile-panel > a,
+.footer-column,
+.newsletter-box,
+.contact-item,
+.icon-btn {
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+
+/* =========================================================
+   MOBILE ACTIVE
+========================================================= */
+
+.mobile-panel > a.active{
+    color:var(--primary);
+    background:var(--surface-soft);
+    font-weight:700;
+}
+
+.mobile-nav-dropdown.active{
+    color:var(--primary);
+    background:var(--surface-soft);
+    font-weight:700;
+}
+
+.mobile-dropdown a.active{
+    color:var(--primary);
+    background:var(--surface-soft);
+    font-weight:700;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .main-nav .nav-link.active{
+    color:#479899;
+}
+
+html[data-theme="dark"] .main-nav .nav-link.active::before{
+    background:linear-gradient(
+        90deg,
+        #479899,
+        #E6A878
+    );
+}
+
+html[data-theme="dark"] .dropdown-item.active{
+    color:#479899;
+    background:#1D212C;
+}
+
+html[data-theme="dark"] .mobile-panel > a.active{
+    color:#479899;
+    background:#1D212C;
+}
+
+html[data-theme="dark"] .mobile-nav-dropdown.active{
+    color:#479899;
+    background:#1D212C;
+}
+
+html[data-theme="dark"] .mobile-dropdown a.active{
+    color:#479899;
+    background:#242936;
+}
+/* =========================================================
+   CARE HEAVEN — FINAL ACTIVE NAVIGATION
+========================================================= */
+
+/* Desktop normal link */
+.main-nav .nav-link{
+    position:relative;
+}
+
+/* Active desktop link */
+.main-nav .nav-link.active{
+    color:var(--primary) !important;
+    font-weight:700;
+}
+
+/* Active underline */
+.main-nav .nav-link.active::before{
+    transform:scaleX(1) !important;
+}
+
+/* Dropdown item */
+.main-nav .dropdown-item.active{
+    color:var(--primary) !important;
+    background:var(--surface-soft) !important;
+    font-weight:700;
+}
+
+/* Dropdown parent */
+.main-nav .dropdown > .nav-link.active{
+    color:var(--primary) !important;
+}
+
+/* =========================================================
+   MOBILE ACTIVE
+========================================================= */
+
+.mobile-panel > a.active{
+    color:var(--primary) !important;
+    background:var(--surface-soft) !important;
+    font-weight:700;
+}
+
+.mobile-nav-dropdown.active{
+    color:var(--primary) !important;
+    background:var(--surface-soft) !important;
+    font-weight:700;
+}
+
+.mobile-dropdown a.active{
+    color:var(--primary) !important;
+    background:var(--surface-soft) !important;
+    font-weight:700;
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .main-nav .nav-link.active{
+    color:#479899 !important;
+}
+
+html[data-theme="dark"] .main-nav .nav-link.active::before{
+    background:linear-gradient(
+        90deg,
+        #479899,
+        #E6A878
+    ) !important;
+    transform:scaleX(1) !important;
+}
+
+html[data-theme="dark"] .dropdown-item.active{
+    color:#479899 !important;
+    background:#1D212C !important;
+}
+
+html[data-theme="dark"] .mobile-panel > a.active{
+    color:#479899 !important;
+    background:#1D212C !important;
+}
+
+html[data-theme="dark"] .mobile-nav-dropdown.active{
+    color:#479899 !important;
+    background:#1D212C !important;
+}
+
+html[data-theme="dark"] .mobile-dropdown a.active{
+    color:#479899 !important;
+    background:#242936 !important;
+}

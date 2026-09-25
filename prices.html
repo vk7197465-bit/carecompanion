@@ -1,0 +1,4696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Pricing | Care Companion</title>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   CARE COMPANION PRICING
+   BRAND COLORS ONLY
+========================================================= */
+
+:root{
+    --primary:#479899;
+    --secondary:#E89651;
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:#ffffff;
+    color:#161616;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.cc-price-hero{
+
+    position:relative;
+
+    min-height:680px;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+    background:
+        url("images/c13.jpeg")
+        center/cover
+        no-repeat;
+}
+
+
+/* HERO IMAGE FALLBACK */
+
+.cc-price-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-2;
+
+    background:
+        url("images/3333.jfif")
+        center/cover
+        no-repeat;
+}
+
+
+/* HERO OVERLAY */
+
+.cc-price-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.82) 0%,
+            rgba(0,0,0,.62) 46%,
+            rgba(71,152,153,.38) 100%
+        );
+}
+
+
+/* HERO CONTENT */
+
+.cc-price-hero-inner{
+
+    width:min(1180px,90%);
+
+    margin:auto;
+
+    padding:110px 0;
+
+    color:#ffffff;
+}
+
+
+.cc-price-hero-content{
+
+    max-width:780px;
+}
+
+
+/* EYEBROW */
+
+.cc-price-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:10px 17px;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    border-radius:100px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(12px);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1.8px;
+
+    text-transform:uppercase;
+}
+
+.cc-price-eyebrow svg{
+    width:16px;
+    height:16px;
+    color:var(--secondary);
+}
+
+
+/* HERO TITLE */
+
+.cc-price-hero h1{
+
+    margin-top:24px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(48px,6vw,76px);
+
+    line-height:1.05;
+
+    letter-spacing:-2.5px;
+
+    font-weight:600;
+}
+
+
+.cc-price-hero h1 span{
+
+    display:inline-block;
+
+    color:var(--secondary);
+
+    min-width:270px;
+
+    border-right:2px solid var(--secondary);
+
+    padding-right:8px;
+}
+
+
+/* HERO TEXT */
+
+.cc-price-hero p{
+
+    max-width:650px;
+
+    margin-top:25px;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    color:#f2f2f2;
+}
+
+
+/* HERO BUTTONS */
+
+.cc-price-hero-actions{
+
+    display:flex;
+
+    gap:14px;
+
+    margin-top:35px;
+}
+
+
+.cc-hero-primary,
+.cc-hero-secondary{
+
+    min-height:52px;
+
+    padding:0 25px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    border-radius:12px;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    transition:.35s ease;
+}
+
+
+.cc-hero-primary{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    border:1px solid var(--primary);
+}
+
+
+.cc-hero-secondary{
+
+    color:#ffffff;
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.45);
+
+    backdrop-filter:blur(10px);
+}
+
+
+.cc-hero-primary:hover,
+.cc-hero-secondary:hover{
+
+    transform:translateY(-4px);
+}
+
+
+.cc-hero-primary:hover{
+    background:var(--secondary);
+    border-color:var(--secondary);
+}
+
+
+.cc-hero-secondary:hover{
+
+    background:var(--secondary);
+
+    border-color:var(--secondary);
+}
+
+
+/* HERO MINI INFO */
+
+.cc-hero-trust{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:24px;
+
+    margin-top:40px;
+}
+
+
+.cc-hero-trust-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    color:#ffffff;
+}
+
+
+.cc-hero-trust-item svg{
+
+    width:17px;
+
+    height:17px;
+
+    color:var(--secondary);
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.cc-price-section{
+
+    padding:105px 0;
+
+    background:#ffffff;
+}
+
+
+.cc-price-container{
+
+    width:min(1180px,90%);
+
+    margin:auto;
+}
+
+
+/* =========================================================
+   CENTERED SECTION HEADING
+========================================================= */
+
+.cc-section-heading{
+
+    max-width:700px;
+
+    margin:0 auto 58px;
+
+    text-align:center;
+}
+
+
+.cc-section-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--secondary);
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+}
+
+
+.cc-section-eyebrow::before,
+.cc-section-eyebrow::after{
+
+    content:"";
+
+    width:28px;
+
+    height:1px;
+
+    background:var(--secondary);
+}
+
+
+.cc-section-heading h2{
+
+    margin-top:16px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(35px,4vw,50px);
+
+    line-height:1.12;
+
+    letter-spacing:-1.5px;
+
+    font-weight:600;
+}
+
+
+.cc-section-heading h2 span{
+    color:var(--primary);
+}
+
+
+.cc-section-heading p{
+
+    max-width:620px;
+
+    margin:17px auto 0;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:#666666;
+}
+
+
+/* =========================================================
+   PRICING CARDS
+========================================================= */
+
+.cc-pricing-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:25px;
+
+    align-items:stretch;
+}
+
+
+/* CARD */
+
+.cc-plan{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:455px;
+
+    padding:32px 30px 30px;
+
+    background:#ffffff;
+
+    border:1px solid rgba(71,152,153,.18);
+
+    border-radius:22px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.06);
+
+    overflow:hidden;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        border-color .4s ease;
+}
+
+
+.cc-plan:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 25px 60px rgba(71,152,153,.15);
+}
+
+
+/* TOP ACCENT */
+
+.cc-plan::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:var(--primary);
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.4s ease;
+}
+
+
+.cc-plan:hover::before{
+    transform:scaleX(1);
+}
+
+
+/* POPULAR */
+
+.cc-plan.cc-popular{
+
+    border:1.5px solid var(--primary);
+
+    box-shadow:
+        0 22px 60px rgba(71,152,153,.16);
+}
+
+
+.cc-plan.cc-popular::before{
+
+    transform:scaleX(1);
+
+    background:var(--secondary);
+}
+
+
+/* POPULAR LABEL */
+
+.cc-popular-label{
+
+    position:absolute;
+
+    top:17px;
+
+    right:17px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:7px 11px;
+
+    border-radius:100px;
+
+    background:var(--secondary);
+
+    color:#ffffff;
+
+    font-size:9px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+}
+
+
+.cc-popular-label svg{
+
+    width:12px;
+    height:12px;
+}
+
+
+/* PLAN ICON */
+
+.cc-plan-icon{
+
+    width:48px;
+
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:rgba(71,152,153,.10);
+
+    color:var(--primary);
+
+    margin-bottom:23px;
+}
+
+
+.cc-plan-icon svg{
+
+    width:23px;
+    height:23px;
+}
+
+
+/* PLAN NAME */
+
+.cc-plan h3{
+
+    font-size:22px;
+
+    font-weight:700;
+}
+
+
+/* DESCRIPTION */
+
+.cc-plan-description{
+
+    margin-top:8px;
+
+    min-height:48px;
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    color:#707070;
+}
+
+
+/* PRICE */
+
+.cc-plan-price{
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:5px;
+
+    margin-top:24px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+
+.cc-plan-price strong{
+
+    color:var(--primary);
+
+    font-size:38px;
+
+    line-height:1;
+
+    letter-spacing:-1.5px;
+}
+
+
+.cc-popular .cc-plan-price strong{
+
+    color:var(--secondary);
+}
+
+
+.cc-plan-price span{
+
+    padding-bottom:4px;
+
+    font-size:12px;
+
+    color:#777777;
+}
+
+
+/* FEATURES */
+
+.cc-plan-features{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:13px;
+
+    margin:23px 0 28px;
+}
+
+
+.cc-plan-features li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:13px;
+
+    line-height:1.4;
+
+    color:#444444;
+}
+
+
+.cc-plan-features svg{
+
+    flex:0 0 auto;
+
+    width:17px;
+
+    height:17px;
+
+    padding:3px;
+
+    border-radius:50%;
+
+    background:rgba(71,152,153,.11);
+
+    color:var(--primary);
+
+    stroke-width:3;
+}
+
+
+/* BUTTON BASE */
+
+.cc-plan-btn{
+
+    width:100%;
+
+    min-height:49px;
+
+    margin-top:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    border-radius:11px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    transition:.35s ease;
+}
+
+
+/* SECONDARY BUTTON
+   NON-POPULAR PLANS
+*/
+
+.cc-secondary-btn{
+
+    color:var(--secondary);
+
+    background:rgba(232,150,81,.10);
+
+    border:1px solid rgba(232,150,81,.35);
+}
+
+
+.cc-secondary-btn:hover{
+
+    color:#ffffff;
+
+    background:var(--secondary);
+
+    border-color:var(--secondary);
+
+    transform:translateY(-3px);
+}
+
+
+/* PRIMARY BUTTON
+   POPULAR PLAN
+*/
+
+.cc-primary-btn{
+
+    color:#ffffff;
+
+    background:var(--primary);
+
+    border:1px solid var(--primary);
+
+    box-shadow:
+        0 10px 25px rgba(71,152,153,.20);
+}
+
+
+.cc-primary-btn:hover{
+
+    background:var(--secondary);
+
+    border-color:var(--secondary);
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 14px 30px rgba(232,150,81,.22);
+}
+
+
+/* =========================================================
+   VALUE STRIP
+========================================================= */
+
+.cc-value-section{
+
+    padding:90px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(71,152,153,.06),
+            rgba(232,150,81,.05)
+        );
+}
+
+
+.cc-value-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:16px;
+}
+
+
+.cc-value-item{
+
+    padding:28px 22px;
+
+    background:#ffffff;
+
+    border:1px solid rgba(71,152,153,.13);
+
+    border-radius:18px;
+
+    text-align:center;
+
+    transition:.35s ease;
+}
+
+
+.cc-value-item:hover{
+
+    transform:translateY(-7px);
+
+    border-color:var(--secondary);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.07);
+}
+
+
+.cc-value-icon{
+
+    width:50px;
+
+    height:50px;
+
+    margin:0 auto 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:var(--primary);
+
+    color:#ffffff;
+}
+
+
+.cc-value-icon svg{
+
+    width:22px;
+    height:22px;
+}
+
+
+.cc-value-item h3{
+
+    font-size:16px;
+
+    margin-bottom:7px;
+}
+
+
+.cc-value-item p{
+
+    font-size:12px;
+
+    line-height:1.6;
+
+    color:#777777;
+}
+
+
+
+
+/* =========================================================
+   COMPARISON SECTION
+========================================================= */
+
+.cc-compare-section {
+
+    padding: 105px 0;
+
+    background: #ffffff;
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.cc-compare-section .cc-price-container {
+
+    width: 92%;
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   CENTERED HEADING
+========================================================= */
+
+.cc-compare-heading {
+
+    max-width: 760px;
+
+    margin: 0 auto 65px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.cc-compare-eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    color: var(--primary);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.3px;
+
+}
+
+
+/* EYEBROW LINES */
+
+.cc-compare-eyebrow::before,
+.cc-compare-eyebrow::after {
+
+    content: "";
+
+    width: 31px;
+
+    height: 2px;
+
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.cc-compare-heading h2 {
+
+    margin: 0;
+
+    color: #171b1b;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 5vw, 60px);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+
+}
+
+
+.cc-compare-heading h2 span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--primary);
+
+    font-style: italic;
+
+}
+
+
+/* =========================================================
+   HEADING DESCRIPTION
+========================================================= */
+
+.cc-compare-heading > p {
+
+    max-width: 650px;
+
+    margin: 22px auto 0;
+
+    color: #6d7474;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   COMPARISON LAYOUT
+========================================================= */
+
+.cc-compare-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, .85fr)
+        minmax(0, 1.15fr);
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.cc-compare-copy {
+
+    position: relative;
+
+}
+
+
+/* =========================================================
+   LARGE NUMBER
+========================================================= */
+
+.cc-compare-number {
+
+    margin-bottom: -25px;
+
+    color: rgba(71,152,153,.10);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 100px;
+
+    font-weight: 700;
+
+    line-height: .8;
+
+}
+
+
+/* =========================================================
+   LEFT HEADING
+========================================================= */
+
+.cc-compare-copy h3 {
+
+    position: relative;
+
+    margin: 0;
+
+    color: #181d1d;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 42px;
+
+    font-weight: 500;
+
+    line-height: 1.15;
+
+    letter-spacing: -1.4px;
+
+}
+
+
+.cc-compare-copy h3 span {
+
+    display: block;
+
+    color: var(--primary);
+
+    font-style: italic;
+
+}
+
+
+/* =========================================================
+   LEFT DESCRIPTION
+========================================================= */
+
+.cc-compare-copy > p {
+
+    max-width: 460px;
+
+    margin: 20px 0 0;
+
+    color: #6d6d6d;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   POINTS
+========================================================= */
+
+.cc-compare-points {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    margin: 27px 0 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+.cc-compare-points li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #292f2f;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.cc-compare-points li svg {
+
+    width: 18px;
+
+    height: 18px;
+
+    color: var(--secondary);
+
+    stroke-width: 2;
+
+}
+
+
+/* =========================================================
+   COMPARISON TABLE
+========================================================= */
+
+.cc-compare-box {
+
+    overflow: hidden;
+
+    border: 1px solid rgba(71,152,153,.15);
+
+    border-radius: 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 20px 55px rgba(0,0,0,.06);
+
+}
+
+
+/* =========================================================
+   ROW
+========================================================= */
+
+.cc-compare-row {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.4fr)
+        minmax(65px, .8fr)
+        minmax(65px, .8fr);
+
+    min-height: 61px;
+
+    align-items: center;
+
+    border-bottom: 1px solid rgba(0,0,0,.07);
+
+}
+
+
+.cc-compare-row:last-child {
+
+    border-bottom: 0;
+
+}
+
+
+.cc-compare-row > div {
+
+    min-width: 0;
+
+    padding: 13px 16px;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.cc-compare-header {
+
+    min-height: 57px;
+
+    color: #ffffff;
+
+    background: var(--primary);
+
+    font-weight: 700;
+
+}
+
+
+.cc-compare-header > div {
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   FEATURE NAME
+========================================================= */
+
+.cc-compare-row .feature-name {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #282e2e;
+
+    font-weight: 600;
+
+}
+
+
+.cc-compare-row .feature-name svg {
+
+    width: 17px;
+
+    height: 17px;
+
+    flex: 0 0 17px;
+
+    color: var(--primary);
+
+}
+
+
+/* =========================================================
+   CHECK
+========================================================= */
+
+.cc-compare-row .check {
+
+    text-align: center;
+
+    color: var(--primary);
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+
+.cc-compare-row .highlight {
+
+    text-align: center;
+
+    color: var(--secondary);
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .cc-compare-section {
+
+        padding: 80px 0;
+
+    }
+
+
+    .cc-compare-heading {
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .cc-compare-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .cc-compare-copy {
+
+        max-width: 620px;
+
+        margin: 0 auto;
+
+        text-align: center;
+
+    }
+
+
+    .cc-compare-copy > p {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .cc-compare-points {
+
+        align-items: center;
+
+    }
+
+
+    .cc-compare-number {
+
+        font-size: 80px;
+
+    }
+
+
+    .cc-compare-box {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .cc-compare-section {
+
+        padding: 65px 0;
+
+    }
+
+
+    .cc-compare-section .cc-price-container {
+
+        width: 90%;
+
+    }
+
+
+    .cc-compare-heading {
+
+        margin-bottom: 42px;
+
+    }
+
+
+    .cc-compare-eyebrow {
+
+        gap: 8px;
+
+        font-size: 9px;
+
+        letter-spacing: 1.7px;
+
+    }
+
+
+    .cc-compare-eyebrow::before,
+    .cc-compare-eyebrow::after {
+
+        width: 22px;
+
+    }
+
+
+    .cc-compare-heading h2 {
+
+        font-size: 35px;
+
+        letter-spacing: -1px;
+
+    }
+
+
+    .cc-compare-heading > p {
+
+        font-size: 13px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .cc-compare-number {
+
+        font-size: 68px;
+
+    }
+
+
+    .cc-compare-copy h3 {
+
+        font-size: 34px;
+
+    }
+
+
+    .cc-compare-copy > p {
+
+        font-size: 13px;
+
+    }
+
+
+    .cc-compare-box {
+
+        border-radius: 15px;
+
+    }
+
+
+    .cc-compare-row {
+
+        grid-template-columns:
+            minmax(0, 1.35fr)
+            minmax(50px, .7fr)
+            minmax(50px, .7fr);
+
+        min-height: 55px;
+
+    }
+
+
+    .cc-compare-row > div {
+
+        padding: 10px 8px;
+
+        font-size: 10px;
+
+    }
+
+
+    .cc-compare-header > div {
+
+        font-size: 9px;
+
+    }
+
+
+    .cc-compare-row .feature-name {
+
+        gap: 6px;
+
+    }
+
+
+    .cc-compare-row .feature-name svg {
+
+        width: 15px;
+
+        height: 15px;
+
+        flex-basis: 15px;
+
+    }
+
+}
+
+
+/* =========================================================
+   360PX
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .cc-compare-heading h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .cc-compare-copy h3 {
+
+        font-size: 31px;
+
+    }
+
+
+    .cc-compare-row > div {
+
+        padding: 9px 6px;
+
+        font-size: 9px;
+
+    }
+
+
+    .cc-compare-header > div {
+
+        font-size: 8px;
+
+    }
+
+}
+
+
+
+
+
+
+/* =========================================================
+   FAMILY PEACE SECTION
+========================================================= */
+
+.cc-peace-section {
+
+    width: 100%;
+    padding: 105px 0;
+    background: #ffffff;
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.cc-peace-section .cc-container {
+
+    width: 92%;
+    max-width: 1180px;
+    margin: 0 auto;
+
+}
+
+
+/* =========================================================
+   CENTER HEADING
+========================================================= */
+
+.cc-peace-heading {
+
+    max-width: 760px;
+    margin: 0 auto 65px;
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.cc-peace-heading .cc-eyebrow {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    color: var(--primary);
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.4px;
+
+}
+
+
+.cc-peace-heading .cc-eyebrow span {
+
+    width: 34px;
+    height: 2px;
+
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.cc-peace-heading h2 {
+
+    margin: 0;
+
+    color: #171b1b;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 5vw, 62px);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+
+}
+
+
+.cc-peace-heading h2 em {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--primary);
+
+    font-style: italic;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.cc-peace-heading p {
+
+    max-width: 650px;
+
+    margin: 23px auto 0;
+
+    color: #626b6b;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   LOWER LAYOUT
+========================================================= */
+
+.cc-peace-layout {
+
+    display: grid;
+
+    grid-template-columns: 0.72fr 1.28fr;
+
+    align-items: center;
+
+    gap: 65px;
+
+}
+
+
+/* =========================================================
+   FEATURE LIST
+========================================================= */
+
+.cc-peace-list {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+
+}
+
+
+.cc-peace-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-height: 64px;
+
+    padding: 13px 17px;
+
+    border: 1px solid rgba(71,152,153,.13);
+
+    border-radius: 13px;
+
+    background: rgba(71,152,153,.035);
+
+    transition: .3s ease;
+
+}
+
+
+.cc-peace-item:hover {
+
+    transform: translateX(5px);
+
+    border-color: rgba(232,150,81,.4);
+
+    box-shadow:
+        0 14px 30px rgba(71,152,153,.09);
+
+}
+
+
+.cc-peace-item i {
+
+    width: 21px;
+    height: 21px;
+
+    flex: 0 0 21px;
+
+    color: var(--secondary);
+
+    stroke-width: 1.8;
+
+}
+
+
+.cc-peace-item span {
+
+    color: #252b2b;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.cc-peace-images {
+
+    position: relative;
+
+    min-height: 500px;
+
+}
+
+
+/* =========================================================
+   LARGE IMAGE
+========================================================= */
+
+.cc-peace-image {
+
+    position: absolute;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.13);
+
+}
+
+
+.cc-peace-large {
+
+    top: 0;
+    right: 0;
+
+    width: 78%;
+    height: 425px;
+
+}
+
+
+.cc-peace-image img {
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform .8s ease;
+
+}
+
+
+.cc-peace-image:hover img {
+
+    transform: scale(1.05);
+
+}
+
+
+/* =========================================================
+   SMALL IMAGE
+========================================================= */
+
+.cc-peace-small {
+
+    left: 0;
+    bottom: 0;
+
+    width: 46%;
+    height: 220px;
+
+    padding: 7px;
+
+    border: none;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 22px 50px rgba(0,0,0,.16);
+
+}
+
+
+.cc-peace-small img {
+
+    border-radius: 17px;
+
+}
+
+
+/* =========================================================
+   FLOATING NOTE
+========================================================= */
+
+.cc-floating-note {
+
+    position: absolute;
+
+    right: -5px;
+    bottom: 55px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    padding: 12px 17px 12px 12px;
+
+    border: 1px solid rgba(71,152,153,.15);
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,.96);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.12);
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+.cc-floating-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+}
+
+
+.cc-floating-icon i {
+
+    width: 18px;
+    height: 18px;
+
+}
+
+
+.cc-floating-text {
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+}
+
+
+.cc-floating-text strong {
+
+    color: #202626;
+
+    font-size: 13px;
+    font-weight: 800;
+
+}
+
+
+.cc-floating-text span {
+
+    color: var(--secondary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .cc-peace-section {
+
+        padding: 80px 0;
+
+    }
+
+
+    .cc-peace-heading {
+
+        margin-bottom: 50px;
+
+    }
+
+
+    .cc-peace-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+
+    .cc-peace-list {
+
+        max-width: 600px;
+
+        margin: 0 auto;
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
+
+    .cc-peace-images {
+
+        max-width: 680px;
+
+        width: 100%;
+
+        margin: auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .cc-peace-section {
+
+        padding: 65px 0;
+
+    }
+
+
+    .cc-peace-heading {
+
+        margin-bottom: 42px;
+
+    }
+
+
+    .cc-peace-heading .cc-eyebrow {
+
+        font-size: 9px;
+
+        letter-spacing: 1.7px;
+
+        gap: 9px;
+
+    }
+
+
+    .cc-peace-heading .cc-eyebrow span {
+
+        width: 22px;
+
+    }
+
+
+    .cc-peace-heading h2 {
+
+        font-size: clamp(34px, 10vw, 43px);
+
+        letter-spacing: -1px;
+
+    }
+
+
+    .cc-peace-heading p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .cc-peace-list {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .cc-peace-images {
+
+        min-height: 370px;
+
+    }
+
+
+    .cc-peace-large {
+
+        width: 82%;
+
+        height: 300px;
+
+    }
+
+
+    .cc-peace-small {
+
+        width: 48%;
+
+        height: 165px;
+
+    }
+
+
+    .cc-floating-note {
+
+        right: 0;
+
+        bottom: 35px;
+
+        padding: 9px 12px 9px 9px;
+
+    }
+
+
+    .cc-floating-icon {
+
+        width: 36px;
+        height: 36px;
+
+    }
+
+}
+
+
+/* =========================================================
+   360px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .cc-peace-heading h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .cc-peace-images {
+
+        min-height: 325px;
+
+    }
+
+
+    .cc-peace-large {
+
+        height: 265px;
+
+    }
+
+
+    .cc-peace-small {
+
+        height: 140px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.cc-faq-section{
+
+    padding:105px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(71,152,153,.045),
+            rgba(232,150,81,.045)
+        );
+}
+
+
+.cc-faq-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:18px;
+
+    max-width:900px;
+
+    margin:auto;
+}
+
+
+.cc-faq{
+
+    background:#ffffff;
+
+    border:1px solid rgba(71,152,153,.13);
+
+    border-radius:17px;
+
+    overflow:hidden;
+}
+
+
+.cc-faq-question{
+
+    width:100%;
+
+    min-height:70px;
+
+    padding:18px 20px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    border:0;
+
+    background:#ffffff;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:700;
+}
+
+
+.cc-faq-question svg{
+
+    flex:0 0 auto;
+
+    width:18px;
+
+    height:18px;
+
+    color:var(--primary);
+
+    transition:.3s ease;
+}
+
+
+.cc-faq-answer{
+
+    display:grid;
+
+    grid-template-rows:0fr;
+
+    transition:.35s ease;
+}
+
+
+.cc-faq-answer-inner{
+
+    overflow:hidden;
+
+    padding:0 20px;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    color:#707070;
+}
+
+
+.cc-faq.active .cc-faq-answer{
+
+    grid-template-rows:1fr;
+}
+
+
+.cc-faq.active .cc-faq-answer-inner{
+
+    padding-bottom:19px;
+}
+
+
+.cc-faq.active .cc-faq-question svg{
+
+    transform:rotate(180deg);
+
+    color:var(--secondary);
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.cc-pricing-cta{
+
+    position:relative;
+
+    min-height:420px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:
+        url("images/care-family.jpg")
+        center/cover
+        no-repeat;
+}
+
+
+.cc-pricing-cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(0,0,0,.80),
+            rgba(71,152,153,.72)
+        );
+}
+
+
+.cc-cta-inner{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(800px,90%);
+
+    text-align:center;
+
+    color:#ffffff;
+}
+
+
+.cc-cta-icon{
+
+    width:60px;
+
+    height:60px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:var(--secondary);
+}
+
+
+.cc-cta-icon svg{
+
+    width:28px;
+
+    height:28px;
+}
+
+
+.cc-cta-inner h2{
+
+    margin-top:23px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(35px,4vw,52px);
+
+    line-height:1.12;
+}
+
+
+.cc-cta-inner h2 span{
+
+    color:var(--secondary);
+}
+
+
+.cc-cta-inner p{
+
+    max-width:600px;
+
+    margin:17px auto 0;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:#f2f2f2;
+}
+
+
+.cc-cta-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:13px;
+
+    margin-top:30px;
+}
+
+
+.cc-cta-primary,
+.cc-cta-secondary{
+
+    min-height:49px;
+
+    padding:0 23px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    border-radius:11px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    transition:.35s ease;
+}
+
+
+.cc-cta-primary{
+
+    color:#ffffff;
+
+    background:var(--primary);
+
+    border:1px solid var(--primary);
+}
+
+
+.cc-cta-secondary{
+
+    color:#ffffff;
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.45);
+}
+
+
+.cc-cta-primary:hover,
+.cc-cta-secondary:hover{
+
+    transform:translateY(-4px);
+
+    background:var(--secondary);
+
+    border-color:var(--secondary);
+}
+
+
+/* =========================================================
+   DESKTOP LARGE
+========================================================= */
+
+@media(min-width:1200px){
+
+    .cc-pricing-grid{
+        gap:30px;
+    }
+
+    .cc-plan{
+        min-height:465px;
+    }
+}
+
+
+/* =========================================================
+   NEST HUB
+   835–1024 WIDTH / SHORT HEIGHT
+========================================================= */
+
+@media
+screen and
+(min-width:835px) and
+(max-width:1100px) and
+(max-height:700px){
+
+    .cc-price-hero{
+        min-height:600px;
+    }
+
+    .cc-price-hero-inner{
+        padding:80px 0;
+    }
+
+    .cc-price-hero h1{
+        font-size:54px;
+    }
+
+    .cc-price-hero p{
+        font-size:15px;
+    }
+
+    .cc-price-section,
+    .cc-compare-section,
+    .cc-faq-section{
+        padding:75px 0;
+    }
+
+    .cc-section-heading{
+        margin-bottom:38px;
+    }
+
+    .cc-section-heading h2{
+        font-size:38px;
+    }
+
+    .cc-plan{
+        min-height:390px;
+        padding:25px 22px;
+    }
+
+    .cc-plan-icon{
+        width:42px;
+        height:42px;
+        margin-bottom:17px;
+    }
+
+    .cc-plan h3{
+        font-size:19px;
+    }
+
+    .cc-plan-description{
+        font-size:11px;
+    }
+
+    .cc-plan-price{
+        margin-top:17px;
+        padding-bottom:15px;
+    }
+
+    .cc-plan-price strong{
+        font-size:30px;
+    }
+
+    .cc-plan-features{
+        gap:9px;
+        margin:17px 0 20px;
+    }
+
+    .cc-plan-features li{
+        font-size:10px;
+    }
+
+    .cc-plan-btn{
+        min-height:42px;
+        font-size:11px;
+    }
+
+    .cc-value-section{
+        padding:65px 0;
+    }
+
+    .cc-compare-layout{
+        gap:40px;
+    }
+
+    .cc-compare-copy h2{
+        font-size:38px;
+    }
+
+    .cc-compare-number{
+        font-size:75px;
+    }
+
+    .cc-compare-row{
+        min-height:52px;
+    }
+
+    .cc-compare-row > div{
+        font-size:10px;
+    }
+}
+
+
+/* =========================================================
+   IPAD MINI
+   768–834
+========================================================= */
+
+@media
+screen and
+(min-width:768px) and
+(max-width:834px){
+
+    .cc-price-hero{
+        min-height:720px;
+
+        text-align:center;
+    }
+
+    .cc-price-hero-inner{
+        padding:100px 0;
+    }
+
+    .cc-price-hero-content{
+        max-width:650px;
+        margin:auto;
+    }
+
+    .cc-price-eyebrow{
+        justify-content:center;
+    }
+
+    .cc-price-hero h1{
+        font-size:52px;
+    }
+
+    .cc-price-hero h1 span{
+        min-width:220px;
+    }
+
+    .cc-price-hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .cc-price-hero-actions{
+        justify-content:center;
+    }
+
+    .cc-hero-trust{
+        justify-content:center;
+    }
+
+
+    .cc-price-section{
+        padding:80px 0;
+    }
+
+    .cc-section-heading{
+        margin-bottom:45px;
+    }
+
+    .cc-section-heading h2{
+        font-size:40px;
+    }
+
+
+    .cc-pricing-grid{
+        grid-template-columns:1fr;
+
+        max-width:520px;
+
+        margin:auto;
+
+        gap:20px;
+    }
+
+    .cc-plan{
+        min-height:430px;
+    }
+
+    .cc-plan.cc-popular{
+        order:-1;
+    }
+
+
+    .cc-value-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .cc-compare-section{
+        padding:85px 0;
+    }
+
+    .cc-compare-layout{
+        grid-template-columns:1fr;
+
+        gap:45px;
+    }
+
+    .cc-compare-copy{
+        text-align:center;
+    }
+
+    .cc-compare-copy p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .cc-compare-points{
+        align-items:center;
+    }
+
+    .cc-compare-copy h2{
+        font-size:42px;
+    }
+
+
+    .cc-faq-grid{
+        grid-template-columns:1fr;
+        max-width:650px;
+    }
+}
+
+
+/* =========================================================
+   SAMSUNG GALAXY S8
+   360px
+========================================================= */
+
+@media(max-width:767px){
+
+    .cc-price-hero{
+
+        min-height:700px;
+
+        text-align:center;
+
+        background-position:center;
+    }
+
+
+    .cc-price-hero::after{
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0,0,0,.78),
+                rgba(71,152,153,.68)
+            );
+    }
+
+
+    .cc-price-hero-inner{
+
+        width:90%;
+
+        padding:85px 0 70px;
+    }
+
+
+    .cc-price-hero-content{
+
+        max-width:100%;
+    }
+
+
+    .cc-price-eyebrow{
+
+        font-size:9px;
+
+        letter-spacing:1.3px;
+
+        padding:9px 13px;
+    }
+
+
+    .cc-price-hero h1{
+
+        margin-top:20px;
+
+        font-size:36px;
+
+        line-height:1.15;
+
+        letter-spacing:-1px;
+    }
+
+
+    .cc-price-hero h1 span{
+
+        min-width:0;
+
+        display:inline;
+
+        padding-right:5px;
+    }
+
+
+    .cc-price-hero p{
+
+        margin-top:18px;
+
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+
+    .cc-price-hero-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        gap:11px;
+
+        margin-top:27px;
+    }
+
+
+    .cc-hero-primary,
+    .cc-hero-secondary{
+
+        width:100%;
+
+        min-height:48px;
+
+        font-size:12px;
+    }
+
+
+    .cc-hero-trust{
+
+        justify-content:center;
+
+        gap:13px 17px;
+
+        margin-top:28px;
+    }
+
+
+    .cc-hero-trust-item{
+
+        font-size:10px;
+    }
+
+
+    /* SECTION */
+
+    .cc-price-section,
+    .cc-compare-section,
+    .cc-faq-section{
+
+        padding:70px 0;
+    }
+
+
+    .cc-price-container{
+
+        width:90%;
+    }
+
+
+    .cc-section-heading{
+
+        margin-bottom:35px;
+    }
+
+
+    .cc-section-eyebrow{
+
+        font-size:9px;
+
+        letter-spacing:1.5px;
+    }
+
+
+    .cc-section-eyebrow::before,
+    .cc-section-eyebrow::after{
+
+        width:18px;
+    }
+
+
+    .cc-section-heading h2{
+
+        margin-top:13px;
+
+        font-size:30px;
+
+        letter-spacing:-.8px;
+    }
+
+
+    .cc-section-heading p{
+
+        margin-top:12px;
+
+        font-size:12px;
+
+        line-height:1.7;
+    }
+
+
+    /* CARDS */
+
+    .cc-pricing-grid{
+
+        grid-template-columns:1fr;
+
+        gap:17px;
+    }
+
+
+    .cc-plan{
+
+        min-height:auto;
+
+        padding:27px 21px;
+
+        border-radius:19px;
+    }
+
+
+    .cc-plan.cc-popular{
+
+        transform:none;
+    }
+
+
+    .cc-popular-label{
+
+        top:14px;
+
+        right:14px;
+
+        font-size:7px;
+
+        padding:6px 9px;
+    }
+
+
+    .cc-plan-icon{
+
+        width:44px;
+
+        height:44px;
+
+        border-radius:12px;
+
+        margin-bottom:18px;
+    }
+
+
+    .cc-plan-icon svg{
+
+        width:20px;
+
+        height:20px;
+    }
+
+
+    .cc-plan h3{
+
+        font-size:20px;
+    }
+
+
+    .cc-plan-description{
+
+        min-height:auto;
+
+        margin-top:7px;
+
+        font-size:12px;
+    }
+
+
+    .cc-plan-price{
+
+        margin-top:20px;
+
+        padding-bottom:17px;
+    }
+
+
+    .cc-plan-price strong{
+
+        font-size:34px;
+    }
+
+
+    .cc-plan-price span{
+
+        font-size:10px;
+
+        padding-bottom:3px;
+    }
+
+
+    .cc-plan-features{
+
+        gap:12px;
+
+        margin:20px 0 24px;
+    }
+
+
+    .cc-plan-features li{
+
+        font-size:11px;
+    }
+
+
+    .cc-plan-features svg{
+
+        width:16px;
+
+        height:16px;
+    }
+
+
+    .cc-plan-btn{
+
+        min-height:46px;
+
+        font-size:11px;
+
+        border-radius:10px;
+    }
+
+
+    /* VALUE */
+
+    .cc-value-section{
+
+        padding:65px 0;
+    }
+
+
+    .cc-value-grid{
+
+        grid-template-columns:1fr 1fr;
+
+        gap:10px;
+    }
+
+
+    .cc-value-item{
+
+        padding:21px 12px;
+
+        border-radius:15px;
+    }
+
+
+    .cc-value-icon{
+
+        width:42px;
+
+        height:42px;
+
+        margin-bottom:13px;
+
+        border-radius:12px;
+    }
+
+
+    .cc-value-icon svg{
+
+        width:19px;
+
+        height:19px;
+    }
+
+
+    .cc-value-item h3{
+
+        font-size:13px;
+    }
+
+
+    .cc-value-item p{
+
+        font-size:10px;
+    }
+
+
+    /* COMPARISON */
+
+    .cc-compare-layout{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+    }
+
+
+    .cc-compare-copy{
+
+        text-align:center;
+    }
+
+
+    .cc-compare-number{
+
+        font-size:72px;
+
+        margin-bottom:-18px;
+    }
+
+
+    .cc-compare-copy h2{
+
+        font-size:31px;
+    }
+
+
+    .cc-compare-copy p{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+        font-size:13px;
+    }
+
+
+    .cc-compare-points{
+
+        align-items:center;
+    }
+
+
+    .cc-compare-points li{
+
+        font-size:11px;
+    }
+
+
+    .cc-compare-box{
+
+        width:100%;
+
+        overflow-x:auto;
+
+        border-radius:16px;
+    }
+
+
+    .cc-compare-row{
+
+        min-width:470px;
+
+        grid-template-columns:
+            1.4fr .8fr .8fr;
+    }
+
+
+    .cc-compare-row > div{
+
+        font-size:10px;
+
+        padding:12px 10px;
+    }
+
+
+    /* FAQ */
+
+    .cc-faq-grid{
+
+        grid-template-columns:1fr;
+
+        gap:11px;
+    }
+
+
+    .cc-faq-question{
+
+        min-height:62px;
+
+        padding:15px;
+
+        font-size:12px;
+    }
+
+
+    .cc-faq-answer-inner{
+
+        padding:0 15px;
+
+        font-size:11px;
+    }
+
+
+    .cc-faq.active .cc-faq-answer-inner{
+
+        padding-bottom:15px;
+    }
+
+
+    /* CTA */
+
+    .cc-pricing-cta{
+
+        min-height:470px;
+
+        background-position:center;
+    }
+
+
+    .cc-cta-inner{
+
+        width:90%;
+    }
+
+
+    .cc-cta-icon{
+
+        width:55px;
+
+        height:55px;
+    }
+
+
+    .cc-cta-icon svg{
+
+        width:25px;
+
+        height:25px;
+    }
+
+
+    .cc-cta-inner h2{
+
+        font-size:32px;
+    }
+
+
+    .cc-cta-inner p{
+
+        font-size:13px;
+
+        line-height:1.7;
+    }
+
+
+    .cc-cta-actions{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        margin-top:25px;
+    }
+
+
+    .cc-cta-primary,
+    .cc-cta-secondary{
+
+        width:100%;
+
+        min-height:47px;
+
+        font-size:11px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media(max-width:380px){
+
+    .cc-price-hero{
+
+        min-height:680px;
+    }
+
+
+    .cc-price-hero h1{
+
+        font-size:33px;
+    }
+
+
+    .cc-price-hero p{
+
+        font-size:13px;
+    }
+
+
+    .cc-section-heading h2{
+
+        font-size:28px;
+    }
+
+
+    .cc-plan{
+
+        padding:24px 18px;
+    }
+
+
+    .cc-plan-price strong{
+
+        font-size:32px;
+    }
+
+
+    .cc-value-item{
+
+        padding:19px 9px;
+    }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        scroll-behavior:auto !important;
+
+        transition:none !important;
+
+        animation:none !important;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="cc-price-hero">
+
+    <div class="cc-price-hero-inner">
+
+        <div class="cc-price-hero-content">
+
+            <span class="cc-price-eyebrow">
+
+                <i data-lucide="heart-handshake"></i>
+
+                Care Companion Pricing
+
+            </span>
+
+
+            <h1>
+
+                Care That Fits
+                <br>
+
+                <span id="ccTyping"></span>
+
+            </h1>
+
+
+            <p>
+
+                Thoughtfully designed care plans for older adults
+                and families who want dependable companionship,
+                meaningful visits and greater peace of mind.
+
+            </p>
+
+
+            <div class="cc-price-hero-actions">
+
+                <a href="#plans"
+                   class="cc-hero-primary">
+
+                    View Care Plans
+
+                    <i data-lucide="arrow-down"></i>
+
+                </a>
+
+
+                <a href="contact.html"
+                   class="cc-hero-secondary">
+
+                    Talk With Our Team
+
+                    <i data-lucide="phone"></i>
+
+                </a>
+
+            </div>
+
+
+            <div class="cc-hero-trust">
+
+                <div class="cc-hero-trust-item">
+
+                    <i data-lucide="badge-check"></i>
+
+                    Trusted Caregivers
+
+                </div>
+
+
+                <div class="cc-hero-trust-item">
+
+                    <i data-lucide="calendar-check"></i>
+
+                    Flexible Visits
+
+                </div>
+
+
+                <div class="cc-hero-trust-item">
+
+                    <i data-lucide="heart-pulse"></i>
+
+                    Wellness Support
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PRICING PLANS
+========================================================= -->
+
+<section class="cc-price-section"
+         id="plans">
+
+    <div class="cc-price-container">
+
+
+        <div class="cc-section-heading">
+
+            <span class="cc-section-eyebrow">
+
+                Simple Care Plans
+
+            </span>
+
+
+            <h2>
+
+                Choose The Right
+                <span>Level Of Care</span>
+
+            </h2>
+
+
+            <p>
+
+                Flexible options built around companionship,
+                daily support and the changing needs of your family.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="cc-pricing-grid">
+
+
+            <!-- =================================================
+                 PLAN 1
+            ================================================== -->
+
+            <article class="cc-plan">
+
+                <div class="cc-plan-icon">
+
+                    <i data-lucide="coffee"></i>
+
+                </div>
+
+
+                <h3>
+                    Companion
+                </h3>
+
+
+                <p class="cc-plan-description">
+
+                    Meaningful companionship and regular social
+                    connection for older adults.
+
+                </p>
+
+
+                <div class="cc-plan-price">
+
+                    <strong>
+                        ₹1,499
+                    </strong>
+
+                    <span>
+                        / visit
+                    </span>
+
+                </div>
+
+
+                <ul class="cc-plan-features">
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Companion visits
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Conversation & social time
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Walk & activity support
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Family visit summary
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Flexible scheduling
+                    </li>
+
+                </ul>
+
+
+                <!-- NON POPULAR = SECONDARY -->
+
+                <a href="contact.html"
+                   class="cc-plan-btn cc-secondary-btn">
+
+                    Get Started
+
+                    <i data-lucide="arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PLAN 2 — POPULAR
+            ================================================== -->
+
+            <article class="cc-plan cc-popular">
+
+                <div class="cc-popular-label">
+
+                    <i data-lucide="star"></i>
+
+                    Popular
+
+                </div>
+
+
+                <div class="cc-plan-icon">
+
+                    <i data-lucide="heart-pulse"></i>
+
+                </div>
+
+
+                <h3>
+                    Complete Care
+                </h3>
+
+
+                <p class="cc-plan-description">
+
+                    A balanced combination of companionship,
+                    daily assistance and wellness support.
+
+                </p>
+
+
+                <div class="cc-plan-price">
+
+                    <strong>
+                        ₹2,499
+                    </strong>
+
+                    <span>
+                        / visit
+                    </span>
+
+                </div>
+
+
+                <ul class="cc-plan-features">
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Everything in Companion
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Daily routine assistance
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Wellness check-ins
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Errand assistance
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Detailed family updates
+                    </li>
+
+                </ul>
+
+
+                <!-- POPULAR = PRIMARY -->
+
+                <a href="contact.html"
+                   class="cc-plan-btn cc-primary-btn">
+
+                    Choose Popular Plan
+
+                    <i data-lucide="arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PLAN 3
+            ================================================== -->
+
+            <article class="cc-plan">
+
+                <div class="cc-plan-icon">
+
+                    <i data-lucide="house-heart"></i>
+
+                </div>
+
+
+                <h3>
+                    Dedicated Care
+                </h3>
+
+
+                <p class="cc-plan-description">
+
+                    Personalized ongoing support for families
+                    seeking more consistent care.
+
+                </p>
+
+
+                <div class="cc-plan-price">
+
+                    <strong>
+                        ₹3,999
+                    </strong>
+
+                    <span>
+                        / visit
+                    </span>
+
+                </div>
+
+
+                <ul class="cc-plan-features">
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Everything in Complete Care
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Personalized care routine
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Appointment assistance
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Medication reminders
+                    </li>
+
+                    <li>
+                        <i data-lucide="check"></i>
+                        Priority family communication
+                    </li>
+
+                </ul>
+
+
+                <!-- NON POPULAR = SECONDARY -->
+
+                <a href="contact.html"
+                   class="cc-plan-btn cc-secondary-btn">
+
+                    Discuss Your Needs
+
+                    <i data-lucide="arrow-right"></i>
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VALUE SECTION
+========================================================= -->
+
+<section class="cc-value-section">
+
+    <div class="cc-price-container">
+
+
+        <div class="cc-section-heading">
+
+            <span class="cc-section-eyebrow">
+                Every Visit Matters
+            </span>
+
+
+            <h2>
+
+                More Than A Visit.
+                <span>A Familiar Presence.</span>
+
+            </h2>
+
+
+            <p>
+
+                Every plan is designed to create comfort,
+                connection and confidence for both older adults
+                and their families.
+
+            </p>
+
+        </div>
+
+
+        <div class="cc-value-grid">
+
+
+            <div class="cc-value-item">
+
+                <div class="cc-value-icon">
+
+                    <i data-lucide="heart"></i>
+
+                </div>
+
+                <h3>
+                    Meaningful Connection
+                </h3>
+
+                <p>
+                    Conversation and companionship that reduce
+                    everyday isolation.
+                </p>
+
+            </div>
+
+
+            <div class="cc-value-item">
+
+                <div class="cc-value-icon">
+
+                    <i data-lucide="shield-check"></i>
+
+                </div>
+
+                <h3>
+                    Trusted Support
+                </h3>
+
+                <p>
+                    Dependable caregivers focused on dignity
+                    and respectful support.
+                </p>
+
+            </div>
+
+
+            <div class="cc-value-item">
+
+                <div class="cc-value-icon">
+
+                    <i data-lucide="activity"></i>
+
+                </div>
+
+                <h3>
+                    Wellness Awareness
+                </h3>
+
+                <p>
+                    Simple check-ins help families stay informed
+                    about everyday wellbeing.
+                </p>
+
+            </div>
+
+
+            <div class="cc-value-item">
+
+                <div class="cc-value-icon">
+
+                    <i data-lucide="messages-square"></i>
+
+                </div>
+
+                <h3>
+                    Family Updates
+                </h3>
+
+                <p>
+                    Clear communication keeps families connected
+                    even from a distance.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     COMPARISON SECTION
+========================================================= -->
+
+<section class="cc-compare-section">
+
+    <div class="cc-price-container">
+
+        <!-- =========================================
+             CENTERED SECTION HEADING
+        ========================================== -->
+
+        <div class="cc-compare-heading">
+
+            <span class="cc-compare-eyebrow">
+                COMPARE YOUR CARE OPTIONS
+            </span>
+
+            <h2>
+                Find Care That
+                <span>Feels Right</span>
+            </h2>
+
+            <p>
+                Not every family needs the same level of support.
+                Compare the care features designed to make everyday
+                life more comfortable and connected.
+            </p>
+
+        </div>
+
+
+        <!-- =========================================
+             COMPARISON AREA
+        ========================================== -->
+
+        <div class="cc-compare-layout">
+
+
+            <!-- LEFT -->
+
+            <div class="cc-compare-copy">
+
+                <div class="cc-compare-number">
+                    01
+                </div>
+
+                <h3>
+                    Built Around
+                    <span>Your Family</span>
+                </h3>
+
+                <p>
+                    Choose the level of support that fits your
+                    loved one's routine today, with flexibility
+                    as their needs change.
+                </p>
+
+
+                <ul class="cc-compare-points">
+
+                    <li>
+                        <i data-lucide="check-circle"></i>
+                        Flexible visit scheduling
+                    </li>
+
+                    <li>
+                        <i data-lucide="check-circle"></i>
+                        Transparent family updates
+                    </li>
+
+                    <li>
+                        <i data-lucide="check-circle"></i>
+                        Personalized support
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="cc-compare-box">
+
+
+                <div class="cc-compare-row cc-compare-header">
+
+                    <div>
+                        Care Feature
+                    </div>
+
+                    <div>
+                        Companion
+                    </div>
+
+                    <div>
+                        Complete
+                    </div>
+
+                </div>
+
+
+                <div class="cc-compare-row">
+
+                    <div class="feature-name">
+
+                        <i data-lucide="users"></i>
+
+                        Companion Visits
+
+                    </div>
+
+                    <div class="check">
+                        ✓
+                    </div>
+
+                    <div class="highlight">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div class="cc-compare-row">
+
+                    <div class="feature-name">
+
+                        <i data-lucide="activity"></i>
+
+                        Wellness Check
+
+                    </div>
+
+                    <div class="check">
+                        —
+                    </div>
+
+                    <div class="highlight">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div class="cc-compare-row">
+
+                    <div class="feature-name">
+
+                        <i data-lucide="shopping-bag"></i>
+
+                        Errand Assistance
+
+                    </div>
+
+                    <div class="check">
+                        —
+                    </div>
+
+                    <div class="highlight">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div class="cc-compare-row">
+
+                    <div class="feature-name">
+
+                        <i data-lucide="message-circle"></i>
+
+                        Family Updates
+
+                    </div>
+
+                    <div class="check">
+                        ✓
+                    </div>
+
+                    <div class="highlight">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div class="cc-compare-row">
+
+                    <div class="feature-name">
+
+                        <i data-lucide="calendar-heart"></i>
+
+                        Flexible Scheduling
+
+                    </div>
+
+                    <div class="check">
+                        ✓
+                    </div>
+
+                    <div class="highlight">
+                        ✓
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (typeof lucide !== "undefined") {
+
+        lucide.createIcons();
+
+    }
+
+});
+
+</script>
+<section class="cc-peace-section">
+
+    <div class="cc-container">
+
+        <!-- CENTERED SECTION HEADING -->
+
+        <div class="cc-peace-heading">
+
+            <div class="cc-eyebrow">
+                <span></span>
+                FAMILY PEACE OF MIND
+                <span></span>
+            </div>
+
+            <h2>
+                Because knowing someone is there
+                <em>changes everything.</em>
+            </h2>
+
+            <p>
+                Care should make life easier for everyone —
+                the older adult receiving support and the family
+                members who want to be there every day.
+            </p>
+
+        </div>
+
+
+        <!-- CONTENT + IMAGES -->
+
+        <div class="cc-peace-layout">
+
+            <!-- LEFT -->
+
+            <div class="cc-peace-content">
+
+                <div class="cc-peace-list">
+
+                    <div class="cc-peace-item">
+                        <i data-lucide="bell-ring"></i>
+                        <span>Regular visit updates</span>
+                    </div>
+
+                    <div class="cc-peace-item">
+                        <i data-lucide="file-check-2"></i>
+                        <span>Clear visit summaries</span>
+                    </div>
+
+                    <div class="cc-peace-item">
+                        <i data-lucide="calendar-clock"></i>
+                        <span>Dependable scheduling</span>
+                    </div>
+
+                    <div class="cc-peace-item">
+                        <i data-lucide="user-round-check"></i>
+                        <span>Personalized support</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT IMAGES -->
+
+            <div class="cc-peace-images">
+
+                <div class="cc-peace-image cc-peace-large">
+                    <img
+                        src="images/elderly-care.jpg"
+                        alt="Older adult receiving companionship"
+                    >
+                </div>
+
+                <div class="cc-peace-image cc-peace-small">
+                    <img
+                        src="images/caregiver.jpg"
+                        alt="Caregiver spending time with senior"
+                    >
+                </div>
+
+                <div class="cc-floating-note">
+
+                    <div class="cc-floating-icon">
+                        <i data-lucide="heart"></i>
+                    </div>
+
+                    <div class="cc-floating-text">
+                        <strong>Family first</strong>
+                        <span>Always.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+    }
+
+});
+
+</script>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section class="cc-faq-section">
+
+    <div class="cc-price-container">
+
+
+        <div class="cc-section-heading">
+
+            <span class="cc-section-eyebrow">
+                Pricing Questions
+            </span>
+
+
+            <h2>
+
+                Care Plans,
+                <span>Made Clear</span>
+
+            </h2>
+
+
+            <p>
+
+                A few simple answers to help your family
+                choose the right starting point.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="cc-faq-grid">
+
+
+            <div class="cc-faq">
+
+                <button class="cc-faq-question">
+
+                    Can I schedule a single visit?
+
+                    <i data-lucide="chevron-down"></i>
+
+                </button>
+
+
+                <div class="cc-faq-answer">
+
+                    <div class="cc-faq-answer-inner">
+
+                        Yes. You can begin with an individual
+                        companion visit and choose a recurring
+                        schedule when it feels right for your family.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cc-faq">
+
+                <button class="cc-faq-question">
+
+                    Can the plan be personalized?
+
+                    <i data-lucide="chevron-down"></i>
+
+                </button>
+
+
+                <div class="cc-faq-answer">
+
+                    <div class="cc-faq-answer-inner">
+
+                        Yes. Visit activities and support can be
+                        discussed around the older adult's routine,
+                        preferences and family requirements.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cc-faq">
+
+                <button class="cc-faq-question">
+
+                    Do families receive visit updates?
+
+                    <i data-lucide="chevron-down"></i>
+
+                </button>
+
+
+                <div class="cc-faq-answer">
+
+                    <div class="cc-faq-answer-inner">
+
+                        Family updates can include visit summaries,
+                        activity notes and relevant observations
+                        from the scheduled care visit.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="cc-faq">
+
+                <button class="cc-faq-question">
+
+                    Can I change my plan later?
+
+                    <i data-lucide="chevron-down"></i>
+
+                </button>
+
+
+                <div class="cc-faq-answer">
+
+                    <div class="cc-faq-answer-inner">
+
+                        Care needs can change over time. Contact
+                        the Care Companion team to discuss adjusting
+                        your visit frequency or support level.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL CTA
+========================================================= -->
+
+<section class="cc-pricing-cta">
+
+    <div class="cc-cta-inner">
+
+
+        <div class="cc-cta-icon">
+
+            <i data-lucide="heart-handshake"></i>
+
+        </div>
+
+
+        <h2>
+
+            The Right Care Can Bring
+            <span>Peace Of Mind.</span>
+
+        </h2>
+
+
+        <p>
+
+            Start with the level of support that feels right
+            today. Our team can help you understand the best
+            option for your loved one's routine.
+
+        </p>
+
+
+        <div class="cc-cta-actions">
+
+            <a href="contact.html"
+               class="cc-cta-primary">
+
+                Talk With Our Team
+
+                <i data-lucide="arrow-right"></i>
+
+            </a>
+
+
+            <a href="book.html"
+               class="cc-cta-secondary">
+
+                Schedule A Visit
+
+                <i data-lucide="calendar-check"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =========================================================
+   LUCIDE
+========================================================= */
+
+lucide.createIcons();
+
+
+
+/* =========================================================
+   HERO TYPING EFFECT
+========================================================= */
+
+const ccTyping = document.getElementById("ccTyping");
+
+const ccWords = [
+
+    "Compassion",
+    "Companionship",
+    "Dignity",
+    "Peace of Mind"
+
+];
+
+let ccWordIndex = 0;
+
+let ccCharIndex = 0;
+
+let ccDeleting = false;
+
+
+function ccTypeEffect(){
+
+    const currentWord =
+        ccWords[ccWordIndex];
+
+
+    if(!ccDeleting){
+
+        ccTyping.textContent =
+            currentWord.substring(
+                0,
+                ccCharIndex
+            );
+
+        ccCharIndex++;
+
+
+        if(ccCharIndex >
+           currentWord.length){
+
+            ccDeleting = true;
+
+            setTimeout(
+                ccTypeEffect,
+                1500
+            );
+
+            return;
+        }
+
+    }else{
+
+        ccTyping.textContent =
+            currentWord.substring(
+                0,
+                ccCharIndex
+            );
+
+        ccCharIndex--;
+
+
+        if(ccCharIndex < 0){
+
+            ccDeleting = false;
+
+            ccWordIndex++;
+
+            if(
+                ccWordIndex >=
+                ccWords.length
+            ){
+
+                ccWordIndex = 0;
+            }
+        }
+    }
+
+
+    setTimeout(
+        ccTypeEffect,
+        ccDeleting ? 55 : 105
+    );
+}
+
+
+ccTypeEffect();
+
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+const ccFaqs =
+    document.querySelectorAll(".cc-faq");
+
+
+ccFaqs.forEach(faq => {
+
+    const button =
+        faq.querySelector(
+            ".cc-faq-question"
+        );
+
+
+    button.addEventListener(
+        "click",
+        () => {
+
+            ccFaqs.forEach(item => {
+
+                if(item !== faq){
+
+                    item.classList.remove(
+                        "active"
+                    );
+
+                }
+
+            });
+
+
+            faq.classList.toggle(
+                "active"
+            );
+
+        }
+    );
+
+});
+
+</script>
+
+</body>
+</html>
