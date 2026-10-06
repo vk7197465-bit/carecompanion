@@ -1236,14 +1236,25 @@ img{
 
 
 /* =========================================================
-   COMPARISON SECTION
+   CARE COMPANION
+   COMPARE YOUR CARE OPTIONS
+   PREMIUM / RESPONSIVE / RTL / DARK MODE
+========================================================= */
+
+
+/* =========================================================
+   SECTION
 ========================================================= */
 
 .cc-compare-section {
 
+    position: relative;
+
     padding: 105px 0;
 
     background: var(--bg);
+
+    overflow: hidden;
 
 }
 
@@ -1264,10 +1275,10 @@ img{
 
 
 /* =========================================================
-   CENTERED HEADING
+   SECTION HEADING
 ========================================================= */
 
-.cc-compare-heading {
+.cc-section-heading {
 
     max-width: 760px;
 
@@ -1282,7 +1293,7 @@ img{
    EYEBROW
 ========================================================= */
 
-.cc-compare-eyebrow {
+.cc-section-eyebrow {
 
     display: inline-flex;
 
@@ -1304,26 +1315,27 @@ img{
 
     letter-spacing: 2.3px;
 
+    line-height: 1.3;
+
 }
 
 
 /* EYEBROW LINES */
 
-.cc-compare-eyebrow::before,
-.cc-compare-eyebrow::after {
+.cc-section-eyebrow::before,
+.cc-section-eyebrow::after {
 
     content: "";
+
+    display: block;
 
     width: 31px;
 
     height: 2px;
 
-    display: block;
+    flex: 0 0 31px;
 
-    background:
-        
-            var(--secondary)
-        ;
+    background: var(--secondary);
 
 }
 
@@ -1332,12 +1344,13 @@ img{
    MAIN HEADING
 ========================================================= */
 
-.cc-compare-heading h2 {
+.cc-section-heading h2 {
 
     margin: 0;
 
-    color:var(--primary);
+    color: var(--primary);
 
+    font-family: "Playfair Display", serif;
 
     font-size: clamp(35px, 5vw, 50px);
 
@@ -1345,11 +1358,14 @@ img{
 
     line-height: 1.08;
 
-    
+    letter-spacing: -1.2px;
+
 }
 
 
-.cc-compare-heading h2 span {
+/* SECOND LINE */
+
+.cc-section-heading h2 span {
 
     display: block;
 
@@ -1357,22 +1373,22 @@ img{
 
     color: var(--secondary);
 
-    
-
 }
 
 
 /* =========================================================
-   HEADING DESCRIPTION
+   DESCRIPTION
 ========================================================= */
 
-.cc-compare-heading > p {
+.cc-section-heading > p {
 
     max-width: 650px;
 
     margin: 22px auto 0;
 
-    color: #6d7474;
+    color: var(--muted);
+
+    font-family: "DM Sans", sans-serif;
 
     font-size: 15px;
 
@@ -1408,6 +1424,8 @@ img{
 
     position: relative;
 
+    min-width: 0;
+
 }
 
 
@@ -1417,16 +1435,19 @@ img{
 
 .cc-compare-number {
 
-    margin-bottom: -1px;
+    margin-bottom: 3px;
 
     color: var(--primary);
 
+    font-family: "Playfair Display", serif;
 
     font-size: 50px;
 
     font-weight: 600;
 
     line-height: .8;
+
+    opacity: .95;
 
 }
 
@@ -1443,7 +1464,7 @@ img{
 
     color: var(--primary);
 
-    
+    font-family: "Playfair Display", serif;
 
     font-size: 42px;
 
@@ -1456,13 +1477,13 @@ img{
 }
 
 
+/* SECOND LINE */
+
 .cc-compare-copy h3 span {
 
     display: block;
 
     color: var(--primary);
-
-  
 
 }
 
@@ -1477,7 +1498,9 @@ img{
 
     margin: 20px 0 0;
 
-    color: #6d6d6d;
+    color: var(--muted);
+
+    font-family: "DM Sans", sans-serif;
 
     font-size: 14px;
 
@@ -1517,6 +1540,8 @@ img{
 
     color: var(--primary);
 
+    font-family: "DM Sans", sans-serif;
+
     font-size: 13px;
 
     font-weight: 600;
@@ -1529,6 +1554,8 @@ img{
     width: 18px;
 
     height: 18px;
+
+    flex: 0 0 18px;
 
     color: var(--secondary);
 
@@ -1543,13 +1570,15 @@ img{
 
 .cc-compare-box {
 
+    width: 100%;
+
     overflow: hidden;
 
     border: 1px solid rgba(71,152,153,.15);
 
     border-radius: 20px;
 
-    background:var(--bg);
+    background: var(--surface);
 
     box-shadow:
         0 20px 55px rgba(0,0,0,.06);
@@ -1558,7 +1587,7 @@ img{
 
 
 /* =========================================================
-   ROW
+   TABLE ROW
 ========================================================= */
 
 .cc-compare-row {
@@ -1572,7 +1601,7 @@ img{
 
     min-height: 61px;
 
-    align-items: center;
+    align-items: stretch;
 
     border-bottom: 1px solid rgba(0,0,0,.07);
 
@@ -1586,13 +1615,34 @@ img{
 }
 
 
+/* =========================================================
+   ALL TABLE CELLS
+   CENTER ALIGNMENT
+========================================================= */
+
 .cc-compare-row > div {
 
     min-width: 0;
 
+    min-height: 61px;
+
     padding: 13px 16px;
 
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: var(--text);
+
+    font-family: "DM Sans", sans-serif;
+
     font-size: 12px;
+
+    line-height: 1.4;
 
 }
 
@@ -1605,18 +1655,24 @@ img{
 
     min-height: 57px;
 
-    color: #ffffff;
-
     background: var(--primary);
 
-    font-weight: 700;
+    border-bottom: 0;
 
 }
 
 
 .cc-compare-header > div {
 
+    min-height: 57px;
+
+    color: #ffffff;
+
     font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .2px;
 
 }
 
@@ -1629,16 +1685,24 @@ img{
 
     display: flex;
 
+    flex-direction: column;
+
     align-items: center;
 
-    gap: 9px;
+    justify-content: center;
+
+    gap: 7px;
 
     color: var(--primary);
 
     font-weight: 600;
 
+    text-align: center;
+
 }
 
+
+/* FEATURE ICON */
 
 .cc-compare-row .feature-name svg {
 
@@ -1648,7 +1712,22 @@ img{
 
     flex: 0 0 17px;
 
-    color: var(--primary);
+    color: var(--secondary);
+
+    stroke-width: 2;
+
+}
+
+
+/* FEATURE TEXT */
+
+.cc-compare-row .feature-name span {
+
+    display: block;
+
+    max-width: 100%;
+
+    text-align: center;
 
 }
 
@@ -1659,46 +1738,171 @@ img{
 
 .cc-compare-row .check {
 
-    text-align: center;
-
     color: var(--primary);
 
-    font-size: 15px;
+    font-size: 17px;
 
     font-weight: 800;
+
+    text-align: center;
 
 }
 
 
-.cc-compare-row .highlight {
+/* =========================================================
+   HIGHLIGHT
+========================================================= */
 
-    text-align: center;
+.cc-compare-row .highlight {
 
     color: var(--secondary);
 
-    font-size: 15px;
+    font-size: 17px;
 
     font-weight: 800;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .cc-compare-box,
+body.dark-theme .cc-compare-box {
+
+    border-color: rgba(255,255,255,.09);
+
+    box-shadow:
+        0 22px 60px rgba(0,0,0,.22);
+
+}
+
+
+html[data-theme="dark"] .cc-compare-row,
+body.dark-theme .cc-compare-row {
+
+    border-bottom-color: rgba(255,255,255,.08);
+
+}
+
+
+html[data-theme="dark"] .cc-compare-row > div,
+body.dark-theme .cc-compare-row > div {
+
+    color: var(--text);
+
+}
+
+
+html[data-theme="dark"] .cc-compare-row .feature-name,
+body.dark-theme .cc-compare-row .feature-name {
+
+    color: var(--primary);
+
+}
+
+
+html[data-theme="dark"] .cc-compare-copy > p,
+body.dark-theme .cc-compare-copy > p,
+
+html[data-theme="dark"] .cc-section-heading > p,
+body.dark-theme .cc-section-heading > p {
+
+    color: var(--muted);
+
+}
+
+
+/* =========================================================
+   RTL
+========================================================= */
+
+html[dir="rtl"] .cc-compare-copy,
+body.rtl .cc-compare-copy {
+
+    direction: rtl;
+
+}
+
+
+html[dir="rtl"] .cc-compare-points,
+body.rtl .cc-compare-points {
+
+    direction: rtl;
+
+}
+
+
+html[dir="rtl"] .cc-compare-points li,
+body.rtl .cc-compare-points li {
+
+    flex-direction: row-reverse;
+
+}
+
+
+html[dir="rtl"] .cc-compare-row,
+body.rtl .cc-compare-row {
+
+    direction: rtl;
+
+}
+
+
+/*
+   Table remains centered in RTL.
+   Do not change cell text alignment.
+*/
+
+html[dir="rtl"] .cc-compare-row > div,
+body.rtl .cc-compare-row > div {
+
+    text-align: center;
+
+    justify-content: center;
+
+}
+
+
+html[dir="rtl"] .cc-compare-row .feature-name,
+body.rtl .cc-compare-row .feature-name {
+
+    align-items: center;
+
+    text-align: center;
 
 }
 
 
 /* =========================================================
    TABLET
+   768 - 1024 / NEST HUB
 ========================================================= */
 
-@media (max-width: 900px) {
+@media screen and
+(min-width: 768px) and
+(max-width: 1024px) {
 
     .cc-compare-section {
 
-        padding: 80px 0;
+        padding: 85px 0;
 
     }
 
 
-    .cc-compare-heading {
+    .cc-compare-section .cc-price-container {
 
-        margin-bottom: 50px;
+        width: 90%;
+
+    }
+
+
+    .cc-section-heading {
+
+        margin-bottom: 55px;
 
     }
 
@@ -1707,14 +1911,14 @@ img{
 
         grid-template-columns: 1fr;
 
-        gap: 45px;
+        gap: 50px;
 
     }
 
 
     .cc-compare-copy {
 
-        max-width: 620px;
+        max-width: 680px;
 
         margin: 0 auto;
 
@@ -1741,7 +1945,7 @@ img{
 
     .cc-compare-number {
 
-        font-size: 80px;
+        font-size: 72px;
 
     }
 
@@ -1756,14 +1960,16 @@ img{
 
 
 /* =========================================================
-   MOBILE
+   SAMSUNG S8 / SMALL TABLET
 ========================================================= */
 
-@media (max-width: 600px) {
+@media screen and
+(min-width: 381px) and
+(max-width: 767px) {
 
     .cc-compare-section {
 
-        padding: 65px 0;
+        padding: 70px 0;
 
     }
 
@@ -1775,14 +1981,14 @@ img{
     }
 
 
-    .cc-compare-heading {
+    .cc-section-heading {
 
-        margin-bottom: 42px;
+        margin-bottom: 45px;
 
     }
 
 
-    .cc-compare-eyebrow {
+    .cc-section-eyebrow {
 
         gap: 8px;
 
@@ -1793,28 +1999,46 @@ img{
     }
 
 
-    .cc-compare-eyebrow::before,
-    .cc-compare-eyebrow::after {
+    .cc-section-eyebrow::before,
+    .cc-section-eyebrow::after {
 
         width: 22px;
 
+        flex-basis: 22px;
+
     }
 
 
-    .cc-compare-heading h2 {
+    .cc-section-heading h2 {
 
         font-size: 35px;
 
-        letter-spacing: -1px;
+        letter-spacing: -.8px;
 
     }
 
 
-    .cc-compare-heading > p {
+    .cc-section-heading > p {
 
         font-size: 13px;
 
         line-height: 1.7;
+
+    }
+
+
+    .cc-compare-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 42px;
+
+    }
+
+
+    .cc-compare-copy {
+
+        text-align: center;
 
     }
 
@@ -1830,19 +2054,32 @@ img{
 
         font-size: 34px;
 
+        letter-spacing: -1px;
+
     }
 
 
     .cc-compare-copy > p {
+
+        margin-left: auto;
+
+        margin-right: auto;
 
         font-size: 13px;
 
     }
 
 
+    .cc-compare-points {
+
+        align-items: center;
+
+    }
+
+
     .cc-compare-box {
 
-        border-radius: 15px;
+        border-radius: 16px;
 
     }
 
@@ -1854,12 +2091,14 @@ img{
             minmax(50px, .7fr)
             minmax(50px, .7fr);
 
-        min-height: 55px;
+        min-height: 58px;
 
     }
 
 
     .cc-compare-row > div {
+
+        min-height: 58px;
 
         padding: 10px 8px;
 
@@ -1870,6 +2109,8 @@ img{
 
     .cc-compare-header > div {
 
+        min-height: 55px;
+
         font-size: 9px;
 
     }
@@ -1877,7 +2118,7 @@ img{
 
     .cc-compare-row .feature-name {
 
-        gap: 6px;
+        gap: 5px;
 
     }
 
@@ -1892,32 +2133,166 @@ img{
 
     }
 
+
+    .cc-compare-row .check,
+    .cc-compare-row .highlight {
+
+        font-size: 15px;
+
+    }
+
 }
 
 
 /* =========================================================
-   360PX
+   320 - 380 PX
 ========================================================= */
 
-@media (max-width: 380px) {
+@media screen and
+(min-width: 320px) and
+(max-width: 380px) {
 
-    .cc-compare-heading h2 {
+    .cc-compare-section {
 
-        font-size: 32px;
+        padding: 62px 0;
+
+    }
+
+
+    .cc-compare-section .cc-price-container {
+
+        width: 91%;
+
+    }
+
+
+    .cc-section-heading {
+
+        margin-bottom: 40px;
+
+    }
+
+
+    .cc-section-eyebrow {
+
+        gap: 6px;
+
+        font-size: 8px;
+
+        letter-spacing: 1.4px;
+
+    }
+
+
+    .cc-section-eyebrow::before,
+    .cc-section-eyebrow::after {
+
+        width: 17px;
+
+        flex-basis: 17px;
+
+    }
+
+
+    .cc-section-heading h2 {
+
+        font-size: 31px;
+
+        letter-spacing: -.6px;
+
+    }
+
+
+    .cc-section-heading > p {
+
+        margin-top: 17px;
+
+        font-size: 12px;
+
+        line-height: 1.7;
+
+    }
+
+
+    .cc-compare-layout {
+
+        gap: 36px;
+
+    }
+
+
+    .cc-compare-number {
+
+        font-size: 60px;
 
     }
 
 
     .cc-compare-copy h3 {
 
-        font-size: 31px;
+        font-size: 30px;
+
+        letter-spacing: -.8px;
+
+    }
+
+
+    .cc-compare-copy > p {
+
+        font-size: 12px;
+
+    }
+
+
+    .cc-compare-points {
+
+        gap: 11px;
+
+    }
+
+
+    .cc-compare-points li {
+
+        font-size: 11px;
+
+    }
+
+
+    .cc-compare-points li svg {
+
+        width: 16px;
+
+        height: 16px;
+
+        flex-basis: 16px;
+
+    }
+
+
+    .cc-compare-box {
+
+        border-radius: 13px;
+
+    }
+
+
+    .cc-compare-row {
+
+        grid-template-columns:
+            minmax(0, 1.3fr)
+            minmax(43px, .7fr)
+            minmax(43px, .7fr);
+
+        min-height: 54px;
 
     }
 
 
     .cc-compare-row > div {
 
-        padding: 9px 6px;
+        min-height: 54px;
+
+        padding: 8px 5px;
 
         font-size: 9px;
 
@@ -1926,15 +2301,132 @@ img{
 
     .cc-compare-header > div {
 
+        min-height: 51px;
+
         font-size: 8px;
+
+    }
+
+
+    .cc-compare-row .feature-name {
+
+        gap: 4px;
+
+    }
+
+
+    .cc-compare-row .feature-name svg {
+
+        width: 14px;
+
+        height: 14px;
+
+        flex-basis: 14px;
+
+    }
+
+
+    .cc-compare-row .check,
+    .cc-compare-row .highlight {
+
+        font-size: 14px;
 
     }
 
 }
 
 
+/* =========================================================
+   BELOW 320 PX
+========================================================= */
+
+@media screen and
+(max-width: 319px) {
+
+    .cc-compare-section {
+
+        padding: 55px 0;
+
+    }
 
 
+    .cc-compare-section .cc-price-container {
+
+        width: 94%;
+
+    }
+
+
+    .cc-section-heading h2 {
+
+        font-size: 28px;
+
+    }
+
+
+    .cc-compare-number {
+
+        font-size: 52px;
+
+    }
+
+
+    .cc-compare-copy h3 {
+
+        font-size: 27px;
+
+    }
+
+
+    .cc-compare-row {
+
+        grid-template-columns:
+            minmax(0, 1.25fr)
+            minmax(39px, .7fr)
+            minmax(39px, .7fr);
+
+    }
+
+
+    .cc-compare-row > div {
+
+        padding: 7px 3px;
+
+        font-size: 8px;
+
+    }
+
+
+    .cc-compare-header > div {
+
+        font-size: 7px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .cc-compare-section *,
+    .cc-compare-section *::before,
+    .cc-compare-section *::after {
+
+        scroll-behavior: auto !important;
+
+        transition-duration: .01ms !important;
+
+        animation-duration: .01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+    }
+
+}
 
 
 /* =========================================================

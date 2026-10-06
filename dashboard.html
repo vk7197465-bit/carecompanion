@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <title>Care Companion | Family Dashboard</title>
 
@@ -3202,6 +3202,1151 @@ html[dir="rtl"] .data-table td{
 }
 
 </style>
+
+<style id="dashboard-rework-overrides">
+/* =========================================================
+   CARE COMPANION — RESPONSIVE DASHBOARD
+   Exact targets:
+   Samsung S8      : 360 × 740
+   iPad Mini       : 768 × 1024 / 1024 × 768
+   Nest Hub        : 1024 × 600
+   Desktop         : 1200+
+   LTR + RTL
+   LIGHT + DARK
+========================================================= */
+
+/* ---------- GLOBAL SAFE BASE ---------- */
+html,
+body{
+    width:100%;
+    min-width:0;
+    max-width:100%;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+.dashboard-app{
+    width:100%;
+    min-width:0;
+    min-height:100vh;
+    min-height:100dvh;
+}
+
+.dashboard-sidebar{
+    box-sizing:border-box;
+    height:100vh;
+    height:100dvh;
+    max-height:100vh;
+    max-height:100dvh;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+.sidebar-nav{
+    min-height:0;
+    overflow-x:hidden;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+}
+
+.dashboard-main,
+.dashboard-content,
+.dashboard-page{
+    min-width:0;
+    max-width:100%;
+}
+
+.dashboard-page{
+    width:100%;
+}
+
+.dashboard-nav-item{
+    flex:0 0 auto;
+}
+
+.dashboard-nav-item span{
+    min-width:0;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.content-card,
+.summary-card,
+.metric-card,
+.visit-card,
+.payment-box,
+.profile-card,
+.profile-form,
+.report-score-card,
+.assignment-details,
+.caregiver-profile-main{
+    min-width:0;
+    max-width:100%;
+}
+
+.table-wrap{
+    width:100%;
+    max-width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+}
+
+.data-table{
+    max-width:none;
+}
+
+.dashboard-nav-item:focus-visible,
+.top-action:focus-visible,
+.mobile-dashboard-menu:focus-visible,
+.profile-button:focus-visible,
+.primary-btn:focus-visible,
+.secondary-btn:focus-visible{
+    outline:3px solid rgba(71,152,153,.28);
+    outline-offset:2px;
+}
+
+/* ---------- LTR / RTL DESKTOP FOUNDATION ---------- */
+html[dir="ltr"] .dashboard-sidebar{
+    left:0;
+    right:auto;
+}
+
+html[dir="rtl"] .dashboard-sidebar{
+    right:0;
+    left:auto;
+}
+
+html[dir="ltr"] .dashboard-main{
+    margin-left:265px;
+    margin-right:0;
+    width:calc(100% - 265px);
+}
+
+html[dir="rtl"] .dashboard-main{
+    margin-left:0;
+    margin-right:265px;
+    width:calc(100% - 265px);
+}
+
+/* =========================================================
+   DESKTOP — 1201px AND ABOVE
+========================================================= */
+@media screen and (min-width:1201px){
+
+    .dashboard-sidebar{
+        width:265px;
+        min-width:265px;
+        transform:none !important;
+    }
+
+    html[dir="ltr"] .dashboard-main{
+        width:calc(100% - 265px);
+        margin-left:265px;
+        margin-right:0;
+    }
+
+    html[dir="rtl"] .dashboard-main{
+        width:calc(100% - 265px);
+        margin-left:0;
+        margin-right:265px;
+    }
+
+    .mobile-dashboard-menu{
+        display:none !important;
+    }
+
+    .dashboard-content{
+        width:100%;
+        padding:32px;
+    }
+
+    .dashboard-topbar{
+        padding:0 30px;
+    }
+
+    .metrics-grid{
+        grid-template-columns:repeat(4,minmax(0,1fr));
+    }
+}
+
+/* =========================================================
+   NEST HUB — 901px TO 1200px
+   Designed around 1024 × 600
+========================================================= */
+@media screen and (min-width:901px) and (max-width:1200px){
+
+    .dashboard-sidebar{
+        width:220px;
+        min-width:220px;
+        transform:none !important;
+    }
+
+    html[dir="ltr"] .dashboard-main{
+        width:calc(100% - 220px);
+        margin-left:220px;
+        margin-right:0;
+    }
+
+    html[dir="rtl"] .dashboard-main{
+        width:calc(100% - 220px);
+        margin-left:0;
+        margin-right:220px;
+    }
+
+    .mobile-dashboard-menu{
+        display:none !important;
+    }
+
+    .sidebar-brand{
+        height:76px;
+        padding:14px 16px;
+    }
+
+    .logo-box{
+        width:40px;
+        height:40px;
+        flex-basis:40px;
+    }
+
+    .brand-name{
+        font-size:18px;
+    }
+
+    .brand-tag{
+        font-size:6.5px;
+        letter-spacing:1.2px;
+    }
+
+    .sidebar-nav{
+        padding:14px 10px;
+    }
+
+    .dashboard-nav-item{
+        min-height:42px;
+        padding:9px 10px;
+        gap:9px;
+        font-size:11px;
+        border-radius:11px;
+    }
+
+    .dashboard-nav-item i,
+    .dashboard-nav-item svg{
+        width:16px;
+        height:16px;
+        flex-basis:16px;
+    }
+
+    .nav-label{
+        padding:0 10px 7px;
+        font-size:8px;
+    }
+
+    .sidebar-bottom{
+        padding:10px;
+    }
+
+    .dashboard-topbar{
+        height:66px;
+        padding:0 18px;
+        gap:12px;
+    }
+
+    .topbar-actions{
+        gap:6px;
+    }
+
+    .top-action{
+        width:38px;
+        height:38px;
+    }
+
+    .profile-button{
+        padding:4px 8px 4px 4px;
+    }
+
+    html[dir="rtl"] .profile-button{
+        padding:4px 4px 4px 8px;
+    }
+
+    .profile-avatar{
+        width:29px;
+        height:29px;
+    }
+
+    .profile-info strong{
+        font-size:10px;
+    }
+
+    .profile-info span{
+        font-size:8px;
+    }
+
+    .dashboard-content{
+        padding:20px 20px 28px;
+    }
+
+    .page-heading{
+        margin-bottom:17px;
+    }
+
+    .page-heading h1{
+        font-size:27px;
+    }
+
+    .page-heading p{
+        font-size:11px;
+        line-height:1.55;
+    }
+
+    .welcome-card{
+        min-height:150px;
+        padding:20px;
+        margin-bottom:17px;
+        border-radius:20px;
+        gap:20px;
+    }
+
+    .welcome-content h2{
+        font-size:24px;
+    }
+
+    .welcome-content p{
+        font-size:11px;
+        line-height:1.55;
+    }
+
+    .welcome-badge{
+        margin-top:10px;
+    }
+
+    .metrics-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:12px;
+        margin-bottom:17px;
+    }
+
+    .metric-card{
+        min-height:108px;
+        padding:14px;
+        border-radius:15px;
+    }
+
+    .metric-icon{
+        width:34px;
+        height:34px;
+    }
+
+    .metric-label{
+        margin-top:10px;
+        font-size:8px;
+    }
+
+    .metric-value{
+        font-size:20px;
+    }
+
+    .metric-note{
+        font-size:8px;
+    }
+
+    .content-grid{
+        grid-template-columns:minmax(0,1.25fr) minmax(240px,.75fr);
+        gap:14px;
+    }
+
+    .content-card{
+        padding:17px;
+    }
+
+    .payment-summary{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+
+    .data-table{
+        min-width:560px;
+    }
+}
+
+/* Nest Hub exact landscape height optimization */
+@media screen and (min-width:901px) and (max-width:1200px) and (max-height:700px){
+
+    .dashboard-topbar{
+        height:60px;
+    }
+
+    .dashboard-content{
+        padding:16px 18px 22px;
+    }
+
+    .page-heading{
+        margin-bottom:13px;
+    }
+
+    .page-heading h1{
+        font-size:25px;
+    }
+
+    .welcome-card{
+        min-height:130px;
+        padding:17px;
+        margin-bottom:13px;
+    }
+
+    .welcome-content h2{
+        font-size:21px;
+    }
+
+    .welcome-content p{
+        font-size:10px;
+        line-height:1.45;
+    }
+
+    .welcome-badge{
+        margin-top:7px;
+        padding:6px 9px;
+    }
+
+    .metrics-grid{
+        gap:10px;
+        margin-bottom:13px;
+    }
+
+    .metric-card{
+        min-height:92px;
+        padding:11px;
+    }
+
+    .content-card{
+        padding:14px;
+    }
+}
+
+/* =========================================================
+   IPAD MINI — 768px TO 900px
+   Portrait + landscape
+========================================================= */
+@media screen and (min-width:768px) and (max-width:900px){
+
+    .dashboard-sidebar{
+        width:286px;
+        min-width:286px;
+        transform:translateX(-110%);
+        box-shadow:0 24px 70px rgba(0,0,0,.22);
+        z-index:1000;
+    }
+
+    html[dir="rtl"] .dashboard-sidebar{
+        transform:translateX(110%);
+    }
+
+    .dashboard-sidebar.open{
+        transform:translateX(0);
+    }
+
+    html[dir="rtl"] .dashboard-sidebar.open{
+        transform:translateX(0);
+    }
+
+    .dashboard-main,
+    html[dir="ltr"] .dashboard-main,
+    html[dir="rtl"] .dashboard-main{
+        width:100%;
+        margin-left:0;
+        margin-right:0;
+    }
+
+    .mobile-dashboard-menu{
+        display:grid;
+        width:42px;
+        height:42px;
+        flex:0 0 42px;
+    }
+
+    .dashboard-topbar{
+        height:72px;
+        padding:0 20px;
+        gap:12px;
+    }
+
+    .dashboard-content{
+        width:100%;
+        padding:25px 22px 34px;
+    }
+
+    .page-heading{
+        flex-direction:row;
+        align-items:flex-end;
+        gap:18px;
+        margin-bottom:22px;
+    }
+
+    .page-heading h1{
+        font-size:29px;
+    }
+
+    .page-heading p{
+        font-size:12px;
+    }
+
+    .welcome-card{
+        padding:24px;
+        min-height:190px;
+        border-radius:22px;
+    }
+
+    .welcome-content h2{
+        font-size:27px;
+    }
+
+    .metrics-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:14px;
+    }
+
+    .metric-card{
+        min-height:130px;
+        padding:17px;
+    }
+
+    .content-grid,
+    .caregiver-profile,
+    .profile-layout,
+    .report-grid{
+        grid-template-columns:1fr;
+    }
+
+    .visit-grid,
+    .summary-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .payment-summary{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+
+    .form-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .table-wrap{
+        border-radius:12px;
+    }
+
+    .data-table{
+        min-width:650px;
+    }
+}
+
+/* =========================================================
+   LARGE PHONE / SMALL TABLET FALLBACK — 391px TO 767px
+========================================================= */
+@media screen and (min-width:391px) and (max-width:767px){
+
+    .dashboard-sidebar{
+        width:min(300px,86vw);
+        min-width:0;
+        transform:translateX(-110%);
+        box-shadow:0 24px 70px rgba(0,0,0,.24);
+        z-index:1000;
+    }
+
+    html[dir="rtl"] .dashboard-sidebar{
+        transform:translateX(110%);
+    }
+
+    .dashboard-sidebar.open{
+        transform:translateX(0);
+    }
+
+    html[dir="rtl"] .dashboard-sidebar.open{
+        transform:translateX(0);
+    }
+
+    .dashboard-main,
+    html[dir="ltr"] .dashboard-main,
+    html[dir="rtl"] .dashboard-main{
+        width:100%;
+        margin:0;
+    }
+
+    .mobile-dashboard-menu{
+        display:grid;
+        width:40px;
+        height:40px;
+        flex:0 0 40px;
+    }
+
+    .dashboard-topbar{
+        height:64px;
+        padding:0 11px;
+        gap:8px;
+    }
+
+    .dashboard-content{
+        width:100%;
+        padding:20px 12px 30px;
+    }
+
+    .page-heading{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:7px;
+        margin-bottom:18px;
+    }
+
+    .page-heading h1{
+        font-size:26px;
+    }
+
+    .page-heading p{
+        max-width:100%;
+        font-size:10px;
+        line-height:1.65;
+    }
+
+    .welcome-card{
+        min-height:0;
+        padding:19px;
+        margin-bottom:18px;
+        border-radius:18px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:14px;
+    }
+
+    .welcome-content{
+        width:100%;
+    }
+
+    .welcome-content h2{
+        font-size:23px;
+    }
+
+    .welcome-content p{
+        font-size:10px;
+        line-height:1.65;
+    }
+
+    .metrics-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:9px;
+    }
+
+    .metric-card{
+        min-height:110px;
+        padding:12px;
+        border-radius:14px;
+    }
+
+    .metric-icon{
+        width:32px;
+        height:32px;
+    }
+
+    .metric-label{
+        margin-top:10px;
+        font-size:8px;
+    }
+
+    .metric-value{
+        font-size:20px;
+    }
+
+    .metric-note{
+        font-size:8px;
+    }
+
+    .content-grid,
+    .caregiver-profile,
+    .profile-layout,
+    .report-grid,
+    .visit-grid,
+    .summary-grid,
+    .payment-summary,
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .content-card{
+        padding:15px;
+        border-radius:16px;
+    }
+
+    .page-toolbar{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .toolbar-actions{
+        width:100%;
+        flex-wrap:wrap;
+    }
+
+    .toolbar-actions .primary-btn,
+    .toolbar-actions .secondary-btn{
+        flex:1 1 140px;
+    }
+
+    .profile-button{
+        width:40px;
+        height:40px;
+        padding:4px;
+        justify-content:center;
+    }
+
+    .profile-info{
+        display:none;
+    }
+
+    .profile-avatar{
+        width:29px;
+        height:29px;
+    }
+
+    .top-action{
+        width:40px;
+        height:40px;
+        border-radius:10px;
+    }
+
+    .topbar-actions{
+        gap:5px;
+    }
+
+    .topbar-title{
+        display:none;
+    }
+
+    .data-table{
+        min-width:620px;
+    }
+
+    .notification-card{
+        padding:14px;
+    }
+}
+
+/* =========================================================
+   SAMSUNG S8 — 320px TO 390px
+   Optimized specifically around 360 × 740
+========================================================= */
+@media screen and (min-width:320px) and (max-width:390px){
+
+    html,
+    body{
+        width:100%;
+        min-width:320px;
+        max-width:100%;
+    }
+
+    .dashboard-sidebar{
+        width:288px;
+        max-width:88vw;
+        min-width:0;
+        transform:translateX(-105%);
+        box-shadow:0 20px 60px rgba(0,0,0,.28);
+        z-index:1000;
+    }
+
+    html[dir="rtl"] .dashboard-sidebar{
+        transform:translateX(105%);
+    }
+
+    .dashboard-sidebar.open{
+        transform:translateX(0);
+    }
+
+    html[dir="rtl"] .dashboard-sidebar.open{
+        transform:translateX(0);
+    }
+
+    .dashboard-main,
+    html[dir="ltr"] .dashboard-main,
+    html[dir="rtl"] .dashboard-main{
+        width:100%;
+        max-width:100%;
+        margin:0;
+    }
+
+    .mobile-dashboard-menu{
+        display:grid;
+        width:38px;
+        height:38px;
+        min-width:38px;
+        flex:0 0 38px;
+        border-radius:10px;
+    }
+
+    .dashboard-topbar{
+        width:100%;
+        height:62px;
+        min-height:62px;
+        padding:0 8px;
+        gap:6px;
+    }
+
+    .topbar-actions{
+        gap:4px;
+    }
+
+    .top-action{
+        width:36px;
+        height:36px;
+        min-width:36px;
+        border-radius:9px;
+    }
+
+    .top-action svg{
+        width:16px;
+        height:16px;
+    }
+
+    .profile-button{
+        width:36px;
+        height:36px;
+        min-width:36px;
+        padding:3px;
+        border-radius:10px;
+    }
+
+    .profile-info{
+        display:none;
+    }
+
+    .profile-avatar{
+        width:28px;
+        height:28px;
+        border-radius:8px;
+    }
+
+    .dashboard-content{
+        width:100%;
+        max-width:100%;
+        padding:16px 8px 25px;
+    }
+
+    .page-heading{
+        width:100%;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+        margin-bottom:15px;
+    }
+
+    .eyebrow{
+        margin-bottom:5px;
+        font-size:8px;
+        letter-spacing:.11em;
+    }
+
+    .page-heading h1{
+        font-size:22px;
+        line-height:1.15;
+    }
+
+    .page-heading p{
+        width:100%;
+        max-width:100%;
+        font-size:9px;
+        line-height:1.6;
+    }
+
+    .welcome-card{
+        width:100%;
+        min-height:0;
+        padding:15px;
+        margin-bottom:15px;
+        border-radius:16px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:11px;
+    }
+
+    .welcome-content{
+        width:100%;
+        min-width:0;
+    }
+
+    .welcome-content h2{
+        font-size:20px;
+        line-height:1.2;
+        margin-bottom:6px;
+    }
+
+    .welcome-content p{
+        max-width:100%;
+        font-size:9px;
+        line-height:1.6;
+    }
+
+    .welcome-badge{
+        margin-top:10px;
+        padding:7px 9px;
+        font-size:8px;
+    }
+
+    .metrics-grid{
+        width:100%;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:7px;
+        margin-bottom:15px;
+    }
+
+    .metric-card{
+        width:100%;
+        min-width:0;
+        min-height:101px;
+        padding:10px;
+        border-radius:12px;
+    }
+
+    .metric-top{
+        gap:5px;
+    }
+
+    .metric-icon{
+        width:30px;
+        height:30px;
+        border-radius:9px;
+    }
+
+    .metric-icon svg{
+        width:15px;
+        height:15px;
+    }
+
+    .metric-label{
+        margin-top:8px;
+        font-size:7px;
+        line-height:1.3;
+    }
+
+    .metric-value{
+        font-size:18px;
+    }
+
+    .metric-note{
+        font-size:7px;
+    }
+
+    .content-grid,
+    .caregiver-profile,
+    .profile-layout,
+    .report-grid,
+    .visit-grid,
+    .summary-grid,
+    .payment-summary,
+    .form-grid{
+        width:100%;
+        grid-template-columns:1fr;
+    }
+
+    .content-card{
+        width:100%;
+        min-width:0;
+        padding:13px;
+        border-radius:14px;
+    }
+
+    .page-toolbar{
+        width:100%;
+        flex-direction:column;
+        align-items:stretch;
+        gap:10px;
+    }
+
+    .toolbar-actions{
+        width:100%;
+        display:flex;
+        flex-wrap:wrap;
+        gap:7px;
+    }
+
+    .toolbar-actions .primary-btn,
+    .toolbar-actions .secondary-btn{
+        flex:1 1 120px;
+        min-width:0;
+    }
+
+    .table-wrap{
+        width:100%;
+        max-width:100%;
+        overflow-x:auto;
+    }
+
+    .data-table{
+        min-width:600px;
+    }
+
+    .notification-card{
+        width:100%;
+        padding:12px;
+    }
+
+    /* Never allow form controls to create horizontal overflow */
+    input,
+    select,
+    textarea,
+    button{
+        max-width:100%;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+        width:100%;
+        min-width:0;
+    }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES — BELOW 320px
+========================================================= */
+@media screen and (max-width:319px){
+
+    .dashboard-sidebar{
+        width:86vw;
+        min-width:0;
+    }
+
+    .dashboard-topbar{
+        padding:0 6px;
+    }
+
+    .dashboard-content{
+        padding-left:7px;
+        padding-right:7px;
+    }
+
+    .metrics-grid{
+        gap:6px;
+    }
+
+    .metric-card{
+        padding:8px;
+    }
+
+    .metric-value{
+        font-size:17px;
+    }
+
+    .page-heading h1{
+        font-size:20px;
+    }
+}
+
+/* =========================================================
+   MOBILE LANDSCAPE
+========================================================= */
+@media screen and (max-width:900px) and (orientation:landscape) and (max-height:560px){
+
+    .dashboard-topbar{
+        height:56px;
+        min-height:56px;
+    }
+
+    .dashboard-content{
+        padding-top:13px;
+        padding-bottom:22px;
+    }
+
+    .page-heading{
+        margin-bottom:12px;
+    }
+
+    .welcome-card{
+        padding:14px;
+        margin-bottom:12px;
+    }
+
+    .metrics-grid{
+        grid-template-columns:repeat(4,minmax(0,1fr));
+    }
+
+    .metric-card{
+        min-height:90px;
+        padding:10px;
+    }
+
+    .content-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+/* =========================================================
+   RTL — COMPLETE MIRRORING
+========================================================= */
+html[dir="rtl"] .dashboard-topbar,
+html[dir="rtl"] .page-toolbar,
+html[dir="rtl"] .card-header,
+html[dir="rtl"] .metric-top,
+html[dir="rtl"] .visit-card-top,
+html[dir="rtl"] .visit-card-footer,
+html[dir="rtl"] .detail-row,
+html[dir="rtl"] .report-item-top{
+    direction:rtl;
+}
+
+html[dir="rtl"] .data-table th,
+html[dir="rtl"] .data-table td{
+    text-align:right;
+}
+
+html[dir="rtl"] .page-heading{
+    text-align:right;
+}
+
+html[dir="rtl"] .profile-info{
+    text-align:right;
+}
+
+html[dir="rtl"] .dashboard-nav-item{
+    text-align:right;
+}
+
+html[dir="rtl"] .form-actions{
+    justify-content:flex-start;
+}
+
+/* =========================================================
+   OVERLAY — ALWAYS ABOVE PAGE, BELOW SIDEBAR
+========================================================= */
+.dashboard-overlay{
+    position:fixed;
+    inset:0;
+    z-index:950;
+    display:none;
+}
+
+.dashboard-overlay.active{
+    display:block;
+}
+
+/* =========================================================
+   ACCESSIBILITY / TEXT SAFETY
+========================================================= */
+h1,h2,h3,h4,h5,h6,
+p,span,small,strong,label{
+    overflow-wrap:anywhere;
+}
+
+@media (prefers-reduced-motion:reduce){
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+    }
+}
+</style>
+
 </head>
 
 
@@ -5374,388 +6519,407 @@ html[dir="rtl"] .data-table td{
 </div>
 
 
+
 <script>
-
 /* =========================================================
-   GLOBAL CARE COMPANION THEME + DIRECTION
-   Shared by EVERY page including Dashboard
+   CARE COMPANION DASHBOARD CONTROLLER
+   - All side-panel screens work
+   - Active state always follows the open screen
+   - Internal dashboard links work
+   - Browser back/forward + URL hash work
+   - Mobile sidebar + overlay work
+   - LTR / RTL persists
+   - Light / dark persists
 ========================================================= */
 
+(function () {
+    "use strict";
 
-/* =========================================================
-   ELEMENTS
-========================================================= */
+    const root = document.documentElement;
+    const body = document.body;
 
-const themeButton =
-    document.getElementById("themeButton");
+    const sidebar = document.getElementById("dashboardSidebar");
+    const overlay = document.getElementById("dashboardOverlay");
+    const menuButton = document.getElementById("dashboardMenu");
+    const themeButton = document.getElementById("themeButton");
+    const rtlButton = document.getElementById("rtlButton");
+    const notificationButton = document.getElementById("notificationButton");
+    const profileButton = document.getElementById("profileButton");
+    const logoutButton = document.getElementById("logoutBtn");
 
-const rtlButton =
-    document.getElementById("rtlButton");
+    const navItems = Array.from(
+        document.querySelectorAll(".dashboard-nav-item[data-page]")
+    );
 
+    const pages = Array.from(
+        document.querySelectorAll(".dashboard-page[id^='page-']")
+    );
 
-/* =========================================================
-   GLOBAL STORAGE KEYS
-=========================================================
+    const validPages = new Set(
+        pages.map(function (page) {
+            return page.id.replace(/^page-/, "");
+        })
+    );
 
-   DO NOT CHANGE THESE KEYS.
+    const pageTitles = {
+        overview: "Overview",
+        schedule: "Visit Schedule",
+        summaries: "Visit Summaries",
+        activity: "Activity Logs",
+        caregiver: "Caregiver Assignment",
+        wellness: "Wellness Reports",
+        payments: "Payments",
+        notifications: "Notifications",
+        profile: "Family Profile"
+    };
 
-   Every page must use:
+    /* ---------------------------------------------------------
+       THEME
+    --------------------------------------------------------- */
 
-   Theme     → care-theme
-   Direction → care-direction
+    function applyTheme() {
+        const dark = localStorage.getItem("care-theme") === "dark";
 
-========================================================= */
-
-
-/* =========================================================
-   READ SAVED THEME
-========================================================= */
-
-let darkMode =
-    localStorage.getItem("care-theme") === "dark";
-
-
-/* =========================================================
-   APPLY GLOBAL THEME
-========================================================= */
-
-function applyGlobalTheme() {
-
-    const root =
-        document.documentElement;
-
-
-    if (darkMode) {
-
-        /* DARK MODE */
-
-        root.classList.add("dark");
-
-        root.setAttribute(
-            "data-theme",
-            "dark"
-        );
-
-
-        root.style.setProperty(
-            "--bg",
-            "#111017"
-        );
-
-        root.style.setProperty(
-            "--surface",
-            "#191720"
-        );
-
-        root.style.setProperty(
-            "--surface-soft",
-            "#211D29"
-        );
-
-        root.style.setProperty(
-            "--text",
-            "#F8F5FA"
-        );
-
-        root.style.setProperty(
-            "--muted",
-            "#B9B2C2"
-        );
-
-        root.style.setProperty(
-            "--border",
-            "rgba(255,255,255,.11)"
-        );
-
-
-        /* Dashboard theme icon */
+        root.setAttribute("data-theme", dark ? "dark" : "light");
+        root.classList.toggle("dark", dark);
+        root.classList.toggle("light", !dark);
 
         if (themeButton) {
-
+            themeButton.setAttribute(
+                "aria-label",
+                dark ? "Switch to light mode" : "Switch to dark mode"
+            );
+            themeButton.setAttribute(
+                "title",
+                dark ? "Light mode" : "Dark mode"
+            );
             themeButton.innerHTML =
-                '<i data-lucide="sun"></i>';
-
+                '<i data-lucide="' + (dark ? "sun" : "moon") + '"></i>';
         }
 
+        refreshIcons();
+    }
 
-    } else {
+    if (!localStorage.getItem("care-theme")) {
+        localStorage.setItem("care-theme", "light");
+    }
 
-        /* LIGHT MODE */
+    applyTheme();
 
-        root.classList.remove("dark");
+    if (themeButton) {
+        themeButton.addEventListener("click", function () {
+            const next =
+                localStorage.getItem("care-theme") === "dark"
+                    ? "light"
+                    : "dark";
 
-        root.setAttribute(
-            "data-theme",
-            "light"
-        );
+            localStorage.setItem("care-theme", next);
+            applyTheme();
+        });
+    }
 
+    /* ---------------------------------------------------------
+       DIRECTION
+    --------------------------------------------------------- */
 
-        root.style.setProperty(
-            "--bg",
-            "#FBF8F4"
-        );
+    function applyDirection() {
+        const rtl = localStorage.getItem("care-direction") === "rtl";
 
-        root.style.setProperty(
-            "--surface",
-            "#FFFFFF"
-        );
+        root.setAttribute("dir", rtl ? "rtl" : "ltr");
+        body.setAttribute("dir", rtl ? "rtl" : "ltr");
 
-        root.style.setProperty(
-            "--surface-soft",
-            "#F5F0EA"
-        );
-
-        root.style.setProperty(
-            "--text",
-            "#292535"
-        );
-
-        root.style.setProperty(
-            "--muted",
-            "#777180"
-        );
-
-        root.style.setProperty(
-            "--border",
-            "rgba(71,152,153,.14)"
-        );
-
-
-        /* Dashboard theme icon */
-
-        if (themeButton) {
-
-            themeButton.innerHTML =
-                '<i data-lucide="moon"></i>';
-
+        if (rtlButton) {
+            rtlButton.setAttribute(
+                "aria-label",
+                rtl ? "Switch to LTR" : "Switch to RTL"
+            );
+            rtlButton.setAttribute(
+                "title",
+                rtl ? "Switch to LTR" : "Switch to RTL"
+            );
+            rtlButton.innerHTML =
+                '<i data-lucide="arrow-left-right"></i>';
         }
 
+        refreshIcons();
     }
 
-
-    /* Rebuild Lucide icons */
-
-    if (
-        typeof lucide !== "undefined"
-    ) {
-
-        lucide.createIcons();
-
+    if (!localStorage.getItem("care-direction")) {
+        localStorage.setItem("care-direction", "ltr");
     }
 
-}
+    applyDirection();
 
+    if (rtlButton) {
+        rtlButton.addEventListener("click", function () {
+            const next =
+                localStorage.getItem("care-direction") === "rtl"
+                    ? "ltr"
+                    : "rtl";
 
-/* =========================================================
-   APPLY SAVED THEME ON LOAD
-========================================================= */
+            localStorage.setItem("care-direction", next);
+            applyDirection();
+        });
+    }
 
-applyGlobalTheme();
+    /* ---------------------------------------------------------
+       ICONS
+    --------------------------------------------------------- */
 
+    function refreshIcons() {
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
+            window.lucide.createIcons();
+        }
+    }
 
-/* =========================================================
-   THEME BUTTON
-========================================================= */
+    /* ---------------------------------------------------------
+       MOBILE SIDEBAR
+    --------------------------------------------------------- */
 
-if (themeButton) {
+    function isMobileLayout() {
+        return window.matchMedia("(max-width: 900px)").matches;
+    }
 
-    themeButton.addEventListener(
-        "click",
-        function () {
+    function openSidebar() {
+        if (!sidebar) return;
 
-            darkMode =
-                !darkMode;
+        sidebar.classList.add("open");
 
+        if (overlay) {
+            overlay.classList.add("active");
+        }
 
-            /* SAVE FOR ENTIRE WEBSITE */
+        if (menuButton) {
+            menuButton.setAttribute("aria-expanded", "true");
+            menuButton.innerHTML =
+                '<i data-lucide="x"></i>';
+            refreshIcons();
+        }
 
-            localStorage.setItem(
-                "care-theme",
-                darkMode
-                    ? "dark"
-                    : "light"
+        body.classList.add("dashboard-menu-open");
+    }
+
+    function closeSidebar() {
+        if (!sidebar) return;
+
+        sidebar.classList.remove("open");
+
+        if (overlay) {
+            overlay.classList.remove("active");
+        }
+
+        if (menuButton) {
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.innerHTML =
+                '<i data-lucide="menu"></i>';
+            refreshIcons();
+        }
+
+        body.classList.remove("dashboard-menu-open");
+    }
+
+    function toggleSidebar() {
+        if (!sidebar) return;
+
+        if (sidebar.classList.contains("open")) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    }
+
+    if (menuButton) {
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-controls", "dashboardSidebar");
+        menuButton.addEventListener("click", toggleSidebar);
+    }
+
+    if (overlay) {
+        overlay.addEventListener("click", closeSidebar);
+    }
+
+    window.addEventListener("resize", function () {
+        if (!isMobileLayout()) {
+            closeSidebar();
+        }
+    });
+
+    /* ---------------------------------------------------------
+       PAGE NAVIGATION
+    --------------------------------------------------------- */
+
+    function getPageFromHash() {
+        const raw = window.location.hash.replace(/^#/, "").trim();
+        return validPages.has(raw) ? raw : "overview";
+    }
+
+    function setActiveNav(pageName) {
+        navItems.forEach(function (item) {
+            const active = item.dataset.page === pageName;
+
+            item.classList.toggle("active", active);
+
+            if (active) {
+                item.setAttribute("aria-current", "page");
+            } else {
+                item.removeAttribute("aria-current");
+            }
+        });
+    }
+
+    function setActiveScreen(pageName) {
+        pages.forEach(function (page) {
+            const name = page.id.replace(/^page-/, "");
+            const active = name === pageName;
+
+            page.classList.toggle("active", active);
+
+            if (active) {
+                page.removeAttribute("hidden");
+            } else {
+                page.setAttribute("hidden", "");
+            }
+        });
+    }
+
+    function updateTopbar(pageName) {
+        const title = document.querySelector(".topbar-title strong");
+
+        if (title && pageTitles[pageName]) {
+            title.textContent = "Care Companion • " + pageTitles[pageName];
+        }
+
+        body.dataset.currentPage = pageName;
+    }
+
+    function showPage(pageName, updateUrl) {
+        if (!validPages.has(pageName)) {
+            pageName = "overview";
+        }
+
+        setActiveNav(pageName);
+        setActiveScreen(pageName);
+        updateTopbar(pageName);
+
+        if (updateUrl !== false) {
+            const nextHash = "#" + pageName;
+
+            if (window.location.hash !== nextHash) {
+                history.pushState(
+                    { dashboardPage: pageName },
+                    "",
+                    nextHash
+                );
+            }
+        }
+
+        if (isMobileLayout()) {
+            closeSidebar();
+        }
+
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+        });
+
+        refreshIcons();
+    }
+
+    function navigateFromElement(element) {
+        const pageName = element.dataset.page ||
+            element.dataset.pageLink;
+
+        if (pageName && validPages.has(pageName)) {
+            showPage(pageName, true);
+        }
+    }
+
+    /* Sidebar buttons */
+    navItems.forEach(function (item) {
+        item.addEventListener("click", function (event) {
+            event.preventDefault();
+            navigateFromElement(item);
+        });
+    });
+
+    /* Dashboard internal links/buttons such as:
+       View Logs, View Details, View Schedule, etc. */
+    document
+        .querySelectorAll("[data-page-link]")
+        .forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                navigateFromElement(link);
+            });
+        });
+
+    /* Browser back / forward */
+    window.addEventListener("popstate", function () {
+        showPage(getPageFromHash(), false);
+    });
+
+    window.addEventListener("hashchange", function () {
+        showPage(getPageFromHash(), false);
+    });
+
+    /* ---------------------------------------------------------
+       TOPBAR SHORTCUTS
+    --------------------------------------------------------- */
+
+    if (notificationButton) {
+        notificationButton.addEventListener("click", function () {
+            showPage("notifications", true);
+        });
+    }
+
+    if (profileButton) {
+        profileButton.addEventListener("click", function () {
+            showPage("profile", true);
+        });
+    }
+
+    /* ---------------------------------------------------------
+       LOGOUT
+       Keep it deterministic; do not fake a successful logout.
+    --------------------------------------------------------- */
+
+    if (logoutButton) {
+        logoutButton.addEventListener("click", function () {
+            const confirmed = window.confirm(
+                "Are you sure you want to log out?"
             );
 
+            if (!confirmed) return;
 
-            /* APPLY */
-
-            applyGlobalTheme();
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   READ SAVED DIRECTION
-========================================================= */
-
-let rtlMode =
-    localStorage.getItem(
-        "care-direction"
-    ) === "rtl";
-
-
-/* =========================================================
-   APPLY GLOBAL DIRECTION
-========================================================= */
-
-function applyGlobalDirection() {
-
-    const root =
-        document.documentElement;
-
-
-    root.setAttribute(
-        "dir",
-        rtlMode
-            ? "rtl"
-            : "ltr"
-    );
-
-
-    /*
-       Optional body attribute.
-       Useful if you have dashboard-specific RTL CSS.
-    */
-
-    document.body.setAttribute(
-        "dir",
-        rtlMode
-            ? "rtl"
-            : "ltr"
-    );
-
-
-    /* Change RTL button icon */
-
- if (rtlButton) {
-
-    rtlButton.innerHTML =
-        '<i data-lucide="arrow-left-right"></i>';
-
-    lucide.createIcons();
-
-}
-
-    /* Rebuild icon */
-
-    if (
-        typeof lucide !== "undefined"
-    ) {
-
-        lucide.createIcons();
-
+            /* Change this path only if your real login page
+               uses a different filename. */
+            window.location.href = "login.html";
+        });
     }
 
-}
+    /* ---------------------------------------------------------
+       CROSS-TAB STORAGE SYNC
+    --------------------------------------------------------- */
 
-
-/* =========================================================
-   APPLY SAVED DIRECTION ON DASHBOARD LOAD
-========================================================= */
-
-applyGlobalDirection();
-
-
-/* =========================================================
-   RTL BUTTON
-========================================================= */
-
-if (rtlButton) {
-
-    rtlButton.addEventListener(
-        "click",
-        function () {
-
-            rtlMode =
-                !rtlMode;
-
-
-            /* SAVE GLOBALLY */
-
-            localStorage.setItem(
-                "care-direction",
-                rtlMode
-                    ? "rtl"
-                    : "ltr"
-            );
-
-
-            /* APPLY */
-
-            applyGlobalDirection();
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   CROSS-PAGE STATE LISTENER
-=========================================================
-
-   If another page changes localStorage while this
-   page is open, update this page automatically.
-
-========================================================= */
-
-window.addEventListener(
-    "storage",
-    function (event) {
-
-
-        /* THEME CHANGED */
-
-        if (
-            event.key === "care-theme"
-        ) {
-
-            darkMode =
-                event.newValue === "dark";
-
-            applyGlobalTheme();
-
+    window.addEventListener("storage", function (event) {
+        if (event.key === "care-theme") {
+            applyTheme();
         }
 
-
-        /* DIRECTION CHANGED */
-
-        if (
-            event.key === "care-direction"
-        ) {
-
-            rtlMode =
-                event.newValue === "rtl";
-
-            applyGlobalDirection();
-
+        if (event.key === "care-direction") {
+            applyDirection();
         }
+    });
 
-    }
-);
+    /* ---------------------------------------------------------
+       INITIALIZE
+    --------------------------------------------------------- */
 
+    showPage(getPageFromHash(), false);
+    refreshIcons();
 
-/* =========================================================
-   DEBUG
-========================================================= */
-
-console.log(
-    "Care Companion Theme:",
-    darkMode
-        ? "Dark"
-        : "Light"
-);
-
-console.log(
-    "Care Companion Direction:",
-    rtlMode
-        ? "RTL"
-        : "LTR"
-);
-
+})();
 </script>
 
 </body>

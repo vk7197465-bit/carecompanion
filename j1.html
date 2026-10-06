@@ -1,1536 +1,1404 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Care Heaven | Premium Responsive Header & Footer</title>
+
 <!-- =========================================================
-     ASTRA VISTA — PREMIUM CONTACT SECTION
-     LEFT  : CONTACT FORM
-     RIGHT : CONTACT INFORMATION
+     GOOGLE FONTS
+========================================================= -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet">
+
+<!-- =========================================================
+     LUCIDE
 ========================================================= -->
 
-<section class="av-contact" id="contact">
+<script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- ================= HEADING ================= -->
+<link rel="stylesheet" href="header.css">
 
-  <div class="av-contact-heading">
+</head>
 
-    <div class="av-contact-label">
-      <span class="av-contact-line"></span>
 
-      <span class="av-contact-label-text">
-        Connect With Astra Vista
-      </span>
+<body>
 
-      <span class="av-contact-line"></span>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="care-header" id="header">
+
+    <div class="header-inner">
+
+
+        <!-- BRAND -->
+
+        <a href="#" class="brand">
+<div class="logo-box image-logo">
+    <img src="images/v1.png" alt="">
+</div>
+
+            <div class="brand-text">
+
+<span class="brand-name">
+    <span class="brand-primary">Care</span>
+    <span class="brand-secondary">Companion</span>
+</span>                <span class="brand-tag">
+                    Compassion • Trust • Care
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- =================================================
+             DESKTOP NAVIGATION
+        ================================================== -->
+
+        <nav class="main-nav">
+ 
+
+            <!-- HOME DROPDOWN -->
+
+            <div class="dropdown" id="homeDropdown">
+
+                <a href="#"
+                   class="nav-link"
+                   id="homeToggle">
+
+                    Home
+
+                    <i data-lucide="chevron-down"
+                       class="nav-arrow">
+                    </i>
+
+                </a>
+
+
+                <div class="dropdown-menu">
+
+                    <div class="dropdown-title">
+                        Explore Home
+                    </div>
+
+
+                    <a href="index.html"
+                       class="dropdown-item">
+
+                        <i data-lucide="house"></i>
+
+                        Home 1
+
+                    </a>
+
+
+                    <a href="home.html"
+                       class="dropdown-item">
+
+                        <i data-lucide="heart"></i>
+
+                        Home 2
+
+                    </a>
+
+
+                    
+                </div>
+
+            </div>
+
+
+
+            <a href="services.html"
+               class="nav-link">
+                Services
+            </a>
+
+      <a href="caregivers.html"
+               class="nav-link">
+                Caregivers
+            </a>
+            <a href="pricing.html"
+               class="nav-link">
+                Pricing
+            </a>
+
+            <a href="blog.html"
+               class="nav-link">
+                Blog
+            </a>
+
+            <a href="contact.html"
+               class="nav-link">
+                Contact
+            </a>
+
+            <a href="dashboard.html"
+               class="nav-link">
+                Dashboard
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             HEADER ACTIONS
+        ================================================== -->
+
+        <div class="header-actions">
+
+
+            <!-- THEME -->
+
+            <button
+                class="icon-btn"
+                id="themeBtn"
+                type="button"
+                title="Toggle theme"
+                aria-label="Toggle theme">
+
+                <i data-lucide="moon"></i>
+
+            </button>
+
+
+            <!-- RTL -->
+
+            <button
+                class="icon-btn"
+                id="rtlBtn"
+                type="button"
+                title="RTL / LTR"
+                aria-label="Toggle RTL">
+                <i data-lucide="arrow-left-right"></i>
+
+ 
+            </button>
+
+
+            <!-- BOOK VISIT CTA -->
+
+            <a href="dashboard.html"
+               class="book-visit-btn desktop-book-visit"
+               aria-label="Book a care visit">
+
+                <i data-lucide="calendar-plus"></i>
+
+                <span>Book Visit</span>
+
+            </a>
+
+
+            <!-- DESKTOP LOGIN -->
+
+            <a href="login.html"
+               class="login-btn desktop-login">
+
+
+                <span>Login</span>
+
+            </a>
+
+
+            <!-- MOBILE MENU -->
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false">
+
+                <i data-lucide="menu"></i>
+
+            </button>
+
+        </div>
+
     </div>
-
-    <h2>
-      Reach Beyond
-      <strong>the Ordinary</strong>
-    </h2>
-
-    <p>
-      Have questions about our planetarium shows, stargazing
-      sessions, school programs, or memberships? Our team is
-      here to help you plan your journey through the cosmos.
-    </p>
-
-  </div>
-
-
-  <!-- ================= MAIN ================= -->
-
-  <div class="av-contact-wrapper">
 
 
     <!-- =====================================================
-         LEFT — FORM
+         RESPONSIVE MOBILE / TABLET PANEL
     ====================================================== -->
 
-    <div class="av-contact-form">
-
-      <div class="av-form-top">
-
-        <span>GET IN TOUCH</span>
-
-        <h3>
-          Start Your Cosmic Journey
-        </h3>
-
-        <p>
-          Tell us what you are looking for and our team
-          will help you plan your Astra Vista experience.
-        </p>
-
-      </div>
+    <div class="mobile-panel"
+         id="mobilePanel">
 
 
-      <form id="avContactForm">
+        <!-- HOME -->
+
+        <div class="mobile-nav-group">
 
 
-        <!-- NAME -->
+            <button
+                class="mobile-nav-dropdown"
+                id="mobileHomeBtn"
+                type="button"
+                aria-expanded="false">
 
-        <div class="av-input">
+                <span>
 
-          <i data-lucide="user-round"></i>
+                    <i data-lucide="house"></i>
 
-          <input
-            type="text"
-            placeholder="Your Name"
-            required
-          >
+                    Home
 
-        </div>
-
-
-        <!-- EMAIL -->
-
-        <div class="av-input">
-
-          <i data-lucide="mail"></i>
-
-          <input
-            type="email"
-            placeholder="Email Address"
-            required
-          >
-
-        </div>
+                </span>
 
 
-        <!-- PHONE -->
+                <i data-lucide="chevron-down"
+                   class="mobile-chevron">
+                </i>
 
-        <div class="av-input">
+            </button>
 
-          <i data-lucide="phone"></i>
 
-          <input
-            type="tel"
-            placeholder="Phone Number"
-            required
-          >
+            <!-- HOME SUBMENU -->
+
+            <div class="mobile-dropdown"
+                 id="mobileHomeDropdown">
+
+
+                <a href="index.html">
+
+                    <i data-lucide="sparkles"></i>
+
+                    Home 1
+
+                </a>
+
+
+                <a href="home.html">
+
+                    <i data-lucide="heart-handshake"></i>
+
+                    Home 2
+
+                </a>
+
+
+
+
+
+            </div>
 
         </div>
 
 
-        <!-- INTEREST -->
-
-        <div class="av-input">
-
-          <i data-lucide="sparkles"></i>
-
-          <select required>
-
-            <option value="">
-              What are you interested in?
-            </option>
-
-            <option>
-              Shows & Programs
-            </option>
-
-            <option>
-              Stargazing Experience
-            </option>
-
-            <option>
-              School Programs
-            </option>
-
-            <option>
-              Membership
-            </option>
-
-            <option>
-              General Enquiry
-            </option>
-
-          </select>
-
-        </div>
 
 
-        <!-- MESSAGE -->
+        <a href="services.html">
 
-        <div class="av-input av-message">
+            <i data-lucide="heart-pulse"></i>
 
-          <i data-lucide="message-circle"></i>
+            Services
 
-          <textarea
-            placeholder="Tell us how we can help you..."
-            required
-          ></textarea>
+        </a>
+       <a href="caregivers.html">
 
-        </div>
+        <i data-lucide="heart-handshake"></i>
 
+            Caregivers
 
-        <!-- BUTTON -->
+        </a>
 
-        <button type="submit">
+        <a href="pricing.html">
 
-          <span>
-            Send Message
-          </span>
+            <i data-lucide="badge-indian-rupee"></i>
 
-          <i data-lucide="arrow-up-right"></i>
+            Pricing
 
-        </button>
+        </a>
 
 
-        <!-- SUCCESS -->
+        <a href="blog.html">
 
-        <div
-          class="av-form-success"
-          id="avFormSuccess"
-        >
+            <i data-lucide="newspaper"></i>
 
-          <i data-lucide="check-circle-2"></i>
+            Blog
 
-          <span>
-            Thank you. Our Astra Vista team will be in touch soon.
-          </span>
+        </a>
 
-        </div>
 
-      </form>
+        <a href="contact.html">
+
+            <i data-lucide="phone"></i>
+
+            Contact
+
+        </a>
+
+
+        <a href="dashboard.html">
+
+            <i data-lucide="layout-dashboard"></i>
+
+            Dashboard
+
+        </a>
+
+
+        <!-- MOBILE BOOK VISIT CTA -->
+
+        <a href="dashboard.html"
+           class="mobile-book-visit">
+
+            <i data-lucide="calendar-plus"></i>
+
+            <span>Book Visit</span>
+
+        </a>
+
+
+        <!-- MOBILE LOGIN -->
+
+        <a href="login.html"
+           class="mobile-login">
+
+            <i data-lucide="log-in"></i>
+
+            Login
+
+        </a>
 
     </div>
 
+</header>
 
 
-    <!-- =====================================================
-         RIGHT — INFORMATION
-    ====================================================== -->
-
-    <div class="av-contact-info">
 
 
-      <!-- COSMIC DECORATION -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-      <div class="av-info-orbit orbit-one"></div>
-
-      <div class="av-info-orbit orbit-two"></div>
-
-      <div class="av-info-glow"></div>
+<footer class="care-footer">
 
 
-      <!-- INFO CONTENT -->
+    <div class="footer-orb one"></div>
 
-      <div class="av-info-content">
+    <div class="footer-orb two"></div>
 
-        <div class="av-info-kicker">
-          <span></span>
-          ASTRA VISTA
+
+    <div class="footer-container">
+
+
+        <div class="footer-top">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+
+                <a href="#"
+                   class="brand">
+
+<div class="logo-box image-logo">
+    <img src="images/v1.png" alt="">
+</div>
+
+                    <div class="brand-text">
+<span class="brand-name">
+    <span class="brand-primary">Care</span>
+    <span class="brand-secondary">Companion</span>
+</span>
+                        <span class="brand-tag">
+                            Compassion • Trust • Care
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <p class="footer-description">
+
+                    Compassionate elderly companionship and
+                    trusted home visit services designed to bring
+                    comfort, safety and peace of mind to families.
+
+                </p>
+
+
+                <div class="footer-badge">
+
+                    <span></span>
+
+                    Trusted Care • Every Visit
+
+                </div>
+
+
+<div class="socials">
+
+    <a href="#"
+       class="social"
+       aria-label="Facebook">
+
+        <i class="bi bi-facebook"></i>
+
+    </a>
+
+    <a href="#"
+       class="social"
+       aria-label="Instagram">
+
+        <i class="bi bi-instagram"></i>
+
+    </a>
+
+    <a href="#"
+       class="social"
+       aria-label="LinkedIn">
+
+        <i class="bi bi-linkedin"></i>
+
+    </a>
+
+    <a href="#"
+       class="social"
+       aria-label="YouTube">
+
+        <i class="bi bi-youtube"></i>
+
+    </a>
+
+</div>
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="services.html">
+                            Services
+                        </a>
+                    </li>
+    <li>
+                        <a href="caregivers.html">
+                            Caregivers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pricing.html">
+                            Pricing
+                        </a>
+                    </li>
+<li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- SERVICES -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Our Services
+                </h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#">
+                            Companion Visits
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Wellness Monitoring
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Errand Assistance
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Safety Checks
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Family Dashboard
+                        </a>
+                    </li>
+   <li>
+                        <a href="#">
+                            Social & Outdoor Support
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-column">
+
+                <h3>
+                    Stay Connected
+                </h3>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+
+                        <i data-lucide="map-pin"></i>
+
+                    </div>
+
+                    <span>
+                        Bengaluru, Karnataka, India
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+
+                        <i data-lucide="phone"></i>
+
+                    </div>
+
+                    <span>
+                        +91 98765 43210
+                    </span>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+
+                        <i data-lucide="mail"></i>
+
+                    </div>
+
+                    <span>
+                        care@carecompanion.com
+                    </span>
+
+                </div>
+
+
+                <!-- NEWSLETTER -->
+
+                <div class="newsletter">
+
+                    <div class="newsletter-box">
+
+                        <input
+                            id="newsletterInput"
+                            type="email"
+                            placeholder="Your email address"
+                            autocomplete="email"
+                        >
+
+
+                        <button
+                            id="newsletterButton"
+                            type="button"
+                            aria-label="Subscribe">
+
+                            <i data-lucide="arrow-up-right"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
 
-        <h3>
-          The universe
-          is closer than
-          <strong>you think.</strong>
-        </h3>
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
 
 
-        <p>
-          Step into an immersive world of stars, planets and
-          distant galaxies. Whether you are planning your first
-          visit or returning for another night beneath the sky,
-          we are here to make every experience memorable.
-        </p>
+            <div class="copyright">
+
+                © 2026 Care Heaven.
+                All rights reserved.
+
+            </div>
 
 
-        <!-- LOCATION -->
+            <div class="footer-bottom-links">
 
-        <div class="av-info-item">
+                <a href="#">
+                    Privacy Policy
+                </a>
 
-          <div class="av-info-icon">
+                <a href="#">
+                    Terms of Service
+                </a>
 
-            <i data-lucide="map-pin"></i>
+                <a href="#">
+                    Accessibility
+                </a>
 
-          </div>
-
-          <div>
-
-            <span>VISIT US</span>
-
-            <strong>
-              Astra Vista Planetarium & Observatory
-            </strong>
-
-          </div>
+            </div>
 
         </div>
-
-
-        <!-- EMAIL -->
-
-        <div class="av-info-item">
-
-          <div class="av-info-icon">
-
-            <i data-lucide="mail"></i>
-
-          </div>
-
-          <div>
-
-            <span>EMAIL US</span>
-
-            <strong>
-              hello@astravista.com
-            </strong>
-
-          </div>
-
-        </div>
-
-
-        <!-- PHONE -->
-
-        <div class="av-info-item">
-
-          <div class="av-info-icon">
-
-            <i data-lucide="phone-call"></i>
-
-          </div>
-
-          <div>
-
-            <span>CALL US</span>
-
-            <strong>
-              +91 00000 00000
-            </strong>
-
-          </div>
-
-        </div>
-
-
-        <!-- HOURS -->
-
-        <div class="av-info-item">
-
-          <div class="av-info-icon">
-
-            <i data-lucide="clock-3"></i>
-
-          </div>
-
-          <div>
-
-            <span>OPENING HOURS</span>
-
-            <strong>
-              Tuesday – Sunday · 10 AM – 9 PM
-            </strong>
-
-          </div>
-
-        </div>
-
-
-        <!-- STATUS -->
-
-        <div class="av-contact-status">
-
-          <span class="av-status-dot"></span>
-
-          <div>
-
-            <strong>
-              Observatory Open
-            </strong>
-
-            <small>
-              Ready for your next discovery
-            </small>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <!-- LARGE DECORATIVE NUMBER -->
-
-      <div class="av-info-number">
-        01
-      </div>
 
     </div>
 
-  </div>
+</footer>
 
-</section>
-
-
-
-<style>
-
-/* =========================================================
-   ASTRA VISTA — CONTACT
-========================================================= */
-
-:root{
-  --primary:#173F9F;
-  --secondary:#7357E8;
-
-  --av-text:#10172A;
-  --av-muted:#70778A;
-  --av-border:rgba(23,63,159,.11);
-  --av-surface:#FFFFFF;
-}
-
-
-/* =========================================================
-   MAIN SECTION
-========================================================= */
-
-.av-contact{
-  position:relative;
-
-  width:100%;
-
-  padding:35px 7% 115px;
-
-  background:#fff;
-
-  overflow:hidden;
-
-  font-family:"DM Sans",sans-serif;
-
-  isolation:isolate;
-}
-
-
-/* soft cosmic glow */
-
-.av-contact::before{
-  content:"";
-
-  position:absolute;
-
-  width:520px;
-  height:520px;
-
-  left:-300px;
-  top:-260px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(115,87,232,.09),
-      transparent 68%
-    );
-
-  pointer-events:none;
-}
-
-
-.av-contact::after{
-  content:"";
-
-  position:absolute;
-
-  width:480px;
-  height:480px;
-
-  right:-280px;
-  bottom:-270px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(23,63,159,.08),
-      transparent 68%
-    );
-
-  pointer-events:none;
-}
-
-
-/* =========================================================
-   HEADING
-========================================================= */
-
-.av-contact-heading{
-  position:relative;
-
-  z-index:2;
-
-  max-width:780px;
-
-  margin:0 auto 58px;
-
-  text-align:center;
-}
-
-
-.av-contact-label{
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:15px;
-}
-
-
-.av-contact-line{
-  width:42px;
-  height:1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--primary),
-      var(--secondary)
-    );
-
-  border-radius:10px;
-}
-
-
-.av-contact-label-text{
-  color:var(--secondary);
-
-  font-size:11px;
-
-  font-weight:800;
-
-  letter-spacing:2.8px;
-
-  line-height:1;
-
-  text-transform:uppercase;
-
-  white-space:nowrap;
-}
-
-
-.av-contact-heading h2{
-  margin:18px 0 16px;
-
-  color:var(--av-text);
-
-  font-family:"Playfair Display",serif;
-
-  font-size:clamp(34px,4vw,56px);
-
-  line-height:1.1;
-
-  font-weight:500;
-
-  letter-spacing:-1.8px;
-}
-
-
-.av-contact-heading h2 strong{
-  color:var(--secondary);
-
-  font-weight:700;
-}
-
-
-.av-contact-heading p{
-  max-width:680px;
-
-  margin:0 auto;
-
-  color:var(--av-muted);
-
-  font-size:14px;
-
-  line-height:1.8;
-}
-
-
-/* =========================================================
-   MAIN WRAPPER
-========================================================= */
-
-.av-contact-wrapper{
-  position:relative;
-
-  z-index:2;
-
-  width:100%;
-
-  max-width:1220px;
-
-  margin:auto;
-
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:70px;
-
-  align-items:stretch;
-}
-
-
-/* =========================================================
-   LEFT — FORM
-========================================================= */
-
-.av-contact-form{
-  position:relative;
-
-  padding:40px;
-
-  border:1px solid var(--av-border);
-
-  border-radius:25px;
-
-  background:#fff;
-
-  box-shadow:
-    0 25px 70px rgba(23,63,159,.075);
-}
-
-
-.av-contact-form::before{
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  left:40px;
-  right:40px;
-
-  height:2px;
-
-  border-radius:0 0 8px 8px;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--primary),
-      var(--secondary)
-    );
-}
-
-
-.av-form-top{
-  margin-bottom:25px;
-}
-
-
-.av-form-top span{
-  color:var(--secondary);
-
-  font-size:10px;
-
-  font-weight:800;
-
-  letter-spacing:2px;
-}
-
-
-.av-form-top h3{
-  margin:8px 0 7px;
-
-  color:var(--av-text);
-
-  font-family:"Playfair Display",serif;
-
-  font-size:29px;
-
-  line-height:1.2;
-
-  font-weight:600;
-}
-
-
-.av-form-top p{
-  margin:0;
-
-  color:var(--av-muted);
-
-  font-size:13px;
-
-  line-height:1.65;
-}
-
-
-/* =========================================================
-   INPUTS
-========================================================= */
-
-.av-input{
-  display:flex;
-
-  align-items:center;
-
-  gap:12px;
-
-  min-height:53px;
-
-  margin-bottom:13px;
-
-  padding:0 16px;
-
-  border:1px solid #E3E7F0;
-
-  border-radius:13px;
-
-  background:#fff;
-
-  transition:
-    border-color .3s ease,
-    box-shadow .3s ease,
-    transform .3s ease;
-}
-
-
-.av-input:hover{
-  border-color:rgba(115,87,232,.25);
-}
-
-
-.av-input svg{
-  width:18px;
-  height:18px;
-
-  flex-shrink:0;
-
-  color:var(--primary);
-
-  stroke-width:1.7;
-}
-
-
-.av-input:focus-within{
-  border-color:var(--secondary);
-
-  box-shadow:
-    0 0 0 4px rgba(115,87,232,.07);
-}
-
-
-.av-input input,
-.av-input select,
-.av-input textarea{
-  width:100%;
-
-  border:none;
-
-  outline:none;
-
-  background:transparent;
-
-  color:var(--av-text);
-
-  font-family:inherit;
-
-  font-size:13px;
-}
-
-
-.av-input input::placeholder,
-.av-input textarea::placeholder{
-  color:#A0A6B4;
-}
-
-
-.av-input select{
-  cursor:pointer;
-}
-
-
-.av-message{
-  align-items:flex-start;
-
-  min-height:108px;
-
-  padding-top:16px;
-}
-
-
-.av-input textarea{
-  min-height:75px;
-
-  resize:none;
-
-  line-height:1.6;
-}
-
-
-/* =========================================================
-   BUTTON
-========================================================= */
-
-.av-contact-form button{
-  position:relative;
-
-  overflow:hidden;
-
-  width:100%;
-  height:54px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:10px;
-
-  border:none;
-
-  border-radius:13px;
-
-  background:
-    linear-gradient(
-      100deg,
-      var(--primary),
-      var(--secondary)
-    );
-
-  color:#fff;
-
-  font-family:inherit;
-
-  font-size:13px;
-
-  font-weight:800;
-
-  cursor:pointer;
-
-  box-shadow:
-    0 14px 28px rgba(23,63,159,.18);
-
-  transition:
-    transform .3s ease,
-    box-shadow .3s ease;
-}
-
-
-.av-contact-form button::before{
-  content:"";
-
-  position:absolute;
-
-  width:70%;
-  height:100%;
-
-  left:-110%;
-  top:0;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,.25),
-      transparent
-    );
-
-  transform:skewX(-20deg);
-
-  transition:left .65s ease;
-}
-
-
-.av-contact-form button:hover{
-  transform:translateY(-3px);
-
-  box-shadow:
-    0 20px 35px rgba(23,63,159,.25);
-}
-
-
-.av-contact-form button:hover::before{
-  left:140%;
-}
-
-
-.av-contact-form button span,
-.av-contact-form button svg{
-  position:relative;
-
-  z-index:2;
-}
-
-
-.av-contact-form button svg{
-  width:17px;
-  height:17px;
-}
-
-
-/* =========================================================
-   SUCCESS
-========================================================= */
-
-.av-form-success{
-  display:none;
-
-  align-items:center;
-
-  gap:9px;
-
-  margin-top:13px;
-
-  padding:12px 14px;
-
-  border-radius:11px;
-
-  background:rgba(23,63,159,.06);
-
-  color:var(--primary);
-
-  font-size:11px;
-
-  line-height:1.5;
-}
-
-
-.av-form-success.show{
-  display:flex;
-}
-
-
-.av-form-success svg{
-  width:18px;
-  height:18px;
-
-  flex-shrink:0;
-}
-
-
-/* =========================================================
-   RIGHT — INFORMATION
-========================================================= */
-
-.av-contact-info{
-  position:relative;
-
-  min-height:550px;
-
-  padding:50px 45px;
-
-  overflow:hidden;
-
-  border-radius:28px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #FAFBFF 0%,
-      #F7F7FF 100%
-    );
-
-  border:1px solid rgba(23,63,159,.09);
-
-  box-shadow:
-    0 25px 70px rgba(23,63,159,.065);
-}
-
-
-/* COSMIC GLOW */
-
-.av-info-glow{
-  position:absolute;
-
-  width:390px;
-  height:390px;
-
-  right:-160px;
-  top:-145px;
-
-  border-radius:50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(115,87,232,.16),
-      rgba(23,63,159,.05) 42%,
-      transparent 70%
-    );
-
-  animation:avInfoGlow 6s ease-in-out infinite;
-
-  pointer-events:none;
-}
-
-
-@keyframes avInfoGlow{
-
-  0%,100%{
-    transform:scale(.95);
-    opacity:.7;
-  }
-
-  50%{
-    transform:scale(1.08);
-    opacity:1;
-  }
-
-}
-
-
-/* =========================================================
-   ORBITS
-========================================================= */
-
-.av-info-orbit{
-  position:absolute;
-
-  border:1px solid rgba(23,63,159,.12);
-
-  border-radius:50%;
-
-  pointer-events:none;
-}
-
-
-.orbit-one{
-  width:380px;
-  height:170px;
-
-  right:-115px;
-  top:35px;
-
-  transform:rotate(-25deg);
-
-  animation:
-    avOrbitOne 14s linear infinite;
-}
-
-
-.orbit-two{
-  width:270px;
-  height:390px;
-
-  right:-40px;
-  top:-50px;
-
-  border-color:rgba(115,87,232,.10);
-
-  transform:rotate(42deg);
-
-  animation:
-    avOrbitTwo 18s linear infinite reverse;
-}
-
-
-.orbit-one::after,
-.orbit-two::after{
-  content:"";
-
-  position:absolute;
-
-  width:8px;
-  height:8px;
-
-  border-radius:50%;
-
-  background:var(--secondary);
-
-  box-shadow:
-    0 0 0 6px rgba(115,87,232,.07),
-    0 0 18px rgba(115,87,232,.5);
-}
-
-
-.orbit-one::after{
-  left:70px;
-  top:8px;
-}
-
-
-.orbit-two::after{
-  right:38px;
-  bottom:80px;
-
-  background:var(--primary);
-
-  box-shadow:
-    0 0 0 6px rgba(23,63,159,.07),
-    0 0 18px rgba(23,63,159,.45);
-}
-
-
-@keyframes avOrbitOne{
-
-  to{
-    transform:rotate(335deg);
-  }
-
-}
-
-
-@keyframes avOrbitTwo{
-
-  to{
-    transform:rotate(-318deg);
-  }
-
-}
-
-
-/* =========================================================
-   INFO CONTENT
-========================================================= */
-
-.av-info-content{
-  position:relative;
-
-  z-index:5;
-
-  max-width:500px;
-}
-
-
-.av-info-kicker{
-  display:flex;
-
-  align-items:center;
-
-  gap:10px;
-
-  margin-bottom:17px;
-
-  color:var(--secondary);
-
-  font-size:10px;
-
-  font-weight:800;
-
-  letter-spacing:2.5px;
-}
-
-
-.av-info-kicker span{
-  width:27px;
-  height:1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--primary),
-      var(--secondary)
-    );
-}
-
-
-.av-info-content h3{
-  max-width:470px;
-
-  margin:0 0 17px;
-
-  color:var(--av-text);
-
-  font-family:"Playfair Display",serif;
-
-  font-size:clamp(36px,4vw,54px);
-
-  line-height:1.02;
-
-  letter-spacing:-2px;
-
-  font-weight:500;
-}
-
-
-.av-info-content h3 strong{
-  color:var(--secondary);
-
-  font-weight:700;
-}
-
-
-.av-info-content > p{
-  max-width:470px;
-
-  margin:0 0 30px;
-
-  color:var(--av-muted);
-
-  font-size:13px;
-
-  line-height:1.75;
-}
-
-
-/* =========================================================
-   INFO ITEMS
-========================================================= */
-
-.av-info-item{
-  display:flex;
-
-  align-items:center;
-
-  gap:14px;
-
-  margin-bottom:17px;
-}
-
-
-.av-info-icon{
-  width:43px;
-  height:43px;
-
-  min-width:43px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  border-radius:13px;
-
-  background:#fff;
-
-  color:var(--primary);
-
-  border:1px solid rgba(23,63,159,.08);
-
-  box-shadow:
-    0 8px 20px rgba(23,63,159,.05);
-}
-
-
-.av-info-icon svg{
-  width:18px;
-  height:18px;
-
-  stroke-width:1.7;
-}
-
-
-.av-info-item span{
-  display:block;
-
-  margin-bottom:3px;
-
-  color:var(--secondary);
-
-  font-size:8px;
-
-  font-weight:800;
-
-  letter-spacing:1.5px;
-}
-
-
-.av-info-item strong{
-  display:block;
-
-  color:#394156;
-
-  font-size:12px;
-
-  font-weight:600;
-
-  line-height:1.5;
-}
-
-
-/* =========================================================
-   STATUS
-========================================================= */
-
-.av-contact-status{
-  display:flex;
-
-  align-items:center;
-
-  gap:11px;
-
-  width:max-content;
-
-  margin-top:25px;
-
-  padding:11px 16px;
-
-  border:1px solid rgba(23,63,159,.09);
-
-  border-radius:50px;
-
-  background:rgba(255,255,255,.75);
-}
-
-
-.av-status-dot{
-  position:relative;
-
-  width:8px;
-  height:8px;
-
-  border-radius:50%;
-
-  background:var(--secondary);
-}
-
-
-.av-status-dot::after{
-  content:"";
-
-  position:absolute;
-
-  inset:-4px;
-
-  border:1px solid rgba(115,87,232,.35);
-
-  border-radius:50%;
-
-  animation:avStatusPulse 1.8s infinite;
-}
-
-
-@keyframes avStatusPulse{
-
-  0%{
-    transform:scale(.7);
-    opacity:.8;
-  }
-
-  100%{
-    transform:scale(1.6);
-    opacity:0;
-  }
-
-}
-
-
-.av-contact-status strong{
-  display:block;
-
-  color:var(--av-text);
-
-  font-size:11px;
-}
-
-
-.av-contact-status small{
-  display:block;
-
-  margin-top:2px;
-
-  color:#8B91A1;
-
-  font-size:9px;
-}
-
-
-/* =========================================================
-   LARGE NUMBER
-========================================================= */
-
-.av-info-number{
-  position:absolute;
-
-  right:-8px;
-  bottom:-30px;
-
-  color:rgba(23,63,159,.045);
-
-  font-family:"Playfair Display",serif;
-
-  font-size:180px;
-
-  font-weight:700;
-
-  line-height:1;
-
-  pointer-events:none;
-
-  user-select:none;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media(max-width:950px){
-
-  .av-contact{
-    padding:80px 30px 90px;
-  }
-
-  .av-contact-heading{
-    margin-bottom:45px;
-  }
-
-  .av-contact-wrapper{
-    grid-template-columns:1fr;
-
-    gap:30px;
-  }
-
-  .av-contact-form{
-    order:1;
-  }
-
-  .av-contact-info{
-    order:2;
-
-    min-height:auto;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:600px){
-
-  .av-contact{
-    padding:70px 20px 80px;
-  }
-
-  .av-contact-heading{
-    margin-bottom:38px;
-  }
-
-  .av-contact-label{
-    gap:10px;
-  }
-
-  .av-contact-line{
-    width:25px;
-  }
-
-  .av-contact-label-text{
-    font-size:9px;
-
-    letter-spacing:2px;
-  }
-
-  .av-contact-heading h2{
-    font-size:39px;
-
-    letter-spacing:-1.2px;
-  }
-
-  .av-contact-heading p{
-    font-size:13px;
-  }
-
-
-  .av-contact-form{
-    padding:30px 20px;
-
-    border-radius:22px;
-  }
-
-  .av-contact-form::before{
-    left:25px;
-    right:25px;
-  }
-
-  .av-form-top h3{
-    font-size:25px;
-  }
-
-
-  .av-contact-info{
-    padding:35px 25px;
-
-    border-radius:22px;
-  }
-
-  .av-info-content h3{
-    font-size:39px;
-
-    letter-spacing:-1.4px;
-  }
-
-  .av-info-glow{
-    width:300px;
-    height:300px;
-
-    right:-150px;
-    top:-100px;
-  }
-
-  .orbit-one{
-    width:300px;
-  }
-
-  .orbit-two{
-    width:220px;
-    height:320px;
-  }
-
-  .av-info-number{
-    font-size:120px;
-  }
-
-}
-
-</style>
 
 
 <script>
 
 /* =========================================================
-   ASTRA VISTA CONTACT — JAVASCRIPT
+   INITIALIZE LUCIDE
 ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function(){
+lucide.createIcons();
 
-  /* ---------------------------------------------
-     LUCIDE ICONS
-  --------------------------------------------- */
 
-  if(window.lucide){
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const header =
+    document.getElementById("header");
+
+const menuBtn =
+    document.getElementById("menuBtn");
+
+const mobilePanel =
+    document.getElementById("mobilePanel");
+
+const themeBtn =
+    document.getElementById("themeBtn");
+
+const rtlBtn =
+    document.getElementById("rtlBtn");
+
+const homeDropdown =
+    document.getElementById("homeDropdown");
+
+const mobileHomeBtn =
+    document.getElementById("mobileHomeBtn");
+
+const mobileHomeDropdown =
+    document.getElementById("mobileHomeDropdown");
+
+const newsletterInput =
+    document.getElementById("newsletterInput");
+
+const newsletterButton =
+    document.getElementById("newsletterButton");
+
+
+/* =========================================================
+   HEADER SCROLL
+========================================================= */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        if(window.scrollY > 25){
+
+            header.classList.add("scrolled");
+
+        }else{
+
+            header.classList.remove("scrolled");
+
+        }
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+/* =========================================================
+   MENU ICON
+========================================================= */
+
+function setMenuIcon(open){
+
+    menuBtn.innerHTML = open
+
+        ? '<i data-lucide="x"></i>'
+
+        : '<i data-lucide="menu"></i>';
+
     lucide.createIcons();
-  }
+
+    menuBtn.setAttribute(
+        "aria-expanded",
+        open ? "true" : "false"
+    );
+
+}
 
 
-  /* ---------------------------------------------
-     CONTACT FORM
-  --------------------------------------------- */
+/* =========================================================
+   OPEN MOBILE MENU
+========================================================= */
 
-  const form =
-    document.getElementById("avContactForm");
+function openMenu(){
 
-  const success =
-    document.getElementById("avFormSuccess");
+    mobilePanel.classList.add("active");
 
+    setMenuIcon(true);
 
-  if(form){
-
-    form.addEventListener("submit", function(e){
-
-      e.preventDefault();
-
-      success.classList.add("show");
-
-      form.reset();
+}
 
 
-      /* refresh Lucide icons */
+/* =========================================================
+   CLOSE MOBILE MENU
+========================================================= */
 
-      if(window.lucide){
+function closeMenu(){
+
+    mobilePanel.classList.remove("active");
+
+    setMenuIcon(false);
+
+    /* Close mobile Home submenu */
+
+    mobileHomeDropdown.classList.remove(
+        "active"
+    );
+
+    mobileHomeBtn.classList.remove(
+        "open"
+    );
+
+    mobileHomeBtn.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+}
+
+
+/* =========================================================
+   TOGGLE MOBILE MENU
+========================================================= */
+
+function toggleMenu(){
+
+    if(
+        mobilePanel.classList.contains("active")
+    ){
+
+        closeMenu();
+
+    }else{
+
+        openMenu();
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+menuBtn.addEventListener(
+    "click",
+    function(event){
+
+        event.stopPropagation();
+
+        toggleMenu();
+
+    }
+);
+
+
+/* =========================================================
+   DESKTOP HOME DROPDOWN
+   ---------------------------------------------------------
+   IMPORTANT:
+   NO CLICK JAVASCRIPT HERE.
+
+   Desktop Home dropdown is controlled ONLY
+   by CSS :hover.
+
+   Therefore:
+   - Hover Home = open
+   - Move away = close
+   - No click required
+========================================================= */
+
+
+/* =========================================================
+   MOBILE HOME DROPDOWN
+   ---------------------------------------------------------
+   Mobile/tablet Home submenu remains click based.
+========================================================= */
+
+mobileHomeBtn.addEventListener(
+    "click",
+    function(event){
+
+        event.preventDefault();
+
+        event.stopPropagation();
+
+        const isOpen =
+            mobileHomeDropdown.classList.toggle(
+                "active"
+            );
+
+        mobileHomeBtn.classList.toggle(
+            "open",
+            isOpen
+        );
+
+        mobileHomeBtn.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   MOBILE LINKS
+========================================================= */
+
+document
+    .querySelectorAll(
+        ".mobile-panel > a"
+    )
+    .forEach(
+        function(link){
+
+            link.addEventListener(
+                "click",
+                function(){
+
+                    closeMenu();
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   MOBILE HOME SUBMENU LINKS
+========================================================= */
+
+document
+    .querySelectorAll(
+        ".mobile-dropdown a"
+    )
+    .forEach(
+        function(link){
+
+            link.addEventListener(
+                "click",
+                function(){
+
+                    closeMenu();
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   CLICK OUTSIDE MOBILE PANEL
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            mobilePanel.classList.contains(
+                "active"
+            ) &&
+
+            !mobilePanel.contains(
+                event.target
+            ) &&
+
+            !menuBtn.contains(
+                event.target
+            )
+        ){
+
+            closeMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+
+            closeMenu();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   PREMIUM DARK / LIGHT MODE
+========================================================= */
+
+let darkMode =
+    localStorage.getItem(
+        "careHeavenTheme"
+    ) === "dark";
+
+
+function applyTheme(){
+
+    const root =
+        document.documentElement;
+
+
+    if(darkMode){
+
+        /* DARK THEME */
+
+        root.setAttribute(
+            "data-theme",
+            "dark"
+        );
+
+        root.style.setProperty(
+            "--bg",
+            "#111017"
+        );
+
+        root.style.setProperty(
+            "--surface",
+            "#191720"
+        );
+
+        root.style.setProperty(
+            "--surface-soft",
+            "#211D29"
+        );
+
+        root.style.setProperty(
+            "--text",
+            "#F8F5FA"
+        );
+
+        root.style.setProperty(
+            "--muted",
+            "#B9B2C2"
+        );
+
+        root.style.setProperty(
+            "--border",
+            "rgba(255,255,255,.11)"
+        );
+
+        themeBtn.innerHTML =
+            '<i data-lucide="sun"></i>';
+
+    }else{
+
+        /* LIGHT THEME */
+
+        root.setAttribute(
+            "data-theme",
+            "light"
+        );
+
+        root.style.setProperty(
+            "--bg",
+            "#FBF8F4"
+        );
+
+        root.style.setProperty(
+            "--surface",
+            "#FFFFFF"
+        );
+
+        root.style.setProperty(
+            "--surface-soft",
+            "#F5F0EA"
+        );
+
+        root.style.setProperty(
+            "--text",
+            "#292535"
+        );
+
+        root.style.setProperty(
+            "--muted",
+            "#777180"
+        );
+
+        root.style.setProperty(
+            "--border",
+            "rgba(91,75,138,.14)"
+        );
+
+        themeBtn.innerHTML =
+            '<i data-lucide="moon"></i>';
+
+    }
+
+
+    lucide.createIcons();
+
+}
+
+
+/* =========================================================
+   APPLY INITIAL THEME
+========================================================= */
+
+applyTheme();
+
+
+/* =========================================================
+   THEME BUTTON
+========================================================= */
+
+themeBtn.addEventListener(
+    "click",
+    function(){
+
+        darkMode =
+            !darkMode;
+
+        localStorage.setItem(
+            "careHeavenTheme",
+            darkMode
+                ? "dark"
+                : "light"
+        );
+
+        applyTheme();
+
+    }
+);
+
+
+/* =========================================================
+   RTL / LTR
+========================================================= */
+
+let rtlMode =
+    localStorage.getItem(
+        "careHeavenDirection"
+    ) === "rtl";
+
+
+function applyDirection(){
+
+    document.documentElement.dir =
+        rtlMode
+            ? "rtl"
+            : "ltr";
+
+}
+
+
+/* =========================================================
+   APPLY INITIAL DIRECTION
+========================================================= */
+
+applyDirection();
+
+
+/* =========================================================
+   RTL BUTTON
+========================================================= */
+
+rtlBtn.addEventListener(
+    "click",
+    function(){
+
+        rtlMode =
+            !rtlMode;
+
+        localStorage.setItem(
+            "careHeavenDirection",
+            rtlMode
+                ? "rtl"
+                : "ltr"
+        );
+
+        applyDirection();
+
+    }
+);
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+newsletterButton.addEventListener(
+    "click",
+    function(){
+
+        const email =
+            newsletterInput.value.trim();
+
+
+        /* EMPTY */
+
+        if(!email){
+
+            newsletterInput.focus();
+
+            newsletterInput.style.outline =
+                "2px solid rgba(216,155,106,.6)";
+
+            setTimeout(
+                function(){
+
+                    newsletterInput.style.outline =
+                        "none";
+
+                },
+                1200
+            );
+
+            return;
+
+        }
+
+
+        /* INVALID EMAIL */
+
+        if(
+            !email.includes("@") ||
+            !email.includes(".")
+        ){
+
+            newsletterInput.focus();
+
+            newsletterInput.style.outline =
+                "2px solid rgba(216,155,106,.6)";
+
+            setTimeout(
+                function(){
+
+                    newsletterInput.style.outline =
+                        "none";
+
+                },
+                1200
+            );
+
+            return;
+
+        }
+
+
+        /* SUCCESS */
+
+        newsletterButton.innerHTML =
+            '<i data-lucide="check"></i>';
+
         lucide.createIcons();
-      }
 
 
-      /* hide success message */
+        newsletterInput.value = "";
 
-      setTimeout(function(){
 
-        success.classList.remove("show");
+        setTimeout(
+            function(){
 
-      },5000);
+                newsletterButton.innerHTML =
+                    '<i data-lucide="arrow-up-right"></i>';
 
-    });
+                lucide.createIcons();
 
-  }
+            },
+            2200
+        );
 
-});
+    }
+);
+
+
+/* =========================================================
+   FOOTER REVEAL
+========================================================= */
+
+const footer =
+    document.querySelector(
+        ".care-footer"
+    );
+
+
+if(
+    "IntersectionObserver" in window
+){
+
+    const footerObserver =
+        new IntersectionObserver(
+            function(entries){
+
+                entries.forEach(
+                    function(entry){
+
+                        if(
+                            entry.isIntersecting
+                        ){
+
+                            footer.style.animation =
+                                "footerReveal .9s cubic-bezier(.2,.8,.2,1) both";
+
+                            footerObserver.unobserve(
+                                footer
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+            {
+                threshold:.08
+            }
+        );
+
+
+    footerObserver.observe(
+        footer
+    );
+
+}
+
+
+/* =========================================================
+   DEMO HASH LINKS
+========================================================= */
+
+document
+    .querySelectorAll(
+        'a[href="#"]'
+    )
+    .forEach(
+        function(link){
+
+            link.addEventListener(
+                "click",
+                function(event){
+
+                    event.preventDefault();
+
+                }
+            );
+
+        }
+    );
+
+
+/* =========================================================
+   INITIAL MENU STATE
+========================================================= */
+
+setMenuIcon(false);
+
+
+/* =========================================================
+   INITIAL MOBILE HOME STATE
+========================================================= */
+
+mobileHomeDropdown.classList.remove(
+    "active"
+);
+
+mobileHomeBtn.classList.remove(
+    "open"
+);
+
+mobileHomeBtn.setAttribute(
+    "aria-expanded",
+    "false"
+);
 
 </script>
+</body>
+</html>
